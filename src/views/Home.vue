@@ -24,6 +24,11 @@
             <pre class="mt-2 rounded-md border p-3 text-sm overflow-x-auto">
 {{ responseText }}
             </pre>
+            <div class="mt-4">
+              <RouterLink to="/about">
+                <Button variant="ghost" size="sm">Go to About</Button>
+              </RouterLink>
+            </div>
           </div>
         </CardFooter>
       </Card>
@@ -34,6 +39,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
