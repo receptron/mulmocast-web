@@ -73,28 +73,6 @@ const loading = ref(false);
 const error = ref<string | null>(null);
 const responseText = ref("");
 
-async function onSubmit() {
-  error.value = null;
-  responseText.value = "";
-  loading.value = true;
-  try {
-    const res = await fetch("/api/echo", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: text.value }),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data?.error || "Request failed");
-    }
-    responseText.value = JSON.stringify(data, null, 2);
-  } catch (e: any) {
-    error.value = e?.message ?? "Unexpected error";
-  } finally {
-    loading.value = false;
-  }
-}
-
 type MacData = {
   version?: string;
   updateTo?: {
@@ -122,12 +100,6 @@ const fetchDataWin = async () => {
 
 fetchDataMac();
 fetchDataWin();
-
-function onClear() {
-  text.value = "";
-  responseText.value = "";
-  error.value = null;
-}
 </script>
 
 <style scoped></style>
