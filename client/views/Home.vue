@@ -100,7 +100,6 @@ const fetchDataWin = async () => {
 
 fetchDataMac();
 fetchDataWin();
-
 </script>
 
 <style scoped></style>
