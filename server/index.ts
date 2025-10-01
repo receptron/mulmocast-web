@@ -1,4 +1,4 @@
-import { Hono } from "hono";
+import { Hono, type Env } from "hono";
 
 const app = new Hono<{ Bindings: Env }>();
 

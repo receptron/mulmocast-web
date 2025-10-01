@@ -62,16 +62,18 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
+// import { RouterLink } from "vue-router";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+// import { Input } from "@/components/ui/input";
+// import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
+/*
 const text = ref("");
 const loading = ref(false);
 const error = ref<string | null>(null);
 const responseText = ref("");
+*/
 
 type MacData = {
   version?: string;
@@ -81,7 +83,7 @@ type MacData = {
 };
 
 const currentMac = ref<MacData>({});
-const currentWin = ref({});
+// const currentWin = ref({});
 
 const fetchDataMac = async () => {
   const response = await fetch("https://s3.aws.mulmocast.com/releases/prod/darwin/arm64/RELEASES.json");
