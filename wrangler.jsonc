@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-  "name": "web-test",
+  "name": "mulmocast-dev",
 	"compatibility_date": "2025-08-31",
 	"main": "server/index.ts",
 	"assets": {
