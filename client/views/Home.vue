@@ -3,32 +3,14 @@
     <div class="max-w-xl w-full space-y-4">
       <Card>
         <CardHeader>
-          <CardTitle>Hono and Vue SPA Example</CardTitle>
+          <CardTitle>MulmoCast</CardTitle>
         </CardHeader>
         <CardContent class="space-y-4">
-          <div class="space-y-2">
-            <Label for="text">Text</Label>
-            <Input id="text" v-model="text" placeholder="Type here" />
-          </div>
-          <div class="flex gap-2">
-            <Button :disabled="loading" @click="onSubmit">
-              {{ loading ? 'Sending...' : 'Send' }}
-            </Button>
-            <Button variant="outline" @click="onClear">Clear</Button>
-          </div>
-          <div v-if="error" class="text-sm text-red-600">{{ error }}</div>
+          <a :href="currentMac?.updateTo?.url">Download {{ currentMac?.version }} ({{ currentMac?.updateTo?.url }})</a>
+
         </CardContent>
         <CardFooter>
           <div class="w-full">
-            <Label>Response</Label>
-            <pre class="mt-2 rounded-md border p-3 text-sm overflow-x-auto">
-{{ responseText }}
-            </pre>
-            <div class="mt-4">
-              <RouterLink to="/about">
-                <Button variant="ghost" size="sm">Go to About</Button>
-              </RouterLink>
-            </div>
           </div>
         </CardFooter>
       </Card>
@@ -70,7 +52,38 @@ async function onSubmit() {
   } finally {
     loading.value = false
   }
+
 }
+
+
+type MacData = {
+  version?: string;
+  updateTo?: {
+    url: string;
+  };
+};
+
+const currentMac = ref<MacData>({});
+const currentWin = ref({});
+
+const fetchDataMac = async () => {
+  const response = await fetch("https://s3.aws.mulmocast.com/releases/prod/darwin/arm64/RELEASES.json");
+  const result = await response.json();
+  const { currentRelease, releases } = result;
+  currentMac.value = releases.find((release: MacData) => release.version === currentRelease);
+
+};
+/*
+const fetchDataWin = async () => {
+  const response = await fetch("https://s3.aws.mulmocast.com/releases/prod/win32/x64/RELEASES");
+  const result = await response.json();
+  const { currentRelease, releases } = result;
+  currentWin.value = releases.find(release => release.version === currentRelease);
+};
+*/
+
+fetchDataMac();
+//fetchDataWin();
 
 function onClear() {
   text.value = ''

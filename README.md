@@ -35,29 +35,29 @@
 1. Install dependencies
 
 ```bash
-npm i
+yarn install
 ```
 
 2. Development server (SPA)
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
 3. Preview (local run including API)
 
 ```bash
-npm run preview   # builds then starts wrangler dev
+yarn run preview   # builds then starts wrangler dev
 ```
 
 4. Build
 
 ```bash
-npm run build
+yarn run build
 ```
 
 5. Deploy (Cloudflare Workers)
 
 ```bash
-npm run deploy
+yarn run deploy
 ```
