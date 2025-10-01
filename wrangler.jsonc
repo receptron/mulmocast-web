@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "sandbox-hono-vue",
+  "name": "web-test",
 	"compatibility_date": "2025-08-31",
 	"main": "server/index.ts",
 	"assets": {
