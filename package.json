@@ -13,6 +13,7 @@
 		"build-only": "vite build",
 		"type-check": "vue-tsc --build",
 		"deploy": "npm run build && wrangler deploy",
+    "format": "prettier --write '{server,client}/**/*.{ts,json,yaml.vue}'",
 		"cf-typegen": "wrangler types"
 	},
 	"dependencies": {
@@ -36,6 +37,7 @@
 		"@vitejs/plugin-vue": "^6.0.1",
 		"@vue/tsconfig": "^0.8.1",
 		"npm-run-all2": "^8.0.4",
+		"prettier": "^3.6.2",
 		"typescript": "~5.9.3",
 		"vite": "^7.1.7",
 		"vite-plugin-vue-devtools": "^8.0.2",
