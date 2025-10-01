@@ -13,6 +13,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "deploy": "npm run build && wrangler deploy",
+    "deploy-prod": "npm run build && wrangler deploy --name mulmocast-prod",
     "lint": "eslint",
     "format": "prettier --write '{server,client}/**/*.{ts,json,yaml,vue}' *.json *.ts *.mjs",
     "cf-typegen": "wrangler types"
