@@ -63,8 +63,7 @@
           <CardTitle>Windows用アプリをダウンロード</CardTitle>
         </CardHeader>
         <CardContent class="space-y-4">
-          {{ winReleaseURL }}
-          <a :href="winReleaseURL" class="text-primary underline"> ダウンロード {{ windowsVersion }} </a>
+          <a :href="winReleaseURL ?? ''" class="text-primary underline"> ダウンロード {{ windowsVersion }} </a>
           <p class="text-muted-foreground text-sm">
             無料で利用できます。<br />
             利用には
@@ -73,7 +72,7 @@
         </CardContent>
         <CardFooter>
           <div class="w-full text-center">
-            <Button as="a" :href="currentMac?.updateTo?.url" class="w-full"> 無料で使ってみる </Button>
+            <Button as="a" :href="winReleaseURL ?? ''" class="w-full"> 無料で使ってみる </Button>
           </div>
         </CardFooter>
       </Card>
