@@ -68,6 +68,8 @@ import { Button } from "@/components/ui/button";
 // import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
+import { macReleaseURL } from "../configs/config";
+
 /*
 const text = ref("");
 const loading = ref(false);
@@ -86,7 +88,7 @@ const currentMac = ref<MacData>({});
 // const currentWin = ref({});
 
 const fetchDataMac = async () => {
-  const response = await fetch("https://s3.aws.mulmocast.com/releases/prod/darwin/arm64/RELEASES.json");
+  const response = await fetch(macReleaseURL);
   const result = await response.json();
   const { currentRelease, releases } = result;
   currentMac.value = releases.find((release: MacData) => release.version === currentRelease);
