@@ -56,6 +56,27 @@
           </div>
         </CardFooter>
       </Card>
+
+      <!-- Download Section -->
+      <Card class="hover:bg-muted/50">
+        <CardHeader>
+          <CardTitle>Windows用アプリをダウンロード</CardTitle>
+        </CardHeader>
+        <CardContent class="space-y-4">
+          {{ winReleaseURL }}
+          <a :href="winReleaseURL" class="text-primary underline"> ダウンロード {{ windowsVersion }} </a>
+          <p class="text-muted-foreground text-sm">
+            無料で利用できます。<br />
+            利用には
+            <span class="font-semibold">OpenAI API Key</span> が必要です。
+          </p>
+        </CardContent>
+        <CardFooter>
+          <div class="w-full text-center">
+            <Button as="a" :href="currentMac?.updateTo?.url" class="w-full"> 無料で使ってみる </Button>
+          </div>
+        </CardFooter>
+      </Card>
     </div>
   </div>
 </template>
@@ -68,7 +89,7 @@ import { Button } from "@/components/ui/button";
 // import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { macReleaseURL } from "../configs/config";
+import { macReleaseURL, winPrefix } from "../configs/config";
 
 /*
 const text = ref("");
@@ -85,7 +106,8 @@ type MacData = {
 };
 
 const currentMac = ref<MacData>({});
-// const currentWin = ref({});
+const winReleaseURL = ref<null | string>(null);
+const windowsVersion = ref<null | string>(null);
 
 const fetchDataMac = async () => {
   const response = await fetch(macReleaseURL);
@@ -95,11 +117,13 @@ const fetchDataMac = async () => {
 };
 
 const fetchDataWin = async () => {
-  const response = await fetch("https://s3.aws.mulmocast.com/releases/prod/win32/x64/RELEASES");
-  const result = await response.text();
-  console.log(result.split("\n").map((line) => line.split(/\s/)));
-  // const { currentRelease, releases } = result;
-  // currentWin.value = releases.find(release => release.version === currentRelease);
+  const response = await fetch(winPrefix + "/RELEASE.json");
+  const result = await response.json();
+
+  const { currentVersion } = result;
+  windowsVersion.value = currentVersion;
+
+  winReleaseURL.value = `${winPrefix}/MulmoCast-${currentVersion}-setup.exe`;
 };
 
 fetchDataMac();
