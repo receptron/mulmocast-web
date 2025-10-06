@@ -1,6 +1,8 @@
 <template>
-  <div class="flex min-h-screen items-center justify-center p-4">
-    <div class="w-full max-w-2xl space-y-6">
+  <div class="min-h-screen">
+    <Navigation />
+    <div class="flex items-center justify-center p-4">
+      <div class="w-full max-w-2xl space-y-6 py-8">
       <!-- Hero -->
       <div class="text-center">
         <h1 class="text-foreground text-3xl font-extrabold sm:text-5xl md:text-6xl">MulmoCast</h1>
@@ -126,6 +128,7 @@
           </div>
         </CardContent>
       </Card>
+      </div>
     </div>
   </div>
 </template>
@@ -137,6 +140,7 @@ import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
 // import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import Navigation from "@/components/Navigation.vue";
 
 import { macReleaseURL, winPrefix } from "../configs/config";
 
