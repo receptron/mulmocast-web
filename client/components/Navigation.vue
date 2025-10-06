@@ -1,12 +1,10 @@
 <template>
-  <nav class="border-b border-muted bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <nav class="border-muted bg-background/95 supports-[backdrop-filter]:bg-background/60 border-b backdrop-blur">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <a href="/" class="text-foreground text-xl font-bold hover:text-primary transition-colors">
-            MulmoCast
-          </a>
+          <a href="/" class="text-foreground hover:text-primary text-xl font-bold transition-colors"> MulmoCast </a>
         </div>
 
         <!-- Desktop Navigation -->
@@ -17,9 +15,7 @@
               :key="item.name"
               :href="item.href"
               :class="[
-                isCurrentPage(item.href)
-                  ? 'text-primary'
-                  : 'text-muted-foreground hover:text-foreground',
+                isCurrentPage(item.href) ? 'text-primary' : 'text-muted-foreground hover:text-foreground',
                 'rounded-md px-3 py-2 text-sm font-medium transition-colors',
               ]"
             >
@@ -33,7 +29,7 @@
           <button
             @click="mobileMenuOpen = !mobileMenuOpen"
             type="button"
-            class="text-muted-foreground hover:text-foreground inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+            class="text-muted-foreground hover:text-foreground focus:ring-primary inline-flex items-center justify-center rounded-md p-2 focus:ring-2 focus:outline-none focus:ring-inset"
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
@@ -67,7 +63,7 @@
 
     <!-- Mobile menu -->
     <div v-if="mobileMenuOpen" class="md:hidden" id="mobile-menu">
-      <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+      <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
         <a
           v-for="item in navigation"
           :key="item.name"
@@ -88,7 +84,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
