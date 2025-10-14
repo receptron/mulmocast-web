@@ -27,8 +27,7 @@
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground">
-              アプリケーション自体は無料でご利用いただけます。ただし、利用にはOpenAI API
-              Keyが必要です。APIの利用料金はOpenAIに直接お支払いいただきます。
+              アプリケーション自体は無料でご利用いただけます。ただし、利用にはOpenAI / Google / Anthropicなどの各種API Keyが必要です。それらのAPIの利用には料金がかかります。
             </p>
           </CardContent>
         </Card>
@@ -44,31 +43,11 @@
 
         <Card class="hover:bg-muted/50">
           <CardHeader>
-            <CardTitle>OpenAI API Keyはどこで取得できますか？</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p class="text-muted-foreground">
-              OpenAIの公式ウェブサイト（
-              <a
-                href="https://platform.openai.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-primary underline"
-              >
-                https://platform.openai.com/
-              </a>
-              ）でアカウントを作成し、API Keyを取得できます。
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card class="hover:bg-muted/50">
-          <CardHeader>
             <CardTitle>どんな用途に使えますか？</CardTitle>
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground">
-              学生のレポートや授業発表、ビジネスの提案資料や企画書など、様々な用途でご利用いただけます。
+              ショート動画、学生のレポートや授業発表、ビジネスの提案資料や企画書など、様々な用途でご利用いただけます。
             </p>
           </CardContent>
         </Card>

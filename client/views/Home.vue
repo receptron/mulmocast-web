@@ -163,7 +163,7 @@ const winReleaseURL = ref<null | string>(null);
 const windowsVersion = ref<null | string>(null);
 
 const fetchDataMac = async () => {
-  const response = await fetch(macReleaseURL);
+  const response = await fetch(macReleaseURL + "?" +  Date.now());
   const result = await response.json();
   const { currentRelease, releases } = result;
   currentMac.value = releases.find((release: MacData) => release.version === currentRelease);
