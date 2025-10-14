@@ -59,6 +59,24 @@
           </CardFooter>
         </Card>
 
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <CardTitle>MulmoCastイントールガイドMac版</CardTitle>
+          </CardHeader>
+          <CardContent class="space-y-4">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/qbxteoIwgXg?si=v4KAaaE6AjtWo4Kr"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </CardContent>
+        </Card>
+
         <!-- Download Section -->
         <Card class="hover:bg-muted/50">
           <CardHeader>
@@ -77,6 +95,24 @@
               <Button as="a" :href="winReleaseURL ?? ''" class="w-full"> 無料で使ってみる </Button>
             </div>
           </CardFooter>
+        </Card>
+
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <CardTitle>MulmoCastイントールガイドWindows版</CardTitle>
+          </CardHeader>
+          <CardContent class="space-y-4">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/ar_iC7lTSjE?si=OBWGHqapGV0FsVrW"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </CardContent>
         </Card>
 
         <!-- Links Section -->
@@ -163,7 +199,7 @@ const winReleaseURL = ref<null | string>(null);
 const windowsVersion = ref<null | string>(null);
 
 const fetchDataMac = async () => {
-  const response = await fetch(macReleaseURL + "?" +  Date.now());
+  const response = await fetch(macReleaseURL + "?" + Date.now());
   const result = await response.json();
   const { currentRelease, releases } = result;
   currentMac.value = releases.find((release: MacData) => release.version === currentRelease);

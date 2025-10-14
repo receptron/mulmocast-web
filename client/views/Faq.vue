@@ -27,7 +27,8 @@
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground">
-              アプリケーション自体は無料でご利用いただけます。ただし、利用にはOpenAI / Google / Anthropicなどの各種API Keyが必要です。それらのAPIの利用には料金がかかります。
+              アプリケーション自体は無料でご利用いただけます。ただし、利用にはOpenAI / Google / Anthropicなどの各種API
+              Keyが必要です。それらのAPIの利用には料金がかかります。
             </p>
           </CardContent>
         </Card>

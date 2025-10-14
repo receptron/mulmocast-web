@@ -5,8 +5,8 @@
       <div class="w-full max-w-2xl space-y-6 py-8">
         <!-- Header -->
         <div class="text-center">
-          <h1 class="text-foreground text-3xl font-extrabold sm:text-5xl md:text-6xl">映画祭</h1>
-          <p class="text-muted-foreground mt-4 text-lg">MulmoCast AI Film Festival</p>
+          <h1 class="text-foreground text-3xl font-extrabold sm:text-3xl md:text-4xl">AIショートフィルムフェス 2025</h1>
+          <p class="text-muted-foreground mt-4 text-lg">MulmoCast AI Short Film Festival</p>
         </div>
 
         <!-- Introduction -->
@@ -16,7 +16,7 @@
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground">
-              MulmoCast AI Film Festivalは、AIを活用して制作された動画作品を募集・展示するイベントです。
+              MulmoCast AI Short Film Festivalは、AIを活用して制作された動画作品を募集・展示するイベントです。
               あなたの創造性とMulmoCastの力で、新しい映像表現に挑戦しませんか？
             </p>
           </CardContent>
@@ -60,35 +60,6 @@
           </CardContent>
         </Card>
 
-        <!-- Rights -->
-        <Card class="hover:bg-muted/50">
-          <CardHeader>
-            <CardTitle>権利関係</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul class="text-muted-foreground list-disc space-y-2 pl-5">
-              <li>応募作品は主催（SS／まぐまぐ）がWeb・SNS・イベント等で紹介できることに同意</li>
-              <li>BGMなど著作権侵害がないことを保証する</li>
-              <li>主催は権利侵害等に関して責任を負わない（免責）</li>
-              <li>受賞作品の利用権（紹介・アーカイブ公開等）は主催が保持</li>
-            </ul>
-          </CardContent>
-        </Card>
-
-        <!-- Judging Criteria -->
-        <Card class="hover:bg-muted/50">
-          <CardHeader>
-            <CardTitle>審査基準</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul class="text-muted-foreground list-disc space-y-2 pl-5">
-              <li>新規性</li>
-              <li>表現力</li>
-              <li>メッセージ性（用途の明確さ）</li>
-            </ul>
-          </CardContent>
-        </Card>
-
         <!-- Results Announcement -->
         <Card class="hover:bg-muted/50">
           <CardHeader>
@@ -96,8 +67,8 @@
           </CardHeader>
           <CardContent>
             <ul class="text-muted-foreground list-disc space-y-2 pl-5">
-              <li><span class="font-semibold">12月中旬</span> YouTubeライブで発表</li>
-              <li>Tech Worldチャンネル＋各社配信</li>
+              <li><span class="font-semibold">12月中旬</span> YouTubeライブで発表予定</li>
+              <li>Tech Worldチャンネル＋各社配信予定</li>
               <li>参加はオンラインに限定</li>
             </ul>
           </CardContent>
