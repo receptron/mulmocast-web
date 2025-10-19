@@ -5,7 +5,7 @@
       <div class="w-full max-w-2xl space-y-6 py-8">
         <!-- Header -->
         <div class="text-center">
-          <h1 class="text-foreground text-3xl font-extrabold sm:text-3xl md:text-4xl">AIショートフィルムフェス 2025</h1>
+          <h1 class="text-foreground text-3xl font-extrabold sm:text-3xl md:text-4xl">{{ t("filmFes.title") }}</h1>
           <p class="text-muted-foreground mt-4 text-lg">MulmoCast AI Short Film Festival</p>
         </div>
 
@@ -105,9 +105,12 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation.vue";
+
+const { t } = useI18n();
 </script>
 
 <style scoped></style>
