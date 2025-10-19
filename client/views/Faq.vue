@@ -56,7 +56,7 @@
 
         <!-- Back Button -->
         <div class="text-center">
-          <Button as="a" href="/" variant="outline"> {{ t("faq.backButton") }} </Button>
+          <Button as="a" :href="localizedUrl('/')" variant="outline"> {{ t("faq.backButton") }} </Button>
         </div>
       </div>
     </div>
@@ -68,8 +68,10 @@ import { useI18n } from "vue-i18n";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation.vue";
+import { useLocalizedUrl } from "@/i18n/utils";
 
 const { t } = useI18n();
+const localizedUrl = useLocalizedUrl();
 </script>
 
 <style scoped></style>

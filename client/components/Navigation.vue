@@ -4,7 +4,9 @@
       <div class="flex h-16 items-center justify-between">
         <!-- Logo -->
         <div class="flex-shrink-0">
-          <a href="/" class="text-foreground hover:text-primary text-xl font-bold transition-colors"> MulmoCast </a>
+          <a :href="localizedUrl('/')" class="text-foreground hover:text-primary text-xl font-bold transition-colors">
+            MulmoCast
+          </a>
         </div>
 
         <!-- Desktop Navigation -->
@@ -122,15 +124,17 @@ import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import { languages } from "@/i18n/index";
+import { useLocalizedUrl } from "@/i18n/utils";
 
 const route = useRoute();
 const mobileMenuOpen = ref(false);
 const { t, locale } = useI18n();
+const localizedUrl = useLocalizedUrl();
 
 const navigation = computed(() => [
-  { name: t("navigation.home"), href: "/" },
-  { name: t("navigation.faq"), href: "/faq" },
-  { name: t("navigation.festival"), href: "/festival" },
+  { name: t("navigation.home"), href: localizedUrl("/") },
+  { name: t("navigation.faq"), href: localizedUrl("/faq") },
+  { name: t("navigation.festival"), href: localizedUrl("/festival") },
   //  { name: "サンプル", href: "/samples" },
 ]);
 
