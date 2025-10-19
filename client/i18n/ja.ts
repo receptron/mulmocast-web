@@ -14,6 +14,12 @@ const lang = {
   filmFes: {
     title: "AIショートフィルムフェス 2025",
   },
+  navigation: {
+    home: "ホーム",
+    faq: "FAQ",
+    festival: "映画祭",
+    openMenu: "メニューを開く",
+  },
   home: {
     hero: {
       title: "MulmoCast",

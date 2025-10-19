@@ -14,6 +14,12 @@ const lang = {
   filmFes: {
     title: "AI Short Film Festival 2025",
   },
+  navigation: {
+    home: "Home",
+    faq: "FAQ",
+    festival: "Festival",
+    openMenu: "Open menu",
+  },
   home: {
     hero: {
       title: "MulmoCast",
