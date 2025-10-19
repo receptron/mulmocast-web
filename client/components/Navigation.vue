@@ -8,8 +8,8 @@
         </div>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:block">
-          <div class="ml-10 flex items-baseline space-x-4">
+        <div class="hidden md:flex md:items-center md:space-x-6">
+          <div class="flex items-baseline space-x-4">
             <a
               v-for="item in navigation"
               :key="item.name"
@@ -20,6 +20,21 @@
               ]"
             >
               {{ item.name }}
+            </a>
+          </div>
+
+          <!-- Language Switcher -->
+          <div class="flex items-center space-x-1 border-l border-muted pl-6">
+            <a
+              v-for="lang in languages"
+              :key="lang"
+              :href="getLanguageUrl(lang)"
+              :class="[
+                locale === lang ? 'text-foreground font-semibold' : 'text-muted-foreground hover:text-foreground',
+                'px-2 py-1 text-sm transition-colors',
+              ]"
+            >
+              {{ lang.toUpperCase() }}
             </a>
           </div>
         </div>
@@ -78,6 +93,25 @@
         >
           {{ item.name }}
         </a>
+
+        <!-- Language Switcher Mobile -->
+        <div class="border-t border-muted pt-3 mt-3">
+          <div class="flex items-center space-x-2 px-3">
+            <span class="text-muted-foreground text-sm">Language:</span>
+            <a
+              v-for="lang in languages"
+              :key="lang"
+              :href="getLanguageUrl(lang)"
+              :class="[
+                locale === lang ? 'text-foreground font-semibold' : 'text-muted-foreground hover:text-foreground',
+                'px-2 py-1 text-sm transition-colors',
+              ]"
+              @click="mobileMenuOpen = false"
+            >
+              {{ lang.toUpperCase() }}
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -87,10 +121,11 @@
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
+import { languages } from "@/i18n/index";
 
 const route = useRoute();
 const mobileMenuOpen = ref(false);
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const navigation = computed(() => [
   { name: t("navigation.home"), href: "/" },
@@ -104,6 +139,16 @@ const isCurrentPage = (href: string) => {
     return route.path === "/";
   }
   return route.path.startsWith(href);
+};
+
+const getLanguageUrl = (lang: string) => {
+  const basePath = (() => {
+    if (route.params.lang) {
+      return route.path.slice((route.params.lang as string).length + 1);
+    }
+    return route.path;
+  })();
+  return `/${lang}${basePath}`;
 };
 </script>
 
