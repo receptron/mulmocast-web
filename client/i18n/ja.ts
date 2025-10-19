@@ -45,11 +45,7 @@ const lang = {
     },
     results: {
       title: "結果発表",
-      items: [
-        "{date} YouTubeライブで発表予定",
-        "Tech Worldチャンネル＋各社配信予定",
-        "参加はオンラインに限定",
-      ],
+      items: ["{date} YouTubeライブで発表予定", "Tech Worldチャンネル＋各社配信予定", "参加はオンラインに限定"],
       date: "12月中旬",
     },
     latestInfo: {

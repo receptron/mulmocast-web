@@ -1,6 +1,5 @@
 import { type RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 import Layout from "../components/Layout.vue";
-import Blank from "../components/Blank.vue";
 import NotFound from "../components/NotFound.vue";
 
 import HomeView from "../views/Home.vue";

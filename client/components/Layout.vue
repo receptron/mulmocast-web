@@ -7,22 +7,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, onMounted, reactive, ref } from "vue";
-
+<script setup lang="ts">
 import { useI18nParam } from "@/i18n/utils";
-
 import Languages from "@/components/Languages.vue";
 
-export default defineComponent({
-  name: "AppLayout",
-  components: {
-    Languages,
-  },
-  setup() {
-    useI18nParam();
-
-    return {};
-  },
-});
+useI18nParam();
 </script>

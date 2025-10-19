@@ -54,7 +54,8 @@ const lang = {
     },
     latestInfo: {
       title: "Latest Information",
-      description: "Details and application form will be available soon. For the latest information, please check our X account (link).",
+      description:
+        "Details and application form will be available soon. For the latest information, please check our X account (link).",
       twitterHandle: "{'@'}mulmocast",
     },
     backButton: "Back to Home",

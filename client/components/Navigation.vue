@@ -33,7 +33,7 @@
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
-            <span class="sr-only">{{ t('navigation.openMenu') }}</span>
+            <span class="sr-only">{{ t("navigation.openMenu") }}</span>
             <svg
               v-if="!mobileMenuOpen"
               class="block h-6 w-6"
