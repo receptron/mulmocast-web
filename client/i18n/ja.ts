@@ -65,6 +65,32 @@ const lang = {
     festival: "映画祭",
     openMenu: "メニューを開く",
   },
+  faq: {
+    title: "FAQ",
+    subtitle: "よくある質問",
+    items: [
+      {
+        question: "MulmoCastとは何ですか？",
+        answer:
+          "MulmoCastは、台本を書くだけでAIが画像とナレーション音声を自動生成し、動画を完成させるマルチモーダルプレゼンテーションツールです。",
+      },
+      {
+        question: "料金はかかりますか？",
+        answer:
+          "アプリケーション自体は無料でご利用いただけます。ただし、利用にはOpenAI / Google / Anthropicなどの各種API Keyが必要です。それらのAPIの利用には料金がかかります。",
+      },
+      {
+        question: "どのプラットフォームで利用できますか？",
+        answer: "MacOS、Windows、およびCLIツールで利用可能です。",
+      },
+      {
+        question: "どんな用途に使えますか？",
+        answer:
+          "ショート動画、学生のレポートや授業発表、ビジネスの提案資料や企画書など、様々な用途でご利用いただけます。",
+      },
+    ],
+    backButton: "ホームに戻る",
+  },
   home: {
     hero: {
       title: "MulmoCast",

@@ -65,6 +65,32 @@ const lang = {
     festival: "Festival",
     openMenu: "Open menu",
   },
+  faq: {
+    title: "FAQ",
+    subtitle: "Frequently Asked Questions",
+    items: [
+      {
+        question: "What is MulmoCast?",
+        answer:
+          "MulmoCast is a multimodal presentation tool that automatically generates images and narration audio using AI, completing your video just by writing a script.",
+      },
+      {
+        question: "Does it cost money?",
+        answer:
+          "The application itself is free to use. However, you will need API Keys from providers such as OpenAI / Google / Anthropic. There are costs associated with using those APIs.",
+      },
+      {
+        question: "What platforms is it available on?",
+        answer: "Available on MacOS, Windows, and as a CLI tool.",
+      },
+      {
+        question: "What can it be used for?",
+        answer:
+          "It can be used for various purposes including short videos, student reports and class presentations, business proposals and planning documents.",
+      },
+    ],
+    backButton: "Back to Home",
+  },
   home: {
     hero: {
       title: "MulmoCast",
