@@ -94,7 +94,7 @@ const navigation = [
   { name: "ホーム", href: "/" },
   { name: "FAQ", href: "/faq" },
   { name: "映画祭", href: "/festival" },
-  { name: "サンプル", href: "/samples" },
+  //  { name: "サンプル", href: "/samples" },
 ];
 
 const isCurrentPage = (href: string) => {
