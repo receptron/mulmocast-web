@@ -33,7 +33,7 @@
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
-            <span class="sr-only">メニューを開く</span>
+            <span class="sr-only">{{ t("navigation.openMenu") }}</span>
             <svg
               v-if="!mobileMenuOpen"
               class="block h-6 w-6"
@@ -84,18 +84,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
 
 const route = useRoute();
 const mobileMenuOpen = ref(false);
+const { t } = useI18n();
 
-const navigation = [
-  { name: "ホーム", href: "/" },
-  { name: "FAQ", href: "/faq" },
-  { name: "映画祭", href: "/festival" },
-  { name: "サンプル", href: "/samples" },
-];
+const navigation = computed(() => [
+  { name: t("navigation.home"), href: "/" },
+  { name: t("navigation.faq"), href: "/faq" },
+  { name: t("navigation.festival"), href: "/festival" },
+  //  { name: "サンプル", href: "/samples" },
+]);
 
 const isCurrentPage = (href: string) => {
   if (href === "/") {

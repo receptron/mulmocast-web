@@ -5,56 +5,58 @@
       <div class="w-full max-w-2xl space-y-6 py-8">
         <!-- Header -->
         <div class="text-center">
-          <h1 class="text-foreground text-3xl font-extrabold sm:text-5xl md:text-6xl">FAQ</h1>
-          <p class="text-muted-foreground mt-4 text-lg">よくある質問</p>
+          <h1 class="text-foreground text-3xl font-extrabold sm:text-5xl md:text-6xl">{{ t("faq.title") }}</h1>
+          <p class="text-muted-foreground mt-4 text-lg">{{ t("faq.subtitle") }}</p>
         </div>
 
         <!-- FAQ Items -->
         <Card class="hover:bg-muted/50">
           <CardHeader>
-            <CardTitle>MulmoCastとは何ですか？</CardTitle>
+            <CardTitle>{{ t("faq.items.0.question") }}</CardTitle>
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground">
-              MulmoCastは、台本を書くだけでAIが画像とナレーション音声を自動生成し、動画を完成させるマルチモーダルプレゼンテーションツールです。
+              {{ t("faq.items.0.answer") }}
             </p>
           </CardContent>
         </Card>
 
         <Card class="hover:bg-muted/50">
           <CardHeader>
-            <CardTitle>料金はかかりますか？</CardTitle>
+            <CardTitle>{{ t("faq.items.1.question") }}</CardTitle>
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground">
-              アプリケーション自体は無料でご利用いただけます。ただし、利用にはOpenAI / Google / Anthropicなどの各種API Keyが必要です。それらのAPIの利用には料金がかかります。
+              {{ t("faq.items.1.answer") }}
             </p>
           </CardContent>
         </Card>
 
         <Card class="hover:bg-muted/50">
           <CardHeader>
-            <CardTitle>どのプラットフォームで利用できますか？</CardTitle>
+            <CardTitle>{{ t("faq.items.2.question") }}</CardTitle>
           </CardHeader>
           <CardContent>
-            <p class="text-muted-foreground">MacOS、Windows、およびCLIツールで利用可能です。</p>
+            <p class="text-muted-foreground">
+              {{ t("faq.items.2.answer") }}
+            </p>
           </CardContent>
         </Card>
 
         <Card class="hover:bg-muted/50">
           <CardHeader>
-            <CardTitle>どんな用途に使えますか？</CardTitle>
+            <CardTitle>{{ t("faq.items.3.question") }}</CardTitle>
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground">
-              ショート動画、学生のレポートや授業発表、ビジネスの提案資料や企画書など、様々な用途でご利用いただけます。
+              {{ t("faq.items.3.answer") }}
             </p>
           </CardContent>
         </Card>
 
         <!-- Back Button -->
         <div class="text-center">
-          <Button as="a" href="/" variant="outline"> ホームに戻る </Button>
+          <Button as="a" href="/" variant="outline"> {{ t("faq.backButton") }} </Button>
         </div>
       </div>
     </div>
@@ -62,9 +64,12 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation.vue";
+
+const { t } = useI18n();
 </script>
 
 <style scoped></style>
