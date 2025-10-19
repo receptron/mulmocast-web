@@ -14,6 +14,51 @@ const lang = {
   filmFes: {
     title: "AI Short Film Festival 2025",
   },
+  festival: {
+    subtitle: "MulmoCast AI Short Film Festival",
+    about: {
+      title: "About the Festival",
+      description:
+        "MulmoCast AI Short Film Festival is an event that accepts and showcases video works created using AI. Why not challenge yourself to create new forms of visual expression with your creativity and the power of MulmoCast?",
+    },
+    applicationMethod: {
+      title: "How to Apply",
+      step1: "Upload your work to YouTube (unlisted is allowed)",
+      step2: "Submit the following information via the application form (Google Form planned)",
+      requirements: {
+        title: "Work title (required)",
+        youtubeLink: "YouTube link",
+        creator: "Creator name (individual/team name)",
+        contact: "Contact information",
+        script: "mulmoscript.json (optional)",
+      },
+    },
+    eligibility: {
+      title: "Eligibility Requirements",
+      items: [
+        "Both individuals and teams are eligible",
+        "Multiple submissions not allowed",
+        "Applicants must be 18 years or older (minors not eligible)",
+        "Overseas applications accepted (prize money/awards subject to separate arrangements)",
+        "Concurrent applications to other contests not allowed",
+      ],
+    },
+    results: {
+      title: "Results Announcement",
+      items: [
+        "Scheduled to be announced on YouTube Live in {date}",
+        "Planned to be broadcast on Tech World channel + other channels",
+        "Participation limited to online",
+      ],
+      date: "mid-December",
+    },
+    latestInfo: {
+      title: "Latest Information",
+      description: "Details and application form will be available soon. For the latest information, please check our X account (link).",
+      twitterHandle: "{'@'}mulmocast",
+    },
+    backButton: "Back to Home",
+  },
   navigation: {
     home: "Home",
     faq: "FAQ",
