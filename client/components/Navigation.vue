@@ -26,7 +26,7 @@
           </div>
 
           <!-- Language Switcher -->
-          <div class="flex items-center space-x-1 border-l border-muted pl-6">
+          <div class="border-muted flex items-center space-x-1 border-l pl-6">
             <a
               v-for="lang in languages"
               :key="lang"
@@ -97,7 +97,7 @@
         </a>
 
         <!-- Language Switcher Mobile -->
-        <div class="border-t border-muted pt-3 mt-3">
+        <div class="border-muted mt-3 border-t pt-3">
           <div class="flex items-center space-x-2 px-3">
             <span class="text-muted-foreground text-sm">Language:</span>
             <a
