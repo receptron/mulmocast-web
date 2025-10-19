@@ -71,7 +71,7 @@
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/qbxteoIwgXg?si=v4KAaaE6AjtWo4Kr"
+              :src="t('home.installGuide.macVideoUrl')"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -113,7 +113,7 @@
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/ar_iC7lTSjE?si=OBWGHqapGV0FsVrW"
+              :src="t('home.installGuide.windowsVideoUrl')"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

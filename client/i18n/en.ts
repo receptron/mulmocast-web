@@ -138,7 +138,9 @@ const lang = {
     },
     installGuide: {
       mac: "MulmoCast Installation Guide - Mac",
+      macVideoUrl: "https://www.youtube.com/embed/qbxteoIwgXg?si=v4KAaaE6AjtWo4Kr",
       windows: "MulmoCast Installation Guide - Windows",
+      windowsVideoUrl: "https://www.youtube.com/embed/ar_iC7lTSjE?si=OBWGHqapGV0FsVrW",
     },
     links: {
       title: "Links",

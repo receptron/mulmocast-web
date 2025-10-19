@@ -129,7 +129,9 @@ const lang = {
     },
     installGuide: {
       mac: "MulmoCastイントールガイドMac版",
+      macVideoUrl: "https://www.youtube.com/embed/qbxteoIwgXg?si=v4KAaaE6AjtWo4Kr",
       windows: "MulmoCastイントールガイドWindows版",
+      windowsVideoUrl: "https://www.youtube.com/embed/ar_iC7lTSjE?si=OBWGHqapGV0FsVrW",
     },
     links: {
       title: "リンク",
