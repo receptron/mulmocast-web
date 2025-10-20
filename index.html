@@ -20,6 +20,15 @@
     <meta property="og:image" content="https://s3.aws.mulmocast.com/600x600bb.jpeg" />
 
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GTAG%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', '%VITE_GTAG%');
+  </script>
   <body>
     <div id="app"></div>
     <script type="module" src="/client/main.ts"></script>
