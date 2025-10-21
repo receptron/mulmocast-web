@@ -12,12 +12,12 @@
     "preview": "npm run build && wrangler dev",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "deploy": "npm run config:dev && VITE_GTAG=G-WTR8ETHHWN npm run build && wrangler deploy",
-    "deploy-prod": "npm run config:prod && VITE_GTAG=G-VBC29CYCHN npm run build && wrangler deploy --name mulmocast-prod && npm run config:dev",
+    "deploy": "npm run config:dev && VITE_GTAG=GTM-N6QMN3VF npm run build && wrangler deploy",
+    "deploy-prod": "npm run config:prod && VITE_GTAG=GTM-W8L5QNPS npm run build && wrangler deploy --name mulmocast-prod && npm run config:dev",
     "config:dev": "cp client/configs/config-dev.ts client/configs/config.ts",
     "config:prod": "cp client/configs/config-prod.ts client/configs/config.ts",
     "lint": "eslint",
-    "format": "prettier --write '{server,client}/**/*.{ts,json,yaml,vue}' *.json *.ts *.mjs",
+    "format": "prettier --write '{server,client}/**/*.{ts,json,yaml,vue}' *.json *.ts *.mjs *.html",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
