@@ -108,6 +108,8 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
+import { useHead } from "@unhead/vue";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation.vue";
@@ -115,6 +117,10 @@ import { useLocalizedUrl } from "@/i18n/utils";
 
 const { t } = useI18n();
 const localizedUrl = useLocalizedUrl();
+
+useHead({
+  title: [t("filmFes.title"), "MulmoCast"].join(" - "),
+});
 </script>
 
 <style scoped></style>

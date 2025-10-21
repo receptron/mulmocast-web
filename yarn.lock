@@ -1366,6 +1366,14 @@
     "@typescript-eslint/types" "8.45.0"
     eslint-visitor-keys "^4.2.1"
 
+"@unhead/vue@^2.0.19":
+  version "2.0.19"
+  resolved "https://registry.yarnpkg.com/@unhead/vue/-/vue-2.0.19.tgz#d628b88526c1e92bb960b2997fdd676b279fe6d9"
+  integrity sha512-7BYjHfOaoZ9+ARJkT10Q2TjnTUqDXmMpfakIAsD/hXiuff1oqWg1xeXT5+MomhNcC15HbiABpbbBmITLSHxdKg==
+  dependencies:
+    hookable "^5.5.3"
+    unhead "2.0.19"
+
 "@vitejs/plugin-vue@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-6.0.1.tgz#4c7f559621af104a22255c6ace5626e6d8349689"
@@ -3246,6 +3254,13 @@ unenv@2.0.0-rc.21:
     ohash "^2.0.11"
     pathe "^2.0.3"
     ufo "^1.6.1"
+
+unhead@2.0.19:
+  version "2.0.19"
+  resolved "https://registry.yarnpkg.com/unhead/-/unhead-2.0.19.tgz#f37e292e34df518923f680d54c5e82f2e2bc9cd0"
+  integrity sha512-gEEjkV11Aj+rBnY6wnRfsFtF2RxKOLaPN4i+Gx3UhBxnszvV6ApSNZbGk7WKyy/lErQ6ekPN63qdFL7sa1leow==
+  dependencies:
+    hookable "^5.5.3"
 
 unplugin-utils@^0.3.0:
   version "0.3.0"
