@@ -17,7 +17,7 @@
     "config:dev": "cp client/configs/config-dev.ts client/configs/config.ts",
     "config:prod": "cp client/configs/config-prod.ts client/configs/config.ts",
     "lint": "eslint",
-    "format": "prettier --write '{server,client}/**/*.{ts,json,yaml,vue}' *.json *.ts *.mjs",
+    "format": "prettier --write '{server,client}/**/*.{ts,json,yaml,vue}' *.json *.ts *.mjs *.html",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
