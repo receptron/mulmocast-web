@@ -65,7 +65,7 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { useHead } from '@unhead/vue'
+import { useHead } from "@unhead/vue";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -76,9 +76,8 @@ const { t } = useI18n();
 const localizedUrl = useLocalizedUrl();
 
 useHead({
-  title: [t("faq.title"), "MulmoCast"].join(" - ")
+  title: [t("faq.title"), "MulmoCast"].join(" - "),
 });
-
 </script>
 
 <style scoped></style>
