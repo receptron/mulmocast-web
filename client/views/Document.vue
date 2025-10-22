@@ -26,19 +26,14 @@
           <MulmoViewer :data-set="Guide1" base-path="/guide01_script" />
         </div>
       </section>
-
-      
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { MulmoViewer } from "mulmocast-viewer";
-import { data } from "./data";
 
 import GuideMac from "./script/guide00_script_mac.json";
 import GuideWin from "./script/guide00_script_win.json";
 import Guide1 from "./script/guide01.json";
-
 </script>
