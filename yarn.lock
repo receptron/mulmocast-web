@@ -2724,10 +2724,10 @@ muggle-string@^0.4.1:
   resolved "https://registry.yarnpkg.com/muggle-string/-/muggle-string-0.4.1.tgz#3b366bd43b32f809dc20659534dd30e7c8a0d328"
   integrity sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==
 
-mulmocast-viewer@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/mulmocast-viewer/-/mulmocast-viewer-0.0.5.tgz#621144cbe1915b6525ddfa40f8df1cfb922e694d"
-  integrity sha512-3glPkUX9/YT4O/5SVJvLfBWdZL7qQj2crPh3KCkSffftctfoBRbM3nF068kInh0s7YIhszbJKc3P9n1V5ywsGg==
+mulmocast-viewer@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/mulmocast-viewer/-/mulmocast-viewer-0.1.0.tgz#b667868b13b227218c50f73eeda8781bd04e4a01"
+  integrity sha512-3th2Vy9z0LOpBs37Dl3Qw00S4oBzmFQTrSgq1jZyK5ozUho1L+yQeILhleeYihHrwqbJAbOgV5FrkvP5DFpU4Q==
   dependencies:
     vue "^3.5.22"
     vue-i18n "^11.1.12"
