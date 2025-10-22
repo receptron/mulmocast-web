@@ -191,13 +191,6 @@ import { macReleaseURL, winPrefix } from "../configs/config";
 
 const { t } = useI18n();
 
-/*
-const text = ref("");
-const loading = ref(false);
-const error = ref<string | null>(null);
-const responseText = ref("");
-*/
-
 type MacData = {
   version?: string;
   updateTo?: {

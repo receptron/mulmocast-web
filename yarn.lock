@@ -2371,10 +2371,10 @@ has-flag@^4.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
 
-hono@4.10.1:
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/hono/-/hono-4.10.1.tgz#94880edaa5f0d3e555390876a3e47bdc78d279e3"
-  integrity sha512-rpGNOfacO4WEPClfkEt1yfl8cbu10uB1lNpiI33AKoiAHwOS8lV748JiLx4b5ozO/u4qLjIvfpFsPXdY5Qjkmg==
+hono@4.10.2:
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/hono/-/hono-4.10.2.tgz#a78d322f2c5fabebb1887f7ae1632a6524513e74"
+  integrity sha512-p6fyzl+mQo6uhESLxbF5WlBOAJMDh36PljwlKtP5V1v09NxlqGru3ShK+4wKhSuhuYf8qxMmrivHOa/M7q0sMg==
 
 hookable@^5.5.3:
   version "5.5.3"
@@ -2723,6 +2723,15 @@ muggle-string@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/muggle-string/-/muggle-string-0.4.1.tgz#3b366bd43b32f809dc20659534dd30e7c8a0d328"
   integrity sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==
+
+mulmocast-viewer@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/mulmocast-viewer/-/mulmocast-viewer-0.0.3.tgz#e381f9054eaf1221bac038da4fc5767ead37894f"
+  integrity sha512-eE21Z/E8qWRVYSljJbfHqCM5vy0Qwp40rgjbeAUPaQLEEQS7F6GYNn73mdleOf1Wtce+k0GdxZ0J6QdygSzalg==
+  dependencies:
+    vue "^3.5.22"
+    vue-i18n "^11.1.12"
+    vue-router "^4.6.3"
 
 nanoid@^3.3.11:
   version "3.3.11"

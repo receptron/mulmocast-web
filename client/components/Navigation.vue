@@ -10,7 +10,7 @@
         </div>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex md:items-center md:space-x-6">
+        <div class="flex items-center space-x-6 max-md:hidden">
           <div class="flex items-baseline space-x-4">
             <a
               v-for="item in navigation"
