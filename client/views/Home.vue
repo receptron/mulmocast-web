@@ -187,21 +187,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation.vue";
 
-import { MulmoView } from "mulmocast-viewer";
-import { data } from "./data";
-
 import { macReleaseURL, winPrefix } from "../configs/config";
 
 const { t } = useI18n();
-
-/*
-const text = ref("");
-const loading = ref(false);
-const error = ref<string | null>(null);
-const responseText = ref("");
-*/
-
-const basePath = "/test_media";
 
 type MacData = {
   version?: string;
