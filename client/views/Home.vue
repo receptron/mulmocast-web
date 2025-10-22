@@ -50,8 +50,7 @@
             </a>
             <p class="text-muted-foreground text-sm">
               {{ t("home.download.mac.free") }}<br />
-              {{ t("home.download.mac.requirement", { apiKey: "" }) }}
-              <span class="font-semibold">{{ t("home.download.mac.apiKey") }}</span> が必要です。
+              {{ t("home.download.mac.requirement", { apiKey: t("home.download.mac.apiKey") }) }}
             </p>
           </CardContent>
           <CardFooter>
@@ -93,8 +92,7 @@
             </a>
             <p class="text-muted-foreground text-sm">
               {{ t("home.download.windows.free") }}<br />
-              {{ t("home.download.windows.requirement", { apiKey: "" }) }}
-              <span class="font-semibold">{{ t("home.download.windows.apiKey") }}</span> が必要です。
+              {{ t("home.download.windows.requirement", { apiKey: t("home.download.windows.apiKey") }) }}
             </p>
           </CardContent>
           <CardFooter>
