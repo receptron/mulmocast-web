@@ -19,7 +19,6 @@
         <div class="bg-muted rounded-lg p-4">
           <MulmoViewer
             v-if="data"
-            ref="viewerRef"
             :data-set="data"
             :base-path="basePath"
             v-slot="{ MulmoPlayer, pageProps, pageMove, currentPage, pageCount, mediaPlayerRef }"

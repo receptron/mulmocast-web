@@ -1,0 +1,148 @@
+{
+  "beats": [
+    {
+      "text": "マルモキャストWindows版のインストールガイドへようこそ。このガイドでは、マルモキャストアプリケーションのダウンロードとインストール手順について順を追って説明いたします。",
+      "audioSources": {
+        "ja": "guide00_script_cae7f9aa532a09b5feba127ec5c60f4f2a9bed320e70fb59a9d61eb24fb1e4e2_ja.mp3",
+        "en": "guide00_script_868525e4712c82a566195000e549cea5db15c815680bcdcc9eaee73097c7fc0a_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "マルモキャストWindows版のインストールガイドへようこそ。このガイドでは、マルモキャストアプリケーションのダウンロードとインストール手順について順を追って説明いたします。",
+        "en": "Welcome to the Marumo Cast Windows version installation guide. This guide will walk you through the steps for downloading and installing the Marumo Cast application."
+      },
+      "imageSource": "title-slide.png"
+    },
+    {
+      "text": "まず最初に、アプリケーションのダウンロード方法について説明します。公式のマルモキャストウェブサイトにアクセスして、「Windows用アプリをダウンロード」のセクションを見つけ、「ダウンロード」のリンクをクリックします。",
+      "audioSources": {
+        "ja": "guide00_script_9211a6a6b08cc81765e16cf587384803b843332d1f8baf3f20914958e66e0e65_ja.mp3",
+        "en": "guide00_script_639dc3c4dabfb660dbf7de47e548b84ef343182a9a1fe175837d5c522660bf28_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "まず最初に、アプリケーションのダウンロード方法について説明します。公式のマルモキャストウェブサイトにアクセスして、「Windows用アプリをダウンロード」のセクションを見つけ、「ダウンロード」のリンクをクリックします。",
+        "en": "First, I will explain how to download the application. Visit the official Marumo Cast website, find the \"Download App for Windows\" section, and click the \"Download\" link."
+      },
+      "imageSource": "1p.png"
+    },
+    {
+      "text": "ブラウザでセキュリティ警告が表示される場合があります。これは新しいアプリケーションのため、安全性確認のメッセージです。三点ドットアイコンをクリックして続行します。",
+      "audioSources": {
+        "ja": "guide00_script_1bd4c91c6c1b813b4300e79ece3233d64eae79a2727c3211c1acbc2916450423_ja.mp3",
+        "en": "guide00_script_4e3516af70737f3c2526582b018613cfcb39b51a609e6dcadd474e68453ffd64_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "ブラウザでセキュリティ警告が表示される場合があります。これは新しいアプリケーションのため、安全性確認のメッセージです。三点ドットアイコンをクリックして続行します。",
+        "en": "You may see a security warning in your browser. This is a safety confirmation message for the new application. Click the three-dot icon to proceed."
+      },
+      "imageSource": "2p.png"
+    },
+    {
+      "text": "ドロップダウンメニューから「保存」を選択してダウンロードを続行します。",
+      "audioSources": {
+        "ja": "guide00_script_a89ecdb7b06dbc49834dfc87e6819d4ffa5d23ec853e789c9c0e8df7b20bfd24_ja.mp3",
+        "en": "guide00_script_3f11f168b371e4637ae0d34295221dd1e4ad175bb67ae52bb4b3c807880e5aa6_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "ドロップダウンメニューから「保存」を選択してダウンロードを続行します。",
+        "en": "Select \"Save\" from the dropdown menu to continue downloading."
+      },
+      "imageSource": "3p.png"
+    },
+    {
+      "text": "削除ボタンの横にある下矢印をクリックし、「保持する」を選択してファイルのダウンロードを完了させます。",
+      "audioSources": {
+        "ja": "guide00_script_aeb6234864b0c3b190ccbd3a69b057e206090ddd3288a07def9c5960c6f9a875_ja.mp3",
+        "en": "guide00_script_78b9cc0396cee9f11b69eba96cd4ece2a9207849743beed4104f9dc33cdf7c30_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "削除ボタンの横にある下矢印をクリックし、「保持する」を選択してファイルのダウンロードを完了させます。",
+        "en": "Click the down arrow next to the delete button and select \"Keep\" to complete the file download."
+      },
+      "imageSource": "4p.png"
+    },
+    {
+      "text": "次に、アプリケーションのインストールを行います。ファイルエクスプローラーを開いて、ダウンロードフォルダーに移動してください。",
+      "audioSources": {
+        "ja": "guide00_script_15592f0f258e5fad7b59f7236114297eecb67e25164e027fd05c3b984489b439_ja.mp3",
+        "en": "guide00_script_1faf82b98ff8507f3275a857066bed1efcd9aabf13e50d5f335686c833bc0f83_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "次に、アプリケーションのインストールを行います。ファイルエクスプローラーを開いて、ダウンロードフォルダーに移動してください。",
+        "en": "Next, install the application. Open File Explorer and navigate to the Downloads folder."
+      },
+      "imageSource": "5p.png"
+    },
+    {
+      "text": "インストーラーファイルをダブルクリックしてインストールを開始します。",
+      "audioSources": {
+        "ja": "guide00_script_de908d77a75b2971f049806cf988a32ba1c2eb3e2cc5fbb422a18df8365040b7_ja.mp3",
+        "en": "guide00_script_9ea5a988039195287e186225e32c4a2352b2986416706205ea5cf5dfeea746df_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "インストーラーファイルをダブルクリックしてインストールを開始します。",
+        "en": "Double-click the installer file to start the installation."
+      },
+      "imageSource": "6p.png"
+    },
+    {
+      "text": "重要なポイントです。Windows Defender SmartScreenが「Windows によって PC が保護されました」メッセージを表示してアプリの実行を防ぐ可能性があります。",
+      "audioSources": {
+        "ja": "guide00_script_9baa4b297868bcabd6e35a9917bba01cfef6a293393977238ff46be9c6dce79c_ja.mp3",
+        "en": "guide00_script_93e0e2e05b8a9ff099f6a133afe0ece6a4b57a267461f511562f42fdc41e3cdb_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "重要なポイントです。Windows Defender SmartScreenが「Windows によって PC が保護されました」メッセージを表示してアプリの実行を防ぐ可能性があります。",
+        "en": "This is an important point. Windows Defender SmartScreen may display a \"Your PC is protected by Windows\" message and prevent the app from running."
+      },
+      "imageSource": "7p.png"
+    },
+    {
+      "text": "「詳細情報」リンクをクリックして、追加オプションを表示させます。",
+      "audioSources": {
+        "ja": "guide00_script_3d1c23c633841beb412b7c12956a7512231aa64ce0612bd07c04e3bf429f0b99_ja.mp3",
+        "en": "guide00_script_d90fc8f8ae650a52c196eec30a7e6586204ba05d80451f3e9bab3d0c3cdc0007_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "「詳細情報」リンクをクリックして、追加オプションを表示させます。",
+        "en": "Click the \"More Information\" link to display additional options."
+      },
+      "imageSource": "8p.png"
+    },
+    {
+      "text": "「実行」ボタンが表示されたら、これをクリックしてインストールを続行します。",
+      "audioSources": {
+        "ja": "guide00_script_0046d23b00a0eb0081e3e4a2707d11541a1acfb96869f0c69c9ec3e59d3ebe7a_ja.mp3",
+        "en": "guide00_script_4975c5c351eb9d8ab1d47ab7345086433a2761c2577a22a84c1f56ed44601797_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "「実行」ボタンが表示されたら、これをクリックしてインストールを続行します。",
+        "en": "When the \"Execute\" button is displayed, click it to continue the installation."
+      },
+      "imageSource": "9p.png"
+    },
+    {
+      "text": "インストーラーウィンドウが起動し、インストールが開始されます。インストールが完了すると、マルモキャストアプリケーションが自動的に起動します。これでインストール作業は完了です。",
+      "audioSources": {
+        "ja": "guide00_script_5e714ff8721cd30b7ba11acebb8f31424505907c9c7d206c649a0b2bbfb74253_ja.mp3",
+        "en": "guide00_script_676ae347648a2ab614e5ede53ebcb7da670722da3551817a3459ca4ebc1096ba_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "インストーラーウィンドウが起動し、インストールが開始されます。インストールが完了すると、マルモキャストアプリケーションが自動的に起動します。これでインストール作業は完了です。",
+        "en": "The installer window will launch, and the installation will begin. Once the installation is complete, the MarumoCast application will automatically start. This concludes the installation process."
+      },
+      "imageSource": "10p.png"
+    },
+    {
+      "text": "",
+      "audioSources": {
+        "ja": "silent300.mp3",
+        "en": "silent300.mp3"
+      },
+      "multiLinguals": {
+        "ja": "",
+        "en": ""
+      },
+      "imageSource": "mulmo_credit.png"
+    }
+  ]
+}

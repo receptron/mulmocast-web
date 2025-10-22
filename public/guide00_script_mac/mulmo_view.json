@@ -1,0 +1,64 @@
+{
+  "beats": [
+    {
+      "text": "マルモキャストMac版のインストールガイドへようこそ。このガイドでは、マルモキャストアプリケーションのダウンロードとインストール手順について順を追って説明いたします。",
+      "audioSources": {
+        "ja": "guide00_script_33cf9f286f34a54a3909bcee1419cdcfd1a0009fb1d49fc2133f69e277fa2d03_ja.mp3",
+        "en": "guide00_script_9b715b0d2fa457d5a1cee462fe324858e3be9102d1d5ec1304905ab28c3ab570_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "マルモキャストMac版のインストールガイドへようこそ。このガイドでは、マルモキャストアプリケーションのダウンロードとインストール手順について順を追って説明いたします。",
+        "en": "Welcome to the installation guide for the MarmoCast Mac version. This guide will walk you through the steps to download and install the MarmoCast application."
+      },
+      "imageSource": "title-slide.png"
+    },
+    {
+      "text": "まず最初に、アプリケーションのダウンロード方法について説明します。公式のマルモキャストウェブサイトにアクセスして、Mac用アプリをダウンロードします。",
+      "audioSources": {
+        "ja": "guide00_script_d40a7ee4d93d64987090d1678b8edd3a374f5f794682ddc72d01190b976d6f66_ja.mp3",
+        "en": "guide00_script_aeb4883bfa03cab5edfdea8fa723a910a54f810613f5fd5b1c1fa6b342428d81_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "まず最初に、アプリケーションのダウンロード方法について説明します。公式のマルモキャストウェブサイトにアクセスして、Mac用アプリをダウンロードします。",
+        "en": "First, I will explain how to download the application. Visit the official MarmoCast website and download the app for Mac."
+      },
+      "imageSource": "1p.png"
+    },
+    {
+      "text": "zipファイルのダウンロードが完了すると、自動的に展開されてFinderのダウンロードフォルダにマルモキャスト.appが表示されます。このアプリケーションをアプリケーションフォルダにドラッグアンドドロップしてインストールを完了します。",
+      "audioSources": {
+        "ja": "guide00_script_94011838fe4b5bb230d79b102a4849bfd4f3181bcde0f7a153cb723f39fa4d23_ja.mp3",
+        "en": "guide00_script_cdcada1d34e99600d2615a7f958514a7ce353a86b57682a71546ed2e6967aad9_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "zipファイルのダウンロードが完了すると、自動的に展開されてFinderのダウンロードフォルダにマルモキャスト.appが表示されます。このアプリケーションをアプリケーションフォルダにドラッグアンドドロップしてインストールを完了します。",
+        "en": "Once the zip file download is complete, it will automatically be extracted and MarmoCast.app will appear in the Finder's Downloads folder. Drag and drop this application to the Applications folder to complete the installation."
+      },
+      "imageSource": "2p.png"
+    },
+    {
+      "text": "インストールが完了したら、アプリケーションフォルダまたはLaunchpadからマルモキャストを起動できます。初回起動時の場合は「開く」を選択してアプリケーションを実行してください。",
+      "audioSources": {
+        "ja": "guide00_script_a28aa43798a29800680df259379b1fe4c459a364660bb679b0aaab41636d12ea_ja.mp3",
+        "en": "guide00_script_1c24fe07d971a42ba2874ded87bbc1856077c174280345937d4315b5c5af78a1_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "インストールが完了したら、アプリケーションフォルダまたはLaunchpadからマルモキャストを起動できます。初回起動時の場合は「開く」を選択してアプリケーションを実行してください。",
+        "en": "Once the installation is complete, you can launch Marmocast from the Applications folder or Launchpad. If this is the first time launching, please select \"Open\" to run the application."
+      },
+      "imageSource": "3p.png"
+    },
+    {
+      "text": "",
+      "audioSources": {
+        "ja": "silent300.mp3",
+        "en": "silent300.mp3"
+      },
+      "multiLinguals": {
+        "ja": "",
+        "en": ""
+      },
+      "imageSource": "mulmo_credit.png"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import Faq from "../views/Faq.vue";
 import Festival from "../views/Festival.vue";
 import Samples from "../views/Samples.vue";
 import Test from "../views/test.vue";
+import Document from "../views/Document.vue";
 
 const routeChildren: Array<RouteRecordRaw> = [
   {
@@ -39,6 +40,11 @@ const routeChildren: Array<RouteRecordRaw> = [
     path: "test",
     name: "test",
     component: Test,
+  },
+  {
+    path: "document",
+    name: "document",
+    component: Document,
   },
 ];
 

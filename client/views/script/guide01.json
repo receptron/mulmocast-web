@@ -1,0 +1,232 @@
+{
+  "beats": [
+    {
+      "text": "マルモキャスト初回セットアップと動画生成マニュアルへようこそ。このガイドでは、マルモキャストのオンボーディングから、サンプルプロジェクトを利用して最初の動画を生成・保存するまでの一連の手順を解説いたします。",
+      "audioSources": {
+        "ja": "guide01_script_2dfff566766d5c682775cee7c9489c0f05dfb48b4b8cdddf7f2c3a1fea02cb64_ja.mp3",
+        "en": "guide01_script_81b6e0ca955fc9381ca2f437a270f60e75e6f9576418e3d5277b6d8f66a9b064_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "マルモキャスト初回セットアップと動画生成マニュアルへようこそ。このガイドでは、マルモキャストのオンボーディングから、サンプルプロジェクトを利用して最初の動画を生成・保存するまでの一連の手順を解説いたします。",
+        "en": "Welcome to the MarmoCast initial setup and video generation manual. This guide explains the series of steps from onboarding with MarmoCast to generating and saving your first video using a sample project."
+      },
+      "imageSource": "title-slide.png"
+    },
+    {
+      "text": "まず、初回セットアップ、オンボーディングについて説明します。",
+      "audioSources": {
+        "ja": "guide01_script_ada86214a50709768b5965c37f61adf60f2c51c99804f102b92418397d1c542a_ja.mp3",
+        "en": "guide01_script_908feeb1efa5dd41459abdb1905ec2a0d378d4fa3d7d6fd4b494eb2a41727628_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "まず、初回セットアップ、オンボーディングについて説明します。",
+        "en": "First, let me explain the initial setup and onboarding."
+      },
+      "imageSource": "1p.png"
+    },
+    {
+      "text": "アプリケーションを初めて起動した際に表示されるセットアップウィザードの設定手順です。最初にウェルカム画面と表示言語の選択を行います。",
+      "audioSources": {
+        "ja": "guide01_script_2f6d9eb86b3ba7a7861841c61e4da6f91916405966a62e6013a9aa1e64773e72_ja.mp3",
+        "en": "guide01_script_cd07c2de710e5d6f48ea7086ecc2d504cf5004288f5fd47088eb2e25223f939c_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "アプリケーションを初めて起動した際に表示されるセットアップウィザードの設定手順です。最初にウェルカム画面と表示言語の選択を行います。",
+        "en": "This is the setup wizard procedure displayed when you first launch the application. First, the welcome screen and the selection of display language are presented."
+      },
+      "imageSource": "2p.png"
+    },
+    {
+      "text": "「マルモキャストへようこそ」というタイトルのポップアップが表示されます。ディスプレイ ランゲージという項目で、アプリケーションの表示言語を選択します。画像では「English」が選択されています。内容を確認後、右下の次へをクリックします。",
+      "audioSources": {
+        "ja": "guide01_script_43be65789099f7e78b01adb7d9f3e1bcd53e5da39171bdf62c23ef3c60c3b355_ja.mp3",
+        "en": "guide01_script_cf3962dd423e133248faaba45ecb14265ddff42fed9c98cde05b069a1b308dd9_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "「マルモキャストへようこそ」というタイトルのポップアップが表示されます。ディスプレイ ランゲージという項目で、アプリケーションの表示言語を選択します。画像では「English」が選択されています。内容を確認後、右下の次へをクリックします。",
+        "en": "A popup with the title \"Welcome to MarumoCast\" will appear. Under the Display Language section, select the display language for the application. In the image, \"English\" is selected. After confirming the content, click Next at the bottom right."
+      },
+      "imageSource": "3p.png"
+    },
+    {
+      "text": "次に、エーピーアイキーの設定を行います。「エーピーアイキー セッティングス」画面に切り替わります。「オープンエーアイ エーピーアイキー」の入力フィールドに、あらかじめ取得しておいたご自身のオープンエーアイエーピーアイキーを入力またはペーストします。",
+      "audioSources": {
+        "ja": "guide01_script_b5162bf06da9801b7edc6b2816b0142ecabe65120dc3a4e234c78fcb33c4aa7f_ja.mp3",
+        "en": "guide01_script_32d8f9cb49b9079f13580b327a299156e67a2bded2ea1d29af5cb72df6749138_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "次に、エーピーアイキーの設定を行います。「エーピーアイキー セッティングス」画面に切り替わります。「オープンエーアイ エーピーアイキー」の入力フィールドに、あらかじめ取得しておいたご自身のオープンエーアイエーピーアイキーを入力またはペーストします。",
+        "en": "Next, set up the API key. Switch to the \"API Key Settings\" screen. Enter or paste your pre-obtained OpenAI API key into the \"OpenAI API Key\" input field."
+      },
+      "imageSource": "4p.png"
+    },
+    {
+      "text": "入力後、右下の次へボタンをクリックします。なお、つまずきやすいポイントとして、この操作には、事前にオープンエーアイのウェブサイトでエーピーアイキーを取得しておく必要があります。エーピーアイキーがないと先に進めませんのでご注意ください。",
+      "audioSources": {
+        "ja": "guide01_script_71ee30b048bd897afdb9db9f620eab071a79b05cd3e41b6eec5a17344832974a_ja.mp3",
+        "en": "guide01_script_85a7afde0dd573a8a6829cfb69d9e840f942e994e415ee5e2e99343a95f0d19c_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "入力後、右下の次へボタンをクリックします。なお、つまずきやすいポイントとして、この操作には、事前にオープンエーアイのウェブサイトでエーピーアイキーを取得しておく必要があります。エーピーアイキーがないと先に進めませんのでご注意ください。",
+        "en": "After entering, click the Next button at the bottom right. Note that a common stumbling point is that you need to obtain an API key from the OpenAI website beforehand for this operation. You cannot proceed without an API key, so please be careful."
+      },
+      "imageSource": "5p.png"
+    },
+    {
+      "text": "セットアップの完了について説明します。緑色のチェックマークと共に「セットアップが正常に完了しました」と表示されれば、初期設定は完了です。",
+      "audioSources": {
+        "ja": "guide01_script_521d89cf5ff15e448976ca75f27912c9014847d8ac6e0614892d5fede9d4787e_ja.mp3",
+        "en": "guide01_script_35ffba2910677711b057ce9f6335c34a8ef2a2793093f11ee4b4511c433f5877_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "セットアップの完了について説明します。緑色のチェックマークと共に「セットアップが正常に完了しました」と表示されれば、初期設定は完了です。",
+        "en": "This explains the completion of the setup. If you see \"Setup completed successfully\" along with a green check mark, the initial setup is complete."
+      },
+      "imageSource": "6p.png"
+    },
+    {
+      "text": "続いて、サンプルプロジェクトによる動画生成について説明します。ホーム画面から、あらかじめ用意されているサンプルプロジェクトを使って動画を生成し、保存する手順です。",
+      "audioSources": {
+        "ja": "guide01_script_b7c616c4618520eb0f830beaf7270b0124a4fb88e4c7619ae3766c1aad14b2b7_ja.mp3",
+        "en": "guide01_script_8834f3cdfb922eac25ec76ac70f01db171fa0f996597beb950940f87c3ca5c72_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "続いて、サンプルプロジェクトによる動画生成について説明します。ホーム画面から、あらかじめ用意されているサンプルプロジェクトを使って動画を生成し、保存する手順です。",
+        "en": "Next, I will explain about video generation using the sample project. This is the procedure for generating and saving a video using a pre-prepared sample project from the home screen."
+      },
+      "imageSource": "7p.png"
+    },
+    {
+      "text": "まず、新規プロジェクトの作成を行います。「マルモキャストへようこそ！」と表示されたホーム画面が表示されます。画面左上にある黒い「新規作成」ボタンをクリックします。",
+      "audioSources": {
+        "ja": "guide01_script_62dc62b97065bc80cc8fb1706b42d99da03d0dcae5a571ed90d0c274055128de_ja.mp3",
+        "en": "guide01_script_2af0dc72d684ce0d2492677d37980ee7e922a55bf9c860ae1f1b2e0881cd70d8_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "まず、新規プロジェクトの作成を行います。「マルモキャストへようこそ！」と表示されたホーム画面が表示されます。画面左上にある黒い「新規作成」ボタンをクリックします。",
+        "en": "First, create a new project. The home screen displaying \"Welcome to MarmoCast!\" will appear. Click the black \"Create New\" button in the top left corner of the screen."
+      },
+      "imageSource": "8p.png"
+    },
+    {
+      "text": "初回から3回目のプロジェクト作成時は、操作に慣れるためのサンプルコンテンツ、台本や画像生成の指示文が自動的に読み込まれた状態でプロジェクトが開始されます。",
+      "audioSources": {
+        "ja": "guide01_script_b5cd1cf2cbf038e3ac747e09fe0903d1958a239a77334c13f57429351ef4364e_ja.mp3",
+        "en": "guide01_script_9b5c1ebf4a7b7071f557ed22aef8db81c9f39b62a06f76c806a2730a6e0a87c5_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "初回から3回目のプロジェクト作成時は、操作に慣れるためのサンプルコンテンツ、台本や画像生成の指示文が自動的に読み込まれた状態でプロジェクトが開始されます。",
+        "en": "When creating projects for the first to the third time, the project will start with sample content, scripts, and image generation instructions automatically loaded to help you get accustomed to the operations."
+      },
+      "imageSource": "9p.png"
+    },
+    {
+      "text": "プロジェクト編集画面の確認を行います。「導入1. ようこそ、マルモキャスト へ!!」というタイトルのプロジェクト編集画面が開きます。画面構成のポイントについて説明します。左側エリア「動画のストーリーを作る」では、動画の各シーン「ビート1」「ビート2」のセリフや画像生成プロンプトが設定されています。ここを編集することでオリジナルの動画を作成します。右側エリア「動画を作る / 動画を見る」では、動画の生成ボタンやプレビューが表示されるエリアです。",
+      "audioSources": {
+        "ja": "guide01_script_271df21b2ce005fc0df9816fcdfe0a896b01bc2383b38cf5947bdfd19f00da02_ja.mp3",
+        "en": "guide01_script_de2a2871d280a69d5b2fb3d6e0c42f8efc2b642ce28183a8c5c8b091dea06665_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "プロジェクト編集画面の確認を行います。「導入1. ようこそ、マルモキャスト へ!!」というタイトルのプロジェクト編集画面が開きます。画面構成のポイントについて説明します。左側エリア「動画のストーリーを作る」では、動画の各シーン「ビート1」「ビート2」のセリフや画像生成プロンプトが設定されています。ここを編集することでオリジナルの動画を作成します。右側エリア「動画を作る / 動画を見る」では、動画の生成ボタンやプレビューが表示されるエリアです。",
+        "en": "We will review the project editing screen. The project editing screen titled \"Introduction 1. Welcome to MarumoCast!!\" will open. I will explain the key points of the screen layout. In the left area, \"Create the Story of the Video,\" the dialogue and image generation prompts for each scene, \"Beat 1\" and \"Beat 2,\" are set. By editing here, you can create an original video. In the right area, \"Create Video / Watch Video,\" there is an area where the video generation button and preview are displayed."
+      },
+      "imageSource": "10p.png"
+    },
+    {
+      "text": "動画の生成開始について説明します。画面右側の「動画を作る / 動画を見る」パネル内にある、黒い「動画生成」ボタンをクリックします。",
+      "audioSources": {
+        "ja": "guide01_script_09ea26e3158817f9f1e5a0f5f01e08c32cb990d63fef23271cb32f17f9454fd7_ja.mp3",
+        "en": "guide01_script_0a7634c1df2c9db5fafaa184fed140467d97a622b48f5d2ce1b0ac282746af6e_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "動画の生成開始について説明します。画面右側の「動画を作る / 動画を見る」パネル内にある、黒い「動画生成」ボタンをクリックします。",
+        "en": "I'll explain how to start generating a video. Click the black \"Generate Video\" button located in the \"Create/Watch Video\" panel on the right side of the screen."
+      },
+      "imageSource": "11p.png"
+    },
+    {
+      "text": "クリック後、動画生成プロセスが開始されます。アプリケーションが各「ビート」に設定された内容に基づいて、音声",
+      "audioSources": {
+        "ja": "guide01_script_5fdb7675f3981cf30092f80b46e4535159d34defe4e50b89147d4887680c9ca6_ja.mp3",
+        "en": "guide01_script_ddf91fb8d4718fca3fd84b7531150b404679deb1b01e3ec37d71aae495a57469_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "クリック後、動画生成プロセスが開始されます。アプリケーションが各「ビート」に設定された内容に基づいて、音声",
+        "en": "After clicking, the video generation process will begin. The application will generate audio based on the content set for each \"beat\"."
+      },
+      "imageSource": "12p.png"
+    },
+    {
+      "text": "画像",
+      "audioSources": {
+        "ja": "guide01_script_e2be45296a53472d1a72d8dfd7100c5bc86a3ea0e50e094ef462b3c53dd29791_ja.mp3",
+        "en": "guide01_script_975875ac09830ba151c311164b711615e43d6f02182d60ef15909e2c19a03b9c_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "画像",
+        "en": "Image"
+      },
+      "imageSource": "13p.png"
+    },
+    {
+      "text": "動画の順番で処理を進めます。動画の長さやシーン数によって、生成には数分かかる場合があります。処理が完了するまでお待ちください。",
+      "audioSources": {
+        "ja": "guide01_script_a4fe5de8d2dffee70c5dd0d39b8df027e0daef251442860d41697b2006a5cc36_ja.mp3",
+        "en": "guide01_script_a71c4f20143df0315b923bf6d75c0047cf0be4ee971b044b9dd69fe2d6d5d5c0_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "動画の順番で処理を進めます。動画の長さやシーン数によって、生成には数分かかる場合があります。処理が完了するまでお待ちください。",
+        "en": "Processing will proceed in the order of the videos. Depending on the length and number of scenes in the video, generation may take several minutes. Please wait until the processing is complete."
+      },
+      "imageSource": "14p.png"
+    },
+    {
+      "text": "生成完了と動画プレビューについて説明します。画面右下に緑色の完了通知が表示されたら、動画の生成は完了です。「動画を作る / 動画を見る」パネルに完成した動画のプレビューが表示され、「再生」ボタンで動画を再生して内容確認ができます。",
+      "audioSources": {
+        "ja": "guide01_script_2ee2612430a6ca1c1276bafe5d82156af4bc356dc22f6516d562bb4600ce0c3a_ja.mp3",
+        "en": "guide01_script_97840aabd633ef59494e39211d62f53567113c7ecb17d7682bddba438808dbfb_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "生成完了と動画プレビューについて説明します。画面右下に緑色の完了通知が表示されたら、動画の生成は完了です。「動画を作る / 動画を見る」パネルに完成した動画のプレビューが表示され、「再生」ボタンで動画を再生して内容確認ができます。",
+        "en": "I will explain about completion of generation and video preview. When a green completion notification appears in the bottom right of the screen, video generation is complete. A preview of the finished video will be displayed in the \"Create Video / Watch Video\" panel, and you can play the video and check its content with the \"Play\" button."
+      },
+      "imageSource": "15p.png"
+    },
+    {
+      "text": "最後に、動画ファイルのダウンロードについて説明します。プレビュー画面の下にある「ダウンロード エムピーフォー」ボタンをクリックします。",
+      "audioSources": {
+        "ja": "guide01_script_92f217458fbb0f10bfad949e3cd4e9268f40e4a645fa8cfe1de5214771089cd0_ja.mp3",
+        "en": "guide01_script_ee033dfcf0b3713b9be2e4dec0fe5084d35063bf21c2f505b95c9909157bb577_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "最後に、動画ファイルのダウンロードについて説明します。プレビュー画面の下にある「ダウンロード エムピーフォー」ボタンをクリックします。",
+        "en": "Finally, I will explain how to download the video file. Click the \"Download MP4\" button located below the preview screen."
+      },
+      "imageSource": "16p.png"
+    },
+    {
+      "text": "お使いのピーシーのファイル保存ダイアログが開き、動画ファイの保存ができます。なお、画像は Mac版です。以上で、マルモキャストを使った基本的な動画作成の一連の操作は完了です。",
+      "audioSources": {
+        "ja": "guide01_script_4b9d227fcc221343ad079eed5448ec9f3cceaea711ce8818ed6a4202d984ad5e_ja.mp3",
+        "en": "guide01_script_afc44d52b4db33ac9ae5e142f6f86c58838441cd7e25d77c6c4d0a9acd291426_en.mp3"
+      },
+      "multiLinguals": {
+        "ja": "お使いのピーシーのファイル保存ダイアログが開き、動画ファイの保存ができます。なお、画像は Mac版です。以上で、マルモキャストを使った基本的な動画作成の一連の操作は完了です。",
+        "en": "The file save dialog on your PC will open, allowing you to save the video file. Note that the image is from the Mac version. This completes the series of basic video creation operations using Marumo Cast."
+      },
+      "imageSource": "17p.png"
+    },
+    {
+      "text": "",
+      "audioSources": {
+        "ja": "silent300.mp3",
+        "en": "silent300.mp3"
+      },
+      "multiLinguals": {
+        "ja": "",
+        "en": ""
+      },
+      "imageSource": "mulmo_credit.png"
+    }
+  ]
+}
