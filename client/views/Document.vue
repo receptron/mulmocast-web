@@ -9,7 +9,6 @@
           <h2 class="text-foreground mb-4 text-2xl font-semibold">Mac</h2>
           <p class="text-muted-foreground mb-4">install</p>
           <div class="bg-muted rounded-lg p-4">
-            {{ i18n.locale }}
             <MulmoViewer :data-set="GuideMac" base-path="/guide00_script_mac" :audio-lang="lang" :text-lang="lang" />
           </div>
         </section>
