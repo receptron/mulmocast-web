@@ -55,6 +55,7 @@
               <li>{{ t("festival.eligibility.items.2") }}</li>
               <li>{{ t("festival.eligibility.items.3") }}</li>
               <li>{{ t("festival.eligibility.items.4") }}</li>
+              <li>{{ t("festival.eligibility.items.5") }}</li>
             </ul>
           </CardContent>
         </Card>
