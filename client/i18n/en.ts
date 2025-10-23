@@ -24,30 +24,31 @@ const lang = {
     applicationMethod: {
       title: "How to Apply",
       step1: "Upload your work to YouTube (unlisted is allowed)",
-      step2: "Submit the following information via the application form (Google Form planned)",
+      step2: "Submit the following information via the application form (Google Form)",
       requirements: {
-        title: "Work title (required)",
+        title: "Work title",
         youtubeLink: "YouTube link",
         creator: "Creator name (individual/team name)",
         contact: "Contact information",
-        script: "mulmoscript.json (optional)",
+        script: "MulmoScript file (.json format)",
       },
     },
     eligibility: {
       title: "Eligibility Requirements",
       items: [
-        "Both individuals and teams are eligible",
+        "Applicants must be 18 years or older (minors are generally not eligible, except with individual permission from the organizer)",
+        "Work must be created using MulmoCast",
         "Multiple submissions not allowed",
-        "Applicants must be 18 years or older (minors not eligible)",
-        "Overseas applications accepted (prize money/awards subject to separate arrangements)",
+        "Team submissions allowed",
         "Concurrent applications to other contests not allowed",
+        "Overseas applications accepted (prize money subject to separate arrangements)",
       ],
     },
     results: {
       title: "Results Announcement",
       items: [
         "Scheduled to be announced on YouTube Live in {date}",
-        "Planned to be broadcast on Tech World channel + other channels",
+        "Planned to be broadcast on TECH WORLD channel + other channels",
         "Participation limited to online",
       ],
       date: "mid-December",
