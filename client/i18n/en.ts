@@ -24,7 +24,7 @@ const lang = {
     applicationMethod: {
       title: "How to Apply",
       step1: "Upload your work to YouTube (unlisted is allowed)",
-      step2: "Submit the following information via the application form (Google Form planned)",
+      step2: "Submit the following information via the application form (Google Form)",
       requirements: {
         title: "Work title (required)",
         youtubeLink: "YouTube link",

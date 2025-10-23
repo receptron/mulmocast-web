@@ -24,7 +24,7 @@ const lang = {
     applicationMethod: {
       title: "応募方法",
       step1: "作品をYouTubeにアップロード（限定公開可）",
-      step2: "応募フォーム（Googleフォーム予定）から以下の情報を申請",
+      step2: "応募フォーム（Googleフォーム）から以下の情報を申請",
       requirements: {
         title: "作品タイトル（必須）",
         youtubeLink: "YouTubeリンク",
