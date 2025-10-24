@@ -10,7 +10,7 @@
         </div>
 
         <!-- Desktop Navigation -->
-        <div class="flex items-center space-x-6 max-md:hidden">
+        <div class="hidden md:!flex md:items-center md:space-x-6">
           <div class="flex items-baseline space-x-4">
             <a
               v-for="item in navigation"
@@ -42,7 +42,7 @@
         </div>
 
         <!-- Mobile menu button -->
-        <div class="md:hidden">
+        <div class="md:!hidden">
           <button
             @click="mobileMenuOpen = !mobileMenuOpen"
             type="button"
