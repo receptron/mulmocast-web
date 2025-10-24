@@ -8,9 +8,11 @@
           <h1 class="text-foreground text-3xl font-extrabold sm:text-5xl md:text-6xl">{{ t("home.hero.title") }}</h1>
           <p class="text-muted-foreground mt-4 text-lg">
             {{ t("home.hero.subtitle") }}<br />
-            {{ t("home.hero.description", { emphasize: "" })
-            }}<span class="font-semibold">{{ t("home.hero.emphasize") }}</span
-            >。
+            <i18n-t keypath="home.hero.description" tag="span">
+              <template #emphasize>
+                <span class="font-semibold">{{ t("home.hero.emphasize") }}</span>
+              </template>
+            </i18n-t>
           </p>
         </div>
 
