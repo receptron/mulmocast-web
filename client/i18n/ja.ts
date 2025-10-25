@@ -51,7 +51,8 @@ const lang = {
     },
     latestInfo: {
       title: "最新情報",
-      description: "詳細・応募フォームは近日公開予定です。最新情報はXアカウント(link)をご確認ください。",
+      description: "詳細・応募フォームは{eventLink}で公開中です。最新情報はXアカウント{twitterLink}をご確認ください。",
+      eventLinkText: "こちら",
       twitterHandle: "{'@'}mulmocast",
     },
     backButton: "ホームに戻る",
