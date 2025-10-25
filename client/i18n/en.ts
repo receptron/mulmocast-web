@@ -56,7 +56,8 @@ const lang = {
     latestInfo: {
       title: "Latest Information",
       description:
-        "Details and application form will be available soon. For the latest information, please check our X account (link).",
+        "Details and application form are now available {eventLink}. For the latest information, please check our X account {twitterLink}.",
+      eventLinkText: "here",
       twitterHandle: "{'@'}mulmocast",
     },
     backButton: "Back to Home",

@@ -84,16 +84,28 @@
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground">
-              {{ t("festival.latestInfo.description").split("(link)")[0] }}
-              <a
-                href="https://x.com/mulmocast"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-primary hover:underline"
-              >
-                {{ t("festival.latestInfo.twitterHandle") }}
-              </a>
-              {{ t("festival.latestInfo.description").split("(link)")[1] }}
+              <i18n-t keypath="festival.latestInfo.description" tag="span">
+                <template #eventLink>
+                  <a
+                    href="https://www.mag2.com/events/ai-film-fes2025/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >
+                    {{ t("festival.latestInfo.eventLinkText") }}
+                  </a>
+                </template>
+                <template #twitterLink>
+                  <a
+                    href="https://x.com/mulmocast"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >
+                    {{ t("festival.latestInfo.twitterHandle") }}
+                  </a>
+                </template>
+              </i18n-t>
             </p>
           </CardContent>
         </Card>
