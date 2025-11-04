@@ -102,16 +102,18 @@ const lang = {
         answer:
           "No payment is required for Persona. You can complete it by following the steps below:",
         steps: [
-          "Go to the OpenAI Platform's organization settings page ( https://platform.openai.com/settings/organization/general ), click 'Verify Organization', and follow the on-screen instructions to complete identity verification (using Persona).",
+          "Go to the {organizationSettingsPage}, click 'Verify Organization', and follow the on-screen instructions to complete identity verification (using Persona).",
         ],
+        organizationSettingsPageText: "OpenAI Platform's organization settings page",
         note: "Persona is the identity verification service used by OpenAI. There is no charge to the user for Persona.",
         support:
-          "※ If identity verification repeatedly fails, please contact OpenAI support ( https://help.openai.com/ ). You can reach them from the Help Center (chat icon in the bottom right corner).",
+          "※ If identity verification repeatedly fails, please contact {openaiSupport}. You can reach them from the Help Center (chat icon in the bottom right corner).",
+        openaiSupportText: "OpenAI support",
         alternative: {
           title: "■ Using the dall-e-3 model",
           description:
             "If you do not wish to use the `gpt-image-1` model, you can use `dall-e-3` instead. Please change the settings as follows:",
-          steps: ["Style Settings Tab → Image Generation Settings", "• AI Type: OpenAI", "• Model: Change auto → dall-e-3"],
+          steps: ["Style Settings Tab → Image Generation Settings", "AI Type: OpenAI", "Model: Change auto → dall-e-3"],
         },
       },
     ],

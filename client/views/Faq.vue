@@ -75,10 +75,36 @@
             </p>
             <p class="text-muted-foreground mt-2 font-semibold">手順:</p>
             <ul class="text-muted-foreground list-disc space-y-2 pl-5">
-              <li>{{ t("faq.items.5.steps.0") }}</li>
+              <li>
+                <i18n-t keypath="faq.items.5.steps.0" tag="span">
+                  <template #organizationSettingsPage>
+                    <a
+                      href="https://platform.openai.com/settings/organization/general"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-primary hover:underline"
+                    >
+                      {{ t("faq.items.5.organizationSettingsPageText") }}
+                    </a>
+                  </template>
+                </i18n-t>
+              </li>
             </ul>
             <p class="text-muted-foreground mt-4">{{ t("faq.items.5.note") }}</p>
-            <p class="text-muted-foreground mt-4">{{ t("faq.items.5.support") }}</p>
+            <p class="text-muted-foreground mt-4">
+              <i18n-t keypath="faq.items.5.support" tag="span">
+                <template #openaiSupport>
+                  <a
+                    href="https://help.openai.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >
+                    {{ t("faq.items.5.openaiSupportText") }}
+                  </a>
+                </template>
+              </i18n-t>
+            </p>
 
             <div class="mt-6">
               <p class="text-muted-foreground font-semibold">{{ t("faq.items.5.alternative.title") }}</p>
