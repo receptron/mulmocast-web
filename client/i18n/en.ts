@@ -91,6 +91,37 @@ const lang = {
         answer:
           "It can be used for various purposes including short videos, student reports and class presentations, business proposals and planning documents.",
       },
+      {
+        question:
+          'I\'m getting an error "Image generation (OpenAI) error: Please complete organization verification to use the gpt-image-1 model..." during image generation. What should I do?',
+        answer:
+          "To use the gpt-image-1 model, you need to complete organization verification (Verify Organization) on your OpenAI account. This is a separate procedure from paid plans like ChatGPT Plus.",
+      },
+      {
+        question: "Where do I complete organization verification, and is there a fee for Persona?",
+        answer: "No payment is required for Persona. You can complete it by following the steps below:",
+        stepsLabel: "Steps:",
+        steps: [
+          "Go to the {organizationSettingsPage} and click the 'Verify Organization' button.",
+          "Follow the on-screen instructions to complete identity verification (using Persona).",
+        ],
+        organizationSettingsPageText: "OpenAI Platform's organization settings page",
+        note: "Persona is the identity verification service used by OpenAI. There is no charge to the user for Persona.",
+        support:
+          "※ If identity verification repeatedly fails, please contact {openaiSupport}. You can reach them from the Help Center (chat icon in the bottom right corner).",
+        openaiSupportText: "OpenAI support",
+        alternative: {
+          title: "■ Using the dall-e-3 model",
+          description:
+            "If you do not wish to use the `gpt-image-1` model, you can use `dall-e-3` instead. Please change the settings as follows:",
+          stepsLabel: "Steps:",
+          steps: [
+            "Navigate to Style Settings Tab → Image Parameters.",
+            "Ensure Provider is set to 'OpenAI'.",
+            "Change Model from 'auto' to 'dall-e-3'.",
+          ],
+        },
+      },
     ],
     backButton: "Back to Home",
   },

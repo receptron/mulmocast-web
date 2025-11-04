@@ -54,6 +54,74 @@
           </CardContent>
         </Card>
 
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <CardTitle>{{ t("faq.items.4.question") }}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground whitespace-pre-line">
+              {{ t("faq.items.4.answer") }}
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <CardTitle>{{ t("faq.items.5.question") }}</CardTitle>
+          </CardHeader>
+          <CardContent class="text-muted-foreground">
+            <p>
+              {{ t("faq.items.5.answer") }}
+            </p>
+            <p class="mt-2 font-semibold">{{ t("faq.items.5.stepsLabel") }}</p>
+            <ul class="list-disc space-y-2 pl-5">
+              <li>
+                <i18n-t keypath="faq.items.5.steps.0" tag="span">
+                  <template #organizationSettingsPage>
+                    <a
+                      href="https://platform.openai.com/settings/organization/general"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-primary hover:underline"
+                    >
+                      {{ t("faq.items.5.organizationSettingsPageText") }}
+                    </a>
+                  </template>
+                </i18n-t>
+              </li>
+              <li>
+                {{ t("faq.items.5.steps.1") }}
+              </li>
+            </ul>
+            <p class="mt-4">{{ t("faq.items.5.note") }}</p>
+            <p class="mt-4">
+              <i18n-t keypath="faq.items.5.support" tag="span">
+                <template #openaiSupport>
+                  <a
+                    href="https://help.openai.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-primary hover:underline"
+                  >
+                    {{ t("faq.items.5.openaiSupportText") }}
+                  </a>
+                </template>
+              </i18n-t>
+            </p>
+
+            <div class="mt-6">
+              <p class="font-semibold">{{ t("faq.items.5.alternative.title") }}</p>
+              <p class="mt-2">{{ t("faq.items.5.alternative.description") }}</p>
+              <p class="mt-2 font-semibold">{{ t("faq.items.5.alternative.stepsLabel") }}</p>
+              <ul class="list-disc space-y-1 pl-5">
+                <li>{{ t("faq.items.5.alternative.steps.0") }}</li>
+                <li>{{ t("faq.items.5.alternative.steps.1") }}</li>
+                <li>{{ t("faq.items.5.alternative.steps.2") }}</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+
         <!-- Back Button -->
         <div class="text-center">
           <Button as="a" :href="localizedUrl('/')" variant="outline"> {{ t("faq.backButton") }} </Button>
