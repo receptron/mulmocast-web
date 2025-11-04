@@ -86,6 +86,28 @@ const lang = {
         answer:
           "ショート動画、学生のレポートや授業発表、ビジネスの提案資料や企画書など、様々な用途でご利用いただけます。",
       },
+      {
+        question:
+          '画像生成時に「画像生成（OpenAI）エラー: gpt-image-1 モデルを利用するためには組織認証を行ってください...」というエラーが出ます。どうすれば良いですか？',
+        answer:
+          "gpt-image-1 モデルを利用するには、OpenAIアカウントで「組織認証（Verify Organization）」を完了する必要があります。これはChatGPT Plusなどの有料プランとは別の手続きです。",
+      },
+      {
+        question: "「組織認証」はどこで行いますか？また、Personaへの課金は必要ですか？",
+        answer:
+          "Personaへの課金は不要です。下記の手順で行うことができます。\n\n" +
+          "手順：\n" +
+          "OpenAI Platformの組織設定ページ（ https://platform.openai.com/settings/organization/general ）で「Verify Organization」をクリックし、画面の案内に沿って本人確認（Personaを利用）を完了してください。\n\n" +
+          "補足：\n" +
+          "PersonaはOpenAIが採用している本人確認サービスです。ユーザー側がPersonaに料金を支払う必要はありません。\n\n" +
+          "※本人確認が繰り返し失敗する場合は、OpenAIのサポート（ https://help.openai.com/ ）へお問い合わせください。Help Center（右下のチャット）から連絡できます。\n\n" +
+          "■ dall-e-3 モデルを利用する場合\n" +
+          "「gpt-image-1」モデルを利用しない場合は、代わりに「dall-e-3」モデルをお使いいただけます。以下の手順で設定を変更してください。\n\n" +
+          "操作手順：\n" +
+          "スタイル設定タブ → 画像生成設定\n" +
+          "• AI の種類：OpenAI\n" +
+          "• モデル：auto → dall-e-3 に変更"
+      }
     ],
     backButton: "ホームに戻る",
   },

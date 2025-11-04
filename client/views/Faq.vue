@@ -54,6 +54,28 @@
           </CardContent>
         </Card>
 
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <CardTitle>{{ t("faq.items.4.question") }}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground whitespace-pre-line">
+              {{ t("faq.items.4.answer") }}
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <CardTitle>{{ t("faq.items.5.question") }}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground whitespace-pre-line">
+              {{ t("faq.items.5.answer") }}
+            </p>
+          </CardContent>
+        </Card>
+
         <!-- Back Button -->
         <div class="text-center">
           <Button as="a" :href="localizedUrl('/')" variant="outline"> {{ t("faq.backButton") }} </Button>
