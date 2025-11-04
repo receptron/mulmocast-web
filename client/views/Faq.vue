@@ -89,6 +89,9 @@
                   </template>
                 </i18n-t>
               </li>
+              <li>
+                {{ t("faq.items.5.steps.1") }}
+              </li>
             </ul>
             <p class="mt-4">{{ t("faq.items.5.note") }}</p>
             <p class="mt-4">

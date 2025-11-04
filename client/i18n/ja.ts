@@ -97,7 +97,8 @@ const lang = {
         answer: "Personaへの課金は不要です。下記の手順で行うことができます。",
         stepsLabel: "手順:",
         steps: [
-          "{organizationSettingsPage}で「Verify Organization」をクリックし、画面の案内に沿って本人確認（Personaを利用）を完了してください。",
+          "{organizationSettingsPage}にアクセスし、「Verify Organization」ボタンをクリックします。",
+          "画面の案内に沿って本人確認（Personaを利用）を完了してください。",
         ],
         organizationSettingsPageText: "OpenAI Platformの組織設定ページ",
         note: "補足：PersonaはOpenAIが採用している本人確認サービスです。ユーザー側がPersonaに料金を支払う必要はありません。",

@@ -102,7 +102,8 @@ const lang = {
         answer: "No payment is required for Persona. You can complete it by following the steps below:",
         stepsLabel: "Steps:",
         steps: [
-          "Go to the {organizationSettingsPage}, click 'Verify Organization', and follow the on-screen instructions to complete identity verification (using Persona).",
+          "Go to the {organizationSettingsPage} and click the 'Verify Organization' button.",
+          "Follow the on-screen instructions to complete identity verification (using Persona).",
         ],
         organizationSettingsPageText: "OpenAI Platform's organization settings page",
         note: "Persona is the identity verification service used by OpenAI. There is no charge to the user for Persona.",
