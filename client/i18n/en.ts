@@ -100,19 +100,20 @@ const lang = {
       {
         question: "Where do I complete organization verification, and is there a fee for Persona?",
         answer:
-          "No payment is required for Persona. You can complete it by following the steps below.\n\n" +
-          "Steps:\n" +
-          "Go to the OpenAI Platform's organization settings page ( https://platform.openai.com/settings/organization/general ), click 'Verify Organization', and follow the on-screen instructions to complete identity verification (using Persona).\n\n" +
-          "Note:\n" +
-          "Persona is the identity verification service used by OpenAI. There is no charge to the user for Persona.\n\n" +
-          "※ If identity verification repeatedly fails, please contact OpenAI support ( https://help.openai.com/ ). You can reach them from the Help Center (chat icon in the bottom right corner).\n\n" +
-          "■ Using the dall-e-3 model\n" +
-          "If you do not wish to use the `gpt-image-1` model, you can use `dall-e-3` instead. Please change the settings as follows:\n\n" +
-          "Steps:\n" +
-          "Style Settings Tab → Image Generation Settings\n" +
-          "• AI Type: OpenAI\n" +
-          "• Model: Change auto → dall-e-3"
-      }
+          "No payment is required for Persona. You can complete it by following the steps below:",
+        steps: [
+          "Go to the OpenAI Platform's organization settings page ( https://platform.openai.com/settings/organization/general ), click 'Verify Organization', and follow the on-screen instructions to complete identity verification (using Persona).",
+        ],
+        note: "Persona is the identity verification service used by OpenAI. There is no charge to the user for Persona.",
+        support:
+          "※ If identity verification repeatedly fails, please contact OpenAI support ( https://help.openai.com/ ). You can reach them from the Help Center (chat icon in the bottom right corner).",
+        alternative: {
+          title: "■ Using the dall-e-3 model",
+          description:
+            "If you do not wish to use the `gpt-image-1` model, you can use `dall-e-3` instead. Please change the settings as follows:",
+          steps: ["Style Settings Tab → Image Generation Settings", "• AI Type: OpenAI", "• Model: Change auto → dall-e-3"],
+        },
+      },
     ],
     backButton: "Back to Home",
   },
