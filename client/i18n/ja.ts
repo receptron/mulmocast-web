@@ -88,14 +88,13 @@ const lang = {
       },
       {
         question:
-          '画像生成時に「画像生成（OpenAI）エラー: gpt-image-1 モデルを利用するためには組織認証を行ってください...」というエラーが出ます。どうすれば良いですか？',
+          "画像生成時に「画像生成（OpenAI）エラー: gpt-image-1 モデルを利用するためには組織認証を行ってください...」というエラーが出ます。どうすれば良いですか？",
         answer:
           "gpt-image-1 モデルを利用するには、OpenAIアカウントで「組織認証（Verify Organization）」を完了する必要があります。これはChatGPT Plusなどの有料プランとは別の手続きです。",
       },
       {
         question: "「組織認証」はどこで行いますか？また、Personaへの課金は必要ですか？",
-        answer:
-          "Personaへの課金は不要です。下記の手順で行うことができます。",
+        answer: "Personaへの課金は不要です。下記の手順で行うことができます。",
         steps: [
           "{organizationSettingsPage}で「Verify Organization」をクリックし、画面の案内に沿って本人確認（Personaを利用）を完了してください。",
         ],
