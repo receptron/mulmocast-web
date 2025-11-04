@@ -100,6 +100,7 @@ const lang = {
       {
         question: "Where do I complete organization verification, and is there a fee for Persona?",
         answer: "No payment is required for Persona. You can complete it by following the steps below:",
+        stepsLabel: "Steps:",
         steps: [
           "Go to the {organizationSettingsPage}, click 'Verify Organization', and follow the on-screen instructions to complete identity verification (using Persona).",
         ],

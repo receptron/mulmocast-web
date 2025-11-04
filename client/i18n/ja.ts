@@ -95,6 +95,7 @@ const lang = {
       {
         question: "「組織認証」はどこで行いますか？また、Personaへの課金は必要ですか？",
         answer: "Personaへの課金は不要です。下記の手順で行うことができます。",
+        stepsLabel: "手順:",
         steps: [
           "{organizationSettingsPage}で「Verify Organization」をクリックし、画面の案内に沿って本人確認（Personaを利用）を完了してください。",
         ],

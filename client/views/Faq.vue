@@ -73,7 +73,7 @@
             <p>
               {{ t("faq.items.5.answer") }}
             </p>
-            <p class="mt-2 font-semibold">手順:</p>
+            <p class="mt-2 font-semibold">{{ t("faq.items.5.stepsLabel") }}</p>
             <ul class="list-disc space-y-2 pl-5">
               <li>
                 <i18n-t keypath="faq.items.5.steps.0" tag="span">
