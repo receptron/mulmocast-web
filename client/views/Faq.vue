@@ -69,12 +69,12 @@
           <CardHeader>
             <CardTitle>{{ t("faq.items.5.question") }}</CardTitle>
           </CardHeader>
-          <CardContent>
-            <p class="text-muted-foreground">
+          <CardContent class="text-muted-foreground">
+            <p>
               {{ t("faq.items.5.answer") }}
             </p>
-            <p class="text-muted-foreground mt-2 font-semibold">手順:</p>
-            <ul class="text-muted-foreground list-disc space-y-2 pl-5">
+            <p class="mt-2 font-semibold">手順:</p>
+            <ul class="list-disc space-y-2 pl-5">
               <li>
                 <i18n-t keypath="faq.items.5.steps.0" tag="span">
                   <template #organizationSettingsPage>
@@ -90,8 +90,8 @@
                 </i18n-t>
               </li>
             </ul>
-            <p class="text-muted-foreground mt-4">{{ t("faq.items.5.note") }}</p>
-            <p class="text-muted-foreground mt-4">
+            <p class="mt-4">{{ t("faq.items.5.note") }}</p>
+            <p class="mt-4">
               <i18n-t keypath="faq.items.5.support" tag="span">
                 <template #openaiSupport>
                   <a
@@ -107,10 +107,10 @@
             </p>
 
             <div class="mt-6">
-              <p class="text-muted-foreground font-semibold">{{ t("faq.items.5.alternative.title") }}</p>
-              <p class="text-muted-foreground mt-2">{{ t("faq.items.5.alternative.description") }}</p>
-              <p class="text-muted-foreground mt-2 font-semibold">操作手順:</p>
-              <ul class="text-muted-foreground list-disc space-y-1 pl-5">
+              <p class="font-semibold">{{ t("faq.items.5.alternative.title") }}</p>
+              <p class="mt-2">{{ t("faq.items.5.alternative.description") }}</p>
+              <p class="mt-2 font-semibold">{{ t("faq.items.5.alternative.stepsLabel") }}</p>
+              <ul class="list-disc space-y-1 pl-5">
                 <li>{{ t("faq.items.5.alternative.steps.0") }}</li>
                 <li>{{ t("faq.items.5.alternative.steps.1") }}</li>
                 <li>{{ t("faq.items.5.alternative.steps.2") }}</li>

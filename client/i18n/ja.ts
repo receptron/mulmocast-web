@@ -108,6 +108,7 @@ const lang = {
           title: "■ dall-e-3 モデルを利用する場合",
           description:
             "「gpt-image-1」モデルを利用しない場合は、代わりに「dall-e-3」モデルをお使いいただけます。以下の手順で設定を変更してください。",
+          stepsLabel: "操作手順:",
           steps: ["スタイル設定タブ → 画像生成設定", "AI の種類：OpenAI", "モデル：auto → dall-e-3 に変更"],
         },
       },

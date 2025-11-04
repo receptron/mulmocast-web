@@ -113,6 +113,7 @@ const lang = {
           title: "■ Using the dall-e-3 model",
           description:
             "If you do not wish to use the `gpt-image-1` model, you can use `dall-e-3` instead. Please change the settings as follows:",
+          stepsLabel: "Steps:",
           steps: ["Style Settings Tab → Image Generation Settings", "AI Type: OpenAI", "Model: Change auto → dall-e-3"],
         },
       },
