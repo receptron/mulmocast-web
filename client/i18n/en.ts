@@ -122,6 +122,15 @@ const lang = {
           ],
         },
       },
+      {
+        question: "The generated video doesn't match my expectations. What should I do?",
+        answer:
+          "MulmoCast generates movies by combining generated images with movie generation prompts. If no images are generated, the movie is created using only the movie generation prompt.\n\nTo generate movies closer to your intended result, please try one of the following methods:",
+        methods: [
+          "Generate images first, then set movie generation prompts based on those images",
+          "Provide detailed visual instructions in the movie generation prompt (such as scene content, movement details, etc.)",
+        ],
+      },
     ],
     backButton: "Back to Home",
   },
