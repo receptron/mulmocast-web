@@ -130,7 +130,7 @@
             <p class="whitespace-pre-line">
               {{ t("faq.items.6.answer") }}
             </p>
-            <ul class="list-disc space-y-2 pl-5 mt-4">
+            <ul class="mt-4 list-disc space-y-2 pl-5">
               <li>{{ t("faq.items.6.methods.0") }}</li>
               <li>{{ t("faq.items.6.methods.1") }}</li>
             </ul>
