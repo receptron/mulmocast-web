@@ -131,6 +131,15 @@ const lang = {
           "Provide detailed visual instructions in the movie generation prompt (such as scene content, movement details, etc.)",
         ],
       },
+      {
+        question: "The latter half of the movie becomes a still image. What should I do?",
+        answer:
+          "When the audio length (text volume) exceeds the movie generation time, the latter half is displayed as a still image.\n\nDepending on the movie generation model you use, there is a time limit for each movie generation. For example, when using Google (Veo3), movies are generated with a fixed duration of 8 seconds.\n\nIn this case, please adjust using one of the following methods:",
+        methods: [
+          "Accept that the latter half becomes a still image",
+          "Adjust the audio length (text volume) and divide it to fit within the movie generation time",
+        ],
+      },
     ],
     backButton: "Back to Home",
   },
