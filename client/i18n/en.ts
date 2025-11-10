@@ -142,12 +142,9 @@ const lang = {
       },
       {
         question: "Can I display a slide without narration (image only) for a specified duration?",
-        answer: "Yes, you can. In Advanced Mode, you can specify the display duration for each beat. Please follow these steps:",
-        steps: [
-          "Switch to Advanced Mode",
-          "Open the JSON tab",
-          "Add \"duration: seconds\" to the corresponding beat",
-        ],
+        answer:
+          "Yes, you can. In Advanced Mode, you can specify the display duration for each beat. Please follow these steps:",
+        steps: ["Switch to Advanced Mode", "Open the JSON tab", 'Add "duration: seconds" to the corresponding beat'],
         exampleLabel: "Example:",
         noteLabel: "Note:",
         example:
@@ -162,7 +159,7 @@ const lang = {
         steps: [
           "Switch to Advanced Mode",
           "Open the JSON tab",
-          "Add \"audioParams.padding: seconds\" to the corresponding beat",
+          'Add "audioParams.padding: seconds" to the corresponding beat',
         ],
         exampleLabel: "Example:",
         noteLabel: "Note:",
