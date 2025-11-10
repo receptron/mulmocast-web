@@ -155,6 +155,22 @@ const lang = {
         exampleNote: "In this example, the slide without narration will be displayed for 5 seconds.",
         note: "When adding duration, remember to add a comma (,) at the end of the previous item (the image object in this example).",
       },
+      {
+        question: "The movie generated from the movie prompt gets cut off midway. What should I do?",
+        answer:
+          "When generating a movie using a movie generation prompt, MulmoCast trims the video based on the audio length when combining audio and video. Therefore, if the generated video is longer than the audio, the video may be cut off at the end of the audio.\n\nIn this case, add audioParams.padding in Advanced Mode to create padding at the end of the audio.\n\nPlease follow these steps:",
+        steps: [
+          "Switch to Advanced Mode",
+          "Open the JSON tab",
+          "Add \"audioParams.padding: seconds\" to the corresponding beat",
+        ],
+        exampleLabel: "Example:",
+        noteLabel: "Note:",
+        example:
+          '{\n  "speaker": "Presenter",\n  "text": "This beat has audio. add padding 6.",\n  "audioParams": {\n    "padding": 6\n  },\n  "moviePrompt": "Four shots in rapid succession: art, anime, documentary, and promotional style.",\n  "enableLipSync": false\n}',
+        exampleNote: "In this example, 6 seconds of padding is added to the end of the audio.",
+        note: "When adding audioParams, remember to add a comma (,) at the end of the previous item.",
+      },
     ],
     backButton: "Back to Home",
   },
