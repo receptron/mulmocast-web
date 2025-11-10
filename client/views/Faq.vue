@@ -152,6 +152,27 @@
           </CardContent>
         </Card>
 
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <CardTitle>{{ t("faq.items.8.question") }}</CardTitle>
+          </CardHeader>
+          <CardContent class="text-muted-foreground">
+            <p class="whitespace-pre-line">
+              {{ t("faq.items.8.answer") }}
+            </p>
+            <ul class="mt-4 list-disc space-y-2 pl-5">
+              <li>{{ t("faq.items.8.steps.0") }}</li>
+              <li>{{ t("faq.items.8.steps.1") }}</li>
+              <li>{{ t("faq.items.8.steps.2") }}</li>
+            </ul>
+            <p class="mt-4 font-semibold">{{ t("faq.items.8.exampleLabel") }}</p>
+            <pre class="bg-muted mt-2 overflow-x-auto rounded p-4"><code>{{ t("faq.items.8.example") }}</code></pre>
+            <p class="mt-2">{{ t("faq.items.8.exampleNote") }}</p>
+            <p class="mt-4 font-semibold">{{ t("faq.items.8.noteLabel") }}</p>
+            <p class="mt-2">{{ t("faq.items.8.note") }}</p>
+          </CardContent>
+        </Card>
+
         <!-- Back Button -->
         <div class="text-center">
           <Button as="a" :href="localizedUrl('/')" variant="outline"> {{ t("faq.backButton") }} </Button>

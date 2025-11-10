@@ -140,6 +140,21 @@ const lang = {
           "Adjust the audio length (text volume) and divide it to fit within the movie generation time",
         ],
       },
+      {
+        question: "Can I display a slide without narration (image only) for a specified duration?",
+        answer: "Yes, you can. In Advanced Mode, you can specify the display duration for each beat. Please follow these steps:",
+        steps: [
+          "Switch to Advanced Mode",
+          "Open the JSON tab",
+          "Add \"duration: seconds\" to the corresponding beat",
+        ],
+        exampleLabel: "Example:",
+        noteLabel: "Note:",
+        example:
+          '{\n  "speaker": "Presenter",\n  "text": "",\n  "image": {\n    "type": "textSlide",\n    "slide": {\n      "title": "no audio slide + duration",\n      "bullets": [\n        "duration 5"\n      ]\n    }\n  },\n  "duration": 5\n}',
+        exampleNote: "In this example, the slide without narration will be displayed for 5 seconds.",
+        note: "When adding duration, remember to add a comma (,) at the end of the previous item (the image object in this example).",
+      },
     ],
     backButton: "Back to Home",
   },
