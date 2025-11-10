@@ -135,6 +135,29 @@ const lang = {
           "音声の長さ（テキスト量）を調整し、動画生成時間内に収まるよう分割する",
         ],
       },
+      {
+        question: "セリフのないスライド（画像のみ）を、指定した時間だけ表示することはできますか？",
+        answer: "可能です。上級モードで、各ビートの表示時間を指定できます。以下の手順で設定してください。",
+        steps: ["上級モードにする", "JSONタブを開く", "該当するビートに「duration: 秒数」を追加する"],
+        exampleLabel: "例:",
+        noteLabel: "注意:",
+        example:
+          '{\n  "speaker": "Presenter",\n  "text": "",\n  "image": {\n    "type": "textSlide",\n    "slide": {\n      "title": "no audio slide + duration",\n      "bullets": [\n        "duration 5"\n      ]\n    }\n  },\n  "duration": 5\n}',
+        exampleNote: "この例では、セリフのないスライドが5秒間表示されます。",
+        note: "duration を追加する場合は、その前の項目（この例では image オブジェクト）の最後にカンマ（,）を付けることを忘れないでください。",
+      },
+      {
+        question: "動画生成プロンプトで作った動画が、途中で切れてしまいます。どうすればいいですか？",
+        answer:
+          "動画生成プロンプトを使用して動画を生成した場合、MulmoCastは音声と動画を結合する際に音声の長さを基準に映像をトリミングしています。そのため、生成された動画が音声より長い場合、音声の終端で動画が途中で切れてしまうことがあります。\n\nこの場合は、上級モードで audioParams.padding を追加して、音声の終端に余白を設けてください。\n\n以下の手順で設定してください。",
+        steps: ["上級モードにする", "JSONタブを開く", "該当するビートに「audioParams.padding: 秒数」を追加する"],
+        exampleLabel: "例:",
+        noteLabel: "注意:",
+        example:
+          '{\n  "speaker": "Presenter",\n  "text": "This beat has audio. add padding 6.",\n  "audioParams": {\n    "padding": 6\n  },\n  "moviePrompt": "Four shots in rapid succession: art, anime, documentary, and promotional style.",\n  "enableLipSync": false\n}',
+        exampleNote: "この例では、音声の終端に6秒の余白を追加しています。",
+        note: "audioParams を追加する場合は、その前の項目の最後にカンマ（,）を付けることを忘れないでください。",
+      },
     ],
     backButton: "ホームに戻る",
   },

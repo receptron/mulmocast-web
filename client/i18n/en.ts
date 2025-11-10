@@ -140,6 +140,34 @@ const lang = {
           "Adjust the audio length (text volume) and divide it to fit within the movie generation time",
         ],
       },
+      {
+        question: "Can I display a slide without narration (image only) for a specified duration?",
+        answer:
+          "Yes, you can. In Advanced Mode, you can specify the display duration for each beat. Please follow these steps:",
+        steps: ["Switch to Advanced Mode", "Open the JSON tab", 'Add "duration: seconds" to the corresponding beat'],
+        exampleLabel: "Example:",
+        noteLabel: "Note:",
+        example:
+          '{\n  "speaker": "Presenter",\n  "text": "",\n  "image": {\n    "type": "textSlide",\n    "slide": {\n      "title": "no audio slide + duration",\n      "bullets": [\n        "duration 5"\n      ]\n    }\n  },\n  "duration": 5\n}',
+        exampleNote: "In this example, the slide without narration will be displayed for 5 seconds.",
+        note: "When adding duration, remember to add a comma (,) at the end of the previous item (the image object in this example).",
+      },
+      {
+        question: "The movie generated from the movie prompt gets cut off midway. What should I do?",
+        answer:
+          "When generating a movie using a movie generation prompt, MulmoCast trims the video based on the audio length when combining audio and video. Therefore, if the generated video is longer than the audio, the video may be cut off at the end of the audio.\n\nIn this case, add audioParams.padding in Advanced Mode to create padding at the end of the audio.\n\nPlease follow these steps:",
+        steps: [
+          "Switch to Advanced Mode",
+          "Open the JSON tab",
+          'Add "audioParams.padding: seconds" to the corresponding beat',
+        ],
+        exampleLabel: "Example:",
+        noteLabel: "Note:",
+        example:
+          '{\n  "speaker": "Presenter",\n  "text": "This beat has audio. add padding 6.",\n  "audioParams": {\n    "padding": 6\n  },\n  "moviePrompt": "Four shots in rapid succession: art, anime, documentary, and promotional style.",\n  "enableLipSync": false\n}',
+        exampleNote: "In this example, 6 seconds of padding is added to the end of the audio.",
+        note: "When adding audioParams, remember to add a comma (,) at the end of the previous item.",
+      },
     ],
     backButton: "Back to Home",
   },
