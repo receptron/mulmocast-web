@@ -142,7 +142,7 @@ const lang = {
         exampleLabel: "例:",
         noteLabel: "注意:",
         example:
-          '{\n  "speaker": "Presenter",\n  "text": "",\n  "image": {\n    "type": "textSlide",\n    "slide": {\n      "title": "no audio slide + duration",\n      "bullets": [\n        "duration 5"\n      ]\n    }\n  },\n  "duration": 5\n}',
+          '{\'{\'}\\n  "speaker": "Presenter",\\n  "text": "",\\n  "image": {\'{\'}\\n    "type": "textSlide",\\n    "slide": {\'{\'}\\n      "title": "no audio slide + duration",\\n      "bullets": [\\n        "duration 5"\\n      ]\\n    {\'}\'}\\n  {\'}\'},\\n  "duration": 5\\n{\'}\'}',
         exampleNote: "この例では、セリフのないスライドが5秒間表示されます。",
         note: "duration を追加する場合は、その前の項目（この例では image オブジェクト）の最後にカンマ（,）を付けることを忘れないでください。",
       },
@@ -154,7 +154,7 @@ const lang = {
         exampleLabel: "例:",
         noteLabel: "注意:",
         example:
-          '{\n  "speaker": "Presenter",\n  "text": "This beat has audio. add padding 6.",\n  "audioParams": {\n    "padding": 6\n  },\n  "moviePrompt": "Four shots in rapid succession: art, anime, documentary, and promotional style.",\n  "enableLipSync": false\n}',
+          '{\'{\'}\\n  "speaker": "Presenter",\\n  "text": "This beat has audio. add padding 6.",\\n  "audioParams": {\'{\'}\\n    "padding": 6\\n  {\'}\'},\\n  "moviePrompt": "Four shots in rapid succession: art, anime, documentary, and promotional style.",\\n  "enableLipSync": false\\n{\'}\'}',
         exampleNote: "この例では、音声の終端に6秒の余白を追加しています。",
         note: "audioParams を追加する場合は、その前の項目の最後にカンマ（,）を付けることを忘れないでください。",
       },

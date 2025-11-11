@@ -148,7 +148,7 @@ const lang = {
         exampleLabel: "Example:",
         noteLabel: "Note:",
         example:
-          '{\n  "speaker": "Presenter",\n  "text": "",\n  "image": {\n    "type": "textSlide",\n    "slide": {\n      "title": "no audio slide + duration",\n      "bullets": [\n        "duration 5"\n      ]\n    }\n  },\n  "duration": 5\n}',
+          '{\'{\'}\\n  "speaker": "Presenter",\\n  "text": "",\\n  "image": {\'{\'}\\n    "type": "textSlide",\\n    "slide": {\'{\'}\\n      "title": "no audio slide + duration",\\n      "bullets": [\\n        "duration 5"\\n      ]\\n    {\'}\'}\\n  {\'}\'},\\n  "duration": 5\\n{\'}\'}',
         exampleNote: "In this example, the slide without narration will be displayed for 5 seconds.",
         note: "When adding duration, remember to add a comma (,) at the end of the previous item (the image object in this example).",
       },
@@ -164,7 +164,7 @@ const lang = {
         exampleLabel: "Example:",
         noteLabel: "Note:",
         example:
-          '{\n  "speaker": "Presenter",\n  "text": "This beat has audio. add padding 6.",\n  "audioParams": {\n    "padding": 6\n  },\n  "moviePrompt": "Four shots in rapid succession: art, anime, documentary, and promotional style.",\n  "enableLipSync": false\n}',
+          '{\'{\'}\\n  "speaker": "Presenter",\\n  "text": "This beat has audio. add padding 6.",\\n  "audioParams": {\'{\'}\\n    "padding": 6\\n  {\'}\'},\\n  "moviePrompt": "Four shots in rapid succession: art, anime, documentary, and promotional style.",\\n  "enableLipSync": false\\n{\'}\'}',
         exampleNote: "In this example, 6 seconds of padding is added to the end of the audio.",
         note: "When adding audioParams, remember to add a comma (,) at the end of the previous item.",
       },
