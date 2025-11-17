@@ -30,6 +30,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
-    - run: yarn install
-    - run: yarn run lint
-    - run: yarn run build
+    - name: Install dependencies
+      run: yarn install
+    - name: Lint web
+      run: yarn workspace mulmocast-web run lint
+    - name: Type check web
+      run: yarn workspace mulmocast-web run type-check
+    - name: Build web
+      run: yarn workspace mulmocast-web run build

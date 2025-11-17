@@ -8,10 +8,10 @@
     "build": "vue-tsc --build && vite build",
     "preview": "vite preview",
     "type-check": "vue-tsc --build",
-    "config:dev": "cp client/configs/config-dev.ts client/configs/config.ts",
-    "config:prod": "cp client/configs/config-prod.ts client/configs/config.ts",
+    "config:dev": "cp src/configs/config-dev.ts src/configs/config.ts",
+    "config:prod": "cp src/configs/config-prod.ts src/configs/config.ts",
     "lint": "eslint",
-    "format": "prettier --write 'client/**/*.{ts,json,yaml,vue}' *.json *.ts *.mjs"
+    "format": "prettier --write 'src/**/*.{ts,json,yaml,vue}' *.json *.ts *.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.15",
