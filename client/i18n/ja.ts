@@ -208,6 +208,7 @@ const lang = {
     links: {
       title: "リンク",
       twitter: "X (Twitter)",
+      discord: "Discord",
       githubApp: "GitHub - MulmoCast App",
       githubCli: "GitHub - MulmoCast CLI",
     },
