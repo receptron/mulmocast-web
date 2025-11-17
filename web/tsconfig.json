@@ -6,16 +6,12 @@
     },
     {
       "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.worker.json"
     }
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["client/*"]
-    },
-    "types": ["./worker-configuration.d.ts"]
+    }
   }
 }
