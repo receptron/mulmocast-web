@@ -8,13 +8,13 @@
     "server"
   ],
   "scripts": {
-    "dev": "yarn run dev --workspace=web",
-    "dev:server": "yarn run dev --workspace=server",
-    "build": "yarn run build --workspace=web",
-    "build:server": "yarn run build --workspace=server",
-    "deploy": "yarn run config:dev --workspace=web && VITE_GTAG=GTM-N6QMN3VF yarn run build --workspace=web && yarn run deploy --workspace=server",
-    "deploy-prod": "yarn run config:prod --workspace=web && VITE_GTAG=GTM-W8L5QNPS yarn run build --workspace=web && yarn run deploy-prod --workspace=server && yarn run config:dev --workspace=web",
-    "lint": "yarn run lint --workspace=web",
+    "dev": "yarn workspace mulmocast-web run dev",
+    "dev:server": "yarn workspace mulmocast-server run dev",
+    "build": "yarn workspace mulmocast-web run build",
+    "build:server": "yarn workspace mulmocast-server run build",
+    "deploy": "yarn workspace mulmocast-web run config:dev && VITE_GTAG=GTM-N6QMN3VF yarn workspace mulmocast-web run build && yarn workspace mulmocast-server run deploy",
+    "deploy-prod": "yarn workspace mulmocast-web run config:prod && VITE_GTAG=GTM-W8L5QNPS yarn workspace mulmocast-web run build && yarn workspace mulmocast-server run deploy-prod && yarn workspace mulmocast-web run config:dev",
+    "lint": "yarn workspace mulmocast-web run lint",
     "format": "prettier --write 'web/**/*.{ts,json,yaml,vue}' 'server/**/*.{ts,json}' '*.json' '*.md'"
   },
   "devDependencies": {
