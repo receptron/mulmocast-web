@@ -66,6 +66,8 @@ const lang = {
   faq: {
     title: "FAQ",
     subtitle: "よくある質問",
+    copyLink: "リンクをコピー",
+    linkCopied: "リンクをクリップボードにコピーしました！",
     items: [
       {
         question: "MulmoCastとは何ですか？",

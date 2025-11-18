@@ -71,6 +71,8 @@ const lang = {
   faq: {
     title: "FAQ",
     subtitle: "Frequently Asked Questions",
+    copyLink: "Copy link",
+    linkCopied: "Link copied to clipboard!",
     items: [
       {
         question: "What is MulmoCast?",
