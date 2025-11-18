@@ -16,4 +16,7 @@ app.post("/api/echo", async (c) => {
   return c.json({ original: text, processed });
 });
 
+app.get("/api/echo", async (c) => {
+  return c.json({ message: "hello"});
+});
 export default app;
