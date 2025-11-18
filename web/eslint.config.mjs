@@ -1,6 +1,3 @@
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
 import js from "@eslint/js";
 import typescript from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
@@ -10,10 +7,6 @@ import prettier from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
 import globals from "globals";
 import sonarjs from "eslint-plugin-sonarjs";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const tsconfigRootDir = __dirname;
-const mainTsconfig = path.resolve(tsconfigRootDir, "tsconfig.worker.json");
 
 // Common base rules configuration
 const baseRules = {
@@ -63,45 +56,11 @@ export default [
   js.configs.recommended,
   sonarjs.configs.recommended,
   {
-    ignores: ["node_modules/**", ".vite/**", "dist/**", "client/components/ui/**"],
-  },
-  // Node.js environment configuration (Main & Preload)
-  {
-    files: ["server/**/*.{js,ts}"],
-    languageOptions: {
-      ...baseLanguageOptions,
-      parserOptions: {
-        ...baseLanguageOptions.parserOptions,
-        project: [mainTsconfig],
-        tsconfigRootDir,
-      },
-      globals: {
-        ...globals.node,
-      },
-    },
-    plugins: {
-      ...basePlugins,
-    },
-    rules: {
-      ...typescript.configs["recommended-type-checked"].rules,
-      ...baseRules,
-      ...sonarjsRules,
-      "@typescript-eslint/no-unsafe-assignment": "off",
-      "@typescript-eslint/no-unsafe-return": "off",
-      "@typescript-eslint/no-unsafe-argument": "off",
-      "@typescript-eslint/no-unsafe-call": "off",
-      "@typescript-eslint/no-unsafe-member-access": "off",
-      "@typescript-eslint/require-await": "off",
-    },
-    settings: {
-      "import/resolver": {
-        typescript: true,
-      },
-    },
+    ignores: ["node_modules/**", ".vite/**", "dist/**", "src/components/ui/**"],
   },
   // Vue configuration (Client process)
   {
-    files: ["client/**/*.vue"],
+    files: ["src/**/*.vue"],
     languageOptions: {
       parser: vueParser,
       parserOptions: {
@@ -154,7 +113,7 @@ export default [
   },
   // TypeScript files in Client process
   {
-    files: ["client/**/*.{js,ts}"],
+    files: ["src/**/*.{js,ts}"],
     languageOptions: {
       ...baseLanguageOptions,
       globals: {
