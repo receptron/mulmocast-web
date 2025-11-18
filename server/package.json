@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "deploy-prod": "wrangler deploy --name mulmocast-prod",
+    "dev": "wrangler dev --config ../wrangler.jsonc",
+    "deploy": "wrangler deploy --config ../wrangler.jsonc",
+    "deploy-prod": "wrangler deploy --config ../wrangler.jsonc --name mulmocast-prod",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
