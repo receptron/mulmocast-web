@@ -3,24 +3,23 @@
     <Navigation />
 
     <!-- Toast Notification -->
-    <Transition name="toast">
-      <div
-        v-if="showToast"
-        class="fixed right-4 top-20 z-50 rounded-lg border bg-background px-4 py-3 shadow-lg"
-      >
-        <div class="flex items-center gap-2">
-          <svg class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 13l4 4L19 7"
-            />
-          </svg>
-          <span class="text-sm">{{ t("faq.linkCopied") }}</span>
-        </div>
+    <div
+      v-if="showToast"
+      class="fixed right-4 top-20 z-50 rounded-lg border bg-background px-4 py-3 shadow-lg transition-all duration-300"
+      :class="toastVisible ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'"
+    >
+      <div class="flex items-center gap-2">
+        <svg class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+        <span class="text-sm">{{ t("faq.linkCopied") }}</span>
       </div>
-    </Transition>
+    </div>
 
     <div class="flex items-center justify-center p-4">
       <div class="w-full max-w-2xl space-y-6 py-8">
@@ -403,16 +402,26 @@ useHead({
 
 // Toast notification state
 const showToast = ref(false);
+const toastVisible = ref(false);
 
 // Copy link to clipboard
 const copyLink = async (hash: string) => {
   const url = `${window.location.origin}${window.location.pathname}${hash}`;
   try {
     await navigator.clipboard.writeText(url);
-    // Show toast notification
+    // Show toast notification with animation
     showToast.value = true;
+    // Trigger animation after DOM update
     setTimeout(() => {
-      showToast.value = false;
+      toastVisible.value = true;
+    }, 10);
+    // Hide toast after 2 seconds
+    setTimeout(() => {
+      toastVisible.value = false;
+      // Remove from DOM after animation completes
+      setTimeout(() => {
+        showToast.value = false;
+      }, 300);
     }, 2000);
   } catch (err) {
     console.error("Failed to copy:", err);
@@ -431,20 +440,3 @@ onMounted(() => {
   }
 });
 </script>
-
-<style scoped>
-.toast-enter-active,
-.toast-leave-active {
-  transition: all 0.3s ease;
-}
-
-.toast-enter-from {
-  opacity: 0;
-  transform: translateY(-1rem);
-}
-
-.toast-leave-to {
-  opacity: 0;
-  transform: translateY(-1rem);
-}
-</style>
