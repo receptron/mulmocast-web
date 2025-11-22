@@ -77,7 +77,7 @@ const lang = {
       {
         question: "料金はかかりますか？",
         answer:
-          "アプリケーション自体は無料でご利用いただけます。ただし、利用にはOpenAI / Google / Anthropicなどの各種API Keyが必要です。それらのAPIの利用には料金がかかります。",
+          "MulmoCast のアプリケーション自体は無料でご利用いただけます。\nただし、生成AIの利用には OpenAI / Google / Anthropic などの各種 API Key が必要で、これらの API の利用には料金が発生します。\n\nまた、ChatGPT Plus のような月額プランとは別の仕組みのため、月額課金をしていても API 利用料が無料になるわけではありません。\n\nMulmoCast はユーザーご自身の API Key を使って AI を呼び出す仕組みのため、MulmoCast 側から料金が請求されることはありません。",
       },
       {
         question: "どのプラットフォームで利用できますか？",

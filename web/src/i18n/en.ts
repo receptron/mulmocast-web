@@ -82,7 +82,7 @@ const lang = {
       {
         question: "Does it cost money?",
         answer:
-          "The application itself is free to use. However, you will need API Keys from providers such as OpenAI / Google / Anthropic. There are costs associated with using those APIs.",
+          "The MulmoCast application itself is free to use.\nHowever, using generative AI requires API Keys from providers such as OpenAI / Google / Anthropic, and using these APIs incurs costs.\n\nAdditionally, this is a separate system from monthly subscription plans like ChatGPT Plus, so having a monthly subscription does not make API usage free.\n\nMulmoCast uses your own API Keys to call AI services, so you will never be charged by MulmoCast itself.",
       },
       {
         question: "What platforms is it available on?",

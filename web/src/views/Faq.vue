@@ -78,7 +78,7 @@
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p class="text-muted-foreground">
+            <p class="text-muted-foreground whitespace-pre-line">
               {{ t("faq.items.1.answer") }}
             </p>
           </CardContent>
