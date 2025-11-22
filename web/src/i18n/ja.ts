@@ -158,6 +158,11 @@ const lang = {
         exampleNote: "この例では、音声の終端に6秒の余白を追加しています。",
         note: "audioParams を追加する場合は、その前の項目の最後にカンマ（,）を付けることを忘れないでください。",
       },
+      {
+        question: "エラーが発生した場合、問い合わせ時にどのような情報を共有すれば良いですか？",
+        answer:
+          "お問い合わせの際は、以下の情報を共有していただくと問題解決がスムーズになります。\n\n■ MulmoScript (JSON) のダウンロード方法\n問題が発生したプロジェクトのJSONファイルを以下の手順でダウンロードできます：\n対象のプロジェクトのページ → 「MulmoScript をダウンロード」\n\n■ ログファイルの場所\n• Mac: ~/Library/Application Support/MulmoCast/mulmocastLog\n• Windows: %APPDATA%\\MulmoCast\\mulmocastLog\n\nログファイルにはアプリケーションの動作ログが記録されており、エラー発生時の詳細情報が含まれます。\nフォルダ内には日付ごとにログファイルが分かれています。エラーが発生した日付のログファイルを共有してください。",
+      },
     ],
     backButton: "ホームに戻る",
   },
