@@ -82,7 +82,7 @@ const lang = {
       {
         question: "Does it cost money?",
         answer:
-          "The application itself is free to use. However, you will need API Keys from providers such as OpenAI / Google / Anthropic. There are costs associated with using those APIs.",
+          "The MulmoCast application itself is free to use.\nHowever, using generative AI requires API Keys from providers such as OpenAI / Google / Anthropic, and using these APIs incurs costs.\n\nAdditionally, this is a separate system from monthly subscription plans like ChatGPT Plus, so having a monthly subscription does not make API usage free.\n\nMulmoCast uses your own API Keys to call AI services, so you will never be charged by MulmoCast itself.",
       },
       {
         question: "What platforms is it available on?",
@@ -167,6 +167,11 @@ const lang = {
         example: `{'{'}\n  "speaker": "Presenter",\n  "text": "This beat has audio. add padding 6.",\n  "audioParams": {'{'}\n    "padding": 6\n  {'}'},\n  "moviePrompt": "Four shots in rapid succession: art, anime, documentary, and promotional style.",\n  "enableLipSync": false\n{'}'}`,
         exampleNote: "In this example, 6 seconds of padding is added to the end of the audio.",
         note: "When adding audioParams, remember to add a comma (,) at the end of the previous item.",
+      },
+      {
+        question: "What information should I share when contacting support about an error?",
+        answer:
+          'When contacting us, sharing the following information will help us resolve the issue more quickly:\n\n■ How to Download MulmoScript (JSON)\nYou can download the JSON file of the project where the issue occurred by:\nTarget Project Page → "Download MulmoScript"\n\n■ Log File Locations\n• Mac: ~/Library/Application Support/MulmoCast/mulmocastLog\n• Windows: %APPDATA%\\MulmoCast\\mulmocastLog\n\nLog files contain application operation logs with detailed error information.\nThe folder contains log files separated by date. Please share the log file from the date when the error occurred.',
       },
     ],
     backButton: "Back to Home",

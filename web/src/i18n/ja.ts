@@ -77,7 +77,7 @@ const lang = {
       {
         question: "料金はかかりますか？",
         answer:
-          "アプリケーション自体は無料でご利用いただけます。ただし、利用にはOpenAI / Google / Anthropicなどの各種API Keyが必要です。それらのAPIの利用には料金がかかります。",
+          "MulmoCast のアプリケーション自体は無料でご利用いただけます。\nただし、生成AIの利用には OpenAI / Google / Anthropic などの各種 API Key が必要で、これらの API の利用には料金が発生します。\n\nまた、ChatGPT Plus のような月額プランとは別の仕組みのため、月額課金をしていても API 利用料が無料になるわけではありません。\n\nMulmoCast はユーザーご自身の API Key を使って AI を呼び出す仕組みのため、MulmoCast 側から料金が請求されることはありません。",
       },
       {
         question: "どのプラットフォームで利用できますか？",
@@ -157,6 +157,11 @@ const lang = {
         example: `{'{'}\n  "speaker": "Presenter",\n  "text": "This beat has audio. add padding 6.",\n  "audioParams": {'{'}\n    "padding": 6\n  {'}'},\n  "moviePrompt": "Four shots in rapid succession: art, anime, documentary, and promotional style.",\n  "enableLipSync": false\n{'}'}`,
         exampleNote: "この例では、音声の終端に6秒の余白を追加しています。",
         note: "audioParams を追加する場合は、その前の項目の最後にカンマ（,）を付けることを忘れないでください。",
+      },
+      {
+        question: "エラーが発生した場合、問い合わせ時にどのような情報を共有すれば良いですか？",
+        answer:
+          "お問い合わせの際は、以下の情報を共有していただくと問題解決がスムーズになります。\n\n■ MulmoScript (JSON) のダウンロード方法\n問題が発生したプロジェクトのJSONファイルを以下の手順でダウンロードできます：\n対象のプロジェクトのページ → 「MulmoScript をダウンロード」\n\n■ ログファイルの場所\n• Mac: ~/Library/Application Support/MulmoCast/mulmocastLog\n• Windows: %APPDATA%\\MulmoCast\\mulmocastLog\n\nログファイルにはアプリケーションの動作ログが記録されており、エラー発生時の詳細情報が含まれます。\nフォルダ内には日付ごとにログファイルが分かれています。エラーが発生した日付のログファイルを共有してください。",
       },
     ],
     backButton: "ホームに戻る",
