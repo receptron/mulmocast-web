@@ -28,7 +28,7 @@
         <Card id="what-is-mulmocast" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#what-is-mulmocast`" class="hover:text-primary flex-1">{{ t("faq.items.0.question") }}</a>
+              <a href="#what-is-mulmocast" class="hover:text-primary flex-1">{{ t("faq.items.0.question") }}</a>
               <button
                 @click="copyLink('#what-is-mulmocast')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -55,7 +55,7 @@
         <Card id="pricing" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#pricing`" class="hover:text-primary flex-1">{{ t("faq.items.1.question") }}</a>
+              <a href="#pricing" class="hover:text-primary flex-1">{{ t("faq.items.1.question") }}</a>
               <button
                 @click="copyLink('#pricing')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -82,7 +82,7 @@
         <Card id="platforms" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#platforms`" class="hover:text-primary flex-1">{{ t("faq.items.2.question") }}</a>
+              <a href="#platforms" class="hover:text-primary flex-1">{{ t("faq.items.2.question") }}</a>
               <button
                 @click="copyLink('#platforms')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -109,7 +109,7 @@
         <Card id="use-cases" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#use-cases`" class="hover:text-primary flex-1">{{ t("faq.items.3.question") }}</a>
+              <a href="#use-cases" class="hover:text-primary flex-1">{{ t("faq.items.3.question") }}</a>
               <button
                 @click="copyLink('#use-cases')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -136,7 +136,7 @@
         <Card id="image-generation-error" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#image-generation-error`" class="hover:text-primary flex-1">{{ t("faq.items.4.question") }}</a>
+              <a href="#image-generation-error" class="hover:text-primary flex-1">{{ t("faq.items.4.question") }}</a>
               <button
                 @click="copyLink('#image-generation-error')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -163,9 +163,7 @@
         <Card id="organization-verification" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#organization-verification`" class="hover:text-primary flex-1">{{
-                t("faq.items.5.question")
-              }}</a>
+              <a href="#organization-verification" class="hover:text-primary flex-1">{{ t("faq.items.5.question") }}</a>
               <button
                 @click="copyLink('#organization-verification')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -238,7 +236,7 @@
         <Card id="video-quality" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#video-quality`" class="hover:text-primary flex-1">{{ t("faq.items.6.question") }}</a>
+              <a href="#video-quality" class="hover:text-primary flex-1">{{ t("faq.items.6.question") }}</a>
               <button
                 @click="copyLink('#video-quality')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -269,7 +267,7 @@
         <Card id="still-image-issue" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#still-image-issue`" class="hover:text-primary flex-1">{{ t("faq.items.7.question") }}</a>
+              <a href="#still-image-issue" class="hover:text-primary flex-1">{{ t("faq.items.7.question") }}</a>
               <button
                 @click="copyLink('#still-image-issue')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -300,7 +298,7 @@
         <Card id="no-narration-slide" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#no-narration-slide`" class="hover:text-primary flex-1">{{ t("faq.items.8.question") }}</a>
+              <a href="#no-narration-slide" class="hover:text-primary flex-1">{{ t("faq.items.8.question") }}</a>
               <button
                 @click="copyLink('#no-narration-slide')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -337,7 +335,7 @@
         <Card id="movie-cutoff" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#movie-cutoff`" class="hover:text-primary flex-1">{{ t("faq.items.9.question") }}</a>
+              <a href="#movie-cutoff" class="hover:text-primary flex-1">{{ t("faq.items.9.question") }}</a>
               <button
                 @click="copyLink('#movie-cutoff')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
@@ -374,7 +372,7 @@
         <Card id="bug-report" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a :href="`#bug-report`" class="hover:text-primary flex-1">{{ t("faq.items.10.question") }}</a>
+              <a href="#bug-report" class="hover:text-primary flex-1">{{ t("faq.items.10.question") }}</a>
               <button
                 @click="copyLink('#bug-report')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
