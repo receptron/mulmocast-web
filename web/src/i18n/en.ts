@@ -173,6 +173,11 @@ const lang = {
         answer:
           'When contacting us, sharing the following information will help us resolve the issue more quickly:\n\n■ How to Download MulmoScript (JSON)\nYou can download the JSON file of the project where the issue occurred by:\nTarget Project Page → "Download MulmoScript"\n\n■ Log File Locations\n• Mac: ~/Library/Application Support/MulmoCast/mulmocastLog\n• Windows: %APPDATA%\\MulmoCast\\mulmocastLog\n\nLog files contain application operation logs with detailed error information.\nThe folder contains log files separated by date. Please share the log file from the date when the error occurred.',
       },
+      {
+        question: "Can I change or turn off the BGM, or use my own audio files?",
+        answer:
+          "Yes, you can.\nFrom Style tab > Audio Parameters > BGM dropdown, you can select the following options:\n\n• BGM: Choose from built-in background music.\n• Custom Audio: Use your own audio files directly.\n• None: Turn off BGM.",
+      },
     ],
     backButton: "Back to Home",
   },
