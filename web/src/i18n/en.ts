@@ -181,7 +181,7 @@ const lang = {
       {
         question: "Is there a way to share one audio across multiple beats (spillover feature)?",
         answer:
-          "Yes, you can. MulmoCast supports an \"audio spillover\" feature that allows one audio (narration) to play across multiple beats. This feature is useful for creating music videos or displaying long narrations across multiple slides.\n\nYou can configure this in Advanced Mode.",
+          'Yes, you can. MulmoCast supports an "audio spillover" feature that allows one audio (narration) to play across multiple beats. This feature is useful for creating music videos or displaying long narrations across multiple slides.\n\nYou can configure this in Advanced Mode.',
         rulesLabel: "How it works:",
         rules: [
           "Audio starts in beats with text",
