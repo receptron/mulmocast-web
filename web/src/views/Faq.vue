@@ -423,6 +423,45 @@
           </CardContent>
         </Card>
 
+        <Card id="audio-spillover" class="hover:bg-muted/50 scroll-mt-20">
+          <CardHeader>
+            <CardTitle class="flex items-center justify-between gap-2">
+              <a href="#audio-spillover" class="hover:text-primary flex-1">{{ t("faq.items.12.question") }}</a>
+              <button
+                @click="copyLink('#audio-spillover')"
+                class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
+                :title="t('faq.copyLink')"
+              >
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  />
+                </svg>
+              </button>
+            </CardTitle>
+          </CardHeader>
+          <CardContent class="text-muted-foreground">
+            <p class="whitespace-pre-line">
+              {{ t("faq.items.12.answer") }}
+            </p>
+            <p class="mt-4 font-semibold">{{ t("faq.items.12.rulesLabel") }}</p>
+            <ul class="mt-2 list-disc space-y-2 pl-5">
+              <li>{{ t("faq.items.12.rules.0") }}</li>
+              <li>{{ t("faq.items.12.rules.1") }}</li>
+              <li>{{ t("faq.items.12.rules.2") }}</li>
+            </ul>
+            <p class="mt-4 font-semibold">{{ t("faq.items.12.durationLabel") }}</p>
+            <ul class="mt-2 list-disc space-y-2 pl-5">
+              <li>{{ t("faq.items.12.duration.0") }}</li>
+              <li>{{ t("faq.items.12.duration.1") }}</li>
+              <li>{{ t("faq.items.12.duration.2") }}</li>
+            </ul>
+          </CardContent>
+        </Card>
+
         <!-- Back Button -->
         <div class="text-center">
           <Button as="a" :href="localizedUrl('/')" variant="outline"> {{ t("faq.backButton") }} </Button>

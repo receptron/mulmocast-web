@@ -178,6 +178,23 @@ const lang = {
         answer:
           "Yes, you can.\nFrom Style tab > Audio Parameters > BGM dropdown, you can select the following options:\n\n• BGM: Choose from built-in background music.\n• Custom Audio: Use your own audio files directly.\n• None: Turn off BGM.",
       },
+      {
+        question: "Is there a way to share one audio across multiple beats (spillover feature)?",
+        answer:
+          "Yes, you can. MulmoCast supports an \"audio spillover\" feature that allows one audio (narration) to play across multiple beats. This feature is useful for creating music videos or displaying long narrations across multiple slides.\n\nYou can configure this in Advanced Mode.",
+        rulesLabel: "How it works:",
+        rules: [
+          "Audio starts in beats with text",
+          "In beats without text, the previous beat's audio continues to play",
+          "You can specify each beat's display time with BEAT duration",
+        ],
+        durationLabel: "Automatic BEAT duration distribution:",
+        duration: [
+          "Beats without BEAT duration specified receive equal distribution of remaining audio time",
+          "When some beats have BEAT duration specified, those durations are prioritized and the remainder is distributed equally",
+          "Each beat is guaranteed at least 1 second during equal distribution",
+        ],
+      },
     ],
     backButton: "Back to Home",
   },
