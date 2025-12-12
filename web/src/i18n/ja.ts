@@ -59,13 +59,13 @@ const lang = {
   },
   navigation: {
     home: "ホーム",
-    faq: "FAQ",
+    faq: "FAQ（よくある質問）",
     festival: "映画祭",
     openMenu: "メニューを開く",
   },
   faq: {
-    title: "FAQ",
-    subtitle: "よくある質問",
+    title: "FAQ（よくある質問）",
+    subtitle: "Frequently Asked Questions",
     copyLink: "リンクをコピー",
     linkCopied: "リンクをクリップボードにコピーしました！",
     items: [
@@ -194,6 +194,12 @@ const lang = {
       subtitle: "台本を書くだけ。AIが動画まで。",
       description: "学生の発表も、ビジネスの提案も、{emphasize}。",
       emphasize: "伝わる形に自動で",
+    },
+    support: {
+      title: "💬 質問・要望はこちら",
+      description: "使い方の疑問、機能の要望、困ったことがあれば、お気軽にDiscordコミュニティにご参加ください！",
+      joinDiscord: "Discordに参加",
+      viewFaq: "FAQ（よくある質問）を見る",
     },
     features: {
       title: "できること",

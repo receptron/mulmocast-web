@@ -205,6 +205,12 @@ const lang = {
       description: "For student presentations and business proposals, {emphasize}.",
       emphasize: "automatically in a compelling format",
     },
+    support: {
+      title: "💬 Questions & Requests",
+      description: "Have questions about how to use MulmoCast? Feature requests? Need help? Join our Discord community! Also check out our FAQ for common questions.",
+      joinDiscord: "Join Discord",
+      viewFaq: "View FAQ",
+    },
     features: {
       title: "What You Can Do",
       items: [
