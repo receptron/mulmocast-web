@@ -133,6 +133,121 @@
           </CardContent>
         </Card>
 
+        <Card id="openai-usage-tiers" class="hover:bg-muted/50 scroll-mt-20">
+          <CardHeader>
+            <CardTitle class="flex items-center justify-between gap-2">
+              <a href="#openai-usage-tiers" class="hover:text-primary flex-1">{{ t("faq.items.13.question") }}</a>
+              <button
+                @click="copyLink('#openai-usage-tiers')"
+                class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
+                :title="t('faq.copyLink')"
+              >
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  />
+                </svg>
+              </button>
+            </CardTitle>
+          </CardHeader>
+          <CardContent class="text-muted-foreground">
+            <p class="whitespace-pre-line">
+              {{ t("faq.items.13.answer") }}
+            </p>
+            <p class="mt-4 font-semibold">{{ t("faq.items.13.tiersLabel") }}</p>
+            <ul class="list-disc space-y-2 pl-5">
+              <li>{{ t("faq.items.13.tiers.0") }}</li>
+              <li>{{ t("faq.items.13.tiers.1") }}</li>
+              <li>{{ t("faq.items.13.tiers.2") }}</li>
+              <li>{{ t("faq.items.13.tiers.3") }}</li>
+            </ul>
+            <p class="mt-4">
+              {{ t("faq.items.13.note") }}
+              <a
+                :href="t('faq.items.13.rateLimitsLink')"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:underline"
+              >
+                {{ t("faq.items.13.rateLimitsText") }}
+              </a>
+            </p>
+            <p class="mt-4">
+              {{ t("faq.items.13.checkTier") }}
+              <a
+                :href="t('faq.items.13.organizationLimitsLink')"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:underline"
+              >
+                {{ t("faq.items.13.organizationLimitsText") }}
+              </a>
+              {{ t("faq.items.13.checkTierSuffix") }}
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card id="gemini-rate-limits" class="hover:bg-muted/50 scroll-mt-20">
+          <CardHeader>
+            <CardTitle class="flex items-center justify-between gap-2">
+              <a href="#gemini-rate-limits" class="hover:text-primary flex-1">{{ t("faq.items.14.question") }}</a>
+              <button
+                @click="copyLink('#gemini-rate-limits')"
+                class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
+                :title="t('faq.copyLink')"
+              >
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  />
+                </svg>
+              </button>
+            </CardTitle>
+          </CardHeader>
+          <CardContent class="text-muted-foreground">
+            <p class="whitespace-pre-line">
+              {{ t("faq.items.14.answer") }}
+            </p>
+            <p class="mt-4 font-semibold">{{ t("faq.items.14.tiersLabel") }}</p>
+            <ul class="list-disc space-y-2 pl-5">
+              <li>{{ t("faq.items.14.tiers.0") }}</li>
+              <li>{{ t("faq.items.14.tiers.1") }}</li>
+              <li>{{ t("faq.items.14.tiers.2") }}</li>
+              <li>{{ t("faq.items.14.tiers.3") }}</li>
+            </ul>
+            <p class="mt-4">{{ t("faq.items.14.note1") }}</p>
+            <p class="mt-4">
+              {{ t("faq.items.14.checkTier") }}
+              <a
+                :href="t('faq.items.14.aiStudioUsageLink')"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:underline"
+              >
+                {{ t("faq.items.14.aiStudioUsageText") }}
+              </a>
+              {{ t("faq.items.14.checkTierSuffix") }}
+            </p>
+            <p class="mt-4">
+              {{ t("faq.items.14.note2") }}
+              <a
+                :href="t('faq.items.14.geminiRateLimitsLink')"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:underline"
+              >
+                {{ t("faq.items.14.geminiRateLimitsText") }}
+              </a>
+            </p>
+          </CardContent>
+        </Card>
+
         <Card id="image-generation-error" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
