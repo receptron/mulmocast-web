@@ -225,7 +225,8 @@ const lang = {
           "Tier 2: Total costs exceeding $250 + 30+ days since payment completion",
           "Tier 3: Total costs exceeding $1,000 + 30+ days since payment completion",
         ],
-        note1: "※ Tier 2/3 costs are based on total accumulated costs for Google Cloud services (including Gemini API).",
+        note1:
+          "※ Tier 2/3 costs are based on total accumulated costs for Google Cloud services (including Gemini API).",
         checkTier: "You can check your tier at",
         aiStudioUsageLink: "https://aistudio.google.com/usage?tab=rate-limit",
         aiStudioUsageText: "AI Studio Usage",
@@ -246,7 +247,8 @@ const lang = {
     },
     support: {
       title: "💬 Questions & Requests",
-      description: "Have questions about how to use MulmoCast? Feature requests? Need help? Join our Discord community! Also check out our FAQ for common questions.",
+      description:
+        "Have questions about how to use MulmoCast? Feature requests? Need help? Join our Discord community! Also check out our FAQ for common questions.",
       joinDiscord: "Join Discord",
       viewFaq: "View FAQ",
     },
