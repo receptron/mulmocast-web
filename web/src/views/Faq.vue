@@ -190,12 +190,12 @@
           </CardContent>
         </Card>
 
-        <Card id="gemini-rate-limits" class="hover:bg-muted/50 scroll-mt-20">
+        <Card id="gemini-usage-tiers" class="hover:bg-muted/50 scroll-mt-20">
           <CardHeader>
             <CardTitle class="flex items-center justify-between gap-2">
-              <a href="#gemini-rate-limits" class="hover:text-primary flex-1">{{ t("faq.items.14.question") }}</a>
+              <a href="#gemini-usage-tiers" class="hover:text-primary flex-1">{{ t("faq.items.14.question") }}</a>
               <button
-                @click="copyLink('#gemini-rate-limits')"
+                @click="copyLink('#gemini-usage-tiers')"
                 class="text-muted-foreground hover:text-foreground hover:bg-muted flex-shrink-0 rounded p-2 transition-colors"
                 :title="t('faq.copyLink')"
               >
