@@ -199,7 +199,7 @@ const lang = {
         question: "What are OpenAI Usage Tiers?",
         answer:
           "OpenAI Usage Tiers are usage limits for the OpenAI API, managed through a tier system based on your payment history.\n\nAs your payment amount to the API increases, you automatically advance to the next usage tier. Higher tiers increase your monthly spending limit and relax API rate limit restrictions.",
-        tiersLabel: "Usage limits for each tier (up to Tier 3):",
+        tiersLabel: "Usage limits for each tier (up to Tier 3, as of December 2025):",
         tiers: [
           "Free: $100/month",
           "Tier 1: $100/month (requires at least $5 in payments)",
@@ -218,7 +218,7 @@ const lang = {
         question: "What are Gemini API Usage Tiers?",
         answer:
           "Gemini API Usage Tiers are usage restrictions for the Gemini API. Unlike OpenAI, they are managed by request counts and token counts rather than monetary limits.\n\nAs your usage and costs increase, you automatically upgrade to higher tiers with relaxed rate limits.",
-        tiersLabel: "Conditions for each tier:",
+        tiersLabel: "Conditions for each tier (as of December 2025):",
         tiers: [
           "Free: Users in eligible countries",
           "Tier 1: Paid billing account linked to the project",

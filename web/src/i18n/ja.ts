@@ -189,7 +189,7 @@ const lang = {
         question: "OpenAI の Usage Tiers とはなんですか？",
         answer:
           "OpenAI APIの利用制限です。支払い実績に応じて変わる「Tierシステム」で管理されています。\n\nAPIへの支払い額が増えると、自動的に次の利用Tierに昇格します。Tierが上がると、月の利用上限額が増え、API rate limitの制限も緩和されます。",
-        tiersLabel: "各Tierの利用上限額（Tier 3まで）:",
+        tiersLabel: "各Tierの利用上限額（Tier 3まで、2025年12月現在）:",
         tiers: [
           "Free: $100/月",
           "Tier 1: $100/月（$5以上の入金が必要）",
@@ -208,7 +208,7 @@ const lang = {
         question: "Gemini API の Usage Tiers とはなんですか？",
         answer:
           "Gemini APIの利用制限です。OpenAIと異なり、金額ベースの上限ではなく、リクエスト数やトークン数で管理されています。\n\n使用量と費用が増加すると、自動的に上位のTierにアップグレードされ、レート制限が緩和されます。",
-        tiersLabel: "各Tierの条件:",
+        tiersLabel: "各Tierの条件（2025年12月現在）:",
         tiers: [
           "Free: 対象となる国のユーザー",
           "Tier 1: プロジェクトにリンクされている有料の請求先アカウント",
