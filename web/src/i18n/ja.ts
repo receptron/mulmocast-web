@@ -221,7 +221,7 @@ const lang = {
         aiStudioUsageText: "AI Studio Usage",
         checkTierSuffix: "から確認できます。",
         note2: "具体的なレート制限値やモデル別の詳細は公式ドキュメントを確認してください：",
-        geminiRateLimitsLink: "https://ai.google.dev/gemini-api/docs/rate-limits?hl=ja",
+        geminiRateLimitsLink: "https://ai.google.dev/gemini-api/docs/rate-limits",
         geminiRateLimitsText: "Gemini API Rate Limits",
       },
     ],
