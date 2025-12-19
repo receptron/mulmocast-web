@@ -41,3 +41,4 @@ coverage
 
 # Playwright MCP
 .playwright-mcp
+.mcp.json

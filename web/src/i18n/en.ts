@@ -195,6 +195,46 @@ const lang = {
           "Each beat is guaranteed at least 1 second during equal distribution",
         ],
       },
+      {
+        question: "What are OpenAI Usage Tiers?",
+        answer:
+          "OpenAI Usage Tiers are usage limits for the OpenAI API, managed through a tier system based on your payment history.\n\nAs your payment amount to the API increases, you automatically advance to the next usage tier. Higher tiers increase your monthly spending limit and relax API rate limit restrictions.",
+        tiersLabel: "Usage limits for each tier (up to Tier 3):",
+        tiers: [
+          "Free: $100/month",
+          "Tier 1: $100/month (requires at least $5 in payments)",
+          "Tier 2: $500/month (requires at least $50 in payments + 7+ days since first payment)",
+          "Tier 3: $1,000/month (requires at least $100 in payments + 7+ days since first payment)",
+        ],
+        note: "For Tier 4 and above, and rate limits for each model, please check the official documentation:",
+        rateLimitsLink: "https://platform.openai.com/docs/guides/rate-limits#usage-tiers",
+        rateLimitsText: "Rate Limits",
+        checkTier: "You can check your tier at",
+        organizationLimitsLink: "https://platform.openai.com/settings/organization/limits",
+        organizationLimitsText: "Organization Limits",
+        checkTierSuffix: ".",
+      },
+      {
+        question: "What are Gemini API Usage Tiers?",
+        answer:
+          "Gemini API Usage Tiers are usage restrictions for the Gemini API. Unlike OpenAI, they are managed by request counts and token counts rather than monetary limits.\n\nAs your usage and costs increase, you automatically upgrade to higher tiers with relaxed rate limits.",
+        tiersLabel: "Conditions for each tier:",
+        tiers: [
+          "Free: Users in eligible countries",
+          "Tier 1: Paid billing account linked to the project",
+          "Tier 2: Total costs exceeding $250 + 30+ days since payment completion",
+          "Tier 3: Total costs exceeding $1,000 + 30+ days since payment completion",
+        ],
+        note1:
+          "※ Tier 2/3 costs are based on total accumulated costs for Google Cloud services (including Gemini API).",
+        checkTier: "You can check your tier at",
+        aiStudioUsageLink: "https://aistudio.google.com/usage?tab=rate-limit",
+        aiStudioUsageText: "AI Studio Usage",
+        checkTierSuffix: ".",
+        note2: "For specific rate limit values and model-specific details, please check the official documentation:",
+        geminiRateLimitsLink: "https://ai.google.dev/gemini-api/docs/rate-limits",
+        geminiRateLimitsText: "Gemini API Rate Limits",
+      },
     ],
     backButton: "Back to Home",
   },
@@ -207,7 +247,8 @@ const lang = {
     },
     support: {
       title: "💬 Questions & Requests",
-      description: "Have questions about how to use MulmoCast? Feature requests? Need help? Join our Discord community! Also check out our FAQ for common questions.",
+      description:
+        "Have questions about how to use MulmoCast? Feature requests? Need help? Join our Discord community! Also check out our FAQ for common questions.",
       joinDiscord: "Join Discord",
       viewFaq: "View FAQ",
     },
