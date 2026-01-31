@@ -66,7 +66,79 @@ const lang = {
     home: "Home",
     faq: "FAQ",
     festival: "Festival",
+    family: "Family",
     openMenu: "Open menu",
+  },
+  family: {
+    title: "MulmoCast Family",
+    subtitle: "Tools that make up the MulmoCast ecosystem",
+    cli: {
+      title: "MulmoCast CLI",
+      tagline: "The Core Engine of MulmoCast",
+      description:
+        "The full-featured CLI tool that is the essence of MulmoCast. An AI-native presentation platform with script generation, image/audio synthesis, and video/PDF/slide output capabilities.",
+    },
+    app: {
+      title: "MulmoCast App",
+      tagline: "Desktop Application",
+      description:
+        "MulmoCast CLI wrapped as an easy-to-use GUI app. Just install and create videos for most use cases.",
+      download: "Download",
+    },
+    slides: {
+      title: "MulmoCast Slides",
+      tagline: "Presentation Converter",
+      description:
+        "Convert Keynote, PPTX, PDF, and Marp Markdown presentations to MulmoScript format. Extracts slide images and supports LLM-powered narration generation.",
+    },
+    vision: {
+      title: "MulmoCast Vision",
+      tagline: "Slide-Focused Tool",
+      description:
+        "An MCP tool specialized for slide creation, combining MulmoCast CLI with templates. Create proposals and reports in seconds with 80+ business templates.",
+    },
+    mcp: {
+      title: "MulmoCast MCP",
+      tagline: "CLI as MCP Server",
+      description:
+        "MulmoCast CLI functionality provided as an MCP server. Use MulmoCast features directly from MCP clients like Claude Desktop.",
+    },
+    viewer: {
+      title: "MulmoCast Viewer",
+      tagline: "Web Embedding Component",
+      description:
+        "A Vue 3 component for embedding bundled data from CLI into websites. Features multi-language support, speed adjustment, and theming.",
+    },
+    chat: {
+      title: "MulmoChat",
+      tagline: "Next-Gen Voice Dialogue OS",
+      description:
+        "A next-generation voice dialogue platform using Chat Protocol. Fuses text and visuals for real-time image generation and interactive content during conversation.",
+    },
+    protocol: {
+      title: "GUI Chat Protocol",
+      tagline: "Chat Plugin Specification",
+      description:
+        "A standard protocol for building GUI chat plugins. Provides Vue 3 and React adapters for portable, framework-agnostic plugin development.",
+    },
+    badges: {
+      gui: "GUI",
+      cli: "CLI",
+      automation: "Automation",
+      component: "Component",
+      format: "Format",
+      openSource: "Open Source",
+      multimodal: "Multimodal",
+      slides: "Slide Generation",
+      core: "Core",
+      fullFeature: "Full Feature",
+      autoGenerate: "Auto Generate",
+      nextGen: "Next Gen",
+      converter: "Converter",
+      protocol: "Protocol",
+      integration: "AI Integration",
+    },
+    backButton: "Back to Home",
   },
   faq: {
     title: "FAQ",

@@ -134,6 +134,7 @@ const localizedUrl = useLocalizedUrl();
 const navigation = computed(() => [
   { name: t("navigation.home"), href: localizedUrl("/") },
   { name: t("navigation.faq"), href: localizedUrl("/faq") },
+  { name: t("navigation.family"), href: localizedUrl("/family") },
   { name: t("navigation.festival"), href: localizedUrl("/festival") },
   //  { name: "サンプル", href: "/samples" },
 ]);
