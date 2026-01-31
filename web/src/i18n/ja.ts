@@ -15,45 +15,53 @@ const lang = {
     title: "AIショートフィルムフェス 2025",
   },
   festival: {
-    subtitle: "MulmoCast AI Short Film Festival",
-    about: {
-      title: "映画祭について",
+    resultsAnnouncement: "結果発表",
+    grandPrix: {
+      title: "グランプリ",
+      work: "無名の人",
+      creator: "柿原飛翔",
       description:
-        "MulmoCast AI Short Film Festivalは、AIを活用して制作された動画作品を募集・展示するイベントです。あなたの創造性とMulmoCastの力で、新しい映像表現に挑戦しませんか？",
+        "影ばかり撮る無名の青年の一夜を通じて、「なんとなく惹かれてしまうもの」とAIとの距離感を重ねて描いた映像作品。審査員満場一致でグランプリに選出。",
     },
-    applicationMethod: {
-      title: "応募方法",
-      step1: "作品をYouTubeにアップロード（限定公開可）",
-      step2: "応募フォーム（Googleフォーム）から以下の情報を申請",
-      requirements: {
-        title: "作品タイトル",
-        youtubeLink: "YouTubeリンク",
-        creator: "制作者名（個人／チーム名）",
-        contact: "連絡先",
-        script: "MulmoScript ファイル (.json 形式)",
+    categoryAwards: {
+      title: "部門賞",
+      visual: {
+        title: "ビジュアル部門",
+        work: "無名の人",
+        creator: "柿原飛翔",
+      },
+      animation: {
+        title: "アニメーション部門",
+        work: "1クリックの向こう側",
+        creator: "カワベシンクン",
+      },
+      promotion: {
+        title: "プロモーション部門",
+        work: "W Pepper Melon",
+        creator: "ungr18",
+      },
+      documentary: {
+        title: "ドキュメンタリー部門",
+        work: "AUTHENTIC ZERO",
+        creator: "keythpiece",
       },
     },
-    eligibility: {
-      title: "応募要件",
-      items: [
-        "18歳以上（未成年は原則応募不可。但し主催者が個別に許可した場合を除く。）",
-        "MulmoCastで制作した作品であること",
-        "複数応募不可",
-        "チーム応募可",
-        "他のコンテストとの併願不可",
-        "海外応募可（賞金対応は別途調整）",
-      ],
+    statistics: {
+      title: "開催概要",
+      totalEntries: "総応募数: 184作品",
+      eventDate: "審査ライブ開催日: 2025年12月13日",
+      totalPrize: "賞金総額: 90万円（グランプリ 50万円）",
     },
-    results: {
-      title: "結果発表",
-      items: ["{date} YouTubeライブで発表予定", "TECH WORLDチャンネル＋各社配信予定", "参加はオンラインに限定"],
-      date: "12月中旬",
+    reviewLive: {
+      title: "審査ライブ",
+      description:
+        "2025年12月13日にYouTubeで開催された審査ライブでは、審査員長の中島聡氏をはじめ、佐渡島庸平氏、白井暁彦氏、オースミユーカ氏による審査が行われました。",
     },
-    latestInfo: {
-      title: "最新情報",
-      description: "詳細・応募フォームは{eventLink}で公開中です。最新情報はXアカウント{twitterLink}をご確認ください。",
-      eventLinkText: "こちら",
-      twitterHandle: "{'@'}mulmocast",
+    relatedLinks: {
+      title: "関連リンク",
+      noteArticle: "審査ライブ全まとめ（note記事）",
+      passedWorks: "一次予選通過作品一覧",
+      officialPage: "公式イベントページ",
     },
     backButton: "ホームに戻る",
   },
