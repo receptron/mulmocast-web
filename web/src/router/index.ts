@@ -6,6 +6,7 @@ import HomeView from "../views/Home.vue";
 import AboutView from "../views/About.vue";
 import Faq from "../views/Faq.vue";
 import Festival from "../views/Festival.vue";
+import Family from "../views/Family.vue";
 import Samples from "../views/Samples.vue";
 import Test from "../views/test.vue";
 import Document from "../views/Document.vue";
@@ -30,6 +31,11 @@ const routeChildren: Array<RouteRecordRaw> = [
     path: "festival",
     name: "festival",
     component: Festival,
+  },
+  {
+    path: "family",
+    name: "family",
+    component: Family,
   },
   {
     path: "samples",

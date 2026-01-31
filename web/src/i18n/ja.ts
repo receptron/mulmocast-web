@@ -61,7 +61,79 @@ const lang = {
     home: "ホーム",
     faq: "FAQ（よくある質問）",
     festival: "映画祭",
+    family: "ファミリー",
     openMenu: "メニューを開く",
+  },
+  family: {
+    title: "MulmoCast Family",
+    subtitle: "MulmoCastエコシステムを構成するツール群",
+    cli: {
+      title: "MulmoCast CLI",
+      tagline: "MulmoCastのコアエンジン",
+      description:
+        "MulmoCastの本質となるフル機能CLIツール。台本生成、画像・音声生成、動画・PDF・スライド出力まで、すべての機能を備えたAIネイティブなプレゼンテーションプラットフォーム。",
+    },
+    app: {
+      title: "MulmoCast App",
+      tagline: "デスクトップアプリケーション",
+      description:
+        "MulmoCast CLIをGUIアプリとして簡単に使えるようにしたもの。インストールするだけで、ほとんどの用途で動画が作れます。",
+      download: "ダウンロード",
+    },
+    slides: {
+      title: "MulmoCast Slides",
+      tagline: "プレゼン変換ツール",
+      description:
+        "Keynote、PPTX、PDF、Marp MarkdownなどのプレゼンテーションファイルをMulmoScriptに変換。スライド画像の抽出やLLMによるナレーション生成も可能です。",
+    },
+    vision: {
+      title: "MulmoCast Vision",
+      tagline: "スライド作成特化ツール",
+      description:
+        "MulmoCast CLIとテンプレートを組み合わせたスライド作成特化のMCPツール。80以上のビジネステンプレートで提案書やレポートを数秒で作成できます。",
+    },
+    mcp: {
+      title: "MulmoCast MCP",
+      tagline: "CLIのMCPサーバー版",
+      description:
+        "MulmoCast CLIの機能をMCPサーバーとして提供。Claude DesktopなどのMCPクライアントから直接MulmoCastの機能を利用できます。",
+    },
+    viewer: {
+      title: "MulmoCast Viewer",
+      tagline: "Web埋め込みコンポーネント",
+      description:
+        "CLIでバンドルしたデータをVue 3のWebサイトに組み込むためのビューアーコンポーネント。多言語対応、速度調整、テーマ機能を備えています。",
+    },
+    chat: {
+      title: "MulmoChat",
+      tagline: "次世代音声対話OS",
+      description:
+        "Chat Protocolを使った次世代の音声対話プラットフォーム。テキストとビジュアルを融合し、会話しながらリアルタイムで画像やインタラクティブコンテンツを体験できます。",
+    },
+    protocol: {
+      title: "GUI Chat Protocol",
+      tagline: "チャットプラグイン仕様",
+      description:
+        "チャットアプリ用GUIプラグインの標準プロトコル。Vue 3とReactアダプターを提供し、フレームワークに依存しないポータブルなプラグイン開発を可能にします。",
+    },
+    badges: {
+      gui: "GUI",
+      cli: "CLI",
+      automation: "自動化",
+      component: "コンポーネント",
+      format: "フォーマット",
+      openSource: "オープンソース",
+      core: "コア",
+      fullFeature: "フル機能",
+      autoGenerate: "自動生成",
+      nextGen: "次世代",
+      converter: "変換",
+      protocol: "プロトコル",
+      multimodal: "マルチモーダル",
+      slides: "スライド生成",
+      integration: "AI統合",
+    },
+    backButton: "ホームに戻る",
   },
   faq: {
     title: "FAQ（よくある質問）",
