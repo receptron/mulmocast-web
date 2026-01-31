@@ -15,50 +15,53 @@ const lang = {
     title: "AI Short Film Festival 2025",
   },
   festival: {
-    subtitle: "MulmoCast AI Short Film Festival",
-    about: {
-      title: "About the Festival",
+    resultsAnnouncement: "Results Announcement",
+    grandPrix: {
+      title: "Grand Prix",
+      work: "The Nameless",
+      creator: "Hisho Kakihara",
       description:
-        "MulmoCast AI Short Film Festival is an event that accepts and showcases video works created using AI. Why not challenge yourself to create new forms of visual expression with your creativity and the power of MulmoCast?",
+        "A visual work depicting one night of a nameless young man who only photographs shadows, overlaying the sense of distance between AI and 'things we are somehow drawn to.' Unanimously selected as Grand Prix by the judges.",
     },
-    applicationMethod: {
-      title: "How to Apply",
-      step1: "Upload your work to YouTube (unlisted is allowed)",
-      step2: "Submit the following information via the application form (Google Form)",
-      requirements: {
-        title: "Work title",
-        youtubeLink: "YouTube link",
-        creator: "Creator name (individual/team name)",
-        contact: "Contact information",
-        script: "MulmoScript file (.json format)",
+    categoryAwards: {
+      title: "Category Awards",
+      visual: {
+        title: "Visual Award",
+        work: "The Nameless",
+        creator: "Hisho Kakihara",
+      },
+      animation: {
+        title: "Animation Award",
+        work: "Beyond One Click",
+        creator: "Kawabe Shinkun",
+      },
+      promotion: {
+        title: "Promotion Award",
+        work: "W Pepper Melon",
+        creator: "ungr18",
+      },
+      documentary: {
+        title: "Documentary Award",
+        work: "AUTHENTIC ZERO",
+        creator: "keythpiece",
       },
     },
-    eligibility: {
-      title: "Eligibility Requirements",
-      items: [
-        "Applicants must be 18 years or older (minors are generally not eligible, except with individual permission from the organizer)",
-        "Work must be created using MulmoCast",
-        "Multiple submissions not allowed",
-        "Team submissions allowed",
-        "Concurrent applications to other contests not allowed",
-        "Overseas applications accepted (prize money subject to separate arrangements)",
-      ],
+    statistics: {
+      title: "Event Overview",
+      totalEntries: "Total Entries: 184 works",
+      eventDate: "Review Live Date: December 13, 2025",
+      totalPrize: "Total Prize Money: 900,000 JPY (Grand Prix: 500,000 JPY)",
     },
-    results: {
-      title: "Results Announcement",
-      items: [
-        "Scheduled to be announced on YouTube Live in {date}",
-        "Planned to be broadcast on TECH WORLD channel + other channels",
-        "Participation limited to online",
-      ],
-      date: "mid-December",
-    },
-    latestInfo: {
-      title: "Latest Information",
+    reviewLive: {
+      title: "Review Live",
       description:
-        "Details and application form are now available {eventLink}. For the latest information, please check our X account {twitterLink}.",
-      eventLinkText: "here",
-      twitterHandle: "{'@'}mulmocast",
+        "The review live was held on YouTube on December 13, 2025, with judges including Satoshi Nakajima (Chief Judge), Yohei Sadoshima, Akihiko Shirai, and Yuka Osumi.",
+    },
+    relatedLinks: {
+      title: "Related Links",
+      noteArticle: "Complete Review Live Summary (note article)",
+      passedWorks: "First Round Passed Works",
+      officialPage: "Official Event Page",
     },
     backButton: "Back to Home",
   },
