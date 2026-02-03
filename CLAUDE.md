@@ -25,7 +25,7 @@ MulmoCastエコシステムを構成するツール群。App以外はnpmパッ�
 | ----------------- | ------------------------------------------------------------ | ------------------- |
 | MulmoCast CLI     | コアエンジン。フル機能のAIプレゼンテーションプラットフォーム | `mulmocast`         |
 | MulmoCast App     | CLIをGUIアプリ化。Mac/Windows対応                            | -                   |
-| MulmoCast Slides  | Keynote/PPTX/PDF/MarpからMulmoScript変換                     | `mulmocast-slides`  |
+| MulmoCast Slides  | Keynote/PPTX/PDF/MarpからMulmoScript変換                     | `@mulmocast/slide`  |
 | MulmoCast Vision  | テンプレート×CLIのスライド作成特化MCPツール                  | `mulmocast-vision`  |
 | MulmoCast MCP     | CLIのMCPサーバー版                                           | `mulmocast-mcp`     |
 | MulmoCast Viewer  | bundleデータをVue 3 Webに組み込むコンポーネント              | `mulmocast-viewer`  |
