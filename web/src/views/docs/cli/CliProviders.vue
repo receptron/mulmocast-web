@@ -336,7 +336,23 @@
               }}
             </p>
 
-            <div class="border-border rounded border p-3">
+            <div class="mb-4">
+              <h4 class="text-foreground mb-2 text-sm font-medium">
+                {{ locale === "ja" ? "デフォルト設定" : "Default Settings" }}
+              </h4>
+              <div class="grid gap-2 md:grid-cols-2">
+                <div class="bg-muted rounded p-2">
+                  <p class="text-muted-foreground text-xs">{{ locale === "ja" ? "声" : "Voice" }}</p>
+                  <code class="text-primary text-sm">Atla</code>
+                </div>
+                <div class="bg-muted rounded p-2">
+                  <p class="text-muted-foreground text-xs">decoration</p>
+                  <code class="text-primary text-sm">neutral</code>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-border mb-4 rounded border p-3">
               <h4 class="text-foreground mb-2 text-sm font-medium">
                 {{ locale === "ja" ? "必要なもの" : "Requirements" }}
               </h4>
@@ -346,6 +362,23 @@
                   <code class="text-primary">KOTODAMA_API_KEY</code>
                 </li>
               </ul>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ locale === "ja" ? "設定例" : "Configuration Example" }}
+            </h4>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "speechParams": {
+    "speakers": {
+      "Narrator": {
+        "provider": "kotodama",
+        "voiceId": "Atla",
+        "decoration": "happy"  // {{ locale === "ja" ? "感情を指定" : "Specify emotion" }}
+      }
+    }
+  }
+}</code></pre>
             </div>
           </CardContent>
         </Card>
@@ -369,7 +402,22 @@
               }}
             </p>
 
-            <div class="border-border rounded border p-3">
+            <div class="mb-4">
+              <h4 class="text-foreground mb-2 text-sm font-medium">
+                {{ locale === "ja" ? "利用できる声（5種類）" : "Available Voices (5 types)" }}
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="voice in ['Kore', 'Puck', 'Charon', 'Fenrir', 'Aoede']"
+                  :key="voice"
+                  class="bg-muted text-foreground rounded px-2 py-1 text-xs"
+                >
+                  {{ voice }}
+                </span>
+              </div>
+            </div>
+
+            <div class="border-border mb-4 rounded border p-3">
               <h4 class="text-foreground mb-2 text-sm font-medium">
                 {{ locale === "ja" ? "必要なもの" : "Requirements" }}
               </h4>
@@ -389,6 +437,22 @@
                   >
                 </li>
               </ul>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ locale === "ja" ? "設定例" : "Configuration Example" }}
+            </h4>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "speechParams": {
+    "speakers": {
+      "Host": {
+        "provider": "gemini",
+        "voiceId": "Kore"  // {{ locale === "ja" ? "デフォルト声" : "Default voice" }}
+      }
+    }
+  }
+}</code></pre>
             </div>
           </CardContent>
         </Card>
@@ -664,7 +728,8 @@
     "speakers": {
       "{{ locale === "ja" ? "ナレーター" : "Narrator" }}": {
         "provider": "kotodama",
-        "voiceId": "your-kotodama-voice-id"
+        "voiceId": "Atla",           <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "デフォルト声" : "Default voice" }}</span>
+        "decoration": "neutral"      <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "感情：neutral, happy, sad等" : "Emotion: neutral, happy, sad, etc." }}</span>
       }
     }
   },
@@ -677,6 +742,18 @@
     }
   ]
 }</code></pre>
+            </div>
+            <div class="text-muted-foreground mt-2 text-xs">
+              <p class="mb-1">
+                {{ locale === "ja" ? "必要な環境変数：" : "Required environment variable:" }}
+                <code class="text-primary">KOTODAMA_API_KEY</code>
+              </p>
+              <p>
+                {{ locale === "ja" ? "decorationオプション：" : "decoration options:" }}
+                <code class="bg-muted rounded px-1">neutral</code>, <code class="bg-muted rounded px-1">happy</code>,
+                <code class="bg-muted rounded px-1">sad</code>,
+                {{ locale === "ja" ? "など" : "etc." }}
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -837,6 +914,25 @@
               {{ locale === "ja" ? "Google Cloudの画像生成AI。" : "Google Cloud's image generation AI." }}
             </p>
 
+            <div class="mb-4">
+              <h4 class="text-foreground mb-2 text-sm font-medium">
+                {{ locale === "ja" ? "利用できるモデル" : "Available Models" }}
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="model in [
+                    'imagen-4.0-generate-001',
+                    'imagen-4.0-ultra-generate-001',
+                    'imagen-4.0-fast-generate-001',
+                  ]"
+                  :key="model"
+                  class="bg-muted text-foreground rounded px-2 py-1 text-xs"
+                >
+                  {{ model }}
+                </span>
+              </div>
+            </div>
+
             <div class="border-border rounded border p-3">
               <h4 class="text-foreground mb-2 text-sm font-medium">
                 {{ locale === "ja" ? "必要なもの" : "Requirements" }}
@@ -849,6 +945,79 @@
                 </li>
               </ul>
             </div>
+          </CardContent>
+        </Card>
+
+        <!-- Image Provider Samples -->
+        <h3 class="text-foreground mt-8 mb-4 text-lg font-medium">
+          {{ locale === "ja" ? "画像プロバイダーサンプル" : "Image Provider Samples" }}
+        </h3>
+
+        <!-- OpenAI DALL-E Sample -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-sm">
+              {{ locale === "ja" ? "OpenAI DALL-E サンプル" : "OpenAI DALL-E Sample" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "DALL-E画像生成" : "DALL-E Image Generation" }}",
+  "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+  "imageParams": {
+    "provider": "openai",
+    "model": "dall-e-3"  <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "または gpt-image-1（認証必要）" : "or gpt-image-1 (verification required)" }}</span>
+  },
+  "speechParams": {
+    "speakers": { "Narrator": { "provider": "openai", "voiceId": "nova" } }
+  },
+  "beats": [
+    {
+      "speaker": "Narrator",
+      "text": "{{ locale === "ja" ? "美しい夕焼けの風景です。" : "A beautiful sunset landscape." }}",
+      "imagePrompt": "{{ locale === "ja" ? "オレンジと紫のグラデーションの夕焼け空、海に反射する光、シルエットの椰子の木" : "Orange and purple gradient sunset sky, light reflecting on the ocean, silhouette of palm trees" }}"
+    }
+  ]
+}</code></pre>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Google Imagen Sample -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-sm">
+              {{ locale === "ja" ? "Google Imagen サンプル" : "Google Imagen Sample" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "Imagen画像生成" : "Imagen Image Generation" }}",
+  "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+  "imageParams": {
+    "provider": "google",
+    "model": "imagen-4.0-generate-001"
+  },
+  "speechParams": {
+    "speakers": { "Narrator": { "provider": "openai", "voiceId": "nova" } }
+  },
+  "beats": [
+    {
+      "speaker": "Narrator",
+      "text": "{{ locale === "ja" ? "未来都市のイメージです。" : "An image of a futuristic city." }}",
+      "imagePrompt": "{{ locale === "ja" ? "未来都市、空飛ぶ車、ネオンライト、高層ビル、サイバーパンク風" : "Futuristic city, flying cars, neon lights, skyscrapers, cyberpunk style" }}"
+    }
+  ]
+}</code></pre>
+            </div>
+            <p class="text-muted-foreground mt-2 text-xs">
+              {{ locale === "ja" ? "必要：" : "Required:" }}
+              <code class="text-primary">gcloud auth application-default login</code>
+            </p>
           </CardContent>
         </Card>
       </section>
@@ -906,6 +1075,26 @@
               }}
             </p>
 
+            <div class="mb-4">
+              <h4 class="text-foreground mb-2 text-sm font-medium">
+                {{ locale === "ja" ? "利用できるモデル" : "Available Models" }}
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="model in [
+                    'bytedance/seedance-1-lite',
+                    'kwaivgi/kling-v2.1',
+                    'google/veo-2',
+                    'minimax/hailuo-02',
+                  ]"
+                  :key="model"
+                  class="bg-muted text-foreground rounded px-2 py-1 text-xs"
+                >
+                  {{ model }}
+                </span>
+              </div>
+            </div>
+
             <div class="border-border rounded border p-3">
               <h4 class="text-foreground mb-2 text-sm font-medium">
                 {{ locale === "ja" ? "必要なもの" : "Requirements" }}
@@ -922,6 +1111,153 @@
                   >
                 </li>
               </ul>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Video Provider Samples -->
+        <h3 class="text-foreground mt-8 mb-4 text-lg font-medium">
+          {{ locale === "ja" ? "動画プロバイダーサンプル" : "Video Provider Samples" }}
+        </h3>
+
+        <!-- Google Veo Sample -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-sm">
+              {{ locale === "ja" ? "Google Veo サンプル" : "Google Veo Sample" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-3 text-xs">
+              {{
+                locale === "ja"
+                  ? "Google Veoで動画を生成。moviePromptを指定すると、画像の代わりに動画が生成されます。"
+                  : "Generate video with Google Veo. Specifying moviePrompt generates video instead of images."
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "Veo動画生成" : "Veo Video Generation" }}",
+  "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+  "movieParams": {
+    "provider": "google",
+    "model": "veo-2.0-generate-001"  <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "veo-3.0もあり" : "veo-3.0 also available" }}</span>
+  },
+  "speechParams": {
+    "speakers": { "Narrator": { "provider": "openai", "voiceId": "nova" } }
+  },
+  "beats": [
+    {
+      "speaker": "Narrator",
+      "text": "{{ locale === "ja" ? "波が打ち寄せる海岸の風景です。" : "A scene of waves crashing on the shore." }}",
+      "moviePrompt": "{{ locale === "ja" ? "穏やかな波が砂浜に打ち寄せる、夕暮れの海岸、金色の光" : "Gentle waves washing onto sandy beach, coastal sunset, golden light" }}"
+    }
+  ]
+}</code></pre>
+            </div>
+            <p class="text-muted-foreground mt-2 text-xs">
+              {{ locale === "ja" ? "必要：" : "Required:" }}
+              <code class="text-primary">GEMINI_API_KEY</code>
+            </p>
+          </CardContent>
+        </Card>
+
+        <!-- Replicate Video Sample -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-sm">
+              {{ locale === "ja" ? "Replicate 動画サンプル" : "Replicate Video Sample" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-3 text-xs">
+              {{
+                locale === "ja"
+                  ? "Replicateで様々な動画生成モデルを使用できます。"
+                  : "Various video generation models available on Replicate."
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "Replicate動画生成" : "Replicate Video Generation" }}",
+  "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+  "movieParams": {
+    "provider": "replicate",
+    "model": "bytedance/seedance-1-lite"  <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "コスト効率良" : "Cost efficient" }}</span>
+  },
+  "speechParams": {
+    "speakers": { "Narrator": { "provider": "openai", "voiceId": "nova" } }
+  },
+  "beats": [
+    {
+      "speaker": "Narrator",
+      "text": "{{ locale === "ja" ? "花が咲く様子を見てみましょう。" : "Let's watch a flower blooming." }}",
+      "imagePrompt": "{{ locale === "ja" ? "白い花のつぼみ、庭園" : "White flower bud, garden" }}",
+      "moviePrompt": "{{ locale === "ja" ? "花がゆっくりと開花する、タイムラプス風" : "Flower slowly blooming, time-lapse style" }}"
+    }
+  ]
+}</code></pre>
+            </div>
+            <p class="text-muted-foreground mt-2 text-xs">
+              {{ locale === "ja" ? "必要：" : "Required:" }}
+              <code class="text-primary">REPLICATE_API_TOKEN</code>
+            </p>
+          </CardContent>
+        </Card>
+
+        <!-- Lip Sync Sample -->
+        <Card class="mb-4 border-purple-200 bg-purple-50 dark:border-purple-900 dark:bg-purple-950">
+          <CardHeader>
+            <CardTitle class="text-sm">
+              {{ locale === "ja" ? "リップシンク（口パク）サンプル" : "Lip Sync Sample" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-3 text-xs">
+              {{
+                locale === "ja"
+                  ? "音声に合わせてキャラクターの口を動かす。Replicateのリップシンクモデルを使用。"
+                  : "Animate character's mouth to match audio. Uses Replicate's lip sync models."
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "リップシンクデモ" : "Lip Sync Demo" }}",
+  "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+  "imageParams": { "provider": "openai", "model": "dall-e-3" },
+  "movieParams": {
+    "provider": "replicate",
+    "lipSyncModel": "bytedance/omni-human"  <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "静止画からリップシンク" : "Lip sync from static image" }}</span>
+  },
+  "speechParams": {
+    "speakers": { "Host": { "provider": "openai", "voiceId": "nova" } }
+  },
+  "beats": [
+    {
+      "speaker": "Host",
+      "text": "{{ locale === "ja" ? "こんにちは、私はAIアシスタントです。" : "Hello, I am an AI assistant." }}",
+      "imagePrompt": "{{ locale === "ja" ? "笑顔の女性キャラクター、正面向き、アニメ風" : "Smiling female character, facing forward, anime style" }}",
+      "lipSync": true
+    }
+  ]
+}</code></pre>
+            </div>
+            <div class="mt-3">
+              <p class="text-muted-foreground mb-2 text-xs">
+                {{ locale === "ja" ? "利用できるリップシンクモデル：" : "Available lip sync models:" }}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="model in ['bytedance/omni-human', 'bytedance/latentsync', 'tmappdev/lipsync']"
+                  :key="model"
+                  class="bg-muted text-foreground rounded px-2 py-1 text-xs"
+                >
+                  {{ model }}
+                </span>
+              </div>
             </div>
           </CardContent>
         </Card>

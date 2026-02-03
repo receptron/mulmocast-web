@@ -846,41 +846,85 @@
                 {{ locale === "ja" ? "サウンドエフェクト" : "Sound Effects" }}
               </h3>
               <p class="text-muted-foreground mb-2 text-sm">
-                {{ locale === "ja" ? "AIが効果音を自動生成します。" : "AI automatically generates sound effects." }}
+                {{
+                  locale === "ja"
+                    ? "動画の内容に合わせて、AIが効果音を自動生成します。"
+                    : "AI automatically generates sound effects matching your video content."
+                }}
               </p>
 
               <div
                 class="mb-3 rounded border border-amber-200 bg-amber-50 p-3 text-sm dark:border-amber-900 dark:bg-amber-950"
               >
                 <p class="text-amber-800 dark:text-amber-200">
-                  <strong>{{ locale === "ja" ? "必要なもの：" : "Required:" }}</strong>
-                  <code class="text-primary">REPLICATE_API_TOKEN</code>
+                  <strong>{{ locale === "ja" ? "必要条件：" : "Requirements:" }}</strong>
                 </p>
-                <p class="text-muted-foreground mt-1 text-xs">
-                  {{
-                    locale === "ja"
-                      ? "現在はReplicateのzsxkib/mmaudioモデルのみ対応しています。"
-                      : "Currently only supports Replicate's zsxkib/mmaudio model."
-                  }}
-                </p>
+                <ul class="text-muted-foreground mt-1 space-y-1 text-xs">
+                  <li>
+                    • <code class="text-primary">REPLICATE_API_TOKEN</code>
+                    {{ locale === "ja" ? "環境変数が必要" : "environment variable required" }}
+                  </li>
+                  <li>
+                    •
+                    {{
+                      locale === "ja"
+                        ? "動画（moviePromptまたはmovie type）が必須 - 動画を元に効果音を生成"
+                        : "Video (moviePrompt or movie type) required - generates sound effects based on video"
+                    }}
+                  </li>
+                </ul>
               </div>
 
+              <h4 class="text-foreground mb-2 text-sm font-medium">
+                {{ locale === "ja" ? "完全な設定例" : "Complete Configuration Example" }}
+              </h4>
               <div class="bg-muted overflow-x-auto rounded p-3">
                 <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "サウンドエフェクトデモ" : "Sound Effect Demo" }}",
+  "soundEffectParams": {
+    "provider": "replicate",
+    "model": "zsxkib/mmaudio"
+  },
   "beats": [
     {
-      "text": "{{ locale === "ja" ? "ドアを開けます。" : "Opening the door." }}",
-      "soundEffectPrompt": "{{ locale === "ja" ? "木製のドアがゆっくり開く音" : "Sound of a wooden door slowly opening" }}"
+      "text": "{{ locale === "ja" ? "ロケットが発射します" : "A rocket launches into space" }}",
+      "soundEffectPrompt": "{{ locale === "ja" ? "ロケット発射音、炎と爆発" : "rocket launch sound with fire and explosion" }}",
+      "moviePrompt": "{{ locale === "ja" ? "発射台からロケットが打ち上がる" : "A rocket launching from a launch pad" }}"
+    },
+    {
+      "text": "{{ locale === "ja" ? "雷が落ちます" : "Lightning strikes" }}",
+      "soundEffectPrompt": "{{ locale === "ja" ? "激しい雷鳴と稲妻の音" : "intense thunder and lightning sound" }}",
+      "moviePrompt": "{{ locale === "ja" ? "夜空に稲妻が走る" : "Lightning striking across the night sky" }}"
     }
   ]
 }</code></pre>
               </div>
 
-              <p class="text-muted-foreground mt-2 text-xs">
+              <div class="mt-3 grid gap-2 md:grid-cols-2">
+                <div class="border-border rounded border p-2">
+                  <code class="text-primary text-xs">soundEffectParams</code>
+                  <p class="text-muted-foreground mt-1 text-xs">
+                    {{
+                      locale === "ja"
+                        ? "グローバル設定（provider: replicate, model: zsxkib/mmaudio）"
+                        : "Global config (provider: replicate, model: zsxkib/mmaudio)"
+                    }}
+                  </p>
+                </div>
+                <div class="border-border rounded border p-2">
+                  <code class="text-primary text-xs">soundEffectPrompt</code>
+                  <p class="text-muted-foreground mt-1 text-xs">
+                    {{ locale === "ja" ? "beat単位で効果音の説明を指定" : "Describe the sound effect per beat" }}
+                  </p>
+                </div>
+              </div>
+
+              <p class="text-muted-foreground mt-3 text-xs">
                 {{
                   locale === "ja"
-                    ? "soundEffectPromptでシーンに合った効果音を生成します。音声と同時に再生されます。"
-                    : "Use soundEffectPrompt to generate sound effects matching the scene. Plays along with the speech."
+                    ? "効果音はmmaudioモデルが動画を解析して生成します。soundEffectPromptの説明と動画内容を組み合わせて最適な効果音を作成します。"
+                    : "The mmaudio model analyzes your video to generate sound effects. It combines the soundEffectPrompt description with video content to create optimal effects."
                 }}
               </p>
             </CardContent>

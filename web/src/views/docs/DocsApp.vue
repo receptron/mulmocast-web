@@ -34,14 +34,20 @@
             <a href="#usage" class="text-muted-foreground hover:text-primary block text-sm">{{
               locale === "ja" ? "3. 使い方" : "3. Usage"
             }}</a>
+            <a href="#workflow" class="text-muted-foreground hover:text-primary block text-sm">{{
+              locale === "ja" ? "4. ワークフロー例" : "4. Workflow Example"
+            }}</a>
+            <a href="#viewer" class="text-muted-foreground hover:text-primary block text-sm">{{
+              locale === "ja" ? "5. Mulmo Viewer" : "5. Mulmo Viewer"
+            }}</a>
             <a href="#settings" class="text-muted-foreground hover:text-primary block text-sm">{{
-              locale === "ja" ? "4. 設定" : "4. Settings"
+              locale === "ja" ? "6. 設定" : "6. Settings"
             }}</a>
             <a href="#videos" class="text-muted-foreground hover:text-primary block text-sm">{{
-              locale === "ja" ? "5. チュートリアル動画" : "5. Tutorial Videos"
+              locale === "ja" ? "7. チュートリアル動画" : "7. Tutorial Videos"
             }}</a>
             <a href="#links" class="text-muted-foreground hover:text-primary block text-sm">{{
-              locale === "ja" ? "6. 関連リンク" : "6. Related Links"
+              locale === "ja" ? "8. 関連リンク" : "8. Related Links"
             }}</a>
           </nav>
         </CardContent>
@@ -231,10 +237,207 @@
         </div>
       </section>
 
+      <!-- Workflow Example -->
+      <section id="workflow" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ locale === "ja" ? "4. ワークフロー例" : "4. Workflow Example" }}
+        </h2>
+        <p class="text-muted-foreground mb-4">
+          {{
+            locale === "ja"
+              ? "Apple新製品発表をアニメ風画像で動画化する例を紹介します。"
+              : "Here's an example of creating a video about Apple's new product announcement with anime-style images."
+          }}
+        </p>
+
+        <!-- Step 1: AI Chat -->
+        <div class="mb-6">
+          <h3 class="text-foreground mb-3 text-lg font-medium">
+            Step 1: {{ locale === "ja" ? "AIチャットでコンテンツ読み込み" : "Load Content with AI Chat" }}
+          </h3>
+          <div class="bg-muted rounded-lg p-4">
+            <code class="text-sm"
+              >https://www.apple.com/jp/apple-events/ {{ locale === "ja" ? "を読み込んで" : "please load this" }}</code
+            >
+          </div>
+          <p class="text-muted-foreground mt-2 text-sm">
+            {{
+              locale === "ja"
+                ? "AIがWebページの内容を解析し、コンテンツを理解します。EXA APIを設定すると検索機能も利用可能です。"
+                : "AI analyzes web page content. With EXA API configured, search functionality is also available."
+            }}
+          </p>
+        </div>
+
+        <!-- Step 2: Template Selection -->
+        <div class="mb-6">
+          <h3 class="text-foreground mb-3 text-lg font-medium">
+            Step 2: {{ locale === "ja" ? "テンプレート選択" : "Select Template" }}
+          </h3>
+          <p class="text-muted-foreground text-sm">
+            {{
+              locale === "ja"
+                ? "テンプレートを選んで「入力欄にコピー」し、必要に応じてプロンプトを調整して送信します。"
+                : "Select a template, click 'Copy to input', adjust the prompt if needed, and send."
+            }}
+          </p>
+          <div class="bg-muted mt-2 rounded-lg p-3">
+            <p class="text-xs">
+              {{ locale === "ja" ? "ヒント: " : "Tip: " }}
+              <code>in 5 beats</code>
+              {{ locale === "ja" ? "を追加してビート数を指定できます" : " to specify the number of beats" }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3: Style Settings -->
+        <div class="mb-6">
+          <h3 class="text-foreground mb-3 text-lg font-medium">
+            Step 3: {{ locale === "ja" ? "スタイル設定" : "Style Settings" }}
+          </h3>
+          <p class="text-muted-foreground text-sm">
+            {{
+              locale === "ja"
+                ? "Styleタブで画像生成モデルを選択します。gpt-image-1を使うにはOpenAI認証が必要です。"
+                : "Select image generation model in Style tab. OpenAI verification is required for gpt-image-1."
+            }}
+          </p>
+          <div class="mt-3 overflow-x-auto">
+            <table class="border-border w-full border-collapse border text-sm">
+              <thead>
+                <tr class="bg-muted">
+                  <th class="border-border border px-4 py-2 text-left">{{ locale === "ja" ? "モデル" : "Model" }}</th>
+                  <th class="border-border border px-4 py-2 text-left">
+                    {{ locale === "ja" ? "要件" : "Requirements" }}
+                  </th>
+                  <th class="border-border border px-4 py-2 text-left">{{ locale === "ja" ? "特徴" : "Features" }}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border-border border px-4 py-2"><code>gpt-image-1</code></td>
+                  <td class="border-border border px-4 py-2">
+                    {{ locale === "ja" ? "OpenAI認証必要" : "OpenAI verification required" }}
+                  </td>
+                  <td class="border-border border px-4 py-2">
+                    {{ locale === "ja" ? "最高品質、アニメ風対応" : "Highest quality, anime style support" }}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border-border border px-4 py-2"><code>dall-e-3</code></td>
+                  <td class="border-border border px-4 py-2">
+                    {{ locale === "ja" ? "認証不要" : "No verification needed" }}
+                  </td>
+                  <td class="border-border border px-4 py-2">
+                    {{ locale === "ja" ? "標準品質" : "Standard quality" }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Step 4: Generate -->
+        <div class="mb-6">
+          <h3 class="text-foreground mb-3 text-lg font-medium">
+            Step 4: {{ locale === "ja" ? "コンテンツ生成" : "Generate Content" }}
+          </h3>
+          <p class="text-muted-foreground text-sm">
+            {{
+              locale === "ja"
+                ? "出力設定で形式を選択し、「コンテンツ生成」ボタンを押します。右下に進行状況が表示されます。"
+                : "Select format in output settings and click 'Generate Content'. Progress is shown in the bottom right."
+            }}
+          </p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <Badge>Movie</Badge>
+            <Badge>Podcast</Badge>
+            <Badge>PDF</Badge>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mulmo Viewer -->
+      <section id="viewer" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">5. Mulmo Viewer</h2>
+        <p class="text-muted-foreground mb-4">
+          {{
+            locale === "ja"
+              ? "様々な形態（マルチモーダル）でコンテンツを視聴できるビューアーです。"
+              : "A viewer that allows you to experience content in various modalities."
+          }}
+        </p>
+
+        <div class="grid gap-4 md:grid-cols-3">
+          <div class="border-border rounded-lg border p-4 text-center">
+            <ImageIcon class="text-primary mx-auto mb-2 h-8 w-8" />
+            <h3 class="text-foreground font-medium">{{ locale === "ja" ? "画像/動画" : "Image/Video" }}</h3>
+            <p class="text-muted-foreground mt-1 text-sm">
+              {{ locale === "ja" ? "ビートごとに表示" : "Displayed per beat" }}
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-4 text-center">
+            <Volume2 class="text-primary mx-auto mb-2 h-8 w-8" />
+            <h3 class="text-foreground font-medium">{{ locale === "ja" ? "音声" : "Audio" }}</h3>
+            <p class="text-muted-foreground mt-1 text-sm">
+              {{ locale === "ja" ? "TTSで生成" : "TTS generated" }}
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-4 text-center">
+            <FileText class="text-primary mx-auto mb-2 h-8 w-8" />
+            <h3 class="text-foreground font-medium">{{ locale === "ja" ? "テキスト" : "Text" }}</h3>
+            <p class="text-muted-foreground mt-1 text-sm">
+              {{ locale === "ja" ? "字幕表示" : "Caption display" }}
+            </p>
+          </div>
+        </div>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "多言語対応" : "Multilingual Support" }}
+        </h3>
+        <div class="space-y-3">
+          <div class="border-border rounded-lg border p-4">
+            <h4 class="text-foreground font-medium">
+              {{ locale === "ja" ? "テキストを翻訳" : "Translate Text" }}
+            </h4>
+            <p class="text-muted-foreground mt-1 text-sm">
+              {{
+                locale === "ja"
+                  ? "「文章」のドロップダウンで言語を選択し、「翻訳する」ボタンを押します。"
+                  : "Select language from 'Text' dropdown and click 'Translate' button."
+              }}
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-4">
+            <h4 class="text-foreground font-medium">
+              {{ locale === "ja" ? "音声を別言語で生成" : "Generate Audio in Another Language" }}
+            </h4>
+            <p class="text-muted-foreground mt-1 text-sm">
+              {{
+                locale === "ja"
+                  ? "「音声」のドロップダウンで言語を選択し、「音声生成」ボタンを押します。"
+                  : "Select language from 'Audio' dropdown and click 'Generate Audio' button."
+              }}
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-muted mt-4 rounded-lg p-4">
+          <p class="text-muted-foreground text-sm">
+            <strong>{{ locale === "ja" ? "操作方法: " : "Controls: " }}</strong>
+            {{
+              locale === "ja"
+                ? "画像/動画にポインターを合わせると再生ボタンが表示されます。視聴中でもページ送りは可能です。"
+                : "Hover over image/video to show play button. You can navigate pages even during playback."
+            }}
+          </p>
+        </div>
+      </section>
+
       <!-- Settings -->
       <section id="settings" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "4. 設定" : "4. Settings" }}
+          {{ locale === "ja" ? "6. 設定" : "6. Settings" }}
         </h2>
         <p class="text-muted-foreground mb-4">
           {{
@@ -244,26 +447,103 @@
           }}
         </p>
 
-        <div class="grid gap-4 md:grid-cols-2">
+        <!-- API Keys -->
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "APIキー設定" : "API Key Settings" }}
+        </h3>
+        <div class="mb-6 overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-4 py-2 text-left">{{ locale === "ja" ? "キー" : "Key" }}</th>
+                <th class="border-border border px-4 py-2 text-left">{{ locale === "ja" ? "用途" : "Purpose" }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="key in apiKeys" :key="key.name">
+                <td class="border-border border px-4 py-2">
+                  <code>{{ key.name }}</code>
+                </td>
+                <td class="border-border border px-4 py-2">{{ locale === "ja" ? key.descJa : key.descEn }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Language Settings -->
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "言語設定" : "Language Settings" }}
+        </h3>
+        <div class="mb-6 grid gap-4 md:grid-cols-2">
           <div class="border-border rounded-lg border p-4">
-            <h3 class="text-foreground mb-2 font-medium">
-              {{ locale === "ja" ? "APIキー設定" : "API Key Settings" }}
-            </h3>
+            <h4 class="text-foreground mb-2 font-medium">
+              {{ locale === "ja" ? "スクリプトの主言語" : "Script Main Language" }}
+            </h4>
             <p class="text-muted-foreground text-sm">
-              {{
-                locale === "ja"
-                  ? "各種サービス（画像/動画/音声生成）のAPIキー"
-                  : "API keys for various services (image/video/audio generation)"
-              }}
+              {{ locale === "ja" ? "生成するコンテンツの言語を設定します" : "Set the language for generated content" }}
             </p>
           </div>
           <div class="border-border rounded-lg border p-4">
-            <h3 class="text-foreground mb-2 font-medium">
-              {{ locale === "ja" ? "言語設定" : "Language Settings" }}
-            </h3>
+            <h4 class="text-foreground mb-2 font-medium">
+              {{ locale === "ja" ? "翻訳先の言語" : "Translation Target Languages" }}
+            </h4>
             <p class="text-muted-foreground text-sm">
-              {{ locale === "ja" ? "スクリプト言語、翻訳先言語" : "Script language, translation target language" }}
+              {{
+                locale === "ja"
+                  ? "多言語対応時の翻訳先言語を設定します"
+                  : "Set target languages for multilingual support"
+              }}
             </p>
+          </div>
+        </div>
+
+        <!-- LLM Settings -->
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "LLM設定" : "LLM Settings" }}
+        </h3>
+        <div class="mb-6 grid gap-4 md:grid-cols-2">
+          <div class="border-border rounded-lg border p-4">
+            <h4 class="text-foreground mb-2 font-medium">
+              {{ locale === "ja" ? "プロバイダー選択" : "Provider Selection" }}
+            </h4>
+            <p class="text-muted-foreground text-sm">
+              {{ locale === "ja" ? "OpenAI、Ollama等から選択" : "Choose from OpenAI, Ollama, etc." }}
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-4">
+            <h4 class="text-foreground mb-2 font-medium">
+              {{ locale === "ja" ? "モデル選択" : "Model Selection" }}
+            </h4>
+            <p class="text-muted-foreground text-sm">
+              {{ locale === "ja" ? "gpt-5、gpt-4o等のモデルを選択" : "Select models like gpt-5, gpt-4o, etc." }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Platform Notes -->
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "プラットフォーム別注意事項" : "Platform Notes" }}
+        </h3>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="border-border rounded-lg border p-4">
+            <div class="flex items-center gap-2">
+              <Apple class="h-5 w-5" />
+              <h4 class="text-foreground font-medium">macOS</h4>
+            </div>
+            <ul class="text-muted-foreground mt-2 list-inside list-disc text-sm">
+              <li>{{ locale === "ja" ? "初回起動時に「開く」を選択" : "Select 'Open' on first launch" }}</li>
+              <li>{{ locale === "ja" ? "Apple Silicon / Intel両対応" : "Supports Apple Silicon / Intel" }}</li>
+            </ul>
+          </div>
+          <div class="border-border rounded-lg border p-4">
+            <div class="flex items-center gap-2">
+              <Monitor class="h-5 w-5" />
+              <h4 class="text-foreground font-medium">Windows</h4>
+            </div>
+            <ul class="text-muted-foreground mt-2 list-inside list-disc text-sm">
+              <li>{{ locale === "ja" ? "64-bit版のみ対応" : "64-bit only" }}</li>
+              <li>{{ locale === "ja" ? "SmartScreen警告が出る場合あり" : "SmartScreen warning may appear" }}</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -271,7 +551,7 @@
       <!-- Videos -->
       <section id="videos" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "5. チュートリアル動画" : "5. Tutorial Videos" }}
+          {{ locale === "ja" ? "7. チュートリアル動画" : "7. Tutorial Videos" }}
         </h2>
 
         <Tabs default-value="ja" class="w-full">
@@ -331,7 +611,7 @@
       <!-- Links -->
       <section id="links" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "6. 関連リンク" : "6. Related Links" }}
+          {{ locale === "ja" ? "8. 関連リンク" : "8. Related Links" }}
         </h2>
 
         <div class="space-y-3">
@@ -391,6 +671,9 @@ import {
   FileEdit,
   Settings,
   FolderOutput,
+  Volume2,
+  FileText,
+  Image as ImageIcon,
 } from "lucide-vue-next";
 
 const { t, locale } = useI18n();
@@ -462,5 +745,14 @@ const videosEn = [
   { category: "Onboarding", title: "Series Part 1", id: "uBRl8_Bo41o" },
   { category: "Onboarding", title: "Series Part 2", id: "7gWOt4viaSA" },
   { category: "Onboarding", title: "Series Part 3", id: "AVSu2uShFD8" },
+];
+
+const apiKeys = [
+  { name: "OPENAI_API_KEY", descJa: "LLM、TTS、画像生成（必須）", descEn: "LLM, TTS, image generation (required)" },
+  { name: "GEMINI_API_KEY", descJa: "Gemini LLM、TTS", descEn: "Gemini LLM, TTS" },
+  { name: "ANTHROPIC_API_KEY", descJa: "Claude LLM", descEn: "Claude LLM" },
+  { name: "REPLICATE_API_TOKEN", descJa: "動画生成、リップシンク", descEn: "Video generation, lip sync" },
+  { name: "ELEVENLABS_API_KEY", descJa: "高品質TTS", descEn: "High-quality TTS" },
+  { name: "EXA_API_KEY", descJa: "AI検索機能", descEn: "AI search feature" },
 ];
 </script>
