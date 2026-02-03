@@ -2,6 +2,21 @@
 
 MulmoCast Viewerを使用したウェブアプリケーション。
 
+## プロジェクト目標 (Issue #52)
+
+公式サイトでMulmoファミリー全体の情報を一元管理。
+
+**ゴール**: 公式サイトに行けばMulmoファミリー（CLI, App, Chat, Viewer等）の情報がすべてわかる状態
+
+### 現在のスコープ
+
+1. **ドキュメントのありかの整理** - 各リポジトリのREADME/docsの構造を把握
+2. **ドキュメント化** - Vueページとして公式サイトに実装
+3. **リンク集** - 必要に応じて外部リソースへのリンク
+4. **YouTube埋め込み** - 説明動画を日本語/英語に分けて全て埋め込み
+
+---
+
 ## MulmoCast Family
 
 MulmoCastエコシステムを構成するツール群。App以外はnpmパッケージとして公開。
@@ -209,13 +224,35 @@ GUIChatPluginTemplate（プラグイン開発用）
 
 チャンネル: [@SingularitySociety](https://www.youtube.com/@SingularitySociety)
 
-| カテゴリ | 内容 |
-|---------|------|
-| インストール | Mac版/Windows版インストールガイド |
-| オンボーディング | 3回シリーズ |
-| チュートリアル | 画像・動画生成、キャラクター設定、リップシンク、Gemini API |
+#### 日本語
 
-**日本語/英語**: 各動画に両言語版あり
+| カテゴリ | タイトル | ID |
+|---------|---------|-----|
+| インストール | インストールガイド (Mac版) | `qbxteoIwgXg` |
+| インストール | インストールガイド (Windows版) | `ar_iC7lTSjE` |
+| セットアップ | 初回セットアップ＆動画生成マニュアル | `_Ofy3mlKsDg` |
+| オンボーディング | シリーズ 第1回 | `vz1V36KbBi0` |
+| オンボーディング | シリーズ 第2回 | `wgMYv77-uLE` |
+| オンボーディング | シリーズ 第3回 | `DmNfmgmnWXU` |
+| チュートリアル | Part 1 - 画像・動画生成の基礎 | `lTmyw7sh4Kw` |
+| チュートリアル | Part 2 - キャラクター設定 | `aVxPPgC7byo` |
+| チュートリアル | Part 3 - リップシンク動画 | `EcFzLz0SAok` |
+| チュートリアル | Part 4 - Gemini APIキー取得 & 課金設定 | `sEBUBCVPWIc` |
+
+#### English
+
+| Category | Title | ID |
+|----------|-------|-----|
+| Install | Installation Guide (Mac) | `58HkfR4WmdY` |
+| Install | Installation Guide (Windows) | `gVKAbBgpOBs` |
+| Setup | Onboarding & Video Generation Manual | `oQFsvDA_76M` |
+| Onboarding | Series Part 1 | `uBRl8_Bo41o` |
+| Onboarding | Series Part 2 | `7gWOt4viaSA` |
+| Onboarding | Series Part 3 | `AVSu2uShFD8` |
+| Tutorial | Part 1 - Basics: Generating Images and Videos | `MDBXMO1f5k0` |
+| Tutorial | Part 2 - Character Setup | `-Am25F-5ybs` |
+| Tutorial | Part 3 - Creating Lip-Sync Videos | `n_iCK9s3Uhw` |
+| Tutorial | Part 4 - Gemini API Key Setup & Billing | `vNceRnJuCX0` |
 
 ---
 
