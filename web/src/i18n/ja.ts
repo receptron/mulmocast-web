@@ -324,7 +324,7 @@ const lang = {
       pageSubtitle: "フル機能のAIプレゼンテーションプラットフォーム",
       installation: {
         title: "インストール",
-        description: "npxを使って直接実行できます。Node.js 18以上が必要です。",
+        description: "npxを使って直接実行できます。Node.js 22以上が必要です。",
         note: "グローバルインストール: npm install -g mulmocast",
       },
       quickstart: {

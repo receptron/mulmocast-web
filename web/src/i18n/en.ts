@@ -330,7 +330,7 @@ const lang = {
       pageSubtitle: "Full-featured AI presentation platform",
       installation: {
         title: "Installation",
-        description: "You can run it directly using npx. Requires Node.js 18 or higher.",
+        description: "You can run it directly using npx. Requires Node.js 22 or higher.",
         note: "Global installation: npm install -g mulmocast",
       },
       quickstart: {
