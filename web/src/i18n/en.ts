@@ -67,6 +67,7 @@ const lang = {
   },
   navigation: {
     home: "Home",
+    docs: "Docs",
     faq: "FAQ",
     festival: "Festival",
     family: "Family",
@@ -312,6 +313,83 @@ const lang = {
       },
     ],
     backButton: "Back to Home",
+  },
+  docs: {
+    title: "Documentation",
+    subtitle: "Official documentation for the MulmoCast ecosystem",
+    readMore: "Read More",
+    backButton: "Back to Home",
+    backToDocs: "Back to Documentation",
+    cli: {
+      title: "MulmoCast CLI",
+      description: "Core engine. Command-line tool for generating AI videos from MulmoScript.",
+      item1: "Installation and Quick Start",
+      item2: "MulmoScript Specification",
+      item3: "Command Reference",
+      pageTitle: "MulmoCast CLI",
+      pageSubtitle: "Full-featured AI presentation platform",
+      installation: {
+        title: "Installation",
+        description: "You can run it directly using npx. Requires Node.js 22 or higher.",
+        note: "Global installation: npm install -g mulmocast",
+      },
+      quickstart: {
+        title: "Quick Start",
+        description: "Basic usage workflow.",
+      },
+      mulmoscript: {
+        title: "MulmoScript",
+        description: "MulmoScript is the script format for MulmoCast. It is written in JSON format.",
+      },
+      commands: {
+        title: "Command Reference",
+        description: "List of available commands.",
+      },
+    },
+    app: {
+      title: "MulmoCast App",
+      description: "CLI wrapped as GUI app. Desktop application for Mac/Windows.",
+      item1: "Installation",
+      item2: "Basic Usage",
+      item3: "Settings Options",
+      pageTitle: "MulmoCast App",
+      pageSubtitle: "Desktop application for Mac/Windows",
+      installation: {
+        title: "Installation",
+        description: "Download and install from the official website.",
+      },
+      usage: {
+        title: "Usage",
+        description: "Explains the basic operations of the app.",
+      },
+      settings: {
+        title: "Settings",
+        description: "Customize API Key, output format, audio settings, and more.",
+      },
+    },
+    mulmochat: {
+      title: "MulmoChat",
+      description: "Next-generation voice dialogue OS using Chat Protocol.",
+      item1: "Overview and Architecture",
+      item2: "GUI Chat Protocol",
+      item3: "Plugin Development",
+      pageTitle: "MulmoChat",
+      pageSubtitle: "Next-generation voice dialogue platform",
+      overview: {
+        title: "Overview",
+        description:
+          "MulmoChat is a next-generation voice dialogue platform using Chat Protocol. It fuses text and visuals for real-time image generation and interactive content during conversation.",
+      },
+      architecture: {
+        title: "Architecture",
+        description: "Explains the system architecture and tech stack of MulmoChat.",
+      },
+      protocol: {
+        title: "GUI Chat Protocol",
+        description:
+          "A standard protocol for building GUI chat plugins. Provides Vue 3 and React adapters for portable, framework-agnostic plugin development.",
+      },
+    },
   },
   home: {
     hero: {
