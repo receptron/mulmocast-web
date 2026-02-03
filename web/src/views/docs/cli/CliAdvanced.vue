@@ -848,11 +848,41 @@
               <p class="text-muted-foreground mb-2 text-sm">
                 {{ locale === "ja" ? "AIが効果音を自動生成します。" : "AI automatically generates sound effects." }}
               </p>
-              <div class="bg-muted rounded p-2">
-                <code class="text-xs"
-                  >"soundEffectPrompt": "{{ locale === "ja" ? "ドアが開く音" : "Door opening sound" }}"</code
-                >
+
+              <div
+                class="mb-3 rounded border border-amber-200 bg-amber-50 p-3 text-sm dark:border-amber-900 dark:bg-amber-950"
+              >
+                <p class="text-amber-800 dark:text-amber-200">
+                  <strong>{{ locale === "ja" ? "必要なもの：" : "Required:" }}</strong>
+                  <code class="text-primary">REPLICATE_API_TOKEN</code>
+                </p>
+                <p class="text-muted-foreground mt-1 text-xs">
+                  {{
+                    locale === "ja"
+                      ? "現在はReplicateのzsxkib/mmaudioモデルのみ対応しています。"
+                      : "Currently only supports Replicate's zsxkib/mmaudio model."
+                  }}
+                </p>
               </div>
+
+              <div class="bg-muted overflow-x-auto rounded p-3">
+                <pre class="text-xs"><code>{
+  "beats": [
+    {
+      "text": "{{ locale === "ja" ? "ドアを開けます。" : "Opening the door." }}",
+      "soundEffectPrompt": "{{ locale === "ja" ? "木製のドアがゆっくり開く音" : "Sound of a wooden door slowly opening" }}"
+    }
+  ]
+}</code></pre>
+              </div>
+
+              <p class="text-muted-foreground mt-2 text-xs">
+                {{
+                  locale === "ja"
+                    ? "soundEffectPromptでシーンに合った効果音を生成します。音声と同時に再生されます。"
+                    : "Use soundEffectPrompt to generate sound effects matching the scene. Plays along with the speech."
+                }}
+              </p>
             </CardContent>
           </Card>
 
