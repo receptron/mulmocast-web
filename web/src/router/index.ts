@@ -10,6 +10,10 @@ import Family from "../views/Family.vue";
 import Samples from "../views/Samples.vue";
 import Test from "../views/test.vue";
 import Document from "../views/Document.vue";
+import DocsIndex from "../views/docs/DocsIndex.vue";
+import DocsCli from "../views/docs/DocsCli.vue";
+import DocsApp from "../views/docs/DocsApp.vue";
+import DocsMulmochat from "../views/docs/DocsMulmochat.vue";
 
 const routeChildren: Array<RouteRecordRaw> = [
   {
@@ -51,6 +55,26 @@ const routeChildren: Array<RouteRecordRaw> = [
     path: "document",
     name: "document",
     component: Document,
+  },
+  {
+    path: "docs",
+    name: "docs",
+    component: DocsIndex,
+  },
+  {
+    path: "docs/cli",
+    name: "docs-cli",
+    component: DocsCli,
+  },
+  {
+    path: "docs/app",
+    name: "docs-app",
+    component: DocsApp,
+  },
+  {
+    path: "docs/mulmochat",
+    name: "docs-mulmochat",
+    component: DocsMulmochat,
   },
 ];
 

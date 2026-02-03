@@ -67,7 +67,8 @@ const lang = {
   },
   navigation: {
     home: "ホーム",
-    faq: "FAQ（よくある質問）",
+    docs: "ドキュメント",
+    faq: "FAQ",
     festival: "映画祭",
     family: "ファミリー",
     openMenu: "メニューを開く",
@@ -306,6 +307,83 @@ const lang = {
       },
     ],
     backButton: "ホームに戻る",
+  },
+  docs: {
+    title: "ドキュメント",
+    subtitle: "MulmoCastエコシステムの公式ドキュメント",
+    readMore: "詳細を見る",
+    backButton: "ホームに戻る",
+    backToDocs: "ドキュメントに戻る",
+    cli: {
+      title: "MulmoCast CLI",
+      description: "コアエンジン。MulmoScriptからAI動画を生成するコマンドラインツール。",
+      item1: "インストールとクイックスタート",
+      item2: "MulmoScript仕様",
+      item3: "コマンドリファレンス",
+      pageTitle: "MulmoCast CLI",
+      pageSubtitle: "フル機能のAIプレゼンテーションプラットフォーム",
+      installation: {
+        title: "インストール",
+        description: "npxを使って直接実行できます。Node.js 18以上が必要です。",
+        note: "グローバルインストール: npm install -g mulmocast",
+      },
+      quickstart: {
+        title: "クイックスタート",
+        description: "基本的な使い方の流れです。",
+      },
+      mulmoscript: {
+        title: "MulmoScript",
+        description: "MulmoScriptはMulmoCastの台本フォーマットです。JSON形式で記述します。",
+      },
+      commands: {
+        title: "コマンドリファレンス",
+        description: "利用可能なコマンド一覧です。",
+      },
+    },
+    app: {
+      title: "MulmoCast App",
+      description: "CLIをGUIアプリ化。Mac/Windows対応のデスクトップアプリケーション。",
+      item1: "インストール方法",
+      item2: "基本的な使い方",
+      item3: "設定オプション",
+      pageTitle: "MulmoCast App",
+      pageSubtitle: "Mac/Windows対応のデスクトップアプリケーション",
+      installation: {
+        title: "インストール",
+        description: "公式サイトからダウンロードしてインストールします。",
+      },
+      usage: {
+        title: "使い方",
+        description: "アプリの基本的な操作方法を説明します。",
+      },
+      settings: {
+        title: "設定",
+        description: "API Key、出力形式、音声設定などをカスタマイズできます。",
+      },
+    },
+    mulmochat: {
+      title: "MulmoChat",
+      description: "Chat Protocol使用の次世代音声対話OS。",
+      item1: "概要とアーキテクチャ",
+      item2: "GUI Chat Protocol",
+      item3: "プラグイン開発",
+      pageTitle: "MulmoChat",
+      pageSubtitle: "次世代音声対話プラットフォーム",
+      overview: {
+        title: "概要",
+        description:
+          "MulmoChatはChat Protocolを使った次世代の音声対話プラットフォームです。テキストとビジュアルを融合し、会話しながらリアルタイムで画像やインタラクティブコンテンツを体験できます。",
+      },
+      architecture: {
+        title: "アーキテクチャ",
+        description: "MulmoChatのシステム構成と技術スタックについて説明します。",
+      },
+      protocol: {
+        title: "GUI Chat Protocol",
+        description:
+          "チャットアプリ用GUIプラグインの標準プロトコル。Vue 3とReactアダプターを提供し、フレームワークに依存しないポータブルなプラグイン開発を可能にします。",
+      },
+    },
   },
   home: {
     hero: {
