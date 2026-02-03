@@ -852,7 +852,7 @@ echo "OPENAI_API_KEY=sk-your-actual-api-key-here" > .env</code></pre>
 
           <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
             <pre class="text-sm"><code>{
-  "$mulmocast": { "version": "1.0" },
+  "$mulmocast": { "version": "1.1" },
   "title": "Hello MulmoCast",
   "lang": "{{ locale === "ja" ? "ja" : "en" }}",
   "speechParams": {
@@ -1053,7 +1053,7 @@ echo "OPENAI_API_KEY=sk-your-actual-api-key-here" > .env</code></pre>
 
             <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
               <pre class="text-sm"><code>{
-  "$mulmocast": { "version": "1.0" },
+  "$mulmocast": { "version": "1.1" },
   "title": "{{ locale === "ja" ? "MulmoCast紹介" : "MulmoCast Introduction" }}",
   "lang": "{{ locale === "ja" ? "ja" : "en" }}",
   "speechParams": {
@@ -1103,7 +1103,7 @@ echo "OPENAI_API_KEY=sk-your-actual-api-key-here" > .env</code></pre>
 
             <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
               <pre class="text-sm"><code>{
-  "$mulmocast": { "version": "1.0" },
+  "$mulmocast": { "version": "1.1" },
   "title": "{{ locale === "ja" ? "MulmoCast対談" : "MulmoCast Dialogue" }}",
   "lang": "{{ locale === "ja" ? "ja" : "en" }}",
   "speechParams": {

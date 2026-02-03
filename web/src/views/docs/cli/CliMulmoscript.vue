@@ -148,7 +148,7 @@
         </h3>
         <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
           <pre class="text-sm"><code>{
-  "$mulmocast": { "version": "1.0" },
+  "$mulmocast": { "version": "1.1" },
   "title": "{{ locale === "ja" ? "自己紹介動画" : "Self Introduction Video" }}",
   "lang": "{{ locale === "ja" ? "ja" : "en" }}",
   "beats": [
@@ -185,7 +185,7 @@
                     }}
                   </p>
                   <div class="bg-muted rounded p-2">
-                    <code class="text-xs">"$mulmocast": { "version": "1.0" }</code>
+                    <code class="text-xs">"$mulmocast": { "version": "1.1" }</code>
                     <span class="text-muted-foreground text-xs">
                       ← {{ locale === "ja" ? "常にこの形式で固定" : "Always use this exact format" }}</span
                     >
@@ -314,7 +314,7 @@
         </p>
         <div class="bg-muted overflow-x-auto rounded-lg p-4">
           <pre class="text-sm"><code>{
-  "$mulmocast": { "version": "1.0" },
+  "$mulmocast": { "version": "1.1" },
   "title": "{{ locale === "ja" ? "完全な構成例" : "Complete Structure Example" }}",
   "lang": "{{ locale === "ja" ? "ja" : "en" }}",
   "description": "{{ locale === "ja" ? "動画の説明文" : "Video description" }}",
@@ -609,7 +609,7 @@
         </p>
         <div class="bg-muted overflow-x-auto rounded-lg p-4">
           <pre class="text-sm"><code>{
-  "$mulmocast": { "version": "1.0" },
+  "$mulmocast": { "version": "1.1" },
   "title": "{{ locale === "ja" ? "季節の挨拶" : "Seasonal Greetings" }}",
   "lang": "{{ locale === "ja" ? "ja" : "en" }}",
   "speechParams": {
@@ -846,7 +846,7 @@
 
         <div class="bg-muted overflow-x-auto rounded-lg p-4">
           <pre class="text-sm"><code>{
-  "$mulmocast": { "version": "1.0" },
+  "$mulmocast": { "version": "1.1" },
   "title": "{{ locale === "ja" ? "対談番組" : "Talk Show" }}",
   "lang": "{{ locale === "ja" ? "ja" : "en" }}",
   "speechParams": {

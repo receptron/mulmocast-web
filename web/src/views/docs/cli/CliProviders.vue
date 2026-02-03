@@ -393,22 +393,371 @@
           </CardContent>
         </Card>
 
-        <!-- How to set TTS -->
-        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
-          {{ locale === "ja" ? "設定方法" : "How to Configure" }}
+        <!-- Speaker Relationship -->
+        <Card class="mt-6 border-purple-200 bg-purple-50 dark:border-purple-900 dark:bg-purple-950">
+          <CardHeader>
+            <CardTitle class="flex items-center gap-2 text-base">
+              <Users class="h-5 w-5 text-purple-600 dark:text-purple-400" />
+              {{ locale === "ja" ? "スピーカーとTTSプロバイダーの関係" : "Speaker and TTS Provider Relationship" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-4 text-sm">
+              {{
+                locale === "ja"
+                  ? "MulmoScriptでは、「誰が話すか」（speaker）と「どの声で話すか」（TTS設定）を分けて管理します。これにより、同じスピーカー名でも簡単に声を変更できます。"
+                  : "MulmoScript separates 'who speaks' (speaker) from 'what voice to use' (TTS settings). This allows you to easily change voices while keeping the same speaker names."
+              }}
+            </p>
+
+            <div class="bg-background mb-4 rounded-lg p-4">
+              <h4 class="text-foreground mb-3 text-sm font-medium">
+                {{ locale === "ja" ? "仕組み" : "How It Works" }}
+              </h4>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div class="rounded border p-3">
+                  <p class="text-primary mb-2 text-xs font-medium">1. speechParams.speakers</p>
+                  <p class="text-muted-foreground text-xs">
+                    {{
+                      locale === "ja"
+                        ? "スピーカー名とTTS設定（プロバイダー、声ID）を定義"
+                        : "Define speaker names and TTS settings (provider, voice ID)"
+                    }}
+                  </p>
+                </div>
+                <div class="rounded border p-3">
+                  <p class="text-primary mb-2 text-xs font-medium">2. beat.speaker</p>
+                  <p class="text-muted-foreground text-xs">
+                    {{
+                      locale === "ja"
+                        ? "各beatで話すスピーカー名を指定（speakers で定義した名前を参照）"
+                        : "Specify which speaker talks in each beat (references name defined in speakers)"
+                    }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "speechParams": {
+    "speakers": {
+      "Host": { "provider": "openai", "voiceId": "nova" },    <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "Hostの声を定義" : "Define Host's voice" }}</span>
+      "Guest": { "provider": "openai", "voiceId": "echo" }    <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "Guestの声を定義" : "Define Guest's voice" }}</span>
+    }
+  },
+  "beats": [
+    { "speaker": "Host", "text": "{{ locale === "ja" ? "こんにちは！" : "Hello!" }}" },   <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "nova で読み上げ" : "Read with nova" }}</span>
+    { "speaker": "Guest", "text": "{{ locale === "ja" ? "よろしく！" : "Nice to meet you!" }}" }  <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "echo で読み上げ" : "Read with echo" }}</span>
+  ]
+}</code></pre>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Practical Examples -->
+        <h3 class="text-foreground mt-8 mb-4 text-lg font-medium">
+          {{ locale === "ja" ? "実用的なサンプル" : "Practical Examples" }}
         </h3>
-        <div class="bg-muted overflow-x-auto rounded-lg p-4">
-          <pre class="text-sm"><code>{
+
+        <!-- OpenAI TTS Example -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-sm">
+              {{ locale === "ja" ? "OpenAI TTS サンプル（対話形式）" : "OpenAI TTS Sample (Dialogue)" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-3 text-xs">
+              {{
+                locale === "ja"
+                  ? "2人のスピーカーが会話する形式。OpenAI TTSは設定不要でOPENAI_API_KEYがあれば動作します。"
+                  : "Two speakers having a conversation. OpenAI TTS works with just OPENAI_API_KEY, no additional setup needed."
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "対話サンプル" : "Dialogue Sample" }}",
+  "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+  "speechParams": {
+    "speakers": {
+      "{{ locale === "ja" ? "先生" : "Teacher" }}": { "provider": "openai", "voiceId": "nova" },
+      "{{ locale === "ja" ? "生徒" : "Student" }}": { "provider": "openai", "voiceId": "echo" }
+    }
+  },
+  "imageParams": { "provider": "openai", "model": "dall-e-3" },
+  "beats": [
+    {
+      "speaker": "{{ locale === "ja" ? "先生" : "Teacher" }}",
+      "text": "{{ locale === "ja" ? "今日はMulmoScriptについて学びましょう。" : "Today, let's learn about MulmoScript." }}",
+      "imagePrompt": "{{ locale === "ja" ? "教室で授業をする先生のイラスト" : "Illustration of a teacher giving a lesson in a classroom" }}"
+    },
+    {
+      "speaker": "{{ locale === "ja" ? "生徒" : "Student" }}",
+      "text": "{{ locale === "ja" ? "MulmoScriptって何ですか？" : "What is MulmoScript?" }}",
+      "image": { "type": "beat" }
+    },
+    {
+      "speaker": "{{ locale === "ja" ? "先生" : "Teacher" }}",
+      "text": "{{ locale === "ja" ? "動画やスライドを自動生成するためのJSON形式の台本です。" : "It's a JSON-format script for automatically generating videos and slides." }}",
+      "imagePrompt": "{{ locale === "ja" ? "コードとビデオが連携するイメージ図" : "Diagram showing code and video connection" }}"
+    }
+  ]
+}</code></pre>
+            </div>
+            <p class="text-muted-foreground mt-2 text-xs">
+              <code class="text-primary">mulmo movie dialogue.json</code>
+              {{ locale === "ja" ? "で実行できます。" : "to run." }}
+            </p>
+          </CardContent>
+        </Card>
+
+        <!-- ElevenLabs Example -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-sm">
+              {{
+                locale === "ja"
+                  ? "ElevenLabs サンプル（高品質ナレーション）"
+                  : "ElevenLabs Sample (High-Quality Narration)"
+              }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-3 text-xs">
+              {{
+                locale === "ja"
+                  ? "プロフェッショナルなナレーション向け。voiceIdはElevenLabsの管理画面から取得します。"
+                  : "For professional narration. Get voiceId from ElevenLabs dashboard."
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "製品紹介" : "Product Introduction" }}",
+  "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+  "speechParams": {
+    "speakers": {
+      "Narrator": {
+        "provider": "elevenlabs",
+        "voiceId": "pNInz6obpgDQGcFmaJgB"  <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "ElevenLabsの声ID（Adamの例）" : "ElevenLabs voice ID (Adam example)" }}</span>
+      }
+    }
+  },
+  "imageParams": { "provider": "openai", "model": "dall-e-3" },
+  "beats": [
+    {
+      "speaker": "Narrator",
+      "text": "{{ locale === "ja" ? "革新的なAI技術で、あなたのアイデアを動画に変換します。" : "Transform your ideas into videos with innovative AI technology." }}",
+      "imagePrompt": "{{ locale === "ja" ? "未来的なAI技術のイメージ、青い光" : "Futuristic AI technology concept, blue light" }}"
+    },
+    {
+      "speaker": "Narrator",
+      "text": "{{ locale === "ja" ? "MulmoCastは、テキストから高品質な動画を自動生成します。" : "MulmoCast automatically generates high-quality videos from text." }}",
+      "imagePrompt": "{{ locale === "ja" ? "テキストが動画に変換される様子" : "Text transforming into video" }}"
+    }
+  ]
+}</code></pre>
+            </div>
+            <div class="text-muted-foreground mt-2 text-xs">
+              <p class="mb-1">
+                {{ locale === "ja" ? "必要な環境変数：" : "Required environment variable:" }}
+                <code class="text-primary">ELEVENLABS_API_KEY</code>
+              </p>
+              <p>
+                {{ locale === "ja" ? "voiceIdの取得方法：" : "How to get voiceId:" }}
+                <a
+                  href="https://elevenlabs.io/app/voice-library"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-primary hover:underline"
+                >
+                  Voice Library
+                  <ExternalLink class="inline h-3 w-3" />
+                </a>
+                {{ locale === "ja" ? "から声を選び、Voice IDをコピー" : "- select a voice and copy Voice ID" }}
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Gemini TTS Example -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-sm">
+              {{ locale === "ja" ? "Google Gemini TTS サンプル" : "Google Gemini TTS Sample" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-3 text-xs">
+              {{
+                locale === "ja"
+                  ? "Gemini APIを使った音声合成。Kore, Puck, Charon, Fenrir, Aoedeなどの声が使えます。"
+                  : "Voice synthesis using Gemini API. Voices like Kore, Puck, Charon, Fenrir, Aoede are available."
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "Gemini TTSデモ" : "Gemini TTS Demo" }}",
+  "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+  "speechParams": {
+    "speakers": {
+      "Host": { "provider": "gemini", "voiceId": "Kore" },
+      "Assistant": { "provider": "gemini", "voiceId": "Puck" }
+    }
+  },
+  "imageParams": { "provider": "openai", "model": "dall-e-3" },
+  "beats": [
+    {
+      "speaker": "Host",
+      "text": "{{ locale === "ja" ? "Gemini TTSを試してみましょう。" : "Let's try Gemini TTS." }}",
+      "imagePrompt": "{{ locale === "ja" ? "マイクとスピーカーのイラスト" : "Illustration of microphone and speaker" }}"
+    },
+    {
+      "speaker": "Assistant",
+      "text": "{{ locale === "ja" ? "自然な音声が生成できます。" : "Natural speech can be generated." }}",
+      "image": { "type": "beat" }
+    }
+  ]
+}</code></pre>
+            </div>
+            <div class="mt-3">
+              <p class="text-muted-foreground mb-2 text-xs">
+                {{ locale === "ja" ? "利用できる声：" : "Available voices:" }}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  v-for="voice in ['Kore', 'Puck', 'Charon', 'Fenrir', 'Aoede']"
+                  :key="voice"
+                  class="bg-muted text-foreground rounded px-2 py-1 text-xs"
+                >
+                  {{ voice }}
+                </span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Kotodama Example -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-sm">
+              {{ locale === "ja" ? "ことだま サンプル（日本語特化）" : "Kotodama Sample (Japanese Specialized)" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-3 text-xs">
+              {{
+                locale === "ja"
+                  ? "日本語に特化したTTS。デコレーション機能で感情や強調を細かく制御できます。"
+                  : "Japanese-specialized TTS. Decoration feature allows fine control over emotion and emphasis."
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "ことだまデモ" : "Kotodama Demo" }}",
+  "lang": "ja",
   "speechParams": {
     "speakers": {
       "{{ locale === "ja" ? "ナレーター" : "Narrator" }}": {
-        "provider": "elevenlabs",  // {{ locale === "ja" ? "使いたいプロバイダー" : "Provider you want to use" }}
-        "voiceId": "your-voice-id"  // {{ locale === "ja" ? "声のID" : "Voice ID" }}
+        "provider": "kotodama",
+        "voiceId": "your-kotodama-voice-id"
+      }
+    }
+  },
+  "imageParams": { "provider": "openai", "model": "dall-e-3" },
+  "beats": [
+    {
+      "speaker": "{{ locale === "ja" ? "ナレーター" : "Narrator" }}",
+      "text": "{{ locale === "ja" ? "こんにちは、ことだまの音声合成をお試しください。" : "Hello, please try Kotodama's voice synthesis." }}",
+      "imagePrompt": "{{ locale === "ja" ? "和風のデジタルアート" : "Japanese style digital art" }}"
+    }
+  ]
+}</code></pre>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Mixed Providers Example -->
+        <Card class="mb-4 border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950">
+          <CardHeader>
+            <CardTitle class="flex items-center gap-2 text-sm">
+              <Sparkles class="h-4 w-4 text-amber-600 dark:text-amber-400" />
+              {{ locale === "ja" ? "複数プロバイダーの組み合わせ" : "Combining Multiple Providers" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-3 text-xs">
+              {{
+                locale === "ja"
+                  ? "スピーカーごとに異なるTTSプロバイダーを使うこともできます。"
+                  : "You can use different TTS providers for each speaker."
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "speechParams": {
+    "speakers": {
+      "Host": { "provider": "openai", "voiceId": "nova" },        <span class="text-green-600 dark:text-green-400">// OpenAI</span>
+      "Expert": { "provider": "elevenlabs", "voiceId": "..." },   <span class="text-green-600 dark:text-green-400">// ElevenLabs</span>
+      "AI": { "provider": "gemini", "voiceId": "Puck" }           <span class="text-green-600 dark:text-green-400">// Gemini</span>
+    }
+  },
+  "beats": [
+    { "speaker": "Host", "text": "..." },    <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "OpenAI nova で読み上げ" : "Read with OpenAI nova" }}</span>
+    { "speaker": "Expert", "text": "..." },  <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "ElevenLabs で読み上げ" : "Read with ElevenLabs" }}</span>
+    { "speaker": "AI", "text": "..." }       <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "Gemini Puck で読み上げ" : "Read with Gemini Puck" }}</span>
+  ]
+}</code></pre>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Language-specific Speakers -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="flex items-center gap-2 text-sm">
+              <Globe class="h-4 w-4" />
+              {{ locale === "ja" ? "言語別スピーカー設定" : "Language-specific Speaker Settings" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-3 text-xs">
+              {{
+                locale === "ja"
+                  ? "speechParams.langを使うと、言語ごとに異なるスピーカー設定を指定できます。翻訳版を作るときに便利です。"
+                  : "Using speechParams.lang, you can specify different speaker settings per language. Useful when creating translated versions."
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "lang": "ja",
+  "speechParams": {
+    "speakers": {
+      "Narrator": { "provider": "openai", "voiceId": "nova" }
+    },
+    "lang": {
+      "en": {
+        "speakers": {
+          "Narrator": { "provider": "elevenlabs", "voiceId": "..." }  <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "英語版は ElevenLabs を使用" : "English version uses ElevenLabs" }}</span>
+        }
       }
     }
   }
 }</code></pre>
-        </div>
+            </div>
+            <p class="text-muted-foreground mt-2 text-xs">
+              {{
+                locale === "ja"
+                  ? "mulmo tool translate で翻訳すると、翻訳版は自動的に lang 設定の声を使います。"
+                  : "When using mulmo tool translate, translated versions automatically use voices from lang settings."
+              }}
+            </p>
+          </CardContent>
+        </Card>
       </section>
 
       <!-- Image Providers -->
@@ -680,7 +1029,17 @@ import { useI18n } from "vue-i18n";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card";
 import Navigation from "../../../components/Navigation.vue";
 import { useLocalizedUrl } from "../../../i18n/utils";
-import { ChevronLeft, ChevronRight, Volume2, Image as ImageIcon, Video, ExternalLink } from "lucide-vue-next";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Volume2,
+  Image as ImageIcon,
+  Video,
+  ExternalLink,
+  Users,
+  Globe,
+  Sparkles,
+} from "lucide-vue-next";
 
 const { locale } = useI18n();
 const localizedUrl = useLocalizedUrl();
