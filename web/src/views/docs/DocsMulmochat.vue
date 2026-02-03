@@ -34,8 +34,14 @@
             <a href="#plugins" class="text-muted-foreground hover:text-primary block text-sm">{{
               locale === "ja" ? "5. プラグイン開発" : "5. Plugin Development"
             }}</a>
+            <a href="#context-api" class="text-muted-foreground hover:text-primary block text-sm">{{
+              locale === "ja" ? "6. Context API" : "6. Context API"
+            }}</a>
+            <a href="#example-plugins" class="text-muted-foreground hover:text-primary block text-sm">{{
+              locale === "ja" ? "7. プラグイン例" : "7. Example Plugins"
+            }}</a>
             <a href="#links" class="text-muted-foreground hover:text-primary block text-sm">{{
-              locale === "ja" ? "6. 関連リンク" : "6. Related Links"
+              locale === "ja" ? "8. 関連リンク" : "8. Related Links"
             }}</a>
           </nav>
         </CardContent>
@@ -204,6 +210,9 @@ GUIChatPluginTemplate（{{ locale === "ja" ? "プラグイン開発用" : "Plugi
                 <th class="border-border border px-4 py-2 text-left">
                   {{ locale === "ja" ? "説明" : "Description" }}
                 </th>
+                <th class="border-border border px-4 py-2 text-left">
+                  {{ locale === "ja" ? "用途例" : "Example Use" }}
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -212,9 +221,57 @@ GUIChatPluginTemplate（{{ locale === "ja" ? "プラグイン開発用" : "Plugi
                   <code>{{ dtype.type }}</code>
                 </td>
                 <td class="border-border border px-4 py-2">{{ locale === "ja" ? dtype.descJa : dtype.descEn }}</td>
+                <td class="border-border border px-4 py-2 text-sm">
+                  {{ locale === "ja" ? dtype.exampleJa : dtype.exampleEn }}
+                </td>
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "入力ハンドラー" : "Input Handlers" }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "プラグインは様々な入力タイプを受け付けることができます。"
+              : "Plugins can accept various input types."
+          }}
+        </p>
+        <div class="grid gap-3 md:grid-cols-3">
+          <div class="border-border rounded-lg border p-3">
+            <code class="text-primary text-sm">file</code>
+            <p class="text-muted-foreground mt-1 text-xs">
+              {{ locale === "ja" ? "ファイルアップロード" : "File upload" }}
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-3">
+            <code class="text-primary text-sm">clipboard-image</code>
+            <p class="text-muted-foreground mt-1 text-xs">
+              {{ locale === "ja" ? "クリップボードから貼り付け" : "Paste from clipboard" }}
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-3">
+            <code class="text-primary text-sm">url</code>
+            <p class="text-muted-foreground mt-1 text-xs">{{ locale === "ja" ? "URL処理" : "URL processing" }}</p>
+          </div>
+          <div class="border-border rounded-lg border p-3">
+            <code class="text-primary text-sm">text</code>
+            <p class="text-muted-foreground mt-1 text-xs">
+              {{ locale === "ja" ? "テキストパターン" : "Text patterns" }}
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-3">
+            <code class="text-primary text-sm">camera</code>
+            <p class="text-muted-foreground mt-1 text-xs">
+              {{ locale === "ja" ? "カメラキャプチャ" : "Camera capture" }}
+            </p>
+          </div>
+          <div class="border-border rounded-lg border p-3">
+            <code class="text-primary text-sm">audio</code>
+            <p class="text-muted-foreground mt-1 text-xs">{{ locale === "ja" ? "音声録音" : "Audio recording" }}</p>
+          </div>
         </div>
       </section>
 
@@ -290,10 +347,184 @@ yarn dev:react  # React</code></pre>
         </div>
       </section>
 
+      <!-- Context API -->
+      <section id="context-api" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ locale === "ja" ? "6. Context API" : "6. Context API" }}
+        </h2>
+        <p class="text-muted-foreground mb-4">
+          {{
+            locale === "ja"
+              ? "execute関数はToolContextを受け取り、アプリの機能にアクセスできます。"
+              : "The execute function receives ToolContext, providing access to app features."
+          }}
+        </p>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">ToolContext</h3>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>interface ToolContext {
+  currentResult?: ToolResult | null;  // {{ locale === "ja" ? "現在選択中の結果" : "Currently selected result" }}
+  app?: ToolContextApp;               // {{ locale === "ja" ? "アプリ機能" : "App functions" }}
+}</code></pre>
+        </div>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "利用可能な機能" : "Available Functions" }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-4 py-2 text-left">{{ locale === "ja" ? "機能" : "Function" }}</th>
+                <th class="border-border border px-4 py-2 text-left">{{ locale === "ja" ? "説明" : "Description" }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="func in contextFunctions" :key="func.name">
+                <td class="border-border border px-4 py-2">
+                  <code class="text-xs">{{ func.name }}</code>
+                </td>
+                <td class="border-border border px-4 py-2 text-sm">
+                  {{ locale === "ja" ? func.descJa : func.descEn }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "実装パターン" : "Implementation Patterns" }}
+        </h3>
+        <div class="space-y-4">
+          <div class="border-border rounded-lg border p-4">
+            <h4 class="text-foreground mb-2 font-medium">
+              {{ locale === "ja" ? "パターンA: バックエンド呼び出し" : "Pattern A: Backend Call" }}
+            </h4>
+            <p class="text-muted-foreground mb-2 text-sm">
+              {{
+                locale === "ja"
+                  ? "generateImage、generateHtml等の外部API呼び出し"
+                  : "External API calls like generateImage, generateHtml"
+              }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded p-3">
+              <pre class="text-xs"><code>const result = await context.app?.generateImage(prompt);
+return { data: result, message: "Image generated" };</code></pre>
+            </div>
+          </div>
+
+          <div class="border-border rounded-lg border p-4">
+            <h4 class="text-foreground mb-2 font-medium">
+              {{ locale === "ja" ? "パターンB: 既存結果の更新" : "Pattern B: Update Existing Result" }}
+            </h4>
+            <p class="text-muted-foreground mb-2 text-sm">
+              {{ locale === "ja" ? "currentResultを使って状態を更新" : "Update state using currentResult" }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded p-3">
+              <pre class="text-xs"><code>return {
+  ...context.currentResult,
+  updating: true,  // {{ locale === "ja" ? "既存結果を更新" : "Update existing result" }}
+  viewState: { scrollTo: args.anchorId }
+};</code></pre>
+            </div>
+          </div>
+
+          <div class="border-border rounded-lg border p-4">
+            <h4 class="text-foreground mb-2 font-medium">
+              {{ locale === "ja" ? "パターンC: 設定の読み書き" : "Pattern C: Config Read/Write" }}
+            </h4>
+            <p class="text-muted-foreground mb-2 text-sm">
+              {{ locale === "ja" ? "getConfig/setConfigで設定を管理" : "Manage settings with getConfig/setConfig" }}
+            </p>
+            <div class="bg-muted overflow-x-auto rounded p-3">
+              <pre class="text-xs"><code>const config = context.app?.getConfig("imageStyle");
+context.app?.setConfig("imageStyle", newConfig);</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Example Plugins -->
+      <section id="example-plugins" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ locale === "ja" ? "7. プラグイン例" : "7. Example Plugins" }}
+        </h2>
+        <p class="text-muted-foreground mb-4">
+          {{
+            locale === "ja"
+              ? "公開されているプラグインを参考に開発できます。"
+              : "You can reference published plugins for development."
+          }}
+        </p>
+
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-4 py-2 text-left">
+                  {{ locale === "ja" ? "プラグイン" : "Plugin" }}
+                </th>
+                <th class="border-border border px-4 py-2 text-left">{{ locale === "ja" ? "機能" : "Features" }}</th>
+                <th class="border-border border px-4 py-2 text-left">
+                  {{ locale === "ja" ? "参考ポイント" : "Reference Points" }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="plugin in examplePlugins" :key="plugin.name">
+                <td class="border-border border px-4 py-2">
+                  <a :href="plugin.url" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">
+                    {{ plugin.name }}
+                  </a>
+                </td>
+                <td class="border-border border px-4 py-2">
+                  {{ locale === "ja" ? plugin.featuresJa : plugin.featuresEn }}
+                </td>
+                <td class="border-border border px-4 py-2 text-sm">
+                  {{ locale === "ja" ? plugin.pointsJa : plugin.pointsEn }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "完成チェックリスト" : "Completion Checklist" }}
+        </h3>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="border-border rounded-lg border p-4">
+            <h4 class="text-foreground mb-2 font-medium">
+              {{ locale === "ja" ? "必須ファイル" : "Required Files" }}
+            </h4>
+            <ul class="text-muted-foreground list-inside list-disc text-sm">
+              <li>package.json</li>
+              <li>vite.config.ts</li>
+              <li>tsconfig.json</li>
+              <li>src/core/types.ts</li>
+              <li>src/core/plugin.ts</li>
+              <li>src/vue/View.vue</li>
+              <li>src/vue/Preview.vue</li>
+            </ul>
+          </div>
+          <div class="border-border rounded-lg border p-4">
+            <h4 class="text-foreground mb-2 font-medium">
+              {{ locale === "ja" ? "ビルド確認" : "Build Verification" }}
+            </h4>
+            <ul class="text-muted-foreground list-inside list-disc text-sm">
+              <li>yarn install</li>
+              <li>yarn typecheck</li>
+              <li>yarn lint</li>
+              <li>yarn build</li>
+              <li>yarn dev</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- Links -->
       <section id="links" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "6. 関連リンク" : "6. Related Links" }}
+          {{ locale === "ja" ? "8. 関連リンク" : "8. Related Links" }}
         </h2>
 
         <div class="space-y-3">
@@ -360,11 +591,109 @@ const repositories = [
 ];
 
 const dataTypes = [
-  { type: "image", descJa: "画像ビューアー", descEn: "Image viewer" },
-  { type: "map", descJa: "地図コンポーネント", descEn: "Map component" },
-  { type: "browse", descJa: "Webコンテンツビューアー", descEn: "Web content viewer" },
-  { type: "game", descJa: "ゲームボード", descEn: "Game board" },
-  { type: "music", descJa: "音楽プレイヤー", descEn: "Music player" },
+  {
+    type: "image",
+    descJa: "画像ビューアー",
+    descEn: "Image viewer",
+    exampleJa: "生成画像の表示",
+    exampleEn: "Display generated images",
+  },
+  {
+    type: "map",
+    descJa: "地図コンポーネント",
+    descEn: "Map component",
+    exampleJa: "位置情報の視覚化",
+    exampleEn: "Visualize location data",
+  },
+  {
+    type: "browse",
+    descJa: "Webコンテンツビューアー",
+    descEn: "Web content viewer",
+    exampleJa: "Webページのプレビュー",
+    exampleEn: "Web page preview",
+  },
+  {
+    type: "game",
+    descJa: "ゲームボード",
+    descEn: "Game board",
+    exampleJa: "オセロ、チェス等",
+    exampleEn: "Othello, chess, etc.",
+  },
+  {
+    type: "music",
+    descJa: "音楽プレイヤー",
+    descEn: "Music player",
+    exampleJa: "音楽再生UI",
+    exampleEn: "Music playback UI",
+  },
+  {
+    type: "html",
+    descJa: "HTMLコンテンツ",
+    descEn: "HTML content",
+    exampleJa: "動的なWebコンテンツ",
+    exampleEn: "Dynamic web content",
+  },
+  {
+    type: "quiz",
+    descJa: "クイズUI",
+    descEn: "Quiz UI",
+    exampleJa: "選択式問題",
+    exampleEn: "Multiple choice questions",
+  },
+];
+
+const contextFunctions = [
+  { name: "getConfig(key)", descJa: "設定値を取得", descEn: "Get configuration value" },
+  { name: "setConfig(key, value)", descJa: "設定値を保存", descEn: "Save configuration value" },
+  { name: "generateImage(prompt)", descJa: "画像を生成", descEn: "Generate image" },
+  { name: "generateHtml({ prompt })", descJa: "LLMでHTMLを生成", descEn: "Generate HTML with LLM" },
+  { name: "browseUrl(url)", descJa: "Webページを取得", descEn: "Fetch web page" },
+  { name: "searchExa(args)", descJa: "Exa検索を実行", descEn: "Execute Exa search" },
+  { name: "getRoles()", descJa: "ロール一覧を取得", descEn: "Get role list" },
+  { name: "switchRole(roleId)", descJa: "ロールを切り替え", descEn: "Switch role" },
+];
+
+const examplePlugins = [
+  {
+    name: "Quiz",
+    url: "https://github.com/receptron/MulmoChatPluginQuiz",
+    featuresJa: "インタラクティブクイズ",
+    featuresEn: "Interactive quiz",
+    pointsJa: "samples、View、Preview",
+    pointsEn: "samples, View, Preview",
+  },
+  {
+    name: "GenerateImage",
+    url: "https://github.com/receptron/MulmoChatPluginGenerateImage",
+    featuresJa: "画像生成",
+    featuresEn: "Image generation",
+    pointsJa: "inputHandlers、backends",
+    pointsEn: "inputHandlers, backends",
+  },
+  {
+    name: "Othello",
+    url: "https://github.com/nicedoc/GUIChatPluginOthello",
+    featuresJa: "ゲーム、インタラクティブUI",
+    featuresEn: "Game, interactive UI",
+    pointsJa: "jsonData、sendTextMessage",
+    pointsEn: "jsonData, sendTextMessage",
+  },
+  {
+    name: "GenerateHtml",
+    url: "https://github.com/nicedoc/GUIChatPluginGenerateHtml",
+    featuresJa: "HTML生成",
+    featuresEn: "HTML generation",
+    pointsJa: "context.app、isEnabled",
+    pointsEn: "context.app, isEnabled",
+  },
+  {
+    name: "Spreadsheet",
+    url: "https://github.com/nicedoc/GUIChatPluginSpreadsheet",
+    featuresJa: "スプレッドシート",
+    featuresEn: "Spreadsheet",
+    pointsJa: "複雑なロジック分離",
+    pointsEn: "Complex logic separation",
+  },
 ];
 
 const relatedLinks = [
