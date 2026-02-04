@@ -359,3 +359,17 @@ yarn deploy-prod   # 本番環境 (mulmocast-prod)
 - 開発環境: `src/configs/config-dev.ts`
 - 本番環境: `src/configs/config-prod.ts`
 - `config.ts` は自動生成されるため直接編集しない
+
+---
+
+## 作業完了時のメタドキュメント更新提案
+
+作業が完了したら「プロジェクトドキュメントの改善点はありますか？ `/improve-project-docs` で反映できます」と提案する。
+
+### 対象ファイル
+
+| ファイル | 役割 |
+|----------|------|
+| `CLAUDE.md` | プロジェクト概要、ソース一覧、開発ガイドライン |
+| `docs/IMPROVEMENT_PLAN.md` | 改善計画、実装状況 |
+| `.claude/commands/update-docs.md` | Webドキュメント更新手順 |
