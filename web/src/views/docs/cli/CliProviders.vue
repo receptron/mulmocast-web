@@ -1266,15 +1266,11 @@
       <!-- Enterprise Settings -->
       <section class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "エンタープライズ設定" : "Enterprise Settings" }}
+          {{ t("docs.cli.enterprise.title") }}
         </h2>
 
         <p class="text-muted-foreground mb-4">
-          {{
-            locale === "ja"
-              ? "企業環境で利用する場合のGoogle Vertex AIとAzure OpenAIの設定方法を説明します。"
-              : "Configuration guide for Google Vertex AI and Azure OpenAI in enterprise environments."
-          }}
+          {{ t("docs.cli.enterprise.description") }}
         </p>
 
         <!-- Vertex AI -->
@@ -1289,70 +1285,56 @@
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground mb-4 text-sm">
-              {{
-                locale === "ja"
-                  ? "エンタープライズ環境ではVertex AIが推奨されます。ADC（Application Default Credentials）を使用してGoogle Cloudと連携します。"
-                  : "Vertex AI is recommended for enterprise environments. It uses ADC (Application Default Credentials) to integrate with Google Cloud."
-              }}
+              {{ t("docs.cli.enterprise.vertexai.description") }}
             </p>
 
             <div class="mb-4 grid gap-4 md:grid-cols-2">
               <div class="border-border rounded border p-3">
                 <h4 class="text-foreground mb-2 text-sm font-medium">
-                  {{ locale === "ja" ? "Gemini API（APIキー）" : "Gemini API (API Key)" }}
+                  {{ t("docs.cli.enterprise.vertexai.geminiApi") }}
                 </h4>
                 <p class="text-muted-foreground text-xs">
-                  {{
-                    locale === "ja"
-                      ? "GEMINI_API_KEYを設定するだけで利用可能。個人・小規模向け。"
-                      : "Just set GEMINI_API_KEY. For personal/small scale use."
-                  }}
+                  {{ t("docs.cli.enterprise.vertexai.geminiApiDesc") }}
                 </p>
               </div>
               <div class="border-border rounded border p-3">
                 <h4 class="text-foreground mb-2 text-sm font-medium">
-                  {{ locale === "ja" ? "Vertex AI（ADC）" : "Vertex AI (ADC)" }}
+                  {{ t("docs.cli.enterprise.vertexai.vertexaiAdc") }}
                 </h4>
                 <p class="text-muted-foreground text-xs">
-                  {{
-                    locale === "ja"
-                      ? "Google Cloudの認証を使用。エンタープライズ・本番環境向け。"
-                      : "Uses Google Cloud auth. For enterprise/production use."
-                  }}
+                  {{ t("docs.cli.enterprise.vertexai.vertexaiAdcDesc") }}
                 </p>
               </div>
             </div>
 
             <h4 class="text-foreground mb-2 text-sm font-medium">
-              {{ locale === "ja" ? "セットアップ手順" : "Setup Steps" }}
+              {{ t("docs.cli.enterprise.vertexai.setupSteps") }}
             </h4>
             <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
-              <pre
-                class="text-xs"
-              ><code># 1. {{ locale === "ja" ? "Google Cloud CLIでログイン" : "Login with Google Cloud CLI" }}
+              <pre class="text-xs"><code># 1. {{ t("docs.cli.enterprise.vertexai.setupStep1") }}
 gcloud auth login
 
-# 2. {{ locale === "ja" ? "プロジェクトを設定" : "Set project" }}
+# 2. {{ t("docs.cli.enterprise.vertexai.setupStep2") }}
 gcloud config set project YOUR_PROJECT_ID
 
-# 3. {{ locale === "ja" ? "必要なAPIを有効化" : "Enable required APIs" }}
+# 3. {{ t("docs.cli.enterprise.vertexai.setupStep3") }}
 gcloud services enable aiplatform.googleapis.com
 gcloud services enable generativelanguage.googleapis.com
 
-# 4. {{ locale === "ja" ? "ADCを設定" : "Set up ADC" }}
+# 4. {{ t("docs.cli.enterprise.vertexai.setupStep4") }}
 gcloud auth application-default login</code></pre>
             </div>
 
             <h4 class="text-foreground mb-2 text-sm font-medium">
-              {{ locale === "ja" ? "MulmoScript設定例" : "MulmoScript Configuration" }}
+              {{ t("docs.cli.enterprise.vertexai.configExample") }}
             </h4>
             <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
               <pre class="text-xs"><code>{
   "imageParams": {
     "provider": "google",
     "model": "imagen-4.0-generate-001",
-    "vertexai_project": "your-project-id",      <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "Google CloudプロジェクトID" : "Google Cloud project ID" }}</span>
-    "vertexai_location": "us-central1"          <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "リージョン" : "Region" }}</span>
+    "vertexai_project": "your-project-id",      <span class="text-green-600 dark:text-green-400">// {{ t("docs.cli.enterprise.vertexai.configProjectComment") }}</span>
+    "vertexai_location": "us-central1"          <span class="text-green-600 dark:text-green-400">// {{ t("docs.cli.enterprise.vertexai.configLocationComment") }}</span>
   },
   "movieParams": {
     "provider": "google",
@@ -1364,33 +1346,33 @@ gcloud auth application-default login</code></pre>
             </div>
 
             <h4 class="text-foreground mb-2 text-sm font-medium">
-              {{ locale === "ja" ? "利用可能なモデル" : "Available Models" }}
+              {{ t("docs.cli.enterprise.vertexai.availableModels") }}
             </h4>
             <div class="overflow-x-auto">
               <table class="border-border w-full border-collapse border text-sm">
                 <thead>
                   <tr class="bg-muted">
                     <th class="border-border border px-3 py-2 text-left">
-                      {{ locale === "ja" ? "カテゴリ" : "Category" }}
+                      {{ t("docs.cli.enterprise.vertexai.category") }}
                     </th>
                     <th class="border-border border px-3 py-2 text-left">
-                      {{ locale === "ja" ? "モデル" : "Model" }}
+                      {{ t("docs.cli.enterprise.vertexai.model") }}
                     </th>
                     <th class="border-border border px-3 py-2 text-left">
-                      {{ locale === "ja" ? "備考" : "Notes" }}
+                      {{ t("docs.cli.enterprise.vertexai.notes") }}
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="border-border border px-3 py-2" rowspan="3">
-                      {{ locale === "ja" ? "画像生成" : "Image" }}
+                      {{ t("docs.cli.enterprise.vertexai.imageGeneration") }}
                     </td>
                     <td class="border-border border px-3 py-2">
                       <code class="text-primary text-xs">imagen-4.0-*</code>
                     </td>
                     <td class="border-border border px-3 py-2 text-xs">
-                      {{ locale === "ja" ? "Imagen 4シリーズ" : "Imagen 4 series" }}
+                      {{ t("docs.cli.enterprise.vertexai.imagen4Series") }}
                     </td>
                   </tr>
                   <tr>
@@ -1398,7 +1380,7 @@ gcloud auth application-default login</code></pre>
                       <code class="text-primary text-xs">gemini-2.5-flash-preview-image</code>
                     </td>
                     <td class="border-border border px-3 py-2 text-xs">
-                      {{ locale === "ja" ? "Geminiベース画像生成" : "Gemini-based image generation" }}
+                      {{ t("docs.cli.enterprise.vertexai.geminiImageGen") }}
                     </td>
                   </tr>
                   <tr>
@@ -1406,23 +1388,23 @@ gcloud auth application-default login</code></pre>
                       <code class="text-primary text-xs">gemini-3-pro-image-preview</code>
                     </td>
                     <td class="border-border border px-3 py-2 text-xs">
-                      {{ locale === "ja" ? "Gemini 3 Pro（一部リージョン）" : "Gemini 3 Pro (some regions)" }}
+                      {{ t("docs.cli.enterprise.vertexai.gemini3Pro") }}
                     </td>
                   </tr>
                   <tr>
                     <td class="border-border border px-3 py-2">
-                      {{ locale === "ja" ? "動画生成" : "Video" }}
+                      {{ t("docs.cli.enterprise.vertexai.videoGeneration") }}
                     </td>
                     <td class="border-border border px-3 py-2">
                       <code class="text-primary text-xs">veo-2.0, veo-3.0, veo-3.1</code>
                     </td>
                     <td class="border-border border px-3 py-2 text-xs">
-                      {{ locale === "ja" ? "Veoシリーズ" : "Veo series" }}
+                      {{ t("docs.cli.enterprise.vertexai.veoSeries") }}
                     </td>
                   </tr>
                   <tr>
                     <td class="border-border border px-3 py-2">
-                      {{ locale === "ja" ? "音声合成" : "TTS" }}
+                      {{ t("docs.cli.enterprise.vertexai.tts") }}
                     </td>
                     <td class="border-border border px-3 py-2">
                       <code class="text-primary text-xs">Google Cloud TTS</code>
@@ -1436,26 +1418,22 @@ gcloud auth application-default login</code></pre>
             <div
               class="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
             >
-              <strong>{{ locale === "ja" ? "注意：" : "Note:" }}</strong>
+              <strong>{{ t("docs.cli.enterprise.vertexai.note") }}</strong>
               <ul class="mt-1 list-inside list-disc space-y-1">
                 <li>
-                  {{
-                    locale === "ja"
-                      ? "vertexai_projectを設定しないと、Gemini API経由で生成しようとします。エンタープライズ環境では必ず設定してください。"
-                      : "Without vertexai_project, it will try to generate via Gemini API. Always set this in enterprise environments."
-                  }}
+                  {{ t("docs.cli.enterprise.vertexai.noteVertexaiProject") }}
                 </li>
                 <li>
                   <code class="text-xs">gemini-3-pro-image-preview</code>
-                  {{ locale === "ja" ? "は vertexai_location を" : " requires vertexai_location set to "
-                  }}<code class="text-xs">global</code>{{ locale === "ja" ? " に設定してください（" : " ("
+                  {{ t("docs.cli.enterprise.vertexai.noteGemini3Location") }}<code class="text-xs">global</code
+                  >{{ t("docs.cli.enterprise.vertexai.noteGemini3LocationSet")
                   }}<a
                     href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-pro-image"
                     target="_blank"
                     rel="noopener"
                     class="underline"
-                    >{{ locale === "ja" ? "参考ドキュメント" : "Reference" }}</a
-                  >{{ locale === "ja" ? " 2025-02-04 現在）" : " as of 2025-02-04)" }}
+                    >{{ t("docs.cli.enterprise.vertexai.noteGemini3Reference") }}</a
+                  >{{ t("docs.cli.enterprise.vertexai.noteGemini3Date") }}
                 </li>
               </ul>
             </div>
@@ -1468,7 +1446,7 @@ gcloud auth application-default login</code></pre>
                 class="text-primary hover:underline"
               >
                 <ExternalLink class="mr-1 inline h-3 w-3" />
-                {{ locale === "ja" ? "Vertex AI詳細ドキュメント" : "Vertex AI Detailed Documentation" }}
+                {{ t("docs.cli.enterprise.vertexai.detailedDocs") }}
               </a>
             </div>
           </CardContent>
@@ -1486,60 +1464,52 @@ gcloud auth application-default login</code></pre>
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground mb-4 text-sm">
-              {{
-                locale === "ja"
-                  ? "Microsoft Azure上でOpenAIモデルを利用できます。エンタープライズのセキュリティ・コンプライアンス要件に対応。"
-                  : "Use OpenAI models on Microsoft Azure. Meets enterprise security and compliance requirements."
-              }}
+              {{ t("docs.cli.enterprise.azure.description") }}
             </p>
 
             <div
               class="mb-4 rounded border border-blue-200 bg-blue-50 p-3 text-sm text-blue-800 dark:border-blue-900 dark:bg-blue-950 dark:text-blue-200"
             >
-              <strong>{{ locale === "ja" ? "重要：" : "Important:" }}</strong>
-              {{
-                locale === "ja"
-                  ? "デプロイメント名はモデル名と完全に一致させてください。例：gpt-image-1.5をデプロイする場合、デプロイメント名も「gpt-image-1.5」にします。"
-                  : "Deployment name must exactly match the model name. Example: When deploying gpt-image-1.5, use 'gpt-image-1.5' as the deployment name."
-              }}
+              <strong>{{ t("docs.cli.enterprise.azure.important") }}</strong>
+              {{ t("docs.cli.enterprise.azure.importantDesc") }}
             </div>
 
             <h4 class="text-foreground mb-2 text-sm font-medium">
-              {{ locale === "ja" ? "環境変数設定" : "Environment Variables" }}
+              {{ t("docs.cli.enterprise.azure.envVars") }}
             </h4>
             <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
-              <pre class="text-xs"><code># {{ locale === "ja" ? "画像生成" : "Image generation" }}
+              <pre class="text-xs"><code># {{ t("docs.cli.enterprise.azure.envImageGen") }}
 IMAGE_OPENAI_API_KEY=your-azure-api-key
 IMAGE_OPENAI_BASE_URL=https://your-resource.openai.azure.com/
 
-# {{ locale === "ja" ? "音声合成（TTS）" : "Text-to-Speech (TTS)" }}
+# {{ t("docs.cli.enterprise.azure.envTts") }}
 TTS_OPENAI_API_KEY=your-azure-api-key
 TTS_OPENAI_BASE_URL=https://your-resource.openai.azure.com/
 
-# {{ locale === "ja" ? "テキスト生成（翻訳等）" : "Text generation (translation, etc.)" }}
+# {{ t("docs.cli.enterprise.azure.envTextGen") }}
 LLM_OPENAI_API_KEY=your-azure-api-key
 LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
             </div>
 
             <h4 class="text-foreground mb-2 text-sm font-medium">
-              {{ locale === "ja" ? "対応モデル" : "Supported Models" }}
+              {{ t("docs.cli.enterprise.azure.supportedModels") }}
             </h4>
             <div class="overflow-x-auto">
               <table class="border-border w-full border-collapse border text-sm">
                 <thead>
                   <tr class="bg-muted">
                     <th class="border-border border px-3 py-2 text-left">
-                      {{ locale === "ja" ? "用途" : "Purpose" }}
+                      {{ t("docs.cli.enterprise.azure.purpose") }}
                     </th>
                     <th class="border-border border px-3 py-2 text-left">
-                      {{ locale === "ja" ? "モデル" : "Model" }}
+                      {{ t("docs.cli.enterprise.vertexai.model") }}
                     </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="border-border border px-3 py-2">
-                      {{ locale === "ja" ? "画像生成" : "Image" }}
+                      {{ t("docs.cli.enterprise.vertexai.imageGeneration") }}
                     </td>
                     <td class="border-border border px-3 py-2">
                       <code class="text-primary text-xs">gpt-image-1.5</code>
@@ -1553,7 +1523,7 @@ LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
                   </tr>
                   <tr>
                     <td class="border-border border px-3 py-2">
-                      {{ locale === "ja" ? "テキスト" : "Text" }}
+                      {{ t("docs.cli.enterprise.azure.text") }}
                     </td>
                     <td class="border-border border px-3 py-2">
                       <code class="text-primary text-xs">gpt-4o</code>
@@ -1564,7 +1534,7 @@ LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
             </div>
 
             <h4 class="text-foreground mt-4 mb-2 text-sm font-medium">
-              {{ locale === "ja" ? "利用可能なTTSボイス" : "Available TTS Voices" }}
+              {{ t("docs.cli.enterprise.azure.availableTtsVoices") }}
             </h4>
             <div class="flex flex-wrap gap-2">
               <span
@@ -1577,12 +1547,10 @@ LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
             </div>
 
             <h4 class="text-foreground mt-4 mb-2 text-sm font-medium">
-              {{ locale === "ja" ? "推奨リージョン" : "Recommended Regions" }}
+              {{ t("docs.cli.enterprise.azure.recommendedRegions") }}
             </h4>
             <p class="text-muted-foreground text-sm">
-              {{
-                locale === "ja" ? "最も多くのモデルに対応しているリージョン：" : "Regions with the most model support:"
-              }}
+              {{ t("docs.cli.enterprise.azure.recommendedRegionsDesc") }}
               <code class="text-primary">East US 2</code>,
               <code class="text-primary">Sweden Central</code>
             </p>
@@ -1590,12 +1558,8 @@ LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
             <div
               class="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
             >
-              <strong>{{ locale === "ja" ? "トラブルシューティング：" : "Troubleshooting:" }}</strong>
-              {{
-                locale === "ja"
-                  ? "「404 The API deployment for this resource does not exist」エラーが出た場合、デプロイメント名がモデル名と一致しているか確認してください。"
-                  : "If you get '404 The API deployment for this resource does not exist' error, verify that deployment name matches the model name."
-              }}
+              <strong>{{ t("docs.cli.enterprise.azure.troubleshooting") }}</strong>
+              {{ t("docs.cli.enterprise.azure.troubleshootingDesc") }}
             </div>
 
             <div class="text-muted-foreground mt-4 rounded-lg border border-dashed p-3 text-sm">
@@ -1606,7 +1570,7 @@ LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
                 class="text-primary hover:underline"
               >
                 <ExternalLink class="mr-1 inline h-3 w-3" />
-                {{ locale === "ja" ? "Azure OpenAI詳細ドキュメント" : "Azure OpenAI Detailed Documentation" }}
+                {{ t("docs.cli.enterprise.azure.detailedDocs") }}
               </a>
             </div>
           </CardContent>
@@ -1699,17 +1663,17 @@ LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
 
         <!-- Azure OpenAI Variables -->
         <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
-          {{ locale === "ja" ? "Azure OpenAI用（エンタープライズ）" : "Azure OpenAI (Enterprise)" }}
+          {{ t("docs.cli.enterprise.envSummary.azureTitle") }}
         </h3>
         <div class="overflow-x-auto">
           <table class="border-border w-full border-collapse border text-sm">
             <thead>
               <tr class="bg-muted">
                 <th class="border-border border px-4 py-2 text-left">
-                  {{ locale === "ja" ? "変数名" : "Variable" }}
+                  {{ t("docs.cli.enterprise.envSummary.variable") }}
                 </th>
                 <th class="border-border border px-4 py-2 text-left">
-                  {{ locale === "ja" ? "用途" : "Purpose" }}
+                  {{ t("docs.cli.enterprise.envSummary.purpose") }}
                 </th>
               </tr>
             </thead>
@@ -1719,7 +1683,7 @@ LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
                   <code class="text-xs">IMAGE_OPENAI_API_KEY / IMAGE_OPENAI_BASE_URL</code>
                 </td>
                 <td class="border-border border px-4 py-2">
-                  {{ locale === "ja" ? "Azure画像生成" : "Azure image generation" }}
+                  {{ t("docs.cli.enterprise.envSummary.azureImageGen") }}
                 </td>
               </tr>
               <tr>
@@ -1727,7 +1691,7 @@ LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
                   <code class="text-xs">TTS_OPENAI_API_KEY / TTS_OPENAI_BASE_URL</code>
                 </td>
                 <td class="border-border border px-4 py-2">
-                  {{ locale === "ja" ? "Azure音声合成" : "Azure TTS" }}
+                  {{ t("docs.cli.enterprise.envSummary.azureTts") }}
                 </td>
               </tr>
               <tr>
@@ -1735,7 +1699,7 @@ LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
                   <code class="text-xs">LLM_OPENAI_API_KEY / LLM_OPENAI_BASE_URL</code>
                 </td>
                 <td class="border-border border px-4 py-2">
-                  {{ locale === "ja" ? "Azureテキスト生成（翻訳等）" : "Azure text generation (translation, etc.)" }}
+                  {{ t("docs.cli.enterprise.envSummary.azureTextGen") }}
                 </td>
               </tr>
             </tbody>
@@ -1783,6 +1747,6 @@ import {
   Building2,
 } from "lucide-vue-next";
 
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const localizedUrl = useLocalizedUrl();
 </script>
