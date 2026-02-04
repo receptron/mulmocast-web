@@ -165,7 +165,7 @@ MulmoScript（JSON形式の台本）からAIが画像・音声・動画を自動
 
 - **コマンド**: `mulmo movie`, `mulmo audio`, `mulmo images`, `mulmo pdf`, `mulmo tool scripting`
 - **MulmoScript**: beats, speechParams, imageParams, movieParams, captionParams
-- **プロバイダー**: OpenAI, Google, Replicate, ElevenLabs, NijiVoice
+- **プロバイダー**: OpenAI, Google, Replicate, ElevenLabs
 - **高度な機能**: スピルオーバー、トランジション、リップシンク、字幕、フィルター
 
 ---
