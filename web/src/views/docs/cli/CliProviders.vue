@@ -1308,6 +1308,18 @@
             </div>
 
             <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.vertexai.prerequisites") }}
+            </h4>
+            <ul class="text-muted-foreground mb-4 list-inside list-disc space-y-1 text-sm">
+              <li>{{ t("docs.cli.enterprise.vertexai.prereq1") }}</li>
+              <li>{{ t("docs.cli.enterprise.vertexai.prereq2") }}</li>
+              <li>{{ t("docs.cli.enterprise.vertexai.prereq3") }}</li>
+            </ul>
+            <p class="text-muted-foreground mb-4 text-xs">
+              {{ t("docs.cli.enterprise.vertexai.prereqInstallHint") }}
+            </p>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
               {{ t("docs.cli.enterprise.vertexai.setupSteps") }}
             </h4>
             <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
@@ -1465,6 +1477,18 @@ gcloud auth application-default login</code></pre>
           <CardContent>
             <p class="text-muted-foreground mb-4 text-sm">
               {{ t("docs.cli.enterprise.azure.description") }}
+            </p>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.azure.prerequisites") }}
+            </h4>
+            <ul class="text-muted-foreground mb-4 list-inside list-disc space-y-1 text-sm">
+              <li>{{ t("docs.cli.enterprise.azure.prereq1") }}</li>
+              <li>{{ t("docs.cli.enterprise.azure.prereq2") }}</li>
+              <li>{{ t("docs.cli.enterprise.azure.prereq3") }}</li>
+            </ul>
+            <p class="text-muted-foreground mb-4 text-xs">
+              {{ t("docs.cli.enterprise.azure.prereqNote") }}
             </p>
 
             <div
