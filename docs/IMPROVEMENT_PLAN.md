@@ -261,7 +261,7 @@ gui-chat-protocol + MulmoChat + GUIChatPluginTemplateより：
 2. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliMulmoscript.vue`
    - 現在: 1462行 ✅ 画像タイプ詳細、Markdownレイアウト、Beat長ルール追加済み
 3. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliProviders.vue`
-   - 現在: 687行 → 目標: ~900行（モデル詳細、設定例追加）
+   - 現在: ~1700行 ✅ Enterprise Settings追加済み（Vertex AI, Azure OpenAI, Geminiモデル）
 4. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliAdvanced.vue`
    - 現在: 636行 → 目標: ~1000行（詳細設定、例追加）
 5. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliIndex.vue`

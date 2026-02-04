@@ -97,7 +97,8 @@ docs/cli/
 - **設定サンプルを添付**: 説明の後に必ずコード例を記載
 - **外部リンクを追加**: GitHub docs、Zenn記事、YouTube動画へのリンク
 - **トラブルシューティング**: よくあるエラーと解決策を記載
-- **i18n**: `locale === "ja" ? ... : ...` パターンで日英対応
+- **i18n**: `$t()` 関数を優先（i18n/ja.ts, en.tsに翻訳キーを追加）
+  - インラインパターン `locale === "ja" ? ... : ...` も可（短いテキスト向け）
 
 ### チュートリアル・クイックスタートのガイドライン
 
@@ -155,8 +156,10 @@ MulmoScript（JSON形式の台本）からAIが画像・音声・動画を自動
 | `docs/sound_and_voice.md`          | 音声スピルオーバー、言語別スピーカー        | 音声機能の詳細                   |
 | `docs/faq_ja.md`                   | FAQ（日本語）                               | トラブルシューティング           |
 | `docs/caption_split.md`            | 字幕分割機能設計                            | 字幕タイミング制御               |
-| `docs/vertexai_en.md`              | Vertex AI設定                               | Google Cloud連携                 |
-| `docs/azure_openai_integration.md` | Azure OpenAI統合設計                        | Azure連携                        |
+| `docs/vertexai_en.md`              | Vertex AI設定（英語）                       | Google Cloud連携                 |
+| `docs/vertexai_ja.md`              | Vertex AI設定（日本語）                     | Google Cloud連携                 |
+| `docs/azure_openai_integration.md` | Azure OpenAI統合設計                        | Azure連携（設計ドキュメント）    |
+| `docs/azure_openai_usage.md`       | Azure OpenAI使用方法                        | Azure連携（ユーザーガイド）      |
 | `docs/tts.md`                      | TTSプロバイダー追加手順                     | 開発者向け拡張                   |
 | `docs/image_plugin.md`             | 画像プラグイン開発                          | 開発者向け拡張                   |
 | `src/types/schema.ts`              | MulmoScriptスキーマ定義                     | 型定義リファレンス               |
@@ -368,8 +371,8 @@ yarn deploy-prod   # 本番環境 (mulmocast-prod)
 
 ### 対象ファイル
 
-| ファイル | 役割 |
-|----------|------|
-| `CLAUDE.md` | プロジェクト概要、ソース一覧、開発ガイドライン |
-| `docs/IMPROVEMENT_PLAN.md` | 改善計画、実装状況 |
-| `.claude/commands/update-docs.md` | Webドキュメント更新手順 |
+| ファイル                          | 役割                                           |
+| --------------------------------- | ---------------------------------------------- |
+| `CLAUDE.md`                       | プロジェクト概要、ソース一覧、開発ガイドライン |
+| `docs/IMPROVEMENT_PLAN.md`        | 改善計画、実装状況                             |
+| `.claude/commands/update-docs.md` | Webドキュメント更新手順                        |
