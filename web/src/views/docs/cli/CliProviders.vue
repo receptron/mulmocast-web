@@ -1366,30 +1366,98 @@ gcloud auth application-default login</code></pre>
             <h4 class="text-foreground mb-2 text-sm font-medium">
               {{ locale === "ja" ? "利用可能なモデル" : "Available Models" }}
             </h4>
-            <div class="grid gap-2 md:grid-cols-3">
-              <div class="bg-muted rounded p-2">
-                <p class="text-muted-foreground text-xs">{{ locale === "ja" ? "画像生成" : "Image" }}</p>
-                <code class="text-primary text-xs">imagen-4.0-*</code>
-              </div>
-              <div class="bg-muted rounded p-2">
-                <p class="text-muted-foreground text-xs">{{ locale === "ja" ? "動画生成" : "Video" }}</p>
-                <code class="text-primary text-xs">veo-2.0, veo-3.0, veo-3.1</code>
-              </div>
-              <div class="bg-muted rounded p-2">
-                <p class="text-muted-foreground text-xs">{{ locale === "ja" ? "音声合成" : "TTS" }}</p>
-                <code class="text-primary text-xs">Google Cloud TTS</code>
-              </div>
+            <div class="overflow-x-auto">
+              <table class="border-border w-full border-collapse border text-sm">
+                <thead>
+                  <tr class="bg-muted">
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ locale === "ja" ? "カテゴリ" : "Category" }}
+                    </th>
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ locale === "ja" ? "モデル" : "Model" }}
+                    </th>
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ locale === "ja" ? "備考" : "Notes" }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-border border px-3 py-2" rowspan="3">
+                      {{ locale === "ja" ? "画像生成" : "Image" }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">imagen-4.0-*</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">
+                      {{ locale === "ja" ? "Imagen 4シリーズ" : "Imagen 4 series" }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">gemini-2.5-flash-preview-image</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">
+                      {{ locale === "ja" ? "Geminiベース画像生成" : "Gemini-based image generation" }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">gemini-3-pro-image-preview</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">
+                      {{ locale === "ja" ? "Gemini 3 Pro（一部リージョン）" : "Gemini 3 Pro (some regions)" }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      {{ locale === "ja" ? "動画生成" : "Video" }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">veo-2.0, veo-3.0, veo-3.1</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">
+                      {{ locale === "ja" ? "Veoシリーズ" : "Veo series" }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      {{ locale === "ja" ? "音声合成" : "TTS" }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">Google Cloud TTS</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">-</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <div
               class="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
             >
               <strong>{{ locale === "ja" ? "注意：" : "Note:" }}</strong>
-              {{
-                locale === "ja"
-                  ? "vertexai_projectを設定しないと、Gemini API経由で生成しようとします。エンタープライズ環境では必ず設定してください。"
-                  : "Without vertexai_project, it will try to generate via Gemini API. Always set this in enterprise environments."
-              }}
+              <ul class="mt-1 list-inside list-disc space-y-1">
+                <li>
+                  {{
+                    locale === "ja"
+                      ? "vertexai_projectを設定しないと、Gemini API経由で生成しようとします。エンタープライズ環境では必ず設定してください。"
+                      : "Without vertexai_project, it will try to generate via Gemini API. Always set this in enterprise environments."
+                  }}
+                </li>
+                <li>
+                  <code class="text-xs">gemini-3-pro-image-preview</code>
+                  {{ locale === "ja" ? "は vertexai_location を" : " requires vertexai_location set to "
+                  }}<code class="text-xs">global</code>{{ locale === "ja" ? " に設定してください（" : " ("
+                  }}<a
+                    href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-pro-image"
+                    target="_blank"
+                    rel="noopener"
+                    class="underline"
+                    >{{ locale === "ja" ? "参考ドキュメント" : "Reference" }}</a
+                  >{{ locale === "ja" ? " 2025-02-04 現在）" : " as of 2025-02-04)" }}
+                </li>
+              </ul>
             </div>
 
             <div class="text-muted-foreground mt-4 rounded-lg border border-dashed p-3 text-sm">
