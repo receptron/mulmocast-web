@@ -1263,6 +1263,288 @@
         </Card>
       </section>
 
+      <!-- Enterprise Settings -->
+      <section class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ locale === "ja" ? "エンタープライズ設定" : "Enterprise Settings" }}
+        </h2>
+
+        <p class="text-muted-foreground mb-4">
+          {{
+            locale === "ja"
+              ? "企業環境で利用する場合のGoogle Vertex AIとAzure OpenAIの設定方法を説明します。"
+              : "Configuration guide for Google Vertex AI and Azure OpenAI in enterprise environments."
+          }}
+        </p>
+
+        <!-- Vertex AI -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="flex items-center gap-2 text-base">
+              <div class="bg-primary/10 flex h-8 w-8 items-center justify-center rounded">
+                <Cloud class="text-primary h-4 w-4" />
+              </div>
+              Google Vertex AI
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-4 text-sm">
+              {{
+                locale === "ja"
+                  ? "エンタープライズ環境ではVertex AIが推奨されます。ADC（Application Default Credentials）を使用してGoogle Cloudと連携します。"
+                  : "Vertex AI is recommended for enterprise environments. It uses ADC (Application Default Credentials) to integrate with Google Cloud."
+              }}
+            </p>
+
+            <div class="mb-4 grid gap-4 md:grid-cols-2">
+              <div class="border-border rounded border p-3">
+                <h4 class="text-foreground mb-2 text-sm font-medium">
+                  {{ locale === "ja" ? "Gemini API（APIキー）" : "Gemini API (API Key)" }}
+                </h4>
+                <p class="text-muted-foreground text-xs">
+                  {{
+                    locale === "ja"
+                      ? "GEMINI_API_KEYを設定するだけで利用可能。個人・小規模向け。"
+                      : "Just set GEMINI_API_KEY. For personal/small scale use."
+                  }}
+                </p>
+              </div>
+              <div class="border-border rounded border p-3">
+                <h4 class="text-foreground mb-2 text-sm font-medium">
+                  {{ locale === "ja" ? "Vertex AI（ADC）" : "Vertex AI (ADC)" }}
+                </h4>
+                <p class="text-muted-foreground text-xs">
+                  {{
+                    locale === "ja"
+                      ? "Google Cloudの認証を使用。エンタープライズ・本番環境向け。"
+                      : "Uses Google Cloud auth. For enterprise/production use."
+                  }}
+                </p>
+              </div>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ locale === "ja" ? "セットアップ手順" : "Setup Steps" }}
+            </h4>
+            <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
+              <pre
+                class="text-xs"
+              ><code># 1. {{ locale === "ja" ? "Google Cloud CLIでログイン" : "Login with Google Cloud CLI" }}
+gcloud auth login
+
+# 2. {{ locale === "ja" ? "プロジェクトを設定" : "Set project" }}
+gcloud config set project YOUR_PROJECT_ID
+
+# 3. {{ locale === "ja" ? "必要なAPIを有効化" : "Enable required APIs" }}
+gcloud services enable aiplatform.googleapis.com
+gcloud services enable generativelanguage.googleapis.com
+
+# 4. {{ locale === "ja" ? "ADCを設定" : "Set up ADC" }}
+gcloud auth application-default login</code></pre>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ locale === "ja" ? "MulmoScript設定例" : "MulmoScript Configuration" }}
+            </h4>
+            <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "imageParams": {
+    "provider": "google",
+    "model": "imagen-4.0-generate-001",
+    "vertexai_project": "your-project-id",      <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "Google CloudプロジェクトID" : "Google Cloud project ID" }}</span>
+    "vertexai_location": "us-central1"          <span class="text-green-600 dark:text-green-400">// {{ locale === "ja" ? "リージョン" : "Region" }}</span>
+  },
+  "movieParams": {
+    "provider": "google",
+    "model": "veo-2.0-generate-001",
+    "vertexai_project": "your-project-id",
+    "vertexai_location": "us-central1"
+  }
+}</code></pre>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ locale === "ja" ? "利用可能なモデル" : "Available Models" }}
+            </h4>
+            <div class="grid gap-2 md:grid-cols-3">
+              <div class="bg-muted rounded p-2">
+                <p class="text-muted-foreground text-xs">{{ locale === "ja" ? "画像生成" : "Image" }}</p>
+                <code class="text-primary text-xs">imagen-4.0-*</code>
+              </div>
+              <div class="bg-muted rounded p-2">
+                <p class="text-muted-foreground text-xs">{{ locale === "ja" ? "動画生成" : "Video" }}</p>
+                <code class="text-primary text-xs">veo-2.0, veo-3.0, veo-3.1</code>
+              </div>
+              <div class="bg-muted rounded p-2">
+                <p class="text-muted-foreground text-xs">{{ locale === "ja" ? "音声合成" : "TTS" }}</p>
+                <code class="text-primary text-xs">Google Cloud TTS</code>
+              </div>
+            </div>
+
+            <div
+              class="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
+            >
+              <strong>{{ locale === "ja" ? "注意：" : "Note:" }}</strong>
+              {{
+                locale === "ja"
+                  ? "vertexai_projectを設定しないと、Gemini API経由で生成しようとします。エンタープライズ環境では必ず設定してください。"
+                  : "Without vertexai_project, it will try to generate via Gemini API. Always set this in enterprise environments."
+              }}
+            </div>
+
+            <div class="text-muted-foreground mt-4 rounded-lg border border-dashed p-3 text-sm">
+              <a
+                href="https://github.com/receptron/mulmocast-cli/blob/main/docs/vertexai_ja.md"
+                target="_blank"
+                rel="noopener"
+                class="text-primary hover:underline"
+              >
+                <ExternalLink class="mr-1 inline h-3 w-3" />
+                {{ locale === "ja" ? "Vertex AI詳細ドキュメント" : "Vertex AI Detailed Documentation" }}
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Azure OpenAI -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="flex items-center gap-2 text-base">
+              <div class="bg-primary/10 flex h-8 w-8 items-center justify-center rounded">
+                <Building2 class="text-primary h-4 w-4" />
+              </div>
+              Azure OpenAI
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-4 text-sm">
+              {{
+                locale === "ja"
+                  ? "Microsoft Azure上でOpenAIモデルを利用できます。エンタープライズのセキュリティ・コンプライアンス要件に対応。"
+                  : "Use OpenAI models on Microsoft Azure. Meets enterprise security and compliance requirements."
+              }}
+            </p>
+
+            <div
+              class="mb-4 rounded border border-blue-200 bg-blue-50 p-3 text-sm text-blue-800 dark:border-blue-900 dark:bg-blue-950 dark:text-blue-200"
+            >
+              <strong>{{ locale === "ja" ? "重要：" : "Important:" }}</strong>
+              {{
+                locale === "ja"
+                  ? "デプロイメント名はモデル名と完全に一致させてください。例：gpt-image-1.5をデプロイする場合、デプロイメント名も「gpt-image-1.5」にします。"
+                  : "Deployment name must exactly match the model name. Example: When deploying gpt-image-1.5, use 'gpt-image-1.5' as the deployment name."
+              }}
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ locale === "ja" ? "環境変数設定" : "Environment Variables" }}
+            </h4>
+            <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code># {{ locale === "ja" ? "画像生成" : "Image generation" }}
+IMAGE_OPENAI_API_KEY=your-azure-api-key
+IMAGE_OPENAI_BASE_URL=https://your-resource.openai.azure.com/openai/deployments/gpt-image-1.5
+
+# {{ locale === "ja" ? "音声合成（TTS）" : "Text-to-Speech (TTS)" }}
+TTS_OPENAI_API_KEY=your-azure-api-key
+TTS_OPENAI_BASE_URL=https://your-resource.openai.azure.com/openai/deployments/tts
+
+# {{ locale === "ja" ? "テキスト生成（翻訳等）" : "Text generation (translation, etc.)" }}
+LLM_OPENAI_API_KEY=your-azure-api-key
+LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/openai/deployments/gpt-4o</code></pre>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ locale === "ja" ? "対応モデル" : "Supported Models" }}
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="border-border w-full border-collapse border text-sm">
+                <thead>
+                  <tr class="bg-muted">
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ locale === "ja" ? "用途" : "Purpose" }}
+                    </th>
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ locale === "ja" ? "モデル" : "Model" }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      {{ locale === "ja" ? "画像生成" : "Image" }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">gpt-image-1.5</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">TTS</td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">tts, tts-hd, gpt-4o-mini-tts</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      {{ locale === "ja" ? "テキスト" : "Text" }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">gpt-4o</code>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 class="text-foreground mt-4 mb-2 text-sm font-medium">
+              {{ locale === "ja" ? "利用可能なTTSボイス" : "Available TTS Voices" }}
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="voice in ['alloy', 'ash', 'coral', 'echo', 'fable', 'nova', 'onyx', 'sage', 'shimmer']"
+                :key="voice"
+                class="bg-muted text-foreground rounded px-2 py-1 text-xs"
+              >
+                {{ voice }}
+              </span>
+            </div>
+
+            <h4 class="text-foreground mt-4 mb-2 text-sm font-medium">
+              {{ locale === "ja" ? "推奨リージョン" : "Recommended Regions" }}
+            </h4>
+            <p class="text-muted-foreground text-sm">
+              {{
+                locale === "ja" ? "最も多くのモデルに対応しているリージョン：" : "Regions with the most model support:"
+              }}
+              <code class="text-primary">East US 2</code>,
+              <code class="text-primary">Sweden Central</code>
+            </p>
+
+            <div
+              class="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
+            >
+              <strong>{{ locale === "ja" ? "トラブルシューティング：" : "Troubleshooting:" }}</strong>
+              {{
+                locale === "ja"
+                  ? "「404 The API deployment for this resource does not exist」エラーが出た場合、デプロイメント名がモデル名と一致しているか確認してください。"
+                  : "If you get '404 The API deployment for this resource does not exist' error, verify that deployment name matches the model name."
+              }}
+            </div>
+
+            <div class="text-muted-foreground mt-4 rounded-lg border border-dashed p-3 text-sm">
+              <a
+                href="https://github.com/receptron/mulmocast-cli/blob/main/docs/azure_openai_usage.md"
+                target="_blank"
+                rel="noopener"
+                class="text-primary hover:underline"
+              >
+                <ExternalLink class="mr-1 inline h-3 w-3" />
+                {{ locale === "ja" ? "Azure OpenAI詳細ドキュメント" : "Azure OpenAI Detailed Documentation" }}
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
       <!-- Environment Variables Summary -->
       <section class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
@@ -1334,6 +1616,60 @@
                 </td>
                 <td class="border-border border px-4 py-2 text-center"></td>
               </tr>
+              <tr>
+                <td class="border-border border px-4 py-2">
+                  <code class="text-xs">KOTODAMA_API_KEY</code>
+                </td>
+                <td class="border-border border px-4 py-2">
+                  {{ locale === "ja" ? "ことだまTTS（日本語特化）" : "Kotodama TTS (Japanese specialized)" }}
+                </td>
+                <td class="border-border border px-4 py-2 text-center"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Azure OpenAI Variables -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "Azure OpenAI用（エンタープライズ）" : "Azure OpenAI (Enterprise)" }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-4 py-2 text-left">
+                  {{ locale === "ja" ? "変数名" : "Variable" }}
+                </th>
+                <th class="border-border border px-4 py-2 text-left">
+                  {{ locale === "ja" ? "用途" : "Purpose" }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-4 py-2">
+                  <code class="text-xs">IMAGE_OPENAI_API_KEY / IMAGE_OPENAI_BASE_URL</code>
+                </td>
+                <td class="border-border border px-4 py-2">
+                  {{ locale === "ja" ? "Azure画像生成" : "Azure image generation" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-4 py-2">
+                  <code class="text-xs">TTS_OPENAI_API_KEY / TTS_OPENAI_BASE_URL</code>
+                </td>
+                <td class="border-border border px-4 py-2">
+                  {{ locale === "ja" ? "Azure音声合成" : "Azure TTS" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-4 py-2">
+                  <code class="text-xs">LLM_OPENAI_API_KEY / LLM_OPENAI_BASE_URL</code>
+                </td>
+                <td class="border-border border px-4 py-2">
+                  {{ locale === "ja" ? "Azureテキスト生成（翻訳等）" : "Azure text generation (translation, etc.)" }}
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1375,6 +1711,8 @@ import {
   Users,
   Globe,
   Sparkles,
+  Cloud,
+  Building2,
 } from "lucide-vue-next";
 
 const { locale } = useI18n();
