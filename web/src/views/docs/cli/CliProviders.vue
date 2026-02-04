@@ -1510,15 +1510,15 @@ gcloud auth application-default login</code></pre>
             <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
               <pre class="text-xs"><code># {{ locale === "ja" ? "画像生成" : "Image generation" }}
 IMAGE_OPENAI_API_KEY=your-azure-api-key
-IMAGE_OPENAI_BASE_URL=https://your-resource.openai.azure.com/openai/deployments/gpt-image-1.5
+IMAGE_OPENAI_BASE_URL=https://your-resource.openai.azure.com/
 
 # {{ locale === "ja" ? "音声合成（TTS）" : "Text-to-Speech (TTS)" }}
 TTS_OPENAI_API_KEY=your-azure-api-key
-TTS_OPENAI_BASE_URL=https://your-resource.openai.azure.com/openai/deployments/tts
+TTS_OPENAI_BASE_URL=https://your-resource.openai.azure.com/
 
 # {{ locale === "ja" ? "テキスト生成（翻訳等）" : "Text generation (translation, etc.)" }}
 LLM_OPENAI_API_KEY=your-azure-api-key
-LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/openai/deployments/gpt-4o</code></pre>
+LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
             </div>
 
             <h4 class="text-foreground mb-2 text-sm font-medium">
