@@ -1263,6 +1263,344 @@
         </Card>
       </section>
 
+      <!-- Enterprise Settings -->
+      <section class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ t("docs.cli.enterprise.title") }}
+        </h2>
+
+        <p class="text-muted-foreground mb-4">
+          {{ t("docs.cli.enterprise.description") }}
+        </p>
+
+        <!-- Vertex AI -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="flex items-center gap-2 text-base">
+              <div class="bg-primary/10 flex h-8 w-8 items-center justify-center rounded">
+                <Cloud class="text-primary h-4 w-4" />
+              </div>
+              Google Vertex AI
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-4 text-sm">
+              {{ t("docs.cli.enterprise.vertexai.description") }}
+            </p>
+
+            <div class="mb-4 grid gap-4 md:grid-cols-2">
+              <div class="border-border rounded border p-3">
+                <h4 class="text-foreground mb-2 text-sm font-medium">
+                  {{ t("docs.cli.enterprise.vertexai.geminiApi") }}
+                </h4>
+                <p class="text-muted-foreground text-xs">
+                  {{ t("docs.cli.enterprise.vertexai.geminiApiDesc") }}
+                </p>
+              </div>
+              <div class="border-border rounded border p-3">
+                <h4 class="text-foreground mb-2 text-sm font-medium">
+                  {{ t("docs.cli.enterprise.vertexai.vertexaiAdc") }}
+                </h4>
+                <p class="text-muted-foreground text-xs">
+                  {{ t("docs.cli.enterprise.vertexai.vertexaiAdcDesc") }}
+                </p>
+              </div>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.vertexai.prerequisites") }}
+            </h4>
+            <ul class="text-muted-foreground mb-4 list-inside list-disc space-y-1 text-sm">
+              <li>{{ t("docs.cli.enterprise.vertexai.prereq1") }}</li>
+              <li>{{ t("docs.cli.enterprise.vertexai.prereq2") }}</li>
+              <li>{{ t("docs.cli.enterprise.vertexai.prereq3") }}</li>
+            </ul>
+            <p class="text-muted-foreground mb-4 text-xs">
+              {{ t("docs.cli.enterprise.vertexai.prereqInstallHint") }}
+            </p>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.vertexai.setupSteps") }}
+            </h4>
+            <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code># 1. {{ t("docs.cli.enterprise.vertexai.setupStep1") }}
+gcloud auth login
+
+# 2. {{ t("docs.cli.enterprise.vertexai.setupStep2") }}
+gcloud config set project YOUR_PROJECT_ID
+
+# 3. {{ t("docs.cli.enterprise.vertexai.setupStep3") }}
+gcloud services enable aiplatform.googleapis.com
+gcloud services enable generativelanguage.googleapis.com
+
+# 4. {{ t("docs.cli.enterprise.vertexai.setupStep4") }}
+gcloud auth application-default login</code></pre>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.vertexai.configExample") }}
+            </h4>
+            <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code>{
+  "imageParams": {
+    "provider": "google",
+    "model": "imagen-4.0-generate-001",
+    "vertexai_project": "your-project-id",      <span class="text-green-600 dark:text-green-400">// {{ t("docs.cli.enterprise.vertexai.configProjectComment") }}</span>
+    "vertexai_location": "us-central1"          <span class="text-green-600 dark:text-green-400">// {{ t("docs.cli.enterprise.vertexai.configLocationComment") }}</span>
+  },
+  "movieParams": {
+    "provider": "google",
+    "model": "veo-2.0-generate-001",
+    "vertexai_project": "your-project-id",
+    "vertexai_location": "us-central1"
+  }
+}</code></pre>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.vertexai.availableModels") }}
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="border-border w-full border-collapse border text-sm">
+                <thead>
+                  <tr class="bg-muted">
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ t("docs.cli.enterprise.vertexai.category") }}
+                    </th>
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ t("docs.cli.enterprise.vertexai.model") }}
+                    </th>
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ t("docs.cli.enterprise.vertexai.notes") }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-border border px-3 py-2" rowspan="3">
+                      {{ t("docs.cli.enterprise.vertexai.imageGeneration") }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">imagen-4.0-*</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">
+                      {{ t("docs.cli.enterprise.vertexai.imagen4Series") }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">gemini-2.5-flash-preview-image</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">
+                      {{ t("docs.cli.enterprise.vertexai.geminiImageGen") }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">gemini-3-pro-image-preview</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">
+                      {{ t("docs.cli.enterprise.vertexai.gemini3Pro") }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      {{ t("docs.cli.enterprise.vertexai.videoGeneration") }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">veo-2.0, veo-3.0, veo-3.1</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">
+                      {{ t("docs.cli.enterprise.vertexai.veoSeries") }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      {{ t("docs.cli.enterprise.vertexai.tts") }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">Google Cloud TTS</code>
+                    </td>
+                    <td class="border-border border px-3 py-2 text-xs">-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              class="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
+            >
+              <strong>{{ t("docs.cli.enterprise.vertexai.note") }}</strong>
+              <ul class="mt-1 list-inside list-disc space-y-1">
+                <li>
+                  {{ t("docs.cli.enterprise.vertexai.noteVertexaiProject") }}
+                </li>
+                <li>
+                  <code class="text-xs">gemini-3-pro-image-preview</code>
+                  {{ t("docs.cli.enterprise.vertexai.noteGemini3Location") }}<code class="text-xs">global</code
+                  >{{ t("docs.cli.enterprise.vertexai.noteGemini3LocationSet")
+                  }}<a
+                    href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-pro-image"
+                    target="_blank"
+                    rel="noopener"
+                    class="underline"
+                    >{{ t("docs.cli.enterprise.vertexai.noteGemini3Reference") }}</a
+                  >{{ t("docs.cli.enterprise.vertexai.noteGemini3Date") }}
+                </li>
+              </ul>
+            </div>
+
+            <div class="text-muted-foreground mt-4 rounded-lg border border-dashed p-3 text-sm">
+              <a
+                href="https://github.com/receptron/mulmocast-cli/blob/main/docs/vertexai_ja.md"
+                target="_blank"
+                rel="noopener"
+                class="text-primary hover:underline"
+              >
+                <ExternalLink class="mr-1 inline h-3 w-3" />
+                {{ t("docs.cli.enterprise.vertexai.detailedDocs") }}
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+
+        <!-- Azure OpenAI -->
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="flex items-center gap-2 text-base">
+              <div class="bg-primary/10 flex h-8 w-8 items-center justify-center rounded">
+                <Building2 class="text-primary h-4 w-4" />
+              </div>
+              Azure OpenAI
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground mb-4 text-sm">
+              {{ t("docs.cli.enterprise.azure.description") }}
+            </p>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.azure.prerequisites") }}
+            </h4>
+            <ul class="text-muted-foreground mb-4 list-inside list-disc space-y-1 text-sm">
+              <li>{{ t("docs.cli.enterprise.azure.prereq1") }}</li>
+              <li>{{ t("docs.cli.enterprise.azure.prereq2") }}</li>
+              <li>{{ t("docs.cli.enterprise.azure.prereq3") }}</li>
+            </ul>
+            <p class="text-muted-foreground mb-4 text-xs">
+              {{ t("docs.cli.enterprise.azure.prereqNote") }}
+            </p>
+
+            <div
+              class="mb-4 rounded border border-blue-200 bg-blue-50 p-3 text-sm text-blue-800 dark:border-blue-900 dark:bg-blue-950 dark:text-blue-200"
+            >
+              <strong>{{ t("docs.cli.enterprise.azure.important") }}</strong>
+              {{ t("docs.cli.enterprise.azure.importantDesc") }}
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.azure.envVars") }}
+            </h4>
+            <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-3">
+              <pre class="text-xs"><code># {{ t("docs.cli.enterprise.azure.envImageGen") }}
+IMAGE_OPENAI_API_KEY=your-azure-api-key
+IMAGE_OPENAI_BASE_URL=https://your-resource.openai.azure.com/
+
+# {{ t("docs.cli.enterprise.azure.envTts") }}
+TTS_OPENAI_API_KEY=your-azure-api-key
+TTS_OPENAI_BASE_URL=https://your-resource.openai.azure.com/
+
+# {{ t("docs.cli.enterprise.azure.envTextGen") }}
+LLM_OPENAI_API_KEY=your-azure-api-key
+LLM_OPENAI_BASE_URL=https://your-resource.openai.azure.com/</code></pre>
+            </div>
+
+            <h4 class="text-foreground mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.azure.supportedModels") }}
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="border-border w-full border-collapse border text-sm">
+                <thead>
+                  <tr class="bg-muted">
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ t("docs.cli.enterprise.azure.purpose") }}
+                    </th>
+                    <th class="border-border border px-3 py-2 text-left">
+                      {{ t("docs.cli.enterprise.vertexai.model") }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      {{ t("docs.cli.enterprise.vertexai.imageGeneration") }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">gpt-image-1.5</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">TTS</td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">tts, tts-hd, gpt-4o-mini-tts</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-border border px-3 py-2">
+                      {{ t("docs.cli.enterprise.azure.text") }}
+                    </td>
+                    <td class="border-border border px-3 py-2">
+                      <code class="text-primary text-xs">gpt-4o</code>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 class="text-foreground mt-4 mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.azure.availableTtsVoices") }}
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              <span
+                v-for="voice in ['alloy', 'ash', 'coral', 'echo', 'fable', 'nova', 'onyx', 'sage', 'shimmer']"
+                :key="voice"
+                class="bg-muted text-foreground rounded px-2 py-1 text-xs"
+              >
+                {{ voice }}
+              </span>
+            </div>
+
+            <h4 class="text-foreground mt-4 mb-2 text-sm font-medium">
+              {{ t("docs.cli.enterprise.azure.recommendedRegions") }}
+            </h4>
+            <p class="text-muted-foreground text-sm">
+              {{ t("docs.cli.enterprise.azure.recommendedRegionsDesc") }}
+              <code class="text-primary">East US 2</code>,
+              <code class="text-primary">Sweden Central</code>
+            </p>
+
+            <div
+              class="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
+            >
+              <strong>{{ t("docs.cli.enterprise.azure.troubleshooting") }}</strong>
+              {{ t("docs.cli.enterprise.azure.troubleshootingDesc") }}
+            </div>
+
+            <div class="text-muted-foreground mt-4 rounded-lg border border-dashed p-3 text-sm">
+              <a
+                href="https://github.com/receptron/mulmocast-cli/blob/main/docs/azure_openai_usage.md"
+                target="_blank"
+                rel="noopener"
+                class="text-primary hover:underline"
+              >
+                <ExternalLink class="mr-1 inline h-3 w-3" />
+                {{ t("docs.cli.enterprise.azure.detailedDocs") }}
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
       <!-- Environment Variables Summary -->
       <section class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
@@ -1334,6 +1672,60 @@
                 </td>
                 <td class="border-border border px-4 py-2 text-center"></td>
               </tr>
+              <tr>
+                <td class="border-border border px-4 py-2">
+                  <code class="text-xs">KOTODAMA_API_KEY</code>
+                </td>
+                <td class="border-border border px-4 py-2">
+                  {{ locale === "ja" ? "ことだまTTS（日本語特化）" : "Kotodama TTS (Japanese specialized)" }}
+                </td>
+                <td class="border-border border px-4 py-2 text-center"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Azure OpenAI Variables -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ t("docs.cli.enterprise.envSummary.azureTitle") }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-4 py-2 text-left">
+                  {{ t("docs.cli.enterprise.envSummary.variable") }}
+                </th>
+                <th class="border-border border px-4 py-2 text-left">
+                  {{ t("docs.cli.enterprise.envSummary.purpose") }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-4 py-2">
+                  <code class="text-xs">IMAGE_OPENAI_API_KEY / IMAGE_OPENAI_BASE_URL</code>
+                </td>
+                <td class="border-border border px-4 py-2">
+                  {{ t("docs.cli.enterprise.envSummary.azureImageGen") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-4 py-2">
+                  <code class="text-xs">TTS_OPENAI_API_KEY / TTS_OPENAI_BASE_URL</code>
+                </td>
+                <td class="border-border border px-4 py-2">
+                  {{ t("docs.cli.enterprise.envSummary.azureTts") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-4 py-2">
+                  <code class="text-xs">LLM_OPENAI_API_KEY / LLM_OPENAI_BASE_URL</code>
+                </td>
+                <td class="border-border border px-4 py-2">
+                  {{ t("docs.cli.enterprise.envSummary.azureTextGen") }}
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1375,8 +1767,10 @@ import {
   Users,
   Globe,
   Sparkles,
+  Cloud,
+  Building2,
 } from "lucide-vue-next";
 
-const { locale } = useI18n();
+const { locale, t } = useI18n();
 const localizedUrl = useLocalizedUrl();
 </script>
