@@ -25,10 +25,26 @@
             </div>
           </CardHeader>
           <CardContent>
-            <ul class="text-muted-foreground space-y-2 text-sm">
-              <li>{{ t("docs.cli.item1") }}</li>
-              <li>{{ t("docs.cli.item2") }}</li>
-              <li>{{ t("docs.cli.item3") }}</li>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  :href="localizedUrl('/docs/cli/quickstart')"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.cli.item1") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/cli/mulmoscript')"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.cli.item2") }}</a
+                >
+              </li>
+              <li>
+                <a :href="localizedUrl('/docs/cli')" class="text-muted-foreground hover:text-primary hover:underline">{{
+                  t("docs.cli.item3")
+                }}</a>
+              </li>
             </ul>
           </CardContent>
           <CardFooter>
@@ -52,10 +68,28 @@
             </div>
           </CardHeader>
           <CardContent>
-            <ul class="text-muted-foreground space-y-2 text-sm">
-              <li>{{ t("docs.app.item1") }}</li>
-              <li>{{ t("docs.app.item2") }}</li>
-              <li>{{ t("docs.app.item3") }}</li>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  :href="localizedUrl('/docs/app') + '#download'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.app.item1") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/app') + '#usage'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.app.item2") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/app') + '#settings'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.app.item3") }}</a
+                >
+              </li>
             </ul>
           </CardContent>
           <CardFooter>
@@ -79,10 +113,28 @@
             </div>
           </CardHeader>
           <CardContent>
-            <ul class="text-muted-foreground space-y-2 text-sm">
-              <li>{{ t("docs.easy.item1") }}</li>
-              <li>{{ t("docs.easy.item2") }}</li>
-              <li>{{ t("docs.easy.item3") }}</li>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  :href="localizedUrl('/docs/easy') + '#install'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.easy.item1") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/easy') + '#commands'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.easy.item2") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/easy') + '#quickstart'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.easy.item3") }}</a
+                >
+              </li>
             </ul>
           </CardContent>
           <CardFooter>
@@ -106,10 +158,28 @@
             </div>
           </CardHeader>
           <CardContent>
-            <ul class="text-muted-foreground space-y-2 text-sm">
-              <li>{{ t("docs.preprocessor.item1") }}</li>
-              <li>{{ t("docs.preprocessor.item2") }}</li>
-              <li>{{ t("docs.preprocessor.item3") }}</li>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  :href="localizedUrl('/docs/preprocessor') + '#profiles'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.preprocessor.item1") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/preprocessor') + '#ai-summarize'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.preprocessor.item2") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/preprocessor') + '#ai-qa'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.preprocessor.item3") }}</a
+                >
+              </li>
             </ul>
           </CardContent>
           <CardFooter>
@@ -133,10 +203,28 @@
             </div>
           </CardHeader>
           <CardContent>
-            <ul class="text-muted-foreground space-y-2 text-sm">
-              <li>{{ t("docs.mulmochat.item1") }}</li>
-              <li>{{ t("docs.mulmochat.item2") }}</li>
-              <li>{{ t("docs.mulmochat.item3") }}</li>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  :href="localizedUrl('/docs/mulmochat') + '#overview'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.mulmochat.item1") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/mulmochat') + '#protocol'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.mulmochat.item2") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/mulmochat') + '#plugins'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.mulmochat.item3") }}</a
+                >
+              </li>
             </ul>
           </CardContent>
           <CardFooter>

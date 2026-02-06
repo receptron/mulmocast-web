@@ -172,7 +172,7 @@ mulmocast-preprocessor profiles script.json</code></pre>
         </h2>
 
         <!-- Summarize -->
-        <h3 class="text-foreground mb-2 font-semibold">
+        <h3 id="ai-summarize" class="text-foreground mb-2 font-semibold">
           {{ t("docs.preprocessor.aiSummarize") }}
         </h3>
         <p class="text-muted-foreground mb-3">
@@ -196,7 +196,7 @@ mulmocast-preprocessor summarize script.json --provider anthropic</code></pre>
         </div>
 
         <!-- Query -->
-        <h3 class="text-foreground mb-2 font-semibold">
+        <h3 id="ai-qa" class="text-foreground mb-2 font-semibold">
           {{ t("docs.preprocessor.aiQA") }}
         </h3>
         <p class="text-muted-foreground mb-3">
