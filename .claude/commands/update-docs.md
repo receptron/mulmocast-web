@@ -91,6 +91,21 @@ web/src/i18n/
 | `docs/how_to_use.md` | ダウンロード、初期設定、UI説明 |
 | `docs/procedure_onboarding.md` | 具体的な使用手順 |
 
+### MulmoCast Plus (`receptron/mulmocast-plus`) - モノレポ
+
+| パッケージ | npm | 内容 |
+|------------|-----|------|
+| `mulmocast-easy` | `mulmocast-easy` | ffmpeg同梱の簡単インストール版CLI |
+| `mulmocast-preprocessor` | `mulmocast-preprocessor` | バリエーション生成 + AI Q&A |
+
+**mulmocast-easy**: ゼロコンフィグでmulmocastが使えるラッパー。ffmpegインストール不要。
+**mulmocast-preprocessor**:
+- プロファイル（default/summary/teaser/カスタム）でバリエーション生成
+- Beat/スクリプトメタデータ（tags, section, audience, FAQ等）
+- AI要約・AI Q&A（OpenAI/Anthropic/Groq/Gemini対応、対話モード有）
+
+ローカル参照: `../mulmocast-plus/packages/`
+
 ### MulmoChat (3リポジトリ)
 
 - `receptron/gui-chat-protocol` - プロトコル仕様
