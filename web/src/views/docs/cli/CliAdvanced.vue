@@ -118,6 +118,20 @@
               </p>
             </div>
           </a>
+          <a
+            href="#fill-option"
+            class="border-border hover:border-primary group flex items-center gap-3 rounded-lg border p-3 transition-colors"
+          >
+            <Maximize class="text-primary h-6 w-6" />
+            <div>
+              <p class="text-foreground group-hover:text-primary text-sm font-medium">
+                {{ locale === "ja" ? "フィルオプション" : "Fill Option" }}
+              </p>
+              <p class="text-muted-foreground text-xs">
+                {{ locale === "ja" ? "アスペクト比の調整" : "Aspect ratio adjustment" }}
+              </p>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -170,39 +184,122 @@
         </Card>
 
         <h3 class="text-foreground mb-3 text-lg font-medium">
-          {{ locale === "ja" ? "設定方法" : "How to Set Up" }}
+          {{ locale === "ja" ? "モデル比較" : "Model Comparison" }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "モデル" : "Model" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "入力形式" : "Input Type" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "特徴" : "Features" }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2">
+                  <code class="text-primary text-xs">bytedance/omni-human</code>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  <span
+                    class="rounded bg-green-100 px-1.5 py-0.5 text-xs text-green-800 dark:bg-green-900 dark:text-green-200"
+                  >
+                    {{ locale === "ja" ? "静止画" : "Still image" }}
+                  </span>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{
+                    locale === "ja"
+                      ? "推奨。最新・高品質。静止画1枚から自然な口パク動画を生成"
+                      : "Recommended. Latest, high quality. Generates natural lip-sync from a single still image"
+                  }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2">
+                  <code class="text-primary text-xs">bytedance/latentsync</code>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  <span
+                    class="rounded bg-blue-100 px-1.5 py-0.5 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                  >
+                    {{ locale === "ja" ? "動画" : "Video" }}
+                  </span>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{
+                    locale === "ja"
+                      ? "安定した品質。既存の動画の口の動きを音声に合わせて変更"
+                      : "Stable quality. Modifies mouth movement in existing video to match audio"
+                  }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2">
+                  <code class="text-primary text-xs">tmappdev/lipsync</code>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  <span
+                    class="rounded bg-blue-100 px-1.5 py-0.5 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                  >
+                    {{ locale === "ja" ? "動画" : "Video" }}
+                  </span>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{
+                    locale === "ja"
+                      ? "レガシーモデル。互換性のために維持"
+                      : "Legacy model. Maintained for compatibility"
+                  }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "完全な設定例" : "Complete Configuration Example" }}
         </h3>
         <div class="bg-muted overflow-x-auto rounded-lg p-4">
           <pre class="text-sm"><code>{
-  "movieParams": {
-    "enableLipSync": true,  // {{ locale === "ja" ? "リップシンクを有効化" : "Enable lip sync" }}
-    "lipSync": {
-      "provider": "replicate",
-      "model": "bytedance/omni-human"  // {{ locale === "ja" ? "おすすめモデル" : "Recommended model" }}
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ locale === "ja" ? "リップシンクデモ" : "Lip Sync Demo" }}",
+  "lipSyncParams": {
+    "provider": "replicate",
+    "model": "bytedance/omni-human"
+  },
+  "beats": [
+    {
+      "speaker": "Character",
+      "text": "{{ locale === "ja" ? "こんにちは、リップシンクのデモです" : "Hello, this is a lip sync demo" }}",
+      "enableLipSync": true,
+      "image": {
+        "type": "image",
+        "source": {
+          "kind": "path",
+          "path": "character.png"
+        }
+      }
     }
-  }
+  ]
 }</code></pre>
         </div>
 
-        <div class="mt-4 grid gap-3 md:grid-cols-3">
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">bytedance/omni-human</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "最新・高品質（静止画から）" : "Latest, high quality (from still)" }}
-            </p>
-          </div>
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">bytedance/latentsync</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "安定（動画から）" : "Stable (from video)" }}
-            </p>
-          </div>
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">tmappdev/lipsync</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "レガシー（動画から）" : "Legacy (from video)" }}
-            </p>
-          </div>
+        <div
+          class="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
+        >
+          <strong>{{ locale === "ja" ? "入力画像のコツ：" : "Image Tips:" }}</strong>
+          {{
+            locale === "ja"
+              ? "正面を向いた顔が明確に映っている画像を使うと、最も良い結果が得られます。横顔や小さく映った顔では品質が下がることがあります。"
+              : "Use images with a clear, front-facing face for best results. Side profiles or small faces may reduce quality."
+          }}
         </div>
       </section>
 
@@ -426,72 +523,484 @@
             <p class="text-muted-foreground">
               {{
                 locale === "ja"
-                  ? "動画全体にかける映像効果です。レトロ風、ホラー風など、動画の雰囲気を変えられます。"
-                  : "Visual effects applied to the entire video. Change the atmosphere to retro, horror, etc."
+                  ? "各beatの映像に視覚効果を適用する機能です。FFmpegのフィルター機能をJSON設定で簡単に利用できます。beat単位で異なるフィルターを適用でき、複数のフィルターをチェーン（連結）して使用することも可能です。"
+                  : "Apply visual effects to each beat's video. Easily use FFmpeg's powerful filter capabilities through JSON configuration. Different filters can be applied per beat, and multiple filters can be chained together."
               }}
             </p>
           </CardContent>
         </Card>
 
+        <!-- 色調整フィルター -->
         <h3 class="text-foreground mb-3 text-lg font-medium">
-          {{ locale === "ja" ? "よく使うフィルター" : "Commonly Used Filters" }}
+          {{ locale === "ja" ? "色調整フィルター（9種類）" : "Color Adjustment Filters (9 types)" }}
         </h3>
         <div class="overflow-x-auto">
           <table class="border-border w-full border-collapse border text-sm">
             <thead>
               <tr class="bg-muted">
-                <th class="border-border border px-4 py-2 text-left">
+                <th class="border-border border px-3 py-2 text-left">
                   {{ locale === "ja" ? "フィルター" : "Filter" }}
                 </th>
-                <th class="border-border border px-4 py-2 text-left">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "効果" : "Effect" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "主なパラメータ" : "Key Parameters" }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">mono</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "モノクロ（グレースケール）" : "Monochrome (grayscale)" }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">sepia</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "セピア調" : "Sepia tone" }}</td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">brightness_contrast</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "明度・コントラスト調整" : "Brightness & contrast" }}
+                </td>
+                <td class="border-border border px-3 py-2">brightness: -1~1, contrast: 0~3</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">hue</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "色相・彩度・明度調整" : "Hue, saturation & brightness" }}
+                </td>
+                <td class="border-border border px-3 py-2">hue: -180~180, saturation: 0~3</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">colorbalance</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "RGB各チャンネルの微調整" : "Fine-tune RGB channels" }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "シャドウ/ミッドトーン/ハイライト別" : "Per shadow/midtone/highlight" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">vibrance</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "彩度の強調" : "Enhance saturation" }}
+                </td>
+                <td class="border-border border px-3 py-2">intensity: -2~2</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">negate</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "色反転（ネガポジ）" : "Color inversion (negative)" }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">colorhold</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "特定の色だけ残し他を脱色" : "Keep specific color, desaturate rest" }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">colorkey</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "特定の色を透明化（クロマキー）" : "Chroma key (transparency)" }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ブラー・シャープフィルター -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "ブラー・シャープフィルター（4種類）" : "Blur & Sharpen Filters (4 types)" }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "フィルター" : "Filter" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "効果" : "Effect" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "主なパラメータ" : "Key Parameters" }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">blur</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "ボックスブラー" : "Box blur" }}</td>
+                <td class="border-border border px-3 py-2">radius: 1-50, power: 1-10</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">gblur</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "ガウシアンブラー" : "Gaussian blur" }}
+                </td>
+                <td class="border-border border px-3 py-2">sigma: 0-100</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">avgblur</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "平均ブラー" : "Average blur" }}</td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "X/Yサイズ個別指定" : "X/Y size individual control" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">unsharp</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "アンシャープマスク" : "Unsharp mask" }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "輝度・色差個別制御" : "Luma/chroma individual control" }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- エッジ検出フィルター -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "エッジ検出フィルター（3種類）" : "Edge Detection Filters (3 types)" }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "フィルター" : "Filter" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "効果" : "Effect" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "主なパラメータ" : "Key Parameters" }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">edgedetect</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "エッジ検出" : "Edge detection" }}</td>
+                <td class="border-border border px-3 py-2">mode: wires / colormix / canny</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">sobel</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "Sobelエッジ検出" : "Sobel edge detection" }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">emboss</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "エンボス（3D浮き彫り）" : "Emboss (3D relief)" }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 変形フィルター -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "変形フィルター（4種類）" : "Transform Filters (4 types)" }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "フィルター" : "Filter" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "効果" : "Effect" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "主なパラメータ" : "Key Parameters" }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">hflip</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "左右反転" : "Horizontal flip" }}</td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">vflip</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "上下反転" : "Vertical flip" }}</td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">rotate</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "回転" : "Rotate" }}</td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "角度（ラジアン）、塗りつぶし色" : "Angle (radians), fill color" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">transpose</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "90度回転" : "90-degree rotation" }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "反転オプション付き" : "With flip options" }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 視覚効果フィルター -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "視覚効果フィルター（4種類）" : "Visual Effect Filters (4 types)" }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "フィルター" : "Filter" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "効果" : "Effect" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "主なパラメータ" : "Key Parameters" }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">vignette</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "周辺減光（映画風）" : "Vignette (cinematic)" }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "角度、中心位置、モード" : "Angle, center, mode" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">fade</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "フェードイン/アウト" : "Fade in/out" }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "フレーム単位で制御" : "Frame-level control" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">pixelize</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "ピクセル化（モザイク）" : "Pixelize (mosaic)" }}
+                </td>
+                <td class="border-border border px-3 py-2">width, height</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">pseudocolor</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "疑似カラー" : "Pseudo color" }}</td>
+                <td class="border-border border px-3 py-2">magma, inferno, plasma, viridis</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 時間効果・閾値・特殊フィルター -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{
+            locale === "ja"
+              ? "時間効果・閾値・特殊フィルター（12種類）"
+              : "Temporal, Threshold & Special Filters (12 types)"
+          }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "カテゴリ" : "Category" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ locale === "ja" ? "フィルター" : "Filter" }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
                   {{ locale === "ja" ? "効果" : "Effect" }}
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">sepia</code></td>
-                <td class="border-border border px-4 py-2">
-                  {{ locale === "ja" ? "セピア調（レトロ風）" : "Sepia tone (retro)" }}
+                <td class="border-border border px-3 py-2" rowspan="2">
+                  {{ locale === "ja" ? "時間効果" : "Temporal" }}
+                </td>
+                <td class="border-border border px-3 py-2"><code class="text-primary">tmix</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "時間軸ミックス（モーションブラー）" : "Temporal mix (motion blur)" }}
                 </td>
               </tr>
               <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">mono</code></td>
-                <td class="border-border border px-4 py-2">{{ locale === "ja" ? "モノクロ" : "Monochrome" }}</td>
-              </tr>
-              <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">vignette</code></td>
-                <td class="border-border border px-4 py-2">
-                  {{ locale === "ja" ? "周辺減光（映画風）" : "Vignette (cinematic)" }}
+                <td class="border-border border px-3 py-2"><code class="text-primary">lagfun</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "ラグエフェクト（モーショントレイル）" : "Lag effect (motion trail)" }}
                 </td>
               </tr>
               <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">glitch</code></td>
-                <td class="border-border border px-4 py-2">
-                  {{ locale === "ja" ? "グリッチ（ノイズ）" : "Glitch effect" }}
+                <td class="border-border border px-3 py-2" rowspan="2">{{ locale === "ja" ? "閾値" : "Threshold" }}</td>
+                <td class="border-border border px-3 py-2"><code class="text-primary">threshold</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "二値化" : "Binarization" }}</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">elbg</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "色数削減（ポスタライズ）" : "Color reduction (posterize)" }}
                 </td>
               </tr>
               <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">grain</code></td>
-                <td class="border-border border px-4 py-2">{{ locale === "ja" ? "フィルム粒子" : "Film grain" }}</td>
+                <td class="border-border border px-3 py-2" rowspan="7">{{ locale === "ja" ? "特殊" : "Special" }}</td>
+                <td class="border-border border px-3 py-2"><code class="text-primary">glitch</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "デジタルグリッチ" : "Digital glitch" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">grain</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "フィルムグレイン" : "Film grain" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">lensdistortion</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "レンズ歪み" : "Lens distortion" }}</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">chromashift</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "色ずれ（色収差）" : "Chroma shift (chromatic aberration)" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">deflicker</code></td>
+                <td class="border-border border px-3 py-2">{{ locale === "ja" ? "フリッカー除去" : "Deflicker" }}</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">dctdnoiz</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "DCTノイズ除去" : "DCT noise reduction" }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">custom</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ locale === "ja" ? "生のFFmpegフィルター文字列を直接指定" : "Raw FFmpeg filter string" }}
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
 
+        <!-- フィルター設定方法 -->
         <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
           {{ locale === "ja" ? "設定方法" : "How to Set Up" }}
         </h3>
-        <div class="bg-muted overflow-x-auto rounded-lg p-4">
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
           <pre class="text-sm"><code>// {{ locale === "ja" ? "単一フィルター" : "Single filter" }}
 {
-  "movieParams": { "filter": "sepia" }
+  "movieParams": {
+    "filters": [{ "type": "sepia" }]
+  }
 }
 
-// {{ locale === "ja" ? "複数フィルターを重ねる" : "Stack multiple filters" }}
+// {{ locale === "ja" ? "パラメータ付きフィルター" : "Filter with parameters" }}
 {
-  "movieParams": { "filter": ["sepia", "vignette", "grain"] }
+  "movieParams": {
+    "filters": [{
+      "type": "hue",
+      "hue": 120,
+      "saturation": 1.5
+    }]
+  }
 }</code></pre>
+        </div>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "フィルターチェーン（複数連結）" : "Filter Chain (multiple)" }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "複数のフィルターを配列で指定すると、順番に効果が適用されます。例：ヴィンテージ風の組み合わせ"
+              : "Specify multiple filters in an array to apply effects in order. Example: vintage combination"
+          }}
+        </p>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "movieParams": {
+    "filters": [
+      { "type": "sepia" },
+      { "type": "grain", "intensity": 25 },
+      { "type": "vignette" }
+    ]
+  }
+}</code></pre>
+        </div>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "カスタムフィルター" : "Custom Filter" }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "プリセットにない効果が必要な場合、FFmpegのフィルター文字列を直接指定できます。"
+              : "For effects not available as presets, you can specify raw FFmpeg filter strings directly."
+          }}
+        </p>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "movieParams": {
+    "filters": [{
+      "type": "custom",
+      "filter": "hflip,negate"
+    }]
+  }
+}</code></pre>
+        </div>
+
+        <div class="grid gap-3 md:grid-cols-2">
+          <div class="border-border rounded border p-3">
+            <p class="text-foreground text-sm font-medium">
+              {{ locale === "ja" ? "グローバル設定" : "Global config" }}
+            </p>
+            <p class="text-muted-foreground mt-1 text-xs">
+              {{
+                locale === "ja"
+                  ? "movieParams.filters をトップレベルに設定 → 全beatに適用"
+                  : "Set movieParams.filters at top level → applies to all beats"
+              }}
+            </p>
+          </div>
+          <div class="border-border rounded border p-3">
+            <p class="text-foreground text-sm font-medium">
+              {{ locale === "ja" ? "beat単位の設定" : "Per-beat config" }}
+            </p>
+            <p class="text-muted-foreground mt-1 text-xs">
+              {{
+                locale === "ja"
+                  ? "各beatの movieParams.filters に設定 → そのbeatのみ適用"
+                  : "Set in each beat's movieParams.filters → applies to that beat only"
+              }}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -519,13 +1028,13 @@
         </Card>
 
         <h3 class="text-foreground mb-3 text-lg font-medium">
-          {{ locale === "ja" ? "設定方法" : "How to Set Up" }}
+          {{ locale === "ja" ? "基本設定" : "Basic Setup" }}
         </h3>
-        <div class="bg-muted overflow-x-auto rounded-lg p-4">
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
           <pre class="text-sm"><code>{
   "captionParams": {
-    "lang": "{{ locale === "ja" ? "ja" : "en" }}",  // {{ locale === "ja" ? "字幕の言語" : "Caption language" }}
-    "captionSplit": "estimate",  // {{ locale === "ja" ? "自動で区切る" : "Auto split" }}
+    "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+    "captionSplit": "estimate",
     "styles": [
       "font-size: 24px",
       "color: white",
@@ -535,19 +1044,92 @@
 }</code></pre>
         </div>
 
-        <div class="mt-4 grid gap-3 md:grid-cols-2">
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">captionSplit: "none"</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "全文を一度に表示" : "Show full text at once" }}
-            </p>
-          </div>
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">captionSplit: "estimate"</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "音声に合わせて自動分割" : "Auto split with audio timing" }}
-            </p>
-          </div>
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          captionSplit {{ locale === "ja" ? "モード" : "Modes" }}
+        </h3>
+        <div class="grid gap-3 md:grid-cols-2">
+          <Card>
+            <CardContent class="pt-6">
+              <code class="text-primary text-sm">captionSplit: "none"</code>
+              <p class="text-muted-foreground mt-2 text-sm">
+                {{
+                  locale === "ja"
+                    ? "全文を一度に表示します。短いテキストや、タイミング制御が不要な場合に使用します。"
+                    : "Shows the full text at once. Use for short text or when timing control is not needed."
+                }}
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent class="pt-6">
+              <code class="text-primary text-sm">captionSplit: "estimate"</code>
+              <p class="text-muted-foreground mt-2 text-sm">
+                {{
+                  locale === "ja"
+                    ? "音声のタイミングに合わせてテキストを自動的に分割・表示します。長いナレーションに最適です。"
+                    : "Automatically splits and displays text in sync with audio timing. Best for long narrations."
+                }}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "スタイルカスタマイズ" : "Style Customization" }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "stylesにCSS文字列の配列を指定して、字幕の見た目をカスタマイズできます。"
+              : "Customize caption appearance by specifying an array of CSS strings in styles."
+          }}
+        </p>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "captionParams": {
+    "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+    "captionSplit": "estimate",
+    "styles": [
+      "font-size: 48px",
+      "color: white",
+      "text-shadow: 2px 2px 4px black",
+      "font-weight: bold",
+      "background: rgba(0, 0, 0, 0.5)",
+      "padding: 8px 16px",
+      "border-radius: 4px"
+    ]
+  }
+}</code></pre>
+        </div>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "beat単位での上書き" : "Per-Beat Override" }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "特定のbeatだけ字幕スタイルを変更できます。グローバル設定をbeat単位で上書きします。"
+              : "Override caption styles for specific beats. Per-beat settings take precedence over global settings."
+          }}
+        </p>
+        <div class="bg-muted overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "captionParams": {
+    "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+    "styles": ["font-size: 24px", "color: white"]
+  },
+  "beats": [
+    {
+      "text": "{{ locale === "ja" ? "通常のテキスト" : "Normal text" }}"
+    },
+    {
+      "text": "{{ locale === "ja" ? "強調テキスト" : "Emphasized text" }}",
+      "captionParams": {
+        "styles": ["font-size: 64px", "color: yellow", "font-weight: bold"]
+      }
+    }
+  ]
+}</code></pre>
         </div>
       </section>
 
@@ -740,6 +1322,71 @@
               ? "suppressSpeechモードでは音声でタイミングが決まらないため、各beatにdurationを指定するか、動画素材の長さを使用する必要があります。"
               : "In suppressSpeech mode, since timing isn't determined by audio, you need to specify duration for each beat or use video material length."
           }}
+        </div>
+      </section>
+
+      <!-- Fill Option -->
+      <section id="fill-option" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ locale === "ja" ? "フィルオプション（アスペクト比調整）" : "Fill Option (Aspect Ratio)" }}
+        </h2>
+
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-base">
+              {{ locale === "ja" ? "これは何？" : "What is this?" }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground">
+              {{
+                locale === "ja"
+                  ? "画像・動画とキャンバスのアスペクト比が異なる場合の表示方法を制御します。例えば、正方形の画像を16:9の動画に配置するときの振る舞いを変更できます。"
+                  : "Controls how images/videos are displayed when their aspect ratio doesn't match the canvas. For example, change how a square image is placed in a 16:9 video."
+              }}
+            </p>
+          </CardContent>
+        </Card>
+
+        <div class="mb-4 grid gap-3 md:grid-cols-2">
+          <Card>
+            <CardContent class="pt-6">
+              <code class="text-primary text-sm">aspectFit</code>
+              <span class="text-muted-foreground ml-2 text-xs">({{ locale === "ja" ? "デフォルト" : "default" }})</span>
+              <p class="text-muted-foreground mt-2 text-sm">
+                {{
+                  locale === "ja"
+                    ? "画像全体を表示します。アスペクト比が合わない場合は余白（黒帯）が表示されます。"
+                    : "Shows the entire image. Letterbox/pillarbox bars appear when aspect ratios don't match."
+                }}
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent class="pt-6">
+              <code class="text-primary text-sm">aspectFill</code>
+              <p class="text-muted-foreground mt-2 text-sm">
+                {{
+                  locale === "ja"
+                    ? "画面全体を埋めます。はみ出した部分はトリミングされます。フルスクリーン表示に最適です。"
+                    : "Fills the entire screen. Overflowing parts are cropped. Best for fullscreen display."
+                }}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "設定方法" : "How to Set Up" }}
+        </h3>
+        <div class="bg-muted overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "movieParams": {
+    "fillOption": {
+      "style": "aspectFill"
+    }
+  }
+}</code></pre>
         </div>
       </section>
 
@@ -998,6 +1645,7 @@ import {
   Subtitles,
   Music,
   AudioLines,
+  Maximize,
 } from "lucide-vue-next";
 
 const { locale } = useI18n();
