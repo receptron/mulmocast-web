@@ -18,10 +18,10 @@
               <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
                 <Terminal class="text-primary h-6 w-6" />
               </div>
-              <div>
-                <CardTitle>{{ t("docs.cli.title") }}</CardTitle>
+              <a :href="localizedUrl('/docs/cli')">
+                <CardTitle class="hover:underline">{{ t("docs.cli.title") }}</CardTitle>
                 <CardDescription>{{ t("docs.cli.description") }}</CardDescription>
-              </div>
+              </a>
             </div>
           </CardHeader>
           <CardContent>
@@ -45,10 +45,10 @@
               <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
                 <Monitor class="text-primary h-6 w-6" />
               </div>
-              <div>
-                <CardTitle>{{ t("docs.app.title") }}</CardTitle>
+              <a :href="localizedUrl('/docs/app')">
+                <CardTitle class="hover:underline">{{ t("docs.app.title") }}</CardTitle>
                 <CardDescription>{{ t("docs.app.description") }}</CardDescription>
-              </div>
+              </a>
             </div>
           </CardHeader>
           <CardContent>
@@ -72,10 +72,10 @@
               <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
                 <Package class="text-primary h-6 w-6" />
               </div>
-              <div>
-                <CardTitle>{{ t("docs.easy.title") }}</CardTitle>
+              <a :href="localizedUrl('/docs/easy')">
+                <CardTitle class="hover:underline">{{ t("docs.easy.title") }}</CardTitle>
                 <CardDescription>{{ t("docs.easy.description") }}</CardDescription>
-              </div>
+              </a>
             </div>
           </CardHeader>
           <CardContent>
@@ -99,10 +99,10 @@
               <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
                 <Sparkles class="text-primary h-6 w-6" />
               </div>
-              <div>
-                <CardTitle>{{ t("docs.preprocessor.title") }}</CardTitle>
+              <a :href="localizedUrl('/docs/preprocessor')">
+                <CardTitle class="hover:underline">{{ t("docs.preprocessor.title") }}</CardTitle>
                 <CardDescription>{{ t("docs.preprocessor.description") }}</CardDescription>
-              </div>
+              </a>
             </div>
           </CardHeader>
           <CardContent>
@@ -126,10 +126,10 @@
               <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
                 <MessageCircle class="text-primary h-6 w-6" />
               </div>
-              <div>
-                <CardTitle>{{ t("docs.mulmochat.title") }}</CardTitle>
+              <a :href="localizedUrl('/docs/mulmochat')">
+                <CardTitle class="hover:underline">{{ t("docs.mulmochat.title") }}</CardTitle>
                 <CardDescription>{{ t("docs.mulmochat.description") }}</CardDescription>
-              </div>
+              </a>
             </div>
           </CardHeader>
           <CardContent>
