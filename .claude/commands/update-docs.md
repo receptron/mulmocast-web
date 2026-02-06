@@ -50,13 +50,15 @@ web/src/views/docs/cli/
 └── CliAdvanced.vue     # /docs/cli/advanced - リップシンク、トランジション、フィルター、字幕
 ```
 
-### App/MulmoChat ドキュメント
+### App/Easy/Preprocessor/MulmoChat ドキュメント
 
 ```
 web/src/views/docs/
-├── DocsIndex.vue       # /docs - ドキュメントトップ
-├── DocsApp.vue         # /docs/app - MulmoCast App
-└── DocsMulmochat.vue   # /docs/mulmochat - MulmoChat
+├── DocsIndex.vue        # /docs - ドキュメントトップ
+├── DocsApp.vue          # /docs/app - MulmoCast App
+├── DocsEasy.vue         # /docs/easy - MulmoCast Easy
+├── DocsPreprocessor.vue # /docs/preprocessor - MulmoCast Preprocessor
+└── DocsMulmochat.vue    # /docs/mulmochat - MulmoChat
 ```
 
 ### i18n
