@@ -58,16 +58,18 @@ mulmocast-web/
 
 ### 構造
 
-| ページ               | パス                    | ファイル                 |
-| -------------------- | ----------------------- | ------------------------ |
-| ドキュメントトップ   | `/docs`                 | `DocsIndex.vue`          |
-| MulmoCast CLI 概要   | `/docs/cli`             | `cli/CliIndex.vue`       |
-| CLI クイックスタート | `/docs/cli/quickstart`  | `cli/CliQuickstart.vue`  |
-| CLI MulmoScript      | `/docs/cli/mulmoscript` | `cli/CliMulmoscript.vue` |
-| CLI プロバイダー     | `/docs/cli/providers`   | `cli/CliProviders.vue`   |
-| CLI 高度な機能       | `/docs/cli/advanced`    | `cli/CliAdvanced.vue`    |
-| MulmoCast App        | `/docs/app`             | `DocsApp.vue`            |
-| MulmoChat            | `/docs/mulmochat`       | `DocsMulmochat.vue`      |
+| ページ                 | パス                    | ファイル                 |
+| ---------------------- | ----------------------- | ------------------------ |
+| ドキュメントトップ     | `/docs`                 | `DocsIndex.vue`          |
+| MulmoCast CLI 概要     | `/docs/cli`             | `cli/CliIndex.vue`       |
+| CLI クイックスタート   | `/docs/cli/quickstart`  | `cli/CliQuickstart.vue`  |
+| CLI MulmoScript        | `/docs/cli/mulmoscript` | `cli/CliMulmoscript.vue` |
+| CLI プロバイダー       | `/docs/cli/providers`   | `cli/CliProviders.vue`   |
+| CLI 高度な機能         | `/docs/cli/advanced`    | `cli/CliAdvanced.vue`    |
+| MulmoCast App          | `/docs/app`             | `DocsApp.vue`            |
+| MulmoCast Easy         | `/docs/easy`            | `DocsEasy.vue`           |
+| MulmoCast Preprocessor | `/docs/preprocessor`    | `DocsPreprocessor.vue`   |
+| MulmoChat              | `/docs/mulmochat`       | `DocsMulmochat.vue`      |
 
 ### CLI ドキュメント構造
 

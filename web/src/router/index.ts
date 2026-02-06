@@ -12,7 +12,8 @@ import Test from "../views/test.vue";
 import Document from "../views/Document.vue";
 import DocsIndex from "../views/docs/DocsIndex.vue";
 import DocsApp from "../views/docs/DocsApp.vue";
-import DocsPlus from "../views/docs/DocsPlus.vue";
+import DocsEasy from "../views/docs/DocsEasy.vue";
+import DocsPreprocessor from "../views/docs/DocsPreprocessor.vue";
 import DocsMulmochat from "../views/docs/DocsMulmochat.vue";
 
 // CLI Documentation (split into multiple pages)
@@ -100,9 +101,14 @@ const routeChildren: Array<RouteRecordRaw> = [
     component: DocsApp,
   },
   {
-    path: "docs/plus",
-    name: "docs-plus",
-    component: DocsPlus,
+    path: "docs/easy",
+    name: "docs-easy",
+    component: DocsEasy,
+  },
+  {
+    path: "docs/preprocessor",
+    name: "docs-preprocessor",
+    component: DocsPreprocessor,
   },
   {
     path: "docs/mulmochat",

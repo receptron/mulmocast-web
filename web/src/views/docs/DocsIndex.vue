@@ -65,28 +65,55 @@
           </CardFooter>
         </Card>
 
-        <!-- MulmoCast Plus -->
+        <!-- MulmoCast Easy -->
         <Card class="hover:bg-muted/50">
           <CardHeader>
             <div class="flex items-center gap-3">
               <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
-                <Blocks class="text-primary h-6 w-6" />
+                <Package class="text-primary h-6 w-6" />
               </div>
               <div>
-                <CardTitle>{{ t("docs.plus.title") }}</CardTitle>
-                <CardDescription>{{ t("docs.plus.description") }}</CardDescription>
+                <CardTitle>{{ t("docs.easy.title") }}</CardTitle>
+                <CardDescription>{{ t("docs.easy.description") }}</CardDescription>
               </div>
             </div>
           </CardHeader>
           <CardContent>
             <ul class="text-muted-foreground space-y-2 text-sm">
-              <li>{{ t("docs.plus.item1") }}</li>
-              <li>{{ t("docs.plus.item2") }}</li>
-              <li>{{ t("docs.plus.item3") }}</li>
+              <li>{{ t("docs.easy.item1") }}</li>
+              <li>{{ t("docs.easy.item2") }}</li>
+              <li>{{ t("docs.easy.item3") }}</li>
             </ul>
           </CardContent>
           <CardFooter>
-            <Button as="a" :href="localizedUrl('/docs/plus')" variant="default" size="sm">
+            <Button as="a" :href="localizedUrl('/docs/easy')" variant="default" size="sm">
+              {{ t("docs.readMore") }}
+            </Button>
+          </CardFooter>
+        </Card>
+
+        <!-- MulmoCast Preprocessor -->
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <div class="flex items-center gap-3">
+              <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
+                <Sparkles class="text-primary h-6 w-6" />
+              </div>
+              <div>
+                <CardTitle>{{ t("docs.preprocessor.title") }}</CardTitle>
+                <CardDescription>{{ t("docs.preprocessor.description") }}</CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <ul class="text-muted-foreground space-y-2 text-sm">
+              <li>{{ t("docs.preprocessor.item1") }}</li>
+              <li>{{ t("docs.preprocessor.item2") }}</li>
+              <li>{{ t("docs.preprocessor.item3") }}</li>
+            </ul>
+          </CardContent>
+          <CardFooter>
+            <Button as="a" :href="localizedUrl('/docs/preprocessor')" variant="default" size="sm">
               {{ t("docs.readMore") }}
             </Button>
           </CardFooter>
@@ -136,7 +163,7 @@ import { Button } from "../../components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card";
 import Navigation from "../../components/Navigation.vue";
 import { useLocalizedUrl } from "../../i18n/utils";
-import { Terminal, Monitor, Blocks, MessageCircle } from "lucide-vue-next";
+import { Terminal, Monitor, Package, Sparkles, MessageCircle } from "lucide-vue-next";
 
 const { t } = useI18n();
 const localizedUrl = useLocalizedUrl();
