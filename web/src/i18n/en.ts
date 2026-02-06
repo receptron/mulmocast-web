@@ -445,6 +445,13 @@ const lang = {
         description: "Customize API Key, output format, audio settings, and more.",
       },
     },
+    plus: {
+      title: "MulmoCast Plus",
+      description: "Easy-install CLI + variation generation & AI extension tools.",
+      item1: "Zero-config install (no ffmpeg needed)",
+      item2: "Multiple variations from one script",
+      item3: "AI-powered summarization & Q&A",
+    },
     mulmochat: {
       title: "MulmoChat",
       description: "Next-generation voice dialogue OS using Chat Protocol.",

@@ -440,6 +440,13 @@ const lang = {
         description: "API Key、出力形式、音声設定などをカスタマイズできます。",
       },
     },
+    plus: {
+      title: "MulmoCast Plus",
+      description: "簡単インストール版CLI＋バリエーション生成＆AI拡張ツール。",
+      item1: "ffmpeg不要の簡単インストール",
+      item2: "1つのスクリプトから複数バリエーション",
+      item3: "AIで要約・質問応答",
+    },
     mulmochat: {
       title: "MulmoChat",
       description: "Chat Protocol使用の次世代音声対話OS。",

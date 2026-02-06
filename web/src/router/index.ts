@@ -12,6 +12,7 @@ import Test from "../views/test.vue";
 import Document from "../views/Document.vue";
 import DocsIndex from "../views/docs/DocsIndex.vue";
 import DocsApp from "../views/docs/DocsApp.vue";
+import DocsPlus from "../views/docs/DocsPlus.vue";
 import DocsMulmochat from "../views/docs/DocsMulmochat.vue";
 
 // CLI Documentation (split into multiple pages)
@@ -97,6 +98,11 @@ const routeChildren: Array<RouteRecordRaw> = [
     path: "docs/app",
     name: "docs-app",
     component: DocsApp,
+  },
+  {
+    path: "docs/plus",
+    name: "docs-plus",
+    component: DocsPlus,
   },
   {
     path: "docs/mulmochat",
