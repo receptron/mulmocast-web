@@ -21,16 +21,18 @@ MulmoCast Viewerを使用したウェブアプリケーション。
 
 MulmoCastエコシステムを構成するツール群。App以外はnpmパッケージとして公開。
 
-| ツール            | 説明                                                         | npm                 |
-| ----------------- | ------------------------------------------------------------ | ------------------- |
-| MulmoCast CLI     | コアエンジン。フル機能のAIプレゼンテーションプラットフォーム | `mulmocast`         |
-| MulmoCast App     | CLIをGUIアプリ化。Mac/Windows対応                            | -                   |
-| MulmoCast Slides  | Keynote/PPTX/PDF/MarpからMulmoScript変換                     | `@mulmocast/slide`  |
-| MulmoCast Vision  | テンプレート×CLIのスライド作成特化MCPツール                  | `mulmocast-vision`  |
-| MulmoCast MCP     | CLIのMCPサーバー版                                           | `mulmocast-mcp`     |
-| MulmoCast Viewer  | bundleデータをVue 3 Webに組み込むコンポーネント              | `mulmocast-viewer`  |
-| MulmoChat         | GUI Chat Protocol実装の次世代マルチモーダルチャット          | -                   |
-| GUI Chat Protocol | チャットアプリ用GUIプラグインの標準プロトコル                | `gui-chat-protocol` |
+| ツール                 | 説明                                                         | npm                      |
+| ---------------------- | ------------------------------------------------------------ | ------------------------ |
+| MulmoCast CLI          | コアエンジン。フル機能のAIプレゼンテーションプラットフォーム | `mulmocast`              |
+| MulmoCast App          | CLIをGUIアプリ化。Mac/Windows対応                            | -                        |
+| MulmoCast Slides       | Keynote/PPTX/PDF/MarpからMulmoScript変換                     | `@mulmocast/slide`       |
+| MulmoCast Vision       | テンプレート×CLIのスライド作成特化MCPツール                  | `mulmocast-vision`       |
+| MulmoCast MCP          | CLIのMCPサーバー版                                           | `mulmocast-mcp`          |
+| MulmoCast Viewer       | bundleデータをVue 3 Webに組み込むコンポーネント              | `mulmocast-viewer`       |
+| MulmoCast Easy         | ffmpeg同梱の簡単インストール版CLI                            | `mulmocast-easy`         |
+| MulmoCast Preprocessor | 1つのスクリプトから複数バリエーション生成 + AI Q&A           | `mulmocast-preprocessor` |
+| MulmoChat              | GUI Chat Protocol実装の次世代マルチモーダルチャット          | -                        |
+| GUI Chat Protocol      | チャットアプリ用GUIプラグインの標準プロトコル                | `gui-chat-protocol`      |
 
 ## Project Structure
 
@@ -56,16 +58,18 @@ mulmocast-web/
 
 ### 構造
 
-| ページ               | パス                    | ファイル                 |
-| -------------------- | ----------------------- | ------------------------ |
-| ドキュメントトップ   | `/docs`                 | `DocsIndex.vue`          |
-| MulmoCast CLI 概要   | `/docs/cli`             | `cli/CliIndex.vue`       |
-| CLI クイックスタート | `/docs/cli/quickstart`  | `cli/CliQuickstart.vue`  |
-| CLI MulmoScript      | `/docs/cli/mulmoscript` | `cli/CliMulmoscript.vue` |
-| CLI プロバイダー     | `/docs/cli/providers`   | `cli/CliProviders.vue`   |
-| CLI 高度な機能       | `/docs/cli/advanced`    | `cli/CliAdvanced.vue`    |
-| MulmoCast App        | `/docs/app`             | `DocsApp.vue`            |
-| MulmoChat            | `/docs/mulmochat`       | `DocsMulmochat.vue`      |
+| ページ                 | パス                    | ファイル                 |
+| ---------------------- | ----------------------- | ------------------------ |
+| ドキュメントトップ     | `/docs`                 | `DocsIndex.vue`          |
+| MulmoCast CLI 概要     | `/docs/cli`             | `cli/CliIndex.vue`       |
+| CLI クイックスタート   | `/docs/cli/quickstart`  | `cli/CliQuickstart.vue`  |
+| CLI MulmoScript        | `/docs/cli/mulmoscript` | `cli/CliMulmoscript.vue` |
+| CLI プロバイダー       | `/docs/cli/providers`   | `cli/CliProviders.vue`   |
+| CLI 高度な機能         | `/docs/cli/advanced`    | `cli/CliAdvanced.vue`    |
+| MulmoCast App          | `/docs/app`             | `DocsApp.vue`            |
+| MulmoCast Easy         | `/docs/easy`            | `DocsEasy.vue`           |
+| MulmoCast Preprocessor | `/docs/preprocessor`    | `DocsPreprocessor.vue`   |
+| MulmoChat              | `/docs/mulmochat`       | `DocsMulmochat.vue`      |
 
 ### CLI ドキュメント構造
 
@@ -196,6 +200,64 @@ MulmoCast CLIをGUIアプリ化したElectronアプリ。Mac/Windows対応。
 - **オンボーディング**: 表示言語、LLM設定、APIキー
 - **編集画面**: AIチャット、スクリプト編集（6タブ）、出力設定、成果物
 - **スクリプト編集タブ**: Text, YAML/JSON, Media, Style
+
+---
+
+## MulmoCast Plus ソース
+
+**リポジトリ**: `receptron/mulmocast-plus`（モノレポ）
+
+### 概要
+
+MulmoCast CLIの拡張パッケージ群。簡単インストール版とスクリプト前処理ツールを提供。
+
+### パッケージ構造
+
+```
+mulmocast-plus/
+└── packages/
+    ├── mulmocast-easy/          # ffmpeg同梱の簡単インストール版
+    └── mulmocast-preprocessor/  # バリエーション生成 + AI Q&A
+```
+
+### 1. mulmocast-easy (`mulmocast-easy`)
+
+ffmpeg/ffprobeを同梱し、別途インストール不要でMulmoCast CLIを使えるようにするラッパー。
+
+| ファイル    | 概要                     |
+| ----------- | ------------------------ |
+| `README.md` | インストール方法、使い方 |
+
+**主要トピック**:
+
+- ゼロコンフィグ: ffmpegのインストール不要
+- クロスプラットフォーム: macOS, Linux, Windows対応
+- 標準mulmocastコマンドがすべて使用可能（`mulmocast-easy movie` 等）
+
+### 2. mulmocast-preprocessor (`mulmocast-preprocessor`)
+
+1つのMulmoScriptから複数のバリエーション（フル版、要約版、ティーザー版）を生成し、メタデータを使ったAI Q&Aも可能な前処理ツール。
+
+| ファイル    | 概要                             |
+| ----------- | -------------------------------- |
+| `README.md` | 全機能の詳細説明、CLI使用法、API |
+
+**主要トピック**:
+
+- **プロファイルベースのバリエーション**: default（フル）、summary（要約）、teaser（短縮）、カスタム
+- **Beat メタデータ**: tags、section、context、keywords、expectedQuestions
+- **スクリプトメタデータ**: audience、prerequisites、goals、FAQ、references
+- **AI要約**: OpenAI/Anthropic/Groq/Geminiで自動要約生成
+- **AI Q&A**: スクリプト内容について質問（対話モード対応）
+- **コンテンツフィルタリング**: セクション別、タグ別の絞り込み
+
+**CLIコマンド**:
+
+- `mulmocast-preprocessor script.json --profile summary -o output.json` - バリエーション生成
+- `mulmocast-preprocessor profiles script.json` - プロファイル一覧
+- `mulmocast-preprocessor summarize script.json` - AI要約
+- `mulmocast-preprocessor query script.json "質問"` - AI Q&A
+- `mulmocast-preprocessor query script.json -i` - 対話モード
 
 ---
 
