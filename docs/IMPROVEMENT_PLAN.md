@@ -31,7 +31,7 @@ mulmocast-cli/docs/より：
 
 ## 実装計画
 
-### Phase 1: DocsCli.vue 大幅拡張
+### Phase 1: DocsCli.vue 大幅拡張 ✅ 完了
 
 #### 1.1 インストールセクション強化
 **現在**: ~15行 → **目標**: ~80行
@@ -256,26 +256,26 @@ gui-chat-protocol + MulmoChat + GUIChatPluginTemplateより：
 ## 対象ファイル
 
 ### CLI ドキュメント（分割済み）
-1. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliQuickstart.vue`
-   - 現在: 1436行 ✅ チュートリアル形式に改善済み
-2. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliMulmoscript.vue`
-   - 現在: 1462行 ✅ 画像タイプ詳細、Markdownレイアウト、Beat長ルール追加済み
-3. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliProviders.vue`
-   - 現在: ~1700行 ✅ Enterprise Settings追加済み（Vertex AI, Azure OpenAI, Geminiモデル）
-4. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliAdvanced.vue`
-   - 現在: 1653行 ✅ フィルター36種、リップシンク詳細、字幕詳細、Fillオプション追加済み、i18n $t()変換済み
-5. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliIndex.vue`
-   - 現在: 371行（概要ページ、大きな変更不要）
+1. `web/src/views/docs/cli/CliQuickstart.vue`
+   - ✅ チュートリアル形式に改善済み
+2. `web/src/views/docs/cli/CliMulmoscript.vue`
+   - ✅ 画像タイプ詳細、Markdownレイアウト、Beat長ルール追加済み
+3. `web/src/views/docs/cli/CliProviders.vue`
+   - ✅ Enterprise Settings追加済み（Vertex AI, Azure OpenAI, Geminiモデル）
+4. `web/src/views/docs/cli/CliAdvanced.vue`
+   - ✅ フィルター36種、リップシンク詳細、字幕詳細、Fillオプション追加済み、i18n $t()変換済み
+5. `web/src/views/docs/cli/CliIndex.vue`
+   - 概要ページ、大きな変更不要
 
 ### App/MulmoChat ドキュメント
-6. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/DocsApp.vue`
+6. `web/src/views/docs/DocsApp.vue`
    - 現在: ~400行 → 目標: ~800行
-7. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/DocsMulmochat.vue`
+7. `web/src/views/docs/DocsMulmochat.vue`
    - 現在: ~300行 → 目標: ~600行
 
 ### i18n更新ファイル
-4. `/Users/isamu/ss/llm/mulmocast-web/web/src/i18n/ja.ts`
-5. `/Users/isamu/ss/llm/mulmocast-web/web/src/i18n/en.ts`
+- `web/src/i18n/ja.ts`
+- `web/src/i18n/en.ts`
 
 ### 参照ソース（GitHub/ローカル）
 - https://github.com/receptron/mulmocast-cli/blob/main/docs/feature.md
