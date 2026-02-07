@@ -38,6 +38,12 @@ MulmoCastエコシステムを構成するツール群。App以外はnpmパッ�
 
 ```
 mulmocast-web/
+├── .claude/
+│   ├── commands/           # スラッシュコマンド
+│   │   ├── update-docs.md  # /update-docs - ソース→Vueページ更新
+│   │   ├── review-docs.md  # /review-docs - ページのブラウザ確認
+│   │   └── improve-project-docs.md  # /improve-project-docs
+│   └── settings.json       # 共有設定（hooks, plansDirectory）
 ├── web/                    # Vue 3 フロントエンド
 │   ├── src/
 │   │   ├── components/     # Vueコンポーネント
@@ -433,8 +439,10 @@ yarn deploy-prod   # 本番環境 (mulmocast-prod)
 
 ### 対象ファイル
 
-| ファイル                          | 役割                                           |
-| --------------------------------- | ---------------------------------------------- |
-| `CLAUDE.md`                       | プロジェクト概要、ソース一覧、開発ガイドライン |
-| `docs/IMPROVEMENT_PLAN.md`        | 改善計画、実装状況                             |
-| `.claude/commands/update-docs.md` | Webドキュメント更新手順                        |
+| ファイル                           | 役割                                           |
+| ---------------------------------- | ---------------------------------------------- |
+| `CLAUDE.md`                        | プロジェクト概要、ソース一覧、開発ガイドライン |
+| `docs/IMPROVEMENT_PLAN.md`         | 改善計画、実装状況                             |
+| `.claude/commands/update-docs.md`  | Webドキュメント更新手順（引数で特定ソース更新） |
+| `.claude/commands/review-docs.md`  | 更新ページのブラウザ確認                       |
+| `.claude/settings.json`            | 共有設定（hooks, plansDirectory）              |

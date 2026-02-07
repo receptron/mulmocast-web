@@ -1,4 +1,27 @@
+---
+description: ソースファイルの変更をWebドキュメント（Vueページ）に反映する。引数でソースを指定すると該当ページだけ更新。
+argument-hint: [ソースのパス/URL/キーワード]
+# Read: ソース/Vueファイルの読み込み
+# Grep: ファイル内容の検索（i18nキーの使用箇所特定等）
+# Glob: ファイル名パターンで対象ファイルを検索
+# WebFetch: GitHub URL等からソースを取得
+# Edit/Write: Vueページ・i18nファイルの編集
+# Bash(yarn *): format, lint, build による検証
+allowed-tools: Read, Grep, Glob, WebFetch, Edit, Write, Bash(yarn format), Bash(yarn lint), Bash(yarn build)
+---
+
 # MulmoCast Web ドキュメント更新スキル
+
+引数: $ARGUMENTS
+
+## 引数モード
+
+- **引数あり**: 指定されたソースだけを読み、関連するVueページだけを更新する
+  - URL（GitHub URL等）→ WebFetchまたはローカルパスに変換して読み込み
+  - ローカルパス（`../mulmocast-cli/docs/feature.md` 等）→ そのファイルを読み込み
+  - テキスト（「CLIのクイックスタート」等）→ 下記の情報源セクションから該当ソースを特定
+  - 対象のソースを読んだ後、それに対応するVueページだけを更新する
+- **引数なし**: 従来通り全ドキュメントを対象に更新する
 
 ## プロジェクト目標 (Issue #52)
 
@@ -206,6 +229,24 @@ import { Button } from "../../../components/ui/button";
 
 ## 実行手順
 
+### 引数ありの場合（特定ソース更新）
+
+1. **引数を解釈**: URL / ローカルパス / テキストから対象ソースファイルを特定
+2. **ソースを読む**: 対象ファイルの最新内容を読み込む
+3. **対応Vueページを特定**: 情報源セクションのマッピングから、更新すべきVueファイルを特定
+4. **対象Vueファイルを読む**: 現在の内容を確認
+5. **差分を特定**: ソースとVueページを比較し、追加・更新すべき情報を特定
+6. **更新を実行**: 該当するVueコンポーネントとi18nファイルだけを編集
+7. **検証**:
+   ```bash
+   yarn format
+   yarn lint
+   yarn build
+   ```
+8. **ページ確認**: 「更新したページをブラウザで確認しますか？」と聞き、y なら `/review-docs` を実行
+
+### 引数なしの場合（全体更新）
+
 1. **CLAUDE.md確認**: 最新のソース一覧を確認
 2. **情報源を読む**: mulmocast-cli/docs/ 等の最新内容を確認
 3. **対象ファイルを読む**: 更新対象のVueファイルを読む
@@ -217,6 +258,7 @@ import { Button } from "../../../components/ui/button";
    yarn lint
    yarn build
    ```
+7. **ページ確認**: 「更新したページをブラウザで確認しますか？」と聞き、y なら `/review-docs` を実行
 
 ---
 
