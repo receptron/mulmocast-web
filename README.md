@@ -1,60 +1,45 @@
-# sandbox-hono-vue
+# MulmoCast Web
 
-## Directory Structure
+Web application for the MulmoCast ecosystem, built with MulmoCast Viewer. The official site for all Mulmo family documentation.
 
-```text
-.
-├─ client/                # Vue 3 SPA (Vite)
-│  ├─ components/ui/...   # Reusable UI components
-│  ├─ router/             # SPA routing
-│  ├─ views/              # Page components
-│  ├─ lib/                # Client utilities
-│  └─ main.ts             # Client entry
-├─ server/                # Hono (Cloudflare Workers) API
-│  └─ index.ts            # Example: POST /api/echo
-├─ public/                # Static assets
-├─ dist/                  # Build outputs
-│  ├─ client/             # SPA assets for serving
-│  └─ sandbox_hono_vue/   # Worker bundle
-├─ vite.config.ts         # Vite config (Vue / Tailwind / Cloudflare)
-├─ wrangler.jsonc         # Cloudflare Workers config
-└─ tsconfig*.json         # TypeScript config
-```
-
-## About Hono and the Vue SPA
-
-- **Frontend (SPA)**: Located under `client/`. The router in `client/router/index.ts` uses `createWebHistory` (History API) for navigation.
-- **Backend (API)**: Located under `server/`. Hono powers a Cloudflare Workers API under `/api/*`. An example endpoint `POST /api/echo` accepts JSON `{ text: string }` and returns the uppercased text.
-- **Build/Run**: Vite with `@cloudflare/vite-plugin` builds both the SPA and the Worker bundle. During development, use Vite for the SPA and `wrangler` for the Worker.
-
-## Setup and Commands
-
-1. Install dependencies
+## Setup
 
 ```bash
 yarn install
+yarn dev           # Frontend dev server
+yarn dev:server    # Backend dev server
 ```
 
-2. Development server (SPA)
+## Commands
 
 ```bash
-yarn run dev
+yarn build         # Build frontend
+yarn build:server  # Build backend
+yarn lint          # ESLint
+yarn format        # Prettier
+yarn deploy        # Deploy to dev
+yarn deploy-prod   # Deploy to production
 ```
 
-3. Preview (local run including API)
+## Claude Code Slash Commands
 
-```bash
-yarn run preview   # builds then starts wrangler dev
-```
+| Command | Arguments | Description |
+| ------- | --------- | ----------- |
+| `/update-docs` | path / URL / keyword (optional) | Sync source file changes to Vue doc pages. With args, updates only the relevant page |
+| `/review-docs` | page path or Vue filename (optional) | Open updated pages in browser via dev server |
+| `/improve-project-docs` | none | Suggest and apply improvements to meta-documents (CLAUDE.md, IMPROVEMENT_PLAN.md, etc.) |
 
-4. Build
+## Claude Code Shared Settings (`.claude/settings.json`)
 
-```bash
-yarn run build
-```
+- **PostToolUse hooks**: Auto-runs `yarn lint --fix && yarn format` after Edit/Write
+- **plansDirectory**: Plan files saved to `docs/plans/`
 
-5. Deploy (Cloudflare Workers)
+## Tech Stack
 
-```bash
-yarn run deploy
-```
+- **Frontend**: Vue 3 (Composition API) + TypeScript + Vite
+- **Styling**: Tailwind CSS v4 + shadcn/vue (reka-ui)
+- **i18n**: vue-i18n
+- **Backend**: Hono on Cloudflare Workers
+- **Package Manager**: yarn (workspaces)
+
+See [CLAUDE.md](./CLAUDE.md) for detailed project documentation.

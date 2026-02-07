@@ -403,6 +403,14 @@ yarn deploy        # 開発環境 (mulmocast-dev)
 yarn deploy-prod   # 本番環境 (mulmocast-prod)
 ```
 
+## Claude Code スラッシュコマンド
+
+| コマンド | 引数 | 説明 |
+| -------- | ---- | ---- |
+| `/update-docs` | パス / URL / キーワード（省略可） | ソースファイルの変更をVueドキュメントページに反映。引数指定で該当ページだけ更新 |
+| `/review-docs` | ページのパスまたはVueファイル名（省略可） | 更新したページをdev serverでブラウザ確認 |
+| `/improve-project-docs` | なし | 作業後にメタドキュメント（CLAUDE.md, IMPROVEMENT_PLAN.md等）の改善点を提案・反映 |
+
 ## Development Guidelines
 
 ### Vue.js
