@@ -118,6 +118,20 @@
               </p>
             </div>
           </a>
+          <a
+            href="#fill-option"
+            class="border-border hover:border-primary group flex items-center gap-3 rounded-lg border p-3 transition-colors"
+          >
+            <Maximize class="text-primary h-6 w-6" />
+            <div>
+              <p class="text-foreground group-hover:text-primary text-sm font-medium">
+                {{ $t("docs.cli.advanced.fillOption.navTitle") }}
+              </p>
+              <p class="text-muted-foreground text-xs">
+                {{ $t("docs.cli.advanced.fillOption.navDescription") }}
+              </p>
+            </div>
+          </a>
         </div>
       </section>
 
@@ -170,39 +184,106 @@
         </Card>
 
         <h3 class="text-foreground mb-3 text-lg font-medium">
-          {{ locale === "ja" ? "設定方法" : "How to Set Up" }}
+          {{ $t("docs.cli.advanced.lipsync.modelComparison") }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.lipsync.model") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.lipsync.inputType") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.lipsync.features") }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2">
+                  <code class="text-primary text-xs">bytedance/omni-human</code>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  <span
+                    class="rounded bg-green-100 px-1.5 py-0.5 text-xs text-green-800 dark:bg-green-900 dark:text-green-200"
+                  >
+                    {{ $t("docs.cli.advanced.lipsync.omniHuman.input") }}
+                  </span>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.lipsync.omniHuman.description") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2">
+                  <code class="text-primary text-xs">bytedance/latentsync</code>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  <span
+                    class="rounded bg-blue-100 px-1.5 py-0.5 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                  >
+                    {{ $t("docs.cli.advanced.lipsync.latentSync.input") }}
+                  </span>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.lipsync.latentSync.description") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2">
+                  <code class="text-primary text-xs">tmappdev/lipsync</code>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  <span
+                    class="rounded bg-blue-100 px-1.5 py-0.5 text-xs text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                  >
+                    {{ $t("docs.cli.advanced.lipsync.tmappdev.input") }}
+                  </span>
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.lipsync.tmappdev.description") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.lipsync.completeConfig") }}
         </h3>
         <div class="bg-muted overflow-x-auto rounded-lg p-4">
           <pre class="text-sm"><code>{
-  "movieParams": {
-    "enableLipSync": true,  // {{ locale === "ja" ? "リップシンクを有効化" : "Enable lip sync" }}
-    "lipSync": {
-      "provider": "replicate",
-      "model": "bytedance/omni-human"  // {{ locale === "ja" ? "おすすめモデル" : "Recommended model" }}
+  "$mulmocast": { "version": "1.1" },
+  "title": "{{ $t("docs.cli.advanced.lipsync.configTitle") }}",
+  "lipSyncParams": {
+    "provider": "replicate",
+    "model": "bytedance/omni-human"
+  },
+  "beats": [
+    {
+      "speaker": "Character",
+      "text": "{{ $t("docs.cli.advanced.lipsync.configText") }}",
+      "enableLipSync": true,
+      "image": {
+        "type": "image",
+        "source": {
+          "kind": "path",
+          "path": "character.png"
+        }
+      }
     }
-  }
+  ]
 }</code></pre>
         </div>
 
-        <div class="mt-4 grid gap-3 md:grid-cols-3">
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">bytedance/omni-human</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "最新・高品質（静止画から）" : "Latest, high quality (from still)" }}
-            </p>
-          </div>
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">bytedance/latentsync</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "安定（動画から）" : "Stable (from video)" }}
-            </p>
-          </div>
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">tmappdev/lipsync</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "レガシー（動画から）" : "Legacy (from video)" }}
-            </p>
-          </div>
+        <div
+          class="mt-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
+        >
+          <strong>{{ $t("docs.cli.advanced.lipsync.imageTipsLabel") }}</strong>
+          {{ $t("docs.cli.advanced.lipsync.imageTips") }}
         </div>
       </section>
 
@@ -413,85 +494,479 @@
       <!-- Filters -->
       <section id="filters" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "ビデオフィルター（36種類）" : "Video Filters (36 types)" }}
+          {{ $t("docs.cli.advanced.filters.title") }}
         </h2>
 
         <Card class="mb-4">
           <CardHeader>
             <CardTitle class="text-base">
-              {{ locale === "ja" ? "これは何？" : "What is this?" }}
+              {{ $t("docs.cli.advanced.filters.whatIsThis") }}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p class="text-muted-foreground">
-              {{
-                locale === "ja"
-                  ? "動画全体にかける映像効果です。レトロ風、ホラー風など、動画の雰囲気を変えられます。"
-                  : "Visual effects applied to the entire video. Change the atmosphere to retro, horror, etc."
-              }}
+              {{ $t("docs.cli.advanced.filters.description") }}
             </p>
           </CardContent>
         </Card>
 
+        <!-- 色調整フィルター -->
         <h3 class="text-foreground mb-3 text-lg font-medium">
-          {{ locale === "ja" ? "よく使うフィルター" : "Commonly Used Filters" }}
+          {{ $t("docs.cli.advanced.filters.color.title") }}
         </h3>
         <div class="overflow-x-auto">
           <table class="border-border w-full border-collapse border text-sm">
             <thead>
               <tr class="bg-muted">
-                <th class="border-border border px-4 py-2 text-left">
-                  {{ locale === "ja" ? "フィルター" : "Filter" }}
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.filter") }}
                 </th>
-                <th class="border-border border px-4 py-2 text-left">
-                  {{ locale === "ja" ? "効果" : "Effect" }}
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.effect") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.keyParameters") }}
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">sepia</code></td>
-                <td class="border-border border px-4 py-2">
-                  {{ locale === "ja" ? "セピア調（レトロ風）" : "Sepia tone (retro)" }}
+                <td class="border-border border px-3 py-2"><code class="text-primary">mono</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.color.mono") }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">sepia</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.color.sepia") }}</td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">brightness_contrast</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.color.brightnessContrast") }}
+                </td>
+                <td class="border-border border px-3 py-2">brightness: -1~1, contrast: 0~3</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">hue</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.color.hue") }}
+                </td>
+                <td class="border-border border px-3 py-2">hue: -180~180, saturation: 0~3</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">colorbalance</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.color.colorbalance") }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.color.colorbalanceParam") }}
                 </td>
               </tr>
               <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">mono</code></td>
-                <td class="border-border border px-4 py-2">{{ locale === "ja" ? "モノクロ" : "Monochrome" }}</td>
-              </tr>
-              <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">vignette</code></td>
-                <td class="border-border border px-4 py-2">
-                  {{ locale === "ja" ? "周辺減光（映画風）" : "Vignette (cinematic)" }}
+                <td class="border-border border px-3 py-2"><code class="text-primary">vibrance</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.color.vibrance") }}
                 </td>
+                <td class="border-border border px-3 py-2">intensity: -2~2</td>
               </tr>
               <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">glitch</code></td>
-                <td class="border-border border px-4 py-2">
-                  {{ locale === "ja" ? "グリッチ（ノイズ）" : "Glitch effect" }}
+                <td class="border-border border px-3 py-2"><code class="text-primary">negate</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.color.negate") }}
                 </td>
+                <td class="border-border border px-3 py-2">-</td>
               </tr>
               <tr>
-                <td class="border-border border px-4 py-2"><code class="text-primary">grain</code></td>
-                <td class="border-border border px-4 py-2">{{ locale === "ja" ? "フィルム粒子" : "Film grain" }}</td>
+                <td class="border-border border px-3 py-2"><code class="text-primary">colorhold</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.color.colorhold") }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">colorkey</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.color.colorkey") }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
               </tr>
             </tbody>
           </table>
         </div>
 
+        <!-- ブラー・シャープフィルター -->
         <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
-          {{ locale === "ja" ? "設定方法" : "How to Set Up" }}
+          {{ $t("docs.cli.advanced.filters.blur.title") }}
         </h3>
-        <div class="bg-muted overflow-x-auto rounded-lg p-4">
-          <pre class="text-sm"><code>// {{ locale === "ja" ? "単一フィルター" : "Single filter" }}
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.filter") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.effect") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.keyParameters") }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">blur</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.blur.blur") }}</td>
+                <td class="border-border border px-3 py-2">radius: 1-50, power: 1-10</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">gblur</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.blur.gblur") }}
+                </td>
+                <td class="border-border border px-3 py-2">sigma: 0-100</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">avgblur</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.blur.avgblur") }}</td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.blur.avgblurParam") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">unsharp</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.blur.unsharp") }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.blur.unsharpParam") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- エッジ検出フィルター -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.filters.edge.title") }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.filter") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.effect") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.keyParameters") }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">edgedetect</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.edge.edgedetect") }}</td>
+                <td class="border-border border px-3 py-2">mode: wires / colormix / canny</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">sobel</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.edge.sobel") }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">emboss</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.edge.emboss") }}
+                </td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 変形フィルター -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.filters.transform.title") }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.filter") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.effect") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.keyParameters") }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">hflip</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.transform.hflip") }}</td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">vflip</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.transform.vflip") }}</td>
+                <td class="border-border border px-3 py-2">-</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">rotate</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.transform.rotate") }}</td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.transform.rotateParam") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">transpose</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.transform.transpose") }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.transform.transposeParam") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 視覚効果フィルター -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.filters.visual.title") }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.filter") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.effect") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.keyParameters") }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">vignette</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.visual.vignette") }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.visual.vignetteParam") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">fade</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.visual.fade") }}
+                </td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.visual.fadeParam") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">pixelize</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.visual.pixelize") }}
+                </td>
+                <td class="border-border border px-3 py-2">width, height</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">pseudocolor</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.visual.pseudocolor") }}</td>
+                <td class="border-border border px-3 py-2">magma, inferno, plasma, viridis</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 時間効果・閾値・特殊フィルター -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.filters.temporal.title") }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="border-border w-full border-collapse border text-sm">
+            <thead>
+              <tr class="bg-muted">
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.category") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.filter") }}
+                </th>
+                <th class="border-border border px-3 py-2 text-left">
+                  {{ $t("docs.cli.advanced.filters.effect") }}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border-border border px-3 py-2" rowspan="2">
+                  {{ $t("docs.cli.advanced.filters.temporal.temporalCategory") }}
+                </td>
+                <td class="border-border border px-3 py-2"><code class="text-primary">tmix</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.temporal.tmix") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">lagfun</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.temporal.lagfun") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2" rowspan="2">
+                  {{ $t("docs.cli.advanced.filters.temporal.thresholdCategory") }}
+                </td>
+                <td class="border-border border px-3 py-2"><code class="text-primary">threshold</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.temporal.threshold") }}</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">elbg</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.temporal.elbg") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2" rowspan="7">
+                  {{ $t("docs.cli.advanced.filters.temporal.specialCategory") }}
+                </td>
+                <td class="border-border border px-3 py-2"><code class="text-primary">glitch</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.temporal.glitch") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">grain</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.temporal.grain") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">lensdistortion</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.temporal.lensdistortion") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">chromashift</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.temporal.chromashift") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">deflicker</code></td>
+                <td class="border-border border px-3 py-2">{{ $t("docs.cli.advanced.filters.temporal.deflicker") }}</td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">dctdnoiz</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.temporal.dctdnoiz") }}
+                </td>
+              </tr>
+              <tr>
+                <td class="border-border border px-3 py-2"><code class="text-primary">custom</code></td>
+                <td class="border-border border px-3 py-2">
+                  {{ $t("docs.cli.advanced.filters.temporal.custom") }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- フィルター設定方法 -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.filters.setup") }}
+        </h3>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>// {{ $t("docs.cli.advanced.filters.singleFilter") }}
 {
-  "movieParams": { "filter": "sepia" }
+  "movieParams": {
+    "filters": [{ "type": "sepia" }]
+  }
 }
 
-// {{ locale === "ja" ? "複数フィルターを重ねる" : "Stack multiple filters" }}
+// {{ $t("docs.cli.advanced.filters.filterWithParams") }}
 {
-  "movieParams": { "filter": ["sepia", "vignette", "grain"] }
+  "movieParams": {
+    "filters": [{
+      "type": "hue",
+      "hue": 120,
+      "saturation": 1.5
+    }]
+  }
 }</code></pre>
+        </div>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.filters.filterChain") }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{ $t("docs.cli.advanced.filters.filterChainDescription") }}
+        </p>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "movieParams": {
+    "filters": [
+      { "type": "sepia" },
+      { "type": "grain", "intensity": 25 },
+      { "type": "vignette" }
+    ]
+  }
+}</code></pre>
+        </div>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.filters.customFilter") }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{ $t("docs.cli.advanced.filters.customFilterDescription") }}
+        </p>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "movieParams": {
+    "filters": [{
+      "type": "custom",
+      "filter": "hflip,negate"
+    }]
+  }
+}</code></pre>
+        </div>
+
+        <div class="grid gap-3 md:grid-cols-2">
+          <div class="border-border rounded border p-3">
+            <p class="text-foreground text-sm font-medium">
+              {{ $t("docs.cli.advanced.filters.globalConfig") }}
+            </p>
+            <p class="text-muted-foreground mt-1 text-xs">
+              {{ $t("docs.cli.advanced.filters.globalConfigDescription") }}
+            </p>
+          </div>
+          <div class="border-border rounded border p-3">
+            <p class="text-foreground text-sm font-medium">
+              {{ $t("docs.cli.advanced.filters.perBeatConfig") }}
+            </p>
+            <p class="text-muted-foreground mt-1 text-xs">
+              {{ $t("docs.cli.advanced.filters.perBeatConfigDescription") }}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -519,13 +994,13 @@
         </Card>
 
         <h3 class="text-foreground mb-3 text-lg font-medium">
-          {{ locale === "ja" ? "設定方法" : "How to Set Up" }}
+          {{ $t("docs.cli.advanced.captions.basicSetup") }}
         </h3>
-        <div class="bg-muted overflow-x-auto rounded-lg p-4">
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
           <pre class="text-sm"><code>{
   "captionParams": {
-    "lang": "{{ locale === "ja" ? "ja" : "en" }}",  // {{ locale === "ja" ? "字幕の言語" : "Caption language" }}
-    "captionSplit": "estimate",  // {{ locale === "ja" ? "自動で区切る" : "Auto split" }}
+    "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+    "captionSplit": "estimate",
     "styles": [
       "font-size: 24px",
       "color: white",
@@ -535,19 +1010,76 @@
 }</code></pre>
         </div>
 
-        <div class="mt-4 grid gap-3 md:grid-cols-2">
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">captionSplit: "none"</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "全文を一度に表示" : "Show full text at once" }}
-            </p>
-          </div>
-          <div class="border-border rounded border p-3">
-            <code class="text-primary text-xs">captionSplit: "estimate"</code>
-            <p class="text-muted-foreground mt-1 text-xs">
-              {{ locale === "ja" ? "音声に合わせて自動分割" : "Auto split with audio timing" }}
-            </p>
-          </div>
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          captionSplit {{ $t("docs.cli.advanced.captions.captionSplitModes") }}
+        </h3>
+        <div class="grid gap-3 md:grid-cols-2">
+          <Card>
+            <CardContent class="pt-6">
+              <code class="text-primary text-sm">captionSplit: "none"</code>
+              <p class="text-muted-foreground mt-2 text-sm">
+                {{ $t("docs.cli.advanced.captions.noneMode") }}
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent class="pt-6">
+              <code class="text-primary text-sm">captionSplit: "estimate"</code>
+              <p class="text-muted-foreground mt-2 text-sm">
+                {{ $t("docs.cli.advanced.captions.estimateMode") }}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.captions.styleCustomization") }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{ $t("docs.cli.advanced.captions.styleCustomizationDescription") }}
+        </p>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "captionParams": {
+    "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+    "captionSplit": "estimate",
+    "styles": [
+      "font-size: 48px",
+      "color: white",
+      "text-shadow: 2px 2px 4px black",
+      "font-weight: bold",
+      "background: rgba(0, 0, 0, 0.5)",
+      "padding: 8px 16px",
+      "border-radius: 4px"
+    ]
+  }
+}</code></pre>
+        </div>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.captions.perBeatOverride") }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{ $t("docs.cli.advanced.captions.perBeatOverrideDescription") }}
+        </p>
+        <div class="bg-muted overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "captionParams": {
+    "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+    "styles": ["font-size: 24px", "color: white"]
+  },
+  "beats": [
+    {
+      "text": "{{ $t("docs.cli.advanced.captions.normalText") }}"
+    },
+    {
+      "text": "{{ $t("docs.cli.advanced.captions.emphasizedText") }}",
+      "captionParams": {
+        "styles": ["font-size: 64px", "color: yellow", "font-weight: bold"]
+      }
+    }
+  ]
+}</code></pre>
         </div>
       </section>
 
@@ -740,6 +1272,61 @@
               ? "suppressSpeechモードでは音声でタイミングが決まらないため、各beatにdurationを指定するか、動画素材の長さを使用する必要があります。"
               : "In suppressSpeech mode, since timing isn't determined by audio, you need to specify duration for each beat or use video material length."
           }}
+        </div>
+      </section>
+
+      <!-- Fill Option -->
+      <section id="fill-option" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ $t("docs.cli.advanced.fillOption.title") }}
+        </h2>
+
+        <Card class="mb-4">
+          <CardHeader>
+            <CardTitle class="text-base">
+              {{ $t("docs.cli.advanced.fillOption.whatIsThis") }}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p class="text-muted-foreground">
+              {{ $t("docs.cli.advanced.fillOption.description") }}
+            </p>
+          </CardContent>
+        </Card>
+
+        <div class="mb-4 grid gap-3 md:grid-cols-2">
+          <Card>
+            <CardContent class="pt-6">
+              <code class="text-primary text-sm">aspectFit</code>
+              <span class="text-muted-foreground ml-2 text-xs"
+                >({{ $t("docs.cli.advanced.fillOption.aspectFitDefault") }})</span
+              >
+              <p class="text-muted-foreground mt-2 text-sm">
+                {{ $t("docs.cli.advanced.fillOption.aspectFitDescription") }}
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent class="pt-6">
+              <code class="text-primary text-sm">aspectFill</code>
+              <p class="text-muted-foreground mt-2 text-sm">
+                {{ $t("docs.cli.advanced.fillOption.aspectFillDescription") }}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.fillOption.setup") }}
+        </h3>
+        <div class="bg-muted overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "movieParams": {
+    "fillOption": {
+      "style": "aspectFill"
+    }
+  }
+}</code></pre>
         </div>
       </section>
 
@@ -998,6 +1585,7 @@ import {
   Subtitles,
   Music,
   AudioLines,
+  Maximize,
 } from "lucide-vue-next";
 
 const { locale } = useI18n();

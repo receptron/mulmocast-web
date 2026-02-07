@@ -263,7 +263,7 @@ gui-chat-protocol + MulmoChat + GUIChatPluginTemplateより：
 3. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliProviders.vue`
    - 現在: ~1700行 ✅ Enterprise Settings追加済み（Vertex AI, Azure OpenAI, Geminiモデル）
 4. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliAdvanced.vue`
-   - 現在: 636行 → 目標: ~1000行（詳細設定、例追加）
+   - 現在: 1653行 ✅ フィルター36種、リップシンク詳細、字幕詳細、Fillオプション追加済み、i18n $t()変換済み
 5. `/Users/isamu/ss/llm/mulmocast-web/web/src/views/docs/cli/CliIndex.vue`
    - 現在: 371行（概要ページ、大きな変更不要）
 
@@ -304,6 +304,64 @@ gui-chat-protocol + MulmoChat + GUIChatPluginTemplateより：
 
 ---
 
+### Phase 4: FAQ ページ改善
+
+既存の `/faq` ページ（`web/src/views/Faq.vue`、15個のQ&A）を改善。
+新規ページは作成せず、既存ページにセクション分類と不足項目を追加する。
+
+#### 現状
+- 15個のQ&Aがフラットなリスト（セクション分類なし）
+- 目次なし
+- i18nキーが配列番号ベース（`faq.items[0]` ~ `faq.items[14]`）
+
+#### 改善内容
+
+##### 1. セクション分類（6セクション）
+
+| セクション | 内容 | 既存項目 | 新規項目 |
+|-----------|------|---------|---------|
+| 一般的な質問 | MulmoCastとは、料金、プラットフォーム、用途 | items.0-3 | - |
+| セットアップ・インストール | gpt-image-1エラー、組織認証 | items.4-5 | ffmpegが見つからない |
+| 生成に関する問題 | 動画品質、静止画問題、動画途切れ | items.6-9, 12 | 429 Rate Limitエラー |
+| APIプロバイダー・課金 | OpenAI/Gemini Usage Tiers | items.13-14 | - |
+| MulmoCast App 固有 | バグ報告、BGMカスタマイズ | items.10-11 | _studio.json互換性 |
+| MulmoCast CLI 固有 | - | - | 多言語問題（翻訳、音声/字幕の不一致） |
+
+##### 2. i18nキー構造の変更
+
+```
+現在: faq.items[n].question / answer
+変更後: faq.sections.general.items.whatIsMulmocast.question / answer
+```
+
+番号インデックスから名前付きキーに変更し、項目の追加・並べ替え時のズレを防止。
+
+##### 3. UI改善
+- ページ上部に**目次（Table of Contents）**を追加
+- セクションごとにヘッダーを追加
+- 既存のアンカーID（#what-is-mulmocast等）は変更しない（外部リンク互換）
+
+##### 4. 新規FAQ項目（4つ）
+
+| 項目 | 内容 |
+|------|------|
+| ffmpegが見つからない | macOS: brew install ffmpeg / Windows: winget install ffmpeg |
+| 429 Rate Limitエラー | 時間を空けて再試行、Usage Tier確認、dall-e-3に変更 |
+| _studio.jsonバージョン互換性 | アプリ最新版にアップデート、JSONエクスポート→新規インポート |
+| 多言語問題 | speechParams.lang確認、captionParams調整、言語別speaker設定 |
+
+##### 5. 変更対象ファイル
+
+| ファイル | 変更内容 |
+|----------|----------|
+| `web/src/views/Faq.vue` | セクション化、目次追加、新FAQカード追加 |
+| `web/src/i18n/ja.ts` | i18nキー構造変更 + 新規項目追加 |
+| `web/src/i18n/en.ts` | i18nキー構造変更 + 新規項目追加 |
+
+ルーター変更: **不要**（既に `/:lang?/faq` が存在）
+
+---
+
 ## 検証方法
 
 1. `yarn format` - コードフォーマット
@@ -325,4 +383,5 @@ gui-chat-protocol + MulmoChat + GUIChatPluginTemplateより：
 | Phase 1 (CLI) | +900行 | +400行 |
 | Phase 2 (App) | +400行 | +200行 |
 | Phase 3 (MulmoChat) | +300行 | +150行 |
-| **合計** | **+1600行** | **+750行** |
+| Phase 4 (FAQ) | +200行 | +150行 |
+| **合計** | **+1800行** | **+900行** |
