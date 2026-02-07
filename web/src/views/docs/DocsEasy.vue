@@ -27,7 +27,7 @@
       </section>
 
       <!-- Installation -->
-      <section class="mb-12">
+      <section id="install" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-bold">
           {{ t("docs.easy.install") }}
         </h2>
@@ -37,7 +37,7 @@
       </section>
 
       <!-- Quick Start -->
-      <section class="mb-12">
+      <section id="quickstart" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-bold">
           {{ t("docs.easy.quickstart") }}
         </h2>
@@ -118,7 +118,7 @@
       </section>
 
       <!-- Available Commands -->
-      <section class="mb-12">
+      <section id="commands" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-bold">
           {{ t("docs.easy.commands") }}
         </h2>
