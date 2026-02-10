@@ -73,6 +73,7 @@ mulmocast-web/
 | CLI プロバイダー       | `/docs/cli/providers`   | `cli/CliProviders.vue`   |
 | CLI 高度な機能         | `/docs/cli/advanced`    | `cli/CliAdvanced.vue`    |
 | MulmoCast App          | `/docs/app`             | `DocsApp.vue`            |
+| MulmoCast Slides       | `/docs/slides`          | `DocsSlides.vue`         |
 | MulmoCast Easy         | `/docs/easy`            | `DocsEasy.vue`           |
 | MulmoCast Preprocessor | `/docs/preprocessor`    | `DocsPreprocessor.vue`   |
 | MulmoChat              | `/docs/mulmochat`       | `DocsMulmochat.vue`      |
@@ -206,6 +207,50 @@ MulmoCast CLIをGUIアプリ化したElectronアプリ。Mac/Windows対応。
 - **オンボーディング**: 表示言語、LLM設定、APIキー
 - **編集画面**: AIチャット、スクリプト編集（6タブ）、出力設定、成果物
 - **スクリプト編集タブ**: Text, YAML/JSON, Media, Style
+
+---
+
+## MulmoCast Slides ソース
+
+**リポジトリ**: `receptron/MulmoCast-Slides`
+
+### 概要
+
+プレゼンテーションファイル（Keynote, PowerPoint, PDF, Marp, Markdown）をMulmoScript形式に変換するツール群。スライド画像の抽出、LLMによるナレーション自動生成、動画・バンドル作成までワンコマンドで実行可能。
+
+### ドキュメント構造
+
+| ファイル                           | 概要                                                    | 用途               |
+| ---------------------------------- | ------------------------------------------------------- | ------------------ |
+| `README.md`                        | システム要件、インストール、CLI全コマンド               | 入門・リファレンス |
+| `docs/markdown-converter.md`       | Markdownコンバーター仕様（セパレーター8種、プラグイン） | 機能リファレンス   |
+| `docs/tutorial-pdf-to-video-en.md` | PDFからナレーション動画チュートリアル（英語）           | ユーザーガイド     |
+| `docs/tutorial-pdf-to-video-ja.md` | PDFからナレーション動画チュートリアル（日本語）         | ユーザーガイド     |
+
+### 主要トピック
+
+- **統合CLI**: `mulmo-slide` コマンド（convert, marp, pptx, pdf, keynote, markdown, narrate）
+- **対応フォーマット**: Keynote(.key), PowerPoint(.pptx), PDF(.pdf), Marp(.md), Markdown(.md)
+- **LLMナレーション生成**: `-g` オプションでOpenAI GPT-4oによる自動ナレーション
+- **Markdownコンバーター**: 8種のセパレーターモード（horizontal-rule, heading, heading-1/2/3, blank-lines, comment, page-break, カスタム正規表現）
+- **プラグイン**: `--mermaid`（Mermaid図変換）、`--directive`（Marpディレクティブ削除）、`--layout`（自動レイアウト検出）、`--style`（スタイル適用）
+- **Narrate CLI**: `mulmo-slide narrate` でExtendedScript一括生成（Claude Codeスキル `/narrate` 対応）
+- **システム要件**: Node.js 22+、ImageMagick、Ghostscript（PDF/PPTX）、LibreOffice（PPTX）、Keynote（macOS）
+
+### チュートリアル（Webドキュメントの核）
+
+**ソース**: `docs/tutorial-pdf-to-video-ja.md` / `docs/tutorial-pdf-to-video-en.md`
+
+PDF → ナレーション動画の実践ワークフロー（Claude Code `/narrate` スキル使用）:
+
+1. プロジェクトディレクトリ作成 + `.env`（OPENAI_API_KEY）
+2. `npm install -g @mulmocast/slide` + `mulmo-slide extend init`
+3. PDFを配置し Claude Code で `/narrate your-paper.pdf` 実行
+4. 生成物: `scripts/{basename}/` に MulmoScript, extracted_texts.json, extended_script.json, images/
+5. 活用: `mulmocast-preprocessor query` で対話的Q&A、`summarize` で要約
+6. 動画生成: `mulmocast-preprocessor` → `mulmo movie` で mp4 出力
+
+**注意**: Webドキュメント更新時は必ず `../MulmoCast-Slides/docs/tutorial-pdf-to-video-*.md` の最新内容を確認すること
 
 ---
 
@@ -405,11 +450,11 @@ yarn deploy-prod   # 本番環境 (mulmocast-prod)
 
 ## Claude Code スラッシュコマンド
 
-| コマンド | 引数 | 説明 |
-| -------- | ---- | ---- |
-| `/update-docs` | パス / URL / キーワード（省略可） | ソースファイルの変更をVueドキュメントページに反映。引数指定で該当ページだけ更新 |
-| `/review-docs` | ページのパスまたはVueファイル名（省略可） | 更新したページをdev serverでブラウザ確認 |
-| `/improve-project-docs` | なし | 作業後にメタドキュメント（CLAUDE.md, IMPROVEMENT_PLAN.md等）の改善点を提案・反映 |
+| コマンド                | 引数                                      | 説明                                                                             |
+| ----------------------- | ----------------------------------------- | -------------------------------------------------------------------------------- |
+| `/update-docs`          | パス / URL / キーワード（省略可）         | ソースファイルの変更をVueドキュメントページに反映。引数指定で該当ページだけ更新  |
+| `/review-docs`          | ページのパスまたはVueファイル名（省略可） | 更新したページをdev serverでブラウザ確認                                         |
+| `/improve-project-docs` | なし                                      | 作業後にメタドキュメント（CLAUDE.md, IMPROVEMENT_PLAN.md等）の改善点を提案・反映 |
 
 ## Development Guidelines
 
@@ -447,10 +492,10 @@ yarn deploy-prod   # 本番環境 (mulmocast-prod)
 
 ### 対象ファイル
 
-| ファイル                           | 役割                                           |
-| ---------------------------------- | ---------------------------------------------- |
-| `CLAUDE.md`                        | プロジェクト概要、ソース一覧、開発ガイドライン |
-| `docs/IMPROVEMENT_PLAN.md`         | 改善計画、実装状況                             |
-| `.claude/commands/update-docs.md`  | Webドキュメント更新手順（引数で特定ソース更新） |
-| `.claude/commands/review-docs.md`  | 更新ページのブラウザ確認                       |
-| `.claude/settings.json`            | 共有設定（hooks, plansDirectory）              |
+| ファイル                          | 役割                                            |
+| --------------------------------- | ----------------------------------------------- |
+| `CLAUDE.md`                       | プロジェクト概要、ソース一覧、開発ガイドライン  |
+| `docs/IMPROVEMENT_PLAN.md`        | 改善計画、実装状況                              |
+| `.claude/commands/update-docs.md` | Webドキュメント更新手順（引数で特定ソース更新） |
+| `.claude/commands/review-docs.md` | 更新ページのブラウザ確認                        |
+| `.claude/settings.json`           | 共有設定（hooks, plansDirectory）               |

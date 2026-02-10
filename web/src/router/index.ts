@@ -13,6 +13,7 @@ import Document from "../views/Document.vue";
 import DocsIndex from "../views/docs/DocsIndex.vue";
 import DocsApp from "../views/docs/DocsApp.vue";
 import DocsEasy from "../views/docs/DocsEasy.vue";
+import DocsSlides from "../views/docs/DocsSlides.vue";
 import DocsPreprocessor from "../views/docs/DocsPreprocessor.vue";
 import DocsMulmochat from "../views/docs/DocsMulmochat.vue";
 
@@ -99,6 +100,11 @@ const routeChildren: Array<RouteRecordRaw> = [
     path: "docs/app",
     name: "docs-app",
     component: DocsApp,
+  },
+  {
+    path: "docs/slides",
+    name: "docs-slides",
+    component: DocsSlides,
   },
   {
     path: "docs/easy",

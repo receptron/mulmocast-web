@@ -32,6 +32,7 @@ allowed-tools: Read, Glob, Bash(yarn dev), Bash(open *)
 | `cli/CliProviders.vue` | `http://localhost:5173/docs/cli/providers` |
 | `cli/CliAdvanced.vue` | `http://localhost:5173/docs/cli/advanced` |
 | `DocsApp.vue` | `http://localhost:5173/docs/app` |
+| `DocsSlides.vue` | `http://localhost:5173/docs/slides` |
 | `DocsEasy.vue` | `http://localhost:5173/docs/easy` |
 | `DocsPreprocessor.vue` | `http://localhost:5173/docs/preprocessor` |
 | `DocsMulmochat.vue` | `http://localhost:5173/docs/mulmochat` |
