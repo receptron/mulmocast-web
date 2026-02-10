@@ -99,6 +99,51 @@
           </CardFooter>
         </Card>
 
+        <!-- MulmoCast Slides -->
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <div class="flex items-center gap-3">
+              <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
+                <Presentation class="text-primary h-6 w-6" />
+              </div>
+              <a :href="localizedUrl('/docs/slides')">
+                <CardTitle class="hover:underline">{{ t("docs.slides.title") }}</CardTitle>
+                <CardDescription>{{ t("docs.slides.description") }}</CardDescription>
+              </a>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  :href="localizedUrl('/docs/slides') + '#tutorial'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.slides.item1") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/slides') + '#cli'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.slides.item2") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/slides') + '#markdown'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.slides.item3") }}</a
+                >
+              </li>
+            </ul>
+          </CardContent>
+          <CardFooter>
+            <Button as="a" :href="localizedUrl('/docs/slides')" variant="default" size="sm">
+              {{ t("docs.readMore") }}
+            </Button>
+          </CardFooter>
+        </Card>
+
         <!-- MulmoCast Easy -->
         <Card class="hover:bg-muted/50">
           <CardHeader>
@@ -251,7 +296,7 @@ import { Button } from "../../components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card";
 import Navigation from "../../components/Navigation.vue";
 import { useLocalizedUrl } from "../../i18n/utils";
-import { Terminal, Monitor, Package, Sparkles, MessageCircle } from "lucide-vue-next";
+import { Terminal, Monitor, Presentation, Package, Sparkles, MessageCircle } from "lucide-vue-next";
 
 const { t } = useI18n();
 const localizedUrl = useLocalizedUrl();
