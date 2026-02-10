@@ -23,11 +23,11 @@ yarn deploy-prod   # Deploy to production
 
 ## Claude Code Slash Commands
 
-| Command | Arguments | Description |
-| ------- | --------- | ----------- |
-| `/update-docs` | path / URL / keyword (optional) | Sync source file changes to Vue doc pages. With args, updates only the relevant page |
-| `/review-docs` | page path or Vue filename (optional) | Open updated pages in browser via dev server |
-| `/improve-project-docs` | none | Suggest and apply improvements to meta-documents (CLAUDE.md, IMPROVEMENT_PLAN.md, etc.) |
+| Command                 | Arguments                            | Description                                                                             |
+| ----------------------- | ------------------------------------ | --------------------------------------------------------------------------------------- |
+| `/update-docs`          | path / URL / keyword (optional)      | Sync source file changes to Vue doc pages. With args, updates only the relevant page    |
+| `/review-docs`          | page path or Vue filename (optional) | Open updated pages in browser via dev server                                            |
+| `/improve-project-docs` | none                                 | Suggest and apply improvements to meta-documents (CLAUDE.md, IMPROVEMENT_PLAN.md, etc.) |
 
 ## Claude Code Shared Settings (`.claude/settings.json`)
 
