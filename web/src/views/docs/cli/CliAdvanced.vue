@@ -1010,28 +1010,184 @@
 }</code></pre>
         </div>
 
+        <!-- 2つの分割概念 -->
         <h3 class="text-foreground mb-3 text-lg font-medium">
-          captionSplit {{ $t("docs.cli.advanced.captions.captionSplitModes") }}
+          {{ $t("docs.cli.advanced.captions.twoConcepts") }}
         </h3>
-        <div class="grid gap-3 md:grid-cols-2">
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{ $t("docs.cli.advanced.captions.twoConceptsDescription") }}
+        </p>
+
+        <div class="mb-4 grid gap-3 md:grid-cols-2">
           <Card>
             <CardContent class="pt-6">
-              <code class="text-primary text-sm">captionSplit: "none"</code>
-              <p class="text-muted-foreground mt-2 text-sm">
-                {{ $t("docs.cli.advanced.captions.noneMode") }}
+              <p class="text-foreground text-sm font-medium">captionSplit</p>
+              <p class="text-muted-foreground mt-1 text-xs">
+                {{
+                  locale === "ja" ? "いつ・どのくらい表示するか（タイミング）" : "When and how long to display (timing)"
+                }}
               </p>
+              <div class="mt-2 space-y-1">
+                <div class="flex items-center gap-2">
+                  <code class="text-primary text-xs">"none"</code>
+                  <span class="text-muted-foreground text-xs">{{ $t("docs.cli.advanced.captions.noneMode") }}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <code class="text-primary text-xs">"estimate"</code>
+                  <span class="text-muted-foreground text-xs">{{ $t("docs.cli.advanced.captions.estimateMode") }}</span>
+                </div>
+              </div>
             </CardContent>
           </Card>
           <Card>
             <CardContent class="pt-6">
-              <code class="text-primary text-sm">captionSplit: "estimate"</code>
-              <p class="text-muted-foreground mt-2 text-sm">
-                {{ $t("docs.cli.advanced.captions.estimateMode") }}
+              <p class="text-foreground text-sm font-medium">textSplit</p>
+              <p class="text-muted-foreground mt-1 text-xs">
+                {{ locale === "ja" ? "何を表示するか（分割方法）" : "What to display (splitting method)" }}
               </p>
+              <div class="mt-2 space-y-1">
+                <div class="flex items-center gap-2">
+                  <code class="text-primary text-xs">{ "type": "none" }</code>
+                  <span class="text-muted-foreground text-xs">{{
+                    $t("docs.cli.advanced.captions.textSplitNone")
+                  }}</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <code class="text-primary text-xs">{ "type": "delimiters" }</code>
+                  <span class="text-muted-foreground text-xs">{{
+                    $t("docs.cli.advanced.captions.textSplitDelimiters")
+                  }}</span>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
 
+        <!-- 自動分割の例 -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.captions.autoSplitExample") }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{ $t("docs.cli.advanced.captions.autoSplitExampleDescription") }}
+        </p>
+        <div class="bg-muted mb-2 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "captionParams": {
+    "lang": "{{ locale === "ja" ? "ja" : "en" }}",
+    "captionSplit": "estimate",
+    "textSplit": {
+      "type": "delimiters"
+    }
+  },
+  "beats": [
+    {
+      "text": "{{ locale === "ja" ? "まずは基本の自動分割を確認します。これは長めの文章です。句点で分割されます。" : "First we confirm basic auto-splitting. This is a longer passage. It is split at sentence endings." }}"
+    }
+  ]
+}</code></pre>
+        </div>
+        <p class="text-muted-foreground mb-4 text-xs">
+          {{ $t("docs.cli.advanced.captions.defaultDelimiters") }}:
+          <code class="text-primary">。 ？ ！ . ? !</code>
+        </p>
+
+        <!-- 手動分割 -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.captions.manualSplitTitle") }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{ $t("docs.cli.advanced.captions.manualSplitDescription") }}
+        </p>
+        <div class="bg-muted mb-2 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "captionParams": {
+    "captionSplit": "estimate"
+  },
+  "beats": [
+    {
+      "text": "{{ locale === "ja" ? "手動分割が優先されます。区切り文字が存在しても自動分割は適用されません。" : "Manual splits take precedence. Even if delimiters exist, automatic splitting is not applied." }}",
+      "texts": [
+        "{{ locale === "ja" ? "手動分割が優先されます。区切り文字が存在しても、" : "Manual splits take precedence. Even if delimiters exist," }}",
+        "{{ locale === "ja" ? "自動分割は適用されません。" : "automatic splitting is not applied." }}"
+      ]
+    }
+  ]
+}</code></pre>
+        </div>
+        <div
+          class="mb-4 rounded border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200"
+        >
+          <strong>{{ locale === "ja" ? "注意：" : "Note:" }}</strong>
+          {{ $t("docs.cli.advanced.captions.manualSplitNote") }}
+        </div>
+
+        <!-- カスタム区切り文字 -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.captions.customDelimitersTitle") }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{ $t("docs.cli.advanced.captions.customDelimitersDescription") }}
+        </p>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "captionParams": {
+    "captionSplit": "estimate",
+    "textSplit": {
+      "type": "delimiters"
+    }
+  },
+  "beats": [
+    {
+      "text": "{{ locale === "ja" ? "通常のbeat。デフォルトの句読点で分割されます。" : "Normal beat. Split by default punctuation." }}"
+    },
+    {
+      "text": "{{ locale === "ja" ? "カスタム区切り文字の動作を確認します | このように分割 — さらにこのように | 完了です。" : "We verify custom delimiters | split like this — and also like this | done." }}",
+      "captionParams": {
+        "captionSplit": "estimate",
+        "textSplit": {
+          "type": "delimiters",
+          "delimiters": ["|", "—"]
+        }
+      }
+    }
+  ]
+}</code></pre>
+        </div>
+
+        <!-- beat単位で分割をオフ -->
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ $t("docs.cli.advanced.captions.perBeatSplitOffTitle") }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{ $t("docs.cli.advanced.captions.perBeatSplitOffDescription") }}
+        </p>
+        <div class="bg-muted mb-4 overflow-x-auto rounded-lg p-4">
+          <pre class="text-sm"><code>{
+  "captionParams": {
+    "captionSplit": "estimate",
+    "textSplit": {
+      "type": "delimiters"
+    }
+  },
+  "beats": [
+    {
+      "text": "{{ locale === "ja" ? "このbeatは自動分割されます。句点で分割されます。" : "This beat is auto-split. It splits at sentence endings." }}"
+    },
+    {
+      "text": "{{ locale === "ja" ? "分割なしの動作を確認します。句読点があっても一つのキャプションとして表示されます。" : "We confirm the no-split behavior. Even with punctuation, it is displayed as a single caption." }}",
+      "captionParams": {
+        "captionSplit": "none",
+        "textSplit": { "type": "none" }
+      }
+    }
+  ]
+}</code></pre>
+        </div>
+        <p class="text-muted-foreground mb-4 text-xs">
+          {{ $t("docs.cli.advanced.captions.perBeatSplitOffExplanation") }}
+        </p>
+
+        <!-- スタイルカスタマイズ -->
         <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
           {{ $t("docs.cli.advanced.captions.styleCustomization") }}
         </h3>
@@ -1056,6 +1212,7 @@
 }</code></pre>
         </div>
 
+        <!-- beat単位でのスタイル上書き -->
         <h3 class="text-foreground mb-3 text-lg font-medium">
           {{ $t("docs.cli.advanced.captions.perBeatOverride") }}
         </h3>
