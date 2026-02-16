@@ -182,10 +182,13 @@ mulmocast-cli/docs/より：
     - 設定例
 
 6.5 キャプション
-    - テキスト分割（手動 vs 自動）
+    - 2つの分割概念（captionSplit vs textSplit）の対比説明
+    - 自動分割（textSplit: delimiters）とデフォルト区切り文字
+    - 手動分割（texts配列、textより優先）
+    - beat単位でカスタム区切り文字（|、—等の非句読点も可）
+    - beat単位で分割をオフ（captionSplit: none + textSplit: none）
     - タイミングモード（none, estimate）
-    - スタイルカスタマイズ
-    - captionSplit設定
+    - スタイルカスタマイズ、per-beatスタイル上書き
 
 6.6 サウンドエフェクト
     - soundEffectPrompt使用法
@@ -263,7 +266,7 @@ gui-chat-protocol + MulmoChat + GUIChatPluginTemplateより：
 3. `web/src/views/docs/cli/CliProviders.vue`
    - ✅ Enterprise Settings追加済み（Vertex AI, Azure OpenAI, Geminiモデル）
 4. `web/src/views/docs/cli/CliAdvanced.vue`
-   - ✅ フィルター36種、リップシンク詳細、字幕詳細、Fillオプション追加済み、i18n $t()変換済み
+   - ✅ フィルター36種、リップシンク詳細、字幕詳細（textSplit/手動分割/per-beatカスタム区切り文字/per-beat分割オフ）、Fillオプション追加済み、i18n $t()変換済み
 5. `web/src/views/docs/cli/CliIndex.vue`
    - 概要ページ、大きな変更不要
 
