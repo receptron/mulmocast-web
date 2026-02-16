@@ -669,6 +669,11 @@ const lang = {
         marpDesc: "Marp Markdown (.md) をMulmoScriptに変換",
         markdownDesc: "Markdown (.md) をMulmoScriptに変換",
         narrateDesc: "ExtendedScript一括生成（Claude Code /narrate対応）",
+        transcribeDesc: "動画ファイルをMulmoScriptに変換（Whisper API使用）",
+        previewDesc: "生成したバンドルをブラウザでプレビュー（Webビューワー内蔵）",
+        extendInitDesc: "Claude Code スキル（/narrate, /extend）をインストール",
+        extendValidateDesc: "ExtendedScript JSONをスキーマでバリデーション",
+        extendScaffoldDesc: "MulmoScriptからExtendedScriptのスケルトンを生成",
         commonOptions: "共通オプション",
       },
       markdown: {

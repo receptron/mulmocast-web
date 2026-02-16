@@ -674,6 +674,11 @@ const lang = {
         marpDesc: "Convert Marp Markdown (.md) to MulmoScript",
         markdownDesc: "Convert Markdown (.md) to MulmoScript",
         narrateDesc: "Batch-generate ExtendedScript (Claude Code /narrate support)",
+        transcribeDesc: "Transcribe video files to MulmoScript (using Whisper API)",
+        previewDesc: "Preview generated bundles in the browser (built-in web viewer)",
+        extendInitDesc: "Install Claude Code skills (/narrate, /extend)",
+        extendValidateDesc: "Validate ExtendedScript JSON against schema",
+        extendScaffoldDesc: "Create ExtendedScript skeleton from MulmoScript",
         commonOptions: "Common Options",
       },
       markdown: {

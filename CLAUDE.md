@@ -229,12 +229,15 @@ MulmoCast CLIをGUIアプリ化したElectronアプリ。Mac/Windows対応。
 
 ### 主要トピック
 
-- **統合CLI**: `mulmo-slide` コマンド（convert, marp, pptx, pdf, keynote, markdown, narrate）
-- **対応フォーマット**: Keynote(.key), PowerPoint(.pptx), PDF(.pdf), Marp(.md), Markdown(.md)
+- **統合CLI**: `mulmo-slide` コマンド（convert, marp, pptx, pdf, keynote, markdown, narrate, transcribe, preview, extend）
+- **対応フォーマット**: Keynote(.key), PowerPoint(.pptx), PDF(.pdf), Marp(.md), Markdown(.md), 動画(.mp4, .mov等)
 - **LLMナレーション生成**: `-g` オプションでOpenAI GPT-4oによる自動ナレーション
 - **Markdownコンバーター**: 8種のセパレーターモード（horizontal-rule, heading, heading-1/2/3, blank-lines, comment, page-break, カスタム正規表現）
 - **プラグイン**: `--mermaid`（Mermaid図変換）、`--directive`（Marpディレクティブ削除）、`--layout`（自動レイアウト検出）、`--style`（スタイル適用）
 - **Narrate CLI**: `mulmo-slide narrate` でExtendedScript一括生成（Claude Codeスキル `/narrate` 対応）
+- **Transcribe**: `mulmo-slide transcribe` で動画ファイルをMulmoScriptに変換（Whisper API使用）
+- **Preview**: `mulmo-slide preview` で生成バンドルをブラウザプレビュー（Webビューワー内蔵）
+- **Extend**: `mulmo-slide extend init/validate/scaffold` でClaude Codeスキル管理・ExtendedScript操作
 - **システム要件**: Node.js 22+、ImageMagick、Ghostscript（PDF/PPTX）、LibreOffice（PPTX）、Keynote（macOS）
 
 ### チュートリアル（Webドキュメントの核）

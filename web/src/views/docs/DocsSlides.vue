@@ -262,9 +262,29 @@ mulmo-slide keynote presentation.key -g</code></pre>
                     <td class="py-2 font-mono text-xs">mulmo-slide markdown</td>
                     <td class="text-muted-foreground py-2">{{ t("docs.slides.cli.markdownDesc") }}</td>
                   </tr>
-                  <tr>
+                  <tr class="border-b">
                     <td class="py-2 font-mono text-xs">mulmo-slide narrate</td>
                     <td class="text-muted-foreground py-2">{{ t("docs.slides.cli.narrateDesc") }}</td>
+                  </tr>
+                  <tr class="border-b">
+                    <td class="py-2 font-mono text-xs">mulmo-slide transcribe</td>
+                    <td class="text-muted-foreground py-2">{{ t("docs.slides.cli.transcribeDesc") }}</td>
+                  </tr>
+                  <tr class="border-b">
+                    <td class="py-2 font-mono text-xs">mulmo-slide preview</td>
+                    <td class="text-muted-foreground py-2">{{ t("docs.slides.cli.previewDesc") }}</td>
+                  </tr>
+                  <tr class="border-b">
+                    <td class="py-2 font-mono text-xs">mulmo-slide extend init</td>
+                    <td class="text-muted-foreground py-2">{{ t("docs.slides.cli.extendInitDesc") }}</td>
+                  </tr>
+                  <tr class="border-b">
+                    <td class="py-2 font-mono text-xs">mulmo-slide extend validate</td>
+                    <td class="text-muted-foreground py-2">{{ t("docs.slides.cli.extendValidateDesc") }}</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 font-mono text-xs">mulmo-slide extend scaffold</td>
+                    <td class="text-muted-foreground py-2">{{ t("docs.slides.cli.extendScaffoldDesc") }}</td>
                   </tr>
                 </tbody>
               </table>
