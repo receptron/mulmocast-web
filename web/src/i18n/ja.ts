@@ -454,9 +454,32 @@ const lang = {
           captionSplitModes: "モード",
           noneMode: "全文を一度に表示します。短いテキストや、タイミング制御が不要な場合に使用します。",
           estimateMode: "音声のタイミングに合わせてテキストを自動的に分割・表示します。長いナレーションに最適です。",
+          twoConcepts: "2つの分割概念",
+          twoConceptsDescription:
+            "字幕分割には「何を表示するか（textSplit）」と「いつ表示するか（captionSplit）」の2つの概念があります。両方を組み合わせて使います。",
+          textSplitTitle: "テキスト分割（textSplit）",
+          textSplitDescription:
+            "テキストをどのように分割するかを決定します。区切り文字で自動分割するか、手動で分割テキストを指定できます。",
+          textSplitNone: "分割しない（デフォルト）",
+          textSplitDelimiters: "指定した区切り文字で自動分割",
+          defaultDelimiters: "デフォルトの区切り文字",
+          autoSplitExample: "自動分割の例",
+          autoSplitExampleDescription:
+            "textSplitにdelimitersを指定すると、テキストが自動的に区切り文字で分割されます。デフォルトでは「。？！.?!」で分割されます。",
+          manualSplitTitle: "手動分割（texts配列）",
+          manualSplitDescription:
+            "texts配列を使って手動でテキストを分割できます。texts配列が指定されている場合、textSplitの自動分割より優先されます。",
+          manualSplitNote: "textsを指定した場合でも、textは音声生成に使用されるため必ず指定してください。",
+          customDelimitersTitle: "beat単位でカスタム区切り文字を指定",
+          customDelimitersDescription:
+            "特定のbeatだけ別の区切り文字を使いたい場合、beat単位のcaptionParamsでtextSplitを上書きできます。句読点以外の文字（|や—など）も区切り文字として使えます。",
+          perBeatSplitOffTitle: "beat単位で分割をオフにする",
+          perBeatSplitOffDescription:
+            "グローバルで自動分割を有効にしつつ、特定のbeatだけ分割をオフにすることもできます。",
+          perBeatSplitOffExplanation: "このbeatは句読点があっても一つのキャプションとして表示されます",
           styleCustomization: "スタイルカスタマイズ",
           styleCustomizationDescription: "stylesにCSS文字列の配列を指定して、字幕の見た目をカスタマイズできます。",
-          perBeatOverride: "beat単位での上書き",
+          perBeatOverride: "beat単位でのスタイル上書き",
           perBeatOverrideDescription:
             "特定のbeatだけ字幕スタイルを変更できます。グローバル設定をbeat単位で上書きします。",
           normalText: "通常のテキスト",

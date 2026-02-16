@@ -461,10 +461,32 @@ const lang = {
           captionSplitModes: "Modes",
           noneMode: "Shows the full text at once. Use for short text or when timing control is not needed.",
           estimateMode: "Automatically splits and displays text in sync with audio timing. Best for long narrations.",
+          twoConcepts: "Two Splitting Concepts",
+          twoConceptsDescription:
+            "Caption splitting has two concepts: 'what to display' (textSplit) and 'when to display' (captionSplit). Use them together.",
+          textSplitTitle: "Text Splitting (textSplit)",
+          textSplitDescription:
+            "Determines how text is split into segments. You can auto-split by delimiters or manually specify split texts.",
+          textSplitNone: "No splitting (default)",
+          textSplitDelimiters: "Auto-split by specified delimiters",
+          defaultDelimiters: "Default delimiters",
+          autoSplitExample: "Auto-Split Example",
+          autoSplitExampleDescription:
+            "When textSplit is set to delimiters, text is automatically split at delimiter characters. The default delimiters are period, question mark, and exclamation mark (both fullwidth and ASCII).",
+          manualSplitTitle: "Manual Split (texts Array)",
+          manualSplitDescription:
+            "You can manually split text using the texts array. When texts is specified, it takes precedence over textSplit auto-splitting.",
+          manualSplitNote: "Even when using texts, you must still specify text as it is used for audio generation.",
+          customDelimitersTitle: "Custom Delimiters Per Beat",
+          customDelimitersDescription:
+            "To use different delimiters for a specific beat, override textSplit in the beat's captionParams. Non-punctuation characters like | and — can also be used as delimiters.",
+          perBeatSplitOffTitle: "Disable Splitting Per Beat",
+          perBeatSplitOffDescription: "You can enable auto-splitting globally while disabling it for specific beats.",
+          perBeatSplitOffExplanation: "This beat displays as a single caption even with punctuation",
           styleCustomization: "Style Customization",
           styleCustomizationDescription:
             "Customize caption appearance by specifying an array of CSS strings in styles.",
-          perBeatOverride: "Per-Beat Override",
+          perBeatOverride: "Per-Beat Style Override",
           perBeatOverrideDescription:
             "Override caption styles for specific beats. Per-beat settings take precedence over global settings.",
           normalText: "Normal text",
