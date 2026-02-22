@@ -279,6 +279,51 @@
           </CardFooter>
         </Card>
 
+        <!-- MulmoCast Claude Plugin -->
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <div class="flex items-center gap-3">
+              <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
+                <Plug class="text-primary h-6 w-6" />
+              </div>
+              <a :href="localizedUrl('/docs/claude-plugin')">
+                <CardTitle class="hover:underline">{{ t("docs.claudePlugin.title") }}</CardTitle>
+                <CardDescription>{{ t("docs.claudePlugin.description") }}</CardDescription>
+              </a>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  :href="localizedUrl('/docs/claude-plugin') + '#install'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.claudePlugin.item1") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/claude-plugin') + '#usage'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.claudePlugin.item2") }}</a
+                >
+              </li>
+              <li>
+                <a
+                  :href="localizedUrl('/docs/claude-plugin') + '#workflow'"
+                  class="text-muted-foreground hover:text-primary hover:underline"
+                  >{{ t("docs.claudePlugin.item3") }}</a
+                >
+              </li>
+            </ul>
+          </CardContent>
+          <CardFooter>
+            <Button as="a" :href="localizedUrl('/docs/claude-plugin')" variant="default" size="sm">
+              {{ t("docs.readMore") }}
+            </Button>
+          </CardFooter>
+        </Card>
+
         <!-- Back Button -->
         <div class="text-center">
           <Button as="a" :href="localizedUrl('/')" variant="outline">
@@ -296,7 +341,7 @@ import { Button } from "../../components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card";
 import Navigation from "../../components/Navigation.vue";
 import { useLocalizedUrl } from "../../i18n/utils";
-import { Terminal, Monitor, Presentation, Package, Sparkles, MessageCircle } from "lucide-vue-next";
+import { Terminal, Monitor, Presentation, Package, Sparkles, MessageCircle, Plug } from "lucide-vue-next";
 
 const { t } = useI18n();
 const localizedUrl = useLocalizedUrl();
