@@ -101,6 +101,12 @@ const lang = {
       description:
         "MulmoCast CLIとテンプレートを組み合わせたスライド作成特化のMCPツール。80以上のビジネステンプレートで提案書やレポートを数秒で作成できます。",
     },
+    claudePlugin: {
+      title: "MulmoCast Claude Plugin",
+      tagline: "Claude Codeプラグイン",
+      description:
+        "Claude Codeから直接動画プレゼンテーションを作成。URLやトピック、ドキュメントを入力するだけで、リサーチ・ナレーション・スライドデザイン・動画生成まで5フェーズの構造化プロセスで自動実行します。",
+    },
     mcp: {
       title: "MulmoCast MCP",
       tagline: "CLIのMCPサーバー版",
@@ -805,6 +811,15 @@ const lang = {
         description: "1つのスクリプトから複数の動画を効率的に作成するワークフロー例です。",
       },
       links: "リンク",
+    },
+    claudePlugin: {
+      title: "MulmoCast Claude Plugin",
+      description: "Claude CodeからURL・トピック・ドキュメントで動画プレゼンテーションを作成するプラグイン。",
+      item1: "インストール",
+      item2: "使い方の例",
+      item3: "ワークフロー",
+      pageTitle: "MulmoCast Claude Plugin",
+      pageSubtitle: "Claude Codeから直接AI動画プレゼンテーションを作成",
     },
     mulmochat: {
       title: "MulmoChat",

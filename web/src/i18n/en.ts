@@ -101,6 +101,12 @@ const lang = {
       description:
         "An MCP tool specialized for slide creation, combining MulmoCast CLI with templates. Create proposals and reports in seconds with 80+ business templates.",
     },
+    claudePlugin: {
+      title: "MulmoCast Claude Plugin",
+      tagline: "Claude Code Plugin",
+      description:
+        "Create video presentations directly from Claude Code. Provide a URL, topic, or document and the plugin handles research, narration, slide design, and video generation through a structured 5-phase process.",
+    },
     mcp: {
       title: "MulmoCast MCP",
       tagline: "CLI as MCP Server",
@@ -809,6 +815,15 @@ const lang = {
         description: "Example workflow for efficiently creating multiple videos from one script.",
       },
       links: "Links",
+    },
+    claudePlugin: {
+      title: "MulmoCast Claude Plugin",
+      description: "Claude Code plugin for creating video presentations from URLs, topics, and documents.",
+      item1: "Installation",
+      item2: "Usage Examples",
+      item3: "Workflow",
+      pageTitle: "MulmoCast Claude Plugin",
+      pageSubtitle: "Create AI video presentations directly from Claude Code",
     },
     mulmochat: {
       title: "MulmoChat",
