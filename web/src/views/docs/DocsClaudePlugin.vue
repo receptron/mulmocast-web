@@ -147,7 +147,9 @@
             </thead>
             <tbody>
               <tr v-for="env in optionalEnvVars" :key="env.name">
-                <td class="border-border border px-4 py-2"><code>{{ env.name }}</code></td>
+                <td class="border-border border px-4 py-2">
+                  <code>{{ env.name }}</code>
+                </td>
                 <td class="border-border border px-4 py-2">{{ locale === "ja" ? env.descJa : env.descEn }}</td>
               </tr>
             </tbody>
@@ -357,7 +359,8 @@ const usageExamples = [
     titleJa: "URLから動画を作成",
     titleEn: "Create video from URL",
     command: "/mulmocast:story https://example.com/article 日本語でmovie",
-    descJa: "記事を取得し、キーインサイトを抽出して、プロフェッショナルなスライドレイアウトでナレーション付きプレゼンテーション動画を生成します。",
+    descJa:
+      "記事を取得し、キーインサイトを抽出して、プロフェッショナルなスライドレイアウトでナレーション付きプレゼンテーション動画を生成します。",
     descEn:
       "Fetches the article, extracts key insights, and produces a narrated video presentation with professional slide layouts.",
   },
@@ -373,7 +376,8 @@ const usageExamples = [
     titleJa: "PDFから動画を作成",
     titleEn: "Create video from PDF",
     command: "/mulmocast:story path/to/quarterly-report.pdf",
-    descJa: "ドキュメントを読み込み、主要な発見やデータポイントを特定し、テーブルや統計を含むスライドで動画にまとめます。",
+    descJa:
+      "ドキュメントを読み込み、主要な発見やデータポイントを特定し、テーブルや統計を含むスライドで動画にまとめます。",
     descEn:
       "Reads the document, identifies key findings and data points, and assembles slides with tables and statistics.",
   },
