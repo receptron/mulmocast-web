@@ -77,6 +77,7 @@ mulmocast-web/
 | MulmoCast Easy         | `/docs/easy`            | `DocsEasy.vue`           |
 | MulmoCast Preprocessor | `/docs/preprocessor`    | `DocsPreprocessor.vue`   |
 | MulmoChat              | `/docs/mulmochat`       | `DocsMulmochat.vue`      |
+| MulmoScript レシピ集   | `/docs/recipes`         | `DocsRecipes.vue`        |
 
 ### CLI ドキュメント構造
 
