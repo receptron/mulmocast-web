@@ -825,6 +825,13 @@ const lang = {
       pageTitle: "MulmoCast Claude Plugin",
       pageSubtitle: "Create AI video presentations directly from Claude Code",
     },
+    recipes: {
+      title: "MulmoScript Recipes",
+      description: "A reverse-lookup reference: find patterns by what you want to achieve.",
+      item1: "Slide Types",
+      item2: "Image Generation",
+      item3: "Movie / Transition",
+    },
     mulmochat: {
       title: "MulmoChat",
       description: "Next-generation voice dialogue OS using Chat Protocol.",

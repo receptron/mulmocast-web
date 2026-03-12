@@ -17,6 +17,7 @@ import DocsSlides from "../views/docs/DocsSlides.vue";
 import DocsPreprocessor from "../views/docs/DocsPreprocessor.vue";
 import DocsMulmochat from "../views/docs/DocsMulmochat.vue";
 import DocsClaudePlugin from "../views/docs/DocsClaudePlugin.vue";
+import DocsRecipes from "../views/docs/DocsRecipes.vue";
 
 // CLI Documentation (split into multiple pages)
 import CliIndex from "../views/docs/cli/CliIndex.vue";
@@ -126,6 +127,11 @@ const routeChildren: Array<RouteRecordRaw> = [
     path: "docs/claude-plugin",
     name: "docs-claude-plugin",
     component: DocsClaudePlugin,
+  },
+  {
+    path: "docs/recipes",
+    name: "docs-recipes",
+    component: DocsRecipes,
   },
 ];
 

@@ -821,6 +821,13 @@ const lang = {
       pageTitle: "MulmoCast Claude Plugin",
       pageSubtitle: "Claude Codeから直接AI動画プレゼンテーションを作成",
     },
+    recipes: {
+      title: "MulmoScript レシピ集",
+      description: "「〜したいとき」から逆引きで書き方がわかるリファレンス。",
+      item1: "スライド表現",
+      item2: "画像生成",
+      item3: "動画・トランジション",
+    },
     mulmochat: {
       title: "MulmoChat",
       description: "Chat Protocol使用の次世代音声対話OS。",
