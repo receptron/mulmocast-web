@@ -832,6 +832,13 @@ const lang = {
       item2: "Image Generation",
       item3: "Movie / Transition",
     },
+    mulmoclaude: {
+      title: "MulmoClaude",
+      description: "Multi-modal client that turns Claude Code into a GUI chat with long-term Wiki memory.",
+      item1: "Overview",
+      item2: "Roles",
+      item3: "Wiki (Long-term Memory)",
+    },
     mulmochat: {
       title: "MulmoChat",
       description: "Next-generation voice dialogue OS using Chat Protocol.",

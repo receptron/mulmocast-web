@@ -828,6 +828,13 @@ const lang = {
       item2: "画像生成",
       item3: "動画・トランジション",
     },
+    mulmoclaude: {
+      title: "MulmoClaude",
+      description: "Claude CodeをGUIチャットとして使うマルチモーダルクライアント。長期Wiki記憶付き。",
+      item1: "概要",
+      item2: "ロール",
+      item3: "Wiki（長期記憶）",
+    },
     mulmochat: {
       title: "MulmoChat",
       description: "Chat Protocol使用の次世代音声対話OS。",
