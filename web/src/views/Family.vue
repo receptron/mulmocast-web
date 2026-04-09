@@ -378,7 +378,46 @@
           </CardFooter>
         </Card>
 
-        <!-- 8. GUI Chat Protocol -->
+        <!-- 8. MulmoClaude -->
+        <Card class="hover:bg-muted/50">
+          <CardHeader>
+            <div class="flex items-center gap-3">
+              <div class="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
+                <Brain class="text-primary h-6 w-6" />
+              </div>
+              <div>
+                <CardTitle>{{ t("family.mulmoclaude.title") }}</CardTitle>
+                <CardDescription>{{ t("family.mulmoclaude.tagline") }}</CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent class="space-y-4">
+            <p class="text-muted-foreground">{{ t("family.mulmoclaude.description") }}</p>
+            <div class="flex flex-wrap gap-2">
+              <Badge variant="secondary">Claude Code</Badge>
+              <Badge variant="secondary">Vue 3</Badge>
+              <Badge variant="outline">{{ t("family.badges.longTermMemory") }}</Badge>
+            </div>
+          </CardContent>
+          <CardFooter class="flex gap-3">
+            <Button as="a" :href="localizedUrl('/docs/mulmoclaude')" variant="default" size="sm">
+              {{ locale === "ja" ? "ドキュメント" : "Docs" }}
+            </Button>
+            <Button
+              as="a"
+              href="https://github.com/receptron/mulmoclaude"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="outline"
+              size="sm"
+            >
+              <Github class="mr-2 h-4 w-4" />
+              GitHub
+            </Button>
+          </CardFooter>
+        </Card>
+
+        <!-- 9. GUI Chat Protocol -->
         <Card class="hover:bg-muted/50">
           <CardHeader>
             <div class="flex items-center gap-3">
@@ -457,6 +496,7 @@ import {
   FileSliders,
   Blocks,
   Plug,
+  Brain,
 } from "lucide-vue-next";
 
 const { t, locale } = useI18n();
