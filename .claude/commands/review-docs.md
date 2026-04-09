@@ -36,4 +36,5 @@ allowed-tools: Read, Glob, Bash(yarn dev), Bash(open *)
 | `DocsEasy.vue` | `http://localhost:5173/docs/easy` |
 | `DocsPreprocessor.vue` | `http://localhost:5173/docs/preprocessor` |
 | `DocsMulmochat.vue` | `http://localhost:5173/docs/mulmochat` |
+| `DocsMulmoclaude.vue` | `http://localhost:5173/docs/mulmoclaude` |
 | `DocsRecipes.vue` | `http://localhost:5173/docs/recipes` |

@@ -125,6 +125,12 @@ const lang = {
       description:
         "Chat Protocolを使った次世代の音声対話プラットフォーム。テキストとビジュアルを融合し、会話しながらリアルタイムで画像やインタラクティブコンテンツを体験できます。",
     },
+    mulmoclaude: {
+      title: "MulmoClaude",
+      tagline: "Multi-modal Claude Code Client",
+      description:
+        "Claude CodeをGUIチャットクライアント化するマルチモーダル実装。ドキュメント・スプレッドシート・マインドマップ・画像・3D・ピアノなどのインタラクティブなビジュアルツールでClaudeが応答。組み込みのパーソナルWikiにより、会話を重ねるごとに成長する長期記憶をClaudeに与えます。",
+    },
     protocol: {
       title: "GUI Chat Protocol",
       tagline: "チャットプラグイン仕様",
@@ -147,6 +153,7 @@ const lang = {
       multimodal: "マルチモーダル",
       slides: "スライド生成",
       integration: "AI統合",
+      longTermMemory: "長期記憶",
     },
     backButton: "ホームに戻る",
   },
@@ -827,6 +834,13 @@ const lang = {
       item1: "スライド表現",
       item2: "画像生成",
       item3: "動画・トランジション",
+    },
+    mulmoclaude: {
+      title: "MulmoClaude",
+      description: "Claude CodeをGUIチャットとして使うマルチモーダルクライアント。長期Wiki記憶付き。",
+      item1: "概要",
+      item2: "ロール",
+      item3: "Wiki（長期記憶）",
     },
     mulmochat: {
       title: "MulmoChat",

@@ -21,18 +21,19 @@ MulmoCast Viewerを使用したウェブアプリケーション。
 
 MulmoCastエコシステムを構成するツール群。App以外はnpmパッケージとして公開。
 
-| ツール                 | 説明                                                         | npm                      |
-| ---------------------- | ------------------------------------------------------------ | ------------------------ |
-| MulmoCast CLI          | コアエンジン。フル機能のAIプレゼンテーションプラットフォーム | `mulmocast`              |
-| MulmoCast App          | CLIをGUIアプリ化。Mac/Windows対応                            | -                        |
-| MulmoCast Slides       | Keynote/PPTX/PDF/MarpからMulmoScript変換                     | `@mulmocast/slide`       |
-| MulmoCast Vision       | テンプレート×CLIのスライド作成特化MCPツール                  | `mulmocast-vision`       |
-| MulmoCast MCP          | CLIのMCPサーバー版                                           | `mulmocast-mcp`          |
-| MulmoCast Viewer       | bundleデータをVue 3 Webに組み込むコンポーネント              | `mulmocast-viewer`       |
-| MulmoCast Easy         | ffmpeg同梱の簡単インストール版CLI                            | `mulmocast-easy`         |
-| MulmoCast Preprocessor | 1つのスクリプトから複数バリエーション生成 + AI Q&A           | `mulmocast-preprocessor` |
-| MulmoChat              | GUI Chat Protocol実装の次世代マルチモーダルチャット          | -                        |
-| GUI Chat Protocol      | チャットアプリ用GUIプラグインの標準プロトコル                | `gui-chat-protocol`      |
+| ツール                 | 説明                                                                   | npm                      |
+| ---------------------- | ---------------------------------------------------------------------- | ------------------------ |
+| MulmoCast CLI          | コアエンジン。フル機能のAIプレゼンテーションプラットフォーム           | `mulmocast`              |
+| MulmoCast App          | CLIをGUIアプリ化。Mac/Windows対応                                      | -                        |
+| MulmoCast Slides       | Keynote/PPTX/PDF/MarpからMulmoScript変換                               | `@mulmocast/slide`       |
+| MulmoCast Vision       | テンプレート×CLIのスライド作成特化MCPツール                            | `mulmocast-vision`       |
+| MulmoCast MCP          | CLIのMCPサーバー版                                                     | `mulmocast-mcp`          |
+| MulmoCast Viewer       | bundleデータをVue 3 Webに組み込むコンポーネント                        | `mulmocast-viewer`       |
+| MulmoCast Easy         | ffmpeg同梱の簡単インストール版CLI                                      | `mulmocast-easy`         |
+| MulmoCast Preprocessor | 1つのスクリプトから複数バリエーション生成 + AI Q&A                     | `mulmocast-preprocessor` |
+| MulmoChat              | GUI Chat Protocol実装の次世代マルチモーダルチャット                    | -                        |
+| MulmoClaude            | Claude CodeをGUIチャット化するマルチモーダルクライアント＋長期Wiki記憶 | -                        |
+| GUI Chat Protocol      | チャットアプリ用GUIプラグインの標準プロトコル                          | `gui-chat-protocol`      |
 
 ## Project Structure
 
@@ -77,6 +78,7 @@ mulmocast-web/
 | MulmoCast Easy         | `/docs/easy`            | `DocsEasy.vue`           |
 | MulmoCast Preprocessor | `/docs/preprocessor`    | `DocsPreprocessor.vue`   |
 | MulmoChat              | `/docs/mulmochat`       | `DocsMulmochat.vue`      |
+| MulmoClaude            | `/docs/mulmoclaude`     | `DocsMulmoclaude.vue`    |
 | MulmoScript レシピ集   | `/docs/recipes`         | `DocsRecipes.vue`        |
 
 ### CLI ドキュメント構造
@@ -371,6 +373,33 @@ GUIChatPluginTemplate（プラグイン開発用）
 - **プロトコル**: ToolResult構造、data type（image, map, game等）
 - **プラグイン**: core（ロジック）、vue/react（UI）分離
 - **ビジョン**: アプリ中心→意図表現中心のパラダイムシフト
+
+---
+
+## MulmoClaude ソース
+
+**リポジトリ**: `receptron/mulmoclaude`
+
+### 概要
+
+Claude CodeをGUIチャットクライアントとして使うマルチモーダル実装。テキストの返答だけでなく、ドキュメント・スプレッドシート・マインドマップ・画像・フォーム・3Dシーン・ピアノなどのインタラクティブビジュアルツールでClaudeが応答する。組み込みのパーソナルWiki（長期記憶）を持ち、会話を重ねるごとにClaude自身が構造化された知識ベースを成長させる。
+
+### ドキュメント構造
+
+| ファイル    | 概要                                             | 用途       |
+| ----------- | ------------------------------------------------ | ---------- |
+| `README.md` | インストール、ロール、Wiki、Dockerサンドボックス | 導入・設定 |
+| `CLAUDE.md` | プロジェクト内部の開発ガイドライン               | 開発者向け |
+
+### 主要トピック
+
+- **アーキテクチャ**: Vite (Vue 3) フロントエンド + Express + Claude Code エージェント バックエンド
+- **9つの組み込みロール**: General / Office / Guide & Planner / Artist / Game / Tutor / Storyteller / Musician / Role Manager
+- **長期記憶 Wiki**: Andrej Karpathy の "LLM Knowledge Bases" にインスパイア。`workspace/wiki/` 以下にプレーンmarkdownで保存（index.md, log.md, pages/, sources/）。`[[wiki link]]` 構文でクロスリファレンス
+- **GUI Chat Protocol プラグイン群**: canvas, mindmap, spreadsheet, present3d, piano, music, othello, edit-image, browse, camera 等
+- **画像生成**: Google Gemini 3.1 Flash Image (nano banana 2) — `GEMINI_API_KEY` 必須
+- **Dockerサンドボックス**: Docker Desktopを検出すると自動でClaudeをサンドボックス化。`yarn sandbox:login` で初回認証
+- **オプション X (Twitter) MCPツール**: `readXPost` / `searchX` — `X_BEARER_TOKEN` で有効化
 
 ---
 

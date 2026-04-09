@@ -125,6 +125,12 @@ const lang = {
       description:
         "A next-generation voice dialogue platform using Chat Protocol. Fuses text and visuals for real-time image generation and interactive content during conversation.",
     },
+    mulmoclaude: {
+      title: "MulmoClaude",
+      tagline: "Multi-modal Claude Code Client",
+      description:
+        "Turns Claude Code into a GUI chat client. Claude responds with interactive visual tools — documents, spreadsheets, mind maps, images, 3D scenes, piano, and more. A built-in personal wiki gives Claude long-term memory that grows with every conversation.",
+    },
     protocol: {
       title: "GUI Chat Protocol",
       tagline: "Chat Plugin Specification",
@@ -147,6 +153,7 @@ const lang = {
       converter: "Converter",
       protocol: "Protocol",
       integration: "AI Integration",
+      longTermMemory: "Long-term Memory",
     },
     backButton: "Back to Home",
   },
@@ -831,6 +838,13 @@ const lang = {
       item1: "Slide Types",
       item2: "Image Generation",
       item3: "Movie / Transition",
+    },
+    mulmoclaude: {
+      title: "MulmoClaude",
+      description: "Multi-modal client that turns Claude Code into a GUI chat with long-term Wiki memory.",
+      item1: "Overview",
+      item2: "Roles",
+      item3: "Wiki (Long-term Memory)",
     },
     mulmochat: {
       title: "MulmoChat",
