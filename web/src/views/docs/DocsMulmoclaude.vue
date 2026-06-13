@@ -39,20 +39,32 @@
             <a href="#roles" class="text-muted-foreground hover:text-primary block text-sm">{{
               locale === "ja" ? "3. ロール" : "3. Roles"
             }}</a>
+            <a href="#skills" class="text-muted-foreground hover:text-primary block text-sm">{{
+              locale === "ja" ? "4. スキル実行" : "4. Skills"
+            }}</a>
+            <a href="#charts" class="text-muted-foreground hover:text-primary block text-sm">{{
+              locale === "ja" ? "5. チャート（ECharts）" : "5. Charts (ECharts)"
+            }}</a>
             <a href="#wiki" class="text-muted-foreground hover:text-primary block text-sm">{{
-              locale === "ja" ? "4. Wiki（長期記憶）" : "4. Wiki (Long-term Memory)"
+              locale === "ja" ? "6. Wiki（長期記憶）" : "6. Wiki (Long-term Memory)"
+            }}</a>
+            <a href="#bridges" class="text-muted-foreground hover:text-primary block text-sm">{{
+              locale === "ja" ? "7. メッセージングブリッジ" : "7. Messaging Bridges"
+            }}</a>
+            <a href="#plugins" class="text-muted-foreground hover:text-primary block text-sm">{{
+              locale === "ja" ? "8. ランタイムプラグイン" : "8. Runtime Plugins"
             }}</a>
             <a href="#security" class="text-muted-foreground hover:text-primary block text-sm">{{
-              locale === "ja" ? "5. セキュリティ（Dockerサンドボックス）" : "5. Security (Docker Sandbox)"
+              locale === "ja" ? "9. セキュリティ（Dockerサンドボックス）" : "9. Security (Docker Sandbox)"
             }}</a>
             <a href="#x-tools" class="text-muted-foreground hover:text-primary block text-sm">{{
-              locale === "ja" ? "6. X (Twitter) MCPツール（オプション）" : "6. X (Twitter) MCP Tools (Optional)"
+              locale === "ja" ? "10. X (Twitter) MCPツール（オプション）" : "10. X (Twitter) MCP Tools (Optional)"
             }}</a>
             <a href="#workspace" class="text-muted-foreground hover:text-primary block text-sm">{{
-              locale === "ja" ? "7. ワークスペース構造" : "7. Workspace Structure"
+              locale === "ja" ? "11. ワークスペース構造" : "11. Workspace Structure"
             }}</a>
             <a href="#links" class="text-muted-foreground hover:text-primary block text-sm">{{
-              locale === "ja" ? "8. リンク" : "8. Links"
+              locale === "ja" ? "12. リンク" : "12. Links"
             }}</a>
           </nav>
         </CardContent>
@@ -109,7 +121,7 @@
           {{ locale === "ja" ? "前提条件" : "Prerequisites" }}
         </h3>
         <ul class="text-muted-foreground mb-6 list-inside list-disc space-y-1 text-sm">
-          <li>Node.js 18+</li>
+          <li>{{ locale === "ja" ? "Node.js 20以上（ランタイム）" : "Node.js 20+ (runtime)" }}</li>
           <li>
             <a href="https://claude.ai/code" target="_blank" rel="noopener" class="text-primary hover:underline">
               Claude Code CLI</a
@@ -119,30 +131,108 @@
           <li>
             {{
               locale === "ja"
-                ? "Gemini APIキー（画像生成用、無料枠あり）"
-                : "Gemini API key (for image generation, free tier available)"
+                ? "ffmpeg（動画生成を使う場合のみ。使わなければ不要）"
+                : "ffmpeg (only if you generate videos — skip otherwise)"
+            }}
+          </li>
+          <li>
+            {{
+              locale === "ja"
+                ? "Gemini APIキー（画像生成用・任意、無料枠あり）"
+                : "Gemini API key (optional, for image generation, free tier available)"
             }}
           </li>
         </ul>
 
+        <!-- Shared prep: install Claude Code CLI -->
         <h3 class="text-foreground mb-3 text-lg font-medium">
-          Step 1: {{ locale === "ja" ? "リポジトリをクローン" : "Clone the repository" }}
+          {{ locale === "ja" ? "事前準備: Claude Code CLI をインストール" : "Setup: Install the Claude Code CLI" }}
         </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "MulmoClaude は Claude Code をバックエンドに使うため、方法A・Bのどちらでも事前にCLIのインストールと認証が必要です。すでに導入済みならスキップしてください。"
+              : "MulmoClaude uses Claude Code as its backend, so both Method A and Method B need the CLI installed and authenticated first. Skip this if you already have it."
+          }}
+        </p>
         <div class="bg-muted mb-6 rounded-lg p-3">
+          <pre class="text-sm"><code># {{ locale === "ja" ? "インストール" : "Install" }}
+npm install -g @anthropic-ai/claude-code
+# {{ locale === "ja" ? "一度だけ認証（claude を実行して OAuth を完了）" : "Authenticate once (run claude to complete OAuth)" }}
+claude</code></pre>
+        </div>
+
+        <!-- Method A: npx -->
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{
+            locale === "ja"
+              ? "方法A: npx で起動（推奨・クローン不要）"
+              : "Method A: Run with npx (recommended — no clone)"
+          }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "最も簡単な方法です。クローンもビルドも不要で、npx がパッケージを取得してそのままサーバーを起動します。npmパッケージにはビルド済みのクライアントとサーバーソースが同梱されています。"
+              : "The easiest way to start. No cloning, no build step — npx downloads the package and starts the server directly. The npm package ships with the pre-built client and server source."
+          }}
+        </p>
+        <div class="bg-muted mb-3 rounded-lg p-3">
+          <pre class="text-sm"><code>npx mulmoclaude@latest</code></pre>
+        </div>
+        <p class="text-muted-foreground mb-6 text-sm">
+          {{
+            locale === "ja"
+              ? "ブラウザが自動で http://localhost:3001 を開きます。データは初回起動時に ~/mulmoclaude/ に作成されます。"
+              : "Your browser opens to http://localhost:3001 automatically. Your data is created in ~/mulmoclaude/ on first run."
+          }}
+        </p>
+
+        <h4 class="text-foreground mb-2 font-medium">{{ locale === "ja" ? "主なオプション" : "Common options" }}</h4>
+        <div class="bg-muted mb-6 rounded-lg p-3">
+          <pre
+            class="text-sm"
+          ><code>npx mulmoclaude@latest                    # {{ locale === "ja" ? "デフォルト（ポート3001、ブラウザを開く）" : "Default (port 3001, opens browser)" }}
+npx mulmoclaude@latest --port 8080        # {{ locale === "ja" ? "ポートを変更" : "Custom port" }}
+npx mulmoclaude@latest --no-open          # {{ locale === "ja" ? "ブラウザを開かない" : "Don't open the browser" }}
+npx mulmoclaude@latest --disable-sandbox  # {{ locale === "ja" ? "Dockerサンドボックスを無効化" : "Disable the Docker sandbox" }}
+npx mulmoclaude@latest --version          # {{ locale === "ja" ? "バージョンを表示" : "Show version" }}</code></pre>
+        </div>
+
+        <!-- Method B: clone -->
+        <h3 class="text-foreground mb-3 text-lg font-medium">
+          {{
+            locale === "ja"
+              ? "方法B: リポジトリをクローン（開発者向け）"
+              : "Method B: Clone the repository (for development)"
+          }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "ソースを編集したり開発に参加したりする場合はクローンします。"
+              : "Clone the repo if you want to edit the source or contribute to development."
+          }}
+        </p>
+
+        <h4 class="text-foreground mb-2 font-medium">
+          Step 1: {{ locale === "ja" ? "リポジトリをクローン" : "Clone the repository" }}
+        </h4>
+        <div class="bg-muted mb-4 rounded-lg p-3">
           <pre class="text-sm"><code>git clone git@github.com:receptron/mulmoclaude.git
 cd mulmoclaude
 yarn install</code></pre>
         </div>
 
-        <h3 class="text-foreground mb-3 text-lg font-medium">
+        <h4 class="text-foreground mb-2 font-medium">
           Step 2: {{ locale === "ja" ? "環境変数を設定" : "Set up environment variables" }}
-        </h3>
-        <div class="bg-muted mb-6 rounded-lg p-3">
+        </h4>
+        <div class="bg-muted mb-4 rounded-lg p-3">
           <pre class="text-sm"><code>cp .env.example .env
 # .envを編集してGEMINI_API_KEYを追加</code></pre>
         </div>
 
-        <h3 class="text-foreground mb-3 text-lg font-medium">Step 3: {{ locale === "ja" ? "起動" : "Run" }}</h3>
+        <h4 class="text-foreground mb-2 font-medium">Step 3: {{ locale === "ja" ? "起動" : "Run" }}</h4>
         <div class="bg-muted mb-4 rounded-lg p-3">
           <code class="text-sm">yarn dev</code>
         </div>
@@ -212,10 +302,135 @@ yarn install</code></pre>
         </div>
       </section>
 
+      <!-- Skills -->
+      <section id="skills" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ locale === "ja" ? "4. スキル実行" : "4. Skills — Run Your Claude Code Skills" }}
+        </h2>
+        <p class="text-muted-foreground mb-4">
+          {{
+            locale === "ja"
+              ? "MulmoClaudeは、あなたがすでに持っているClaude Codeのスキル（~/.claude/skills/ 配下）を一覧表示して実行できます。スキルはSKILL.mdに書かれた手順で、ボタン1つでそのままチャットから呼び出せます。"
+              : "MulmoClaude can list and launch the Claude Code skills you already have (under ~/.claude/skills/). A skill is a set of instructions in a SKILL.md, and you can run it straight from the chat with a single click."
+          }}
+        </p>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "使い方" : "How to use" }}
+        </h3>
+        <ol class="text-muted-foreground mb-6 list-inside list-decimal space-y-1 text-sm">
+          <li>
+            {{
+              locale === "ja"
+                ? "General / Office / Tutor のいずれかのロールにする"
+                : "Switch to one of the skill-enabled roles: General, Office, or Tutor"
+            }}
+          </li>
+          <li>
+            {{
+              locale === "ja"
+                ? "「スキル一覧を見せて」「list skills」などと頼むと、Canvasに Skills ビューが開く"
+                : 'Ask Claude to "show my skills" or "list skills" — a Skills view opens in the canvas'
+            }}
+          </li>
+          <li>
+            {{
+              locale === "ja"
+                ? "スキルの「Run」を押すと /スキル名 がチャットに送られ、その場で実行される"
+                : "Click Run on a skill — MulmoClaude sends /skill-name to Claude and it runs inline"
+            }}
+          </li>
+        </ol>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "2つのスコープ" : "Two scopes" }}
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse text-sm">
+            <thead>
+              <tr class="border-border border-b">
+                <th class="py-2 pr-4 text-left font-medium">{{ locale === "ja" ? "スコープ" : "Scope" }}</th>
+                <th class="py-2 pr-4 text-left font-medium">{{ locale === "ja" ? "場所" : "Location" }}</th>
+                <th class="py-2 text-left font-medium">{{ locale === "ja" ? "意味" : "Semantics" }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-border border-b">
+                <td class="text-foreground py-2 pr-4 font-medium whitespace-nowrap">User</td>
+                <td class="py-2 pr-4 font-mono text-xs">~/.claude/skills/&lt;name&gt;/</td>
+                <td class="text-muted-foreground py-2">
+                  {{
+                    locale === "ja" ? "全プロジェクト共通の個人スキル" : "Personal skills shared across every project"
+                  }}
+                </td>
+              </tr>
+              <tr class="border-border border-b">
+                <td class="text-foreground py-2 pr-4 font-medium whitespace-nowrap">Project</td>
+                <td class="py-2 pr-4 font-mono text-xs">~/mulmoclaude/.claude/skills/&lt;name&gt;/</td>
+                <td class="text-muted-foreground py-2">
+                  {{
+                    locale === "ja"
+                      ? "ワークスペース固有のスキル（名前が衝突した場合はProjectが優先）"
+                      : "Workspace-scoped skills (Project wins on a name collision)"
+                  }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "会話をスキルとして保存" : "Save a conversation as a skill" }}
+        </h3>
+        <p class="text-muted-foreground text-sm">
+          {{
+            locale === "ja"
+              ? "生産的な会話のあとに「この会話を fix-ci という skill にして」「skill 化して」と頼むと、Claudeが手順を抽出して ~/mulmoclaude/.claude/skills/ に新しいSKILL.mdを書き出します（保存先はProjectスコープのみ）。"
+              : 'After a productive chat, ask "save this as a skill called fix-ci" and Claude distills the steps into a new SKILL.md under ~/mulmoclaude/.claude/skills/ (saves are Project-scope only).'
+          }}
+        </p>
+      </section>
+
+      <!-- Charts -->
+      <section id="charts" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ locale === "ja" ? "5. チャート（ECharts）" : "5. Charts (ECharts)" }}
+        </h2>
+        <p class="text-muted-foreground mb-4">
+          {{
+            locale === "ja"
+              ? "presentChart プラグインが Apache ECharts のグラフをCanvasに描画します。折れ線・棒・ローソク足・サンキー・ヒートマップ・ネットワーク図などに対応し、各チャートには [↓ PNG] ボタンでワンクリック書き出しが付きます。General / Office / Guide & Planner / Tutor の各ロールで利用できます。"
+              : "The presentChart plugin renders Apache ECharts visualizations in the canvas — line, bar, candlestick, sankey, heatmap, and network/graph charts. Every chart has a [↓ PNG] one-click export button. Available in the General, Office, Guide & Planner, and Tutor roles."
+          }}
+        </p>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "使用例" : "Example prompts" }}
+        </h3>
+        <div class="bg-muted mb-4 rounded-lg p-3">
+          <pre class="text-sm"><code>{{
+              locale === "ja" ? "先四半期の売上を地域別に棒グラフで" : "Chart last quarter's revenue by region as a bar chart"
+            }}
+{{ locale === "ja" ? "過去30日のAAPLの終値をローソク足で" : "Plot AAPL's daily closes for the last 30 days as a candlestick" }}
+{{
+              locale === "ja"
+                ? "エネルギーフローのサンキー図: 石炭/ガス/太陽光 → 電力 → 家庭/産業/輸送"
+                : "Show a sankey of energy flow: coal/gas/solar → electricity → home/industry/transport"
+            }}</code></pre>
+        </div>
+        <p class="text-muted-foreground text-sm">
+          {{
+            locale === "ja"
+              ? "各チャートは ~/mulmoclaude/artifacts/charts/ に1ファイルとして保存され、1つのドキュメントに複数のチャートを縦に並べて表示できます。"
+              : "Each chart is saved as one file under ~/mulmoclaude/artifacts/charts/, and a single document can stack any number of charts vertically."
+          }}
+        </p>
+      </section>
+
       <!-- Wiki -->
       <section id="wiki" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "4. Wiki — Claude Codeの長期記憶" : "4. Wiki — Long-Term Memory for Claude Code" }}
+          {{ locale === "ja" ? "6. Wiki — Claude Codeの長期記憶" : "6. Wiki — Long-Term Memory for Claude Code" }}
         </h2>
         <p class="text-muted-foreground mb-4">
           {{
@@ -251,7 +466,7 @@ yarn install</code></pre>
           }}
         </p>
         <div class="bg-muted mb-4 rounded-lg p-3">
-          <pre class="text-sm"><code>workspace/wiki/
+          <pre class="text-sm"><code>~/mulmoclaude/data/wiki/
   index.md          ← {{
               locale === "ja" ? "全ページのカタログ（タイトル、説明、最終更新）" : "catalog of all pages (title, description, last updated)"
             }}
@@ -268,10 +483,112 @@ yarn install</code></pre>
         </p>
       </section>
 
+      <!-- Messaging Bridges -->
+      <section id="bridges" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ locale === "ja" ? "7. メッセージングブリッジ" : "7. Messaging Bridges" }}
+        </h2>
+        <p class="text-muted-foreground mb-4">
+          {{
+            locale === "ja"
+              ? "MulmoClaudeは、Telegram・Slack・Discord・LINEなど20以上のメッセージングアプリから「ブリッジ」プロセス経由でアクセスできます。ブリッジは別プロセスとして起動し、socket.io でサーバーに接続します。すべてのブリッジがリアルタイムのテキストストリーミングに対応し、CLIとTelegramはファイル添付にも対応しています。"
+              : "MulmoClaude can be reached from 20+ messaging apps — Telegram, Slack, Discord, LINE, and more — via bridge processes. Each bridge runs as a separate process and connects to the server over socket.io. All bridges support real-time text streaming; CLI and Telegram also support file attachments."
+          }}
+        </p>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "起動方法" : "How to run" }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "クローン環境からは yarn スクリプトで、それ以外では単体のnpmパッケージとして起動できます。"
+              : "Run them via yarn scripts in a cloned repo, or as standalone npm packages anywhere."
+          }}
+        </p>
+        <div class="bg-muted mb-4 rounded-lg p-3">
+          <pre class="text-sm"><code># {{ locale === "ja" ? "クローン環境から" : "From a cloned repo" }}
+yarn cli                            # {{ locale === "ja" ? "同一マシンの対話型CLIブリッジ" : "interactive CLI bridge (same machine)" }}
+yarn telegram                       # {{ locale === "ja" ? "Telegramボット（要 TELEGRAM_BOT_TOKEN）" : "Telegram bot (requires TELEGRAM_BOT_TOKEN)" }}
+
+# {{ locale === "ja" ? "単体のnpmパッケージとして" : "As standalone npm packages" }}
+npx @mulmobridge/telegram@latest    # Telegram
+npx @mulmobridge/slack@latest       # Slack
+npx @mulmobridge/discord@latest     # Discord
+npx @mulmobridge/line@latest        # LINE
+# {{ locale === "ja" ? "ほか WhatsApp / Signal / Teams / Mastodon / Bluesky など多数" : "plus WhatsApp / Signal / Teams / Mastodon / Bluesky and many more" }}</code></pre>
+        </div>
+        <p class="text-muted-foreground text-sm">
+          {{
+            locale === "ja"
+              ? "対応プラットフォームの全リストとセットアップ手順は"
+              : "For the full platform list and setup, see the"
+          }}
+          <a
+            href="https://github.com/receptron/mulmoclaude/blob/main/docs/mulmobridge-guide.en.md"
+            target="_blank"
+            rel="noopener"
+            class="text-primary hover:underline"
+            >{{ locale === "ja" ? "MulmoBridgeガイド" : "MulmoBridge Guide" }}</a
+          >{{ locale === "ja" ? "を参照してください。" : "." }}
+        </p>
+      </section>
+
+      <!-- Runtime Plugins -->
+      <section id="plugins" class="mb-12">
+        <h2 class="text-foreground mb-4 text-2xl font-semibold">
+          {{ locale === "ja" ? "8. ランタイムプラグイン" : "8. Runtime Plugins" }}
+        </h2>
+        <p class="text-muted-foreground mb-4">
+          {{
+            locale === "ja"
+              ? "MulmoClaudeは「AIネイティブなアプリケーションプラットフォーム」です。個別のアプリではなく、機能はすべて単一レジストリ上のプラグインとして構築され、Claudeがそれらを横断する万能コントローラーとして振る舞います。現在動作しているアプリ例には、フル機能の会計システム、パーソナルWiki、SEC提出書類リーダー（Edgar）があります。"
+              : "MulmoClaude is an AI-native application platform. Instead of siloed apps, every capability is built as a plugin within a single registry, and Claude acts as a universal controller that composes across them. Apps running on it today include a full accounting system, a personal wiki, and an SEC-filings reader (Edgar)."
+          }}
+        </p>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "ランタイム読み込み" : "Runtime loading" }}
+        </h3>
+        <p class="text-muted-foreground mb-4 text-sm">
+          {{
+            locale === "ja"
+              ? "プラグインはnpmパッケージとして配布でき、ワークスペースに実行時インストールできます。クローンやビルドは不要です。"
+              : "Plugins can be distributed as npm packages and installed into a workspace at runtime — no cloning or build step required."
+          }}
+        </p>
+
+        <h3 class="text-foreground mt-6 mb-3 text-lg font-medium">
+          {{ locale === "ja" ? "プラグイン開発" : "Plugin development" }}
+        </h3>
+        <p class="text-muted-foreground mb-3 text-sm">
+          {{
+            locale === "ja"
+              ? "ローカルのプラグインディレクトリを --dev-plugin で読み込めます。vite の watch（プラグイン側で yarn dev）と組み合わせると、編集 → 自動リビルド → ブラウザ自動リロードの開発ループになります。"
+              : "Load a local plugin directory with --dev-plugin. Paired with vite watch (yarn dev in the plugin dir), edits trigger a rebuild and the browser auto-reloads — a tight dev loop."
+          }}
+        </p>
+        <div class="bg-muted mb-4 rounded-lg p-3">
+          <pre class="text-sm"><code>npx mulmoclaude@latest --dev-plugin ./my-plugin   # {{
+              locale === "ja" ? "ローカルのプラグインを読み込む" : "load a plugin from a local project dir"
+            }}</code></pre>
+        </div>
+        <p class="text-muted-foreground text-sm">
+          {{ locale === "ja" ? "詳細は" : "See the" }}
+          <a
+            href="https://github.com/receptron/mulmoclaude/blob/main/docs/plugin-runtime.md"
+            target="_blank"
+            rel="noopener"
+            class="text-primary hover:underline"
+            >{{ locale === "ja" ? "ランタイムプラグインのドキュメント" : "Runtime-Loaded Plugins guide" }}</a
+          >{{ locale === "ja" ? "を参照してください。" : "." }}
+        </p>
+      </section>
+
       <!-- Security -->
       <section id="security" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "5. セキュリティ — Dockerサンドボックス" : "5. Security — Docker Sandbox" }}
+          {{ locale === "ja" ? "9. セキュリティ — Dockerサンドボックス" : "9. Security — Docker Sandbox" }}
         </h2>
         <p class="text-muted-foreground mb-4">
           {{
@@ -352,7 +669,7 @@ yarn install</code></pre>
       <!-- X Tools -->
       <section id="x-tools" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "6. X (Twitter) MCPツール（オプション）" : "6. X (Twitter) MCP Tools (Optional)" }}
+          {{ locale === "ja" ? "10. X (Twitter) MCPツール（オプション）" : "10. X (Twitter) MCP Tools (Optional)" }}
         </h2>
         <p class="text-muted-foreground mb-4">
           {{
@@ -398,28 +715,34 @@ yarn install</code></pre>
       <!-- Workspace -->
       <section id="workspace" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "7. ワークスペース構造" : "7. Workspace Structure" }}
+          {{ locale === "ja" ? "11. ワークスペース構造" : "11. Workspace Structure" }}
         </h2>
         <p class="text-muted-foreground mb-4">
           {{
             locale === "ja"
-              ? "すべてのデータはワークスペースディレクトリにプレーンなファイルとして保存されます:"
-              : "All data is stored as plain files in the workspace directory:"
+              ? "すべてのデータはワークスペースディレクトリにプレーンなファイルとして保存され、4つの意味的なバケットに分類されます:"
+              : "All data is stored as plain files in the workspace directory, grouped into four semantic buckets:"
           }}
         </p>
         <div class="bg-muted rounded-lg p-3">
           <pre class="text-sm"><code>~/mulmoclaude/
-  chat/         ← {{ locale === "ja" ? "会話履歴（セッションごとに1つの.jsonl）" : "conversation history (one .jsonl per session)" }}
-  todos/        ← {{ locale === "ja" ? "ToDoアイテム" : "todo items" }}
-  memory.md     ← {{ locale === "ja" ? "Claudeが常にコンテキストに持つ永続的な事実" : "persistent facts Claude always has in context" }}
-  wiki/         ← {{ locale === "ja" ? "パーソナル知識ベース" : "personal knowledge base" }}</code></pre>
+  config/          ← {{ locale === "ja" ? "settings.json、mcp.json、roles/、helps/" : "settings.json, mcp.json, roles/, helps/" }}
+  conversations/   ← {{ locale === "ja" ? "chat/、memory.md、summaries/、searches/" : "chat/, memory.md, summaries/, searches/" }}
+  data/            ← {{
+              locale === "ja" ? "wiki/、todos/、calendar/、scheduler/、sources/ など" : "wiki/, todos/, calendar/, scheduler/, sources/, etc."
+            }}
+  artifacts/       ← {{
+              locale === "ja"
+                ? "charts/、documents/、images/、spreadsheets/、stories/ など"
+                : "charts/, documents/, images/, spreadsheets/, stories/, etc."
+            }}</code></pre>
         </div>
       </section>
 
       <!-- Links -->
       <section id="links" class="mb-12">
         <h2 class="text-foreground mb-4 text-2xl font-semibold">
-          {{ locale === "ja" ? "8. リンク" : "8. Links" }}
+          {{ locale === "ja" ? "12. リンク" : "12. Links" }}
         </h2>
         <ul class="space-y-2 text-sm">
           <li>
@@ -431,6 +754,41 @@ yarn install</code></pre>
             >
               <Github class="mr-2 h-4 w-4" />
               receptron/mulmoclaude
+              <ExternalLink class="ml-1 h-3 w-3" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.npmjs.com/package/mulmoclaude"
+              target="_blank"
+              rel="noopener"
+              class="text-primary inline-flex items-center hover:underline"
+            >
+              npm: mulmoclaude
+              <ExternalLink class="ml-1 h-3 w-3" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/receptron/mulmoclaude/blob/main/docs/mulmobridge-guide.en.md"
+              target="_blank"
+              rel="noopener"
+              class="text-primary inline-flex items-center hover:underline"
+            >
+              {{
+                locale === "ja" ? "MulmoBridgeガイド（メッセージングアプリ連携）" : "MulmoBridge Guide (messaging apps)"
+              }}
+              <ExternalLink class="ml-1 h-3 w-3" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/receptron/mulmoclaude/blob/main/docs/plugin-runtime.md"
+              target="_blank"
+              rel="noopener"
+              class="text-primary inline-flex items-center hover:underline"
+            >
+              {{ locale === "ja" ? "ランタイムプラグイン開発ガイド" : "Runtime-Loaded Plugins Guide" }}
               <ExternalLink class="ml-1 h-3 w-3" />
             </a>
           </li>
@@ -487,7 +845,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/ca
 import { Badge } from "../../components/ui/badge";
 import Navigation from "../../components/Navigation.vue";
 import { useLocalizedUrl } from "../../i18n/utils";
-import { ChevronLeft, ExternalLink, Github, MessageSquare, Brain, Palette, Shield } from "lucide-vue-next";
+import {
+  ChevronLeft,
+  ExternalLink,
+  Github,
+  MessageSquare,
+  Brain,
+  Palette,
+  Shield,
+  BarChart3,
+  Send,
+} from "lucide-vue-next";
 
 const { t, locale } = useI18n();
 const localizedUrl = useLocalizedUrl();
@@ -511,8 +879,22 @@ const features = [
     icon: Palette,
     titleJa: "ロールベースのツール切替",
     titleEn: "Role-based Tool Switching",
-    descJa: "9つの組み込みロール（General、Office、Artist、Game、Tutor等）でツールを切替",
-    descEn: "9 built-in roles (General, Office, Artist, Game, Tutor, etc.) swap tools per role",
+    descJa: "6つの組み込みロール（General、Office、Artist、Tutor等）でツールを切替",
+    descEn: "6 built-in roles (General, Office, Artist, Tutor, etc.) swap tools per role",
+  },
+  {
+    icon: BarChart3,
+    titleJa: "チャート＆データ可視化",
+    titleEn: "Charts & Data Viz",
+    descJa: "ECharts（折れ線・棒・ローソク足・サンキー等）をCanvasに描画、PNG出力対応",
+    descEn: "Renders ECharts (line, bar, candlestick, sankey, etc.) in the canvas with PNG export",
+  },
+  {
+    icon: Send,
+    titleJa: "メッセージングブリッジ",
+    titleEn: "Messaging Bridges",
+    descJa: "Telegram、Slack、Discord、LINEなど20以上のアプリからアクセス",
+    descEn: "Access from Telegram, Slack, Discord, LINE, and 20+ messaging apps",
   },
   {
     icon: Shield,
@@ -545,11 +927,6 @@ const roles = [
     descEn: "Image generation, image editing, generative art with p5.js",
   },
   {
-    name: "Game",
-    descJa: "オセロをプレイ、またはPhaser/Three.jsでブラウザゲームを構築",
-    descEn: "Play Othello, or build browser games with Phaser/Three.js",
-  },
-  {
     name: "Tutor",
     descJa: "適応型ティーチング — 説明の前にあなたのレベルを評価",
     descEn: "Adaptive teaching — evaluates your level before explaining anything",
@@ -558,16 +935,6 @@ const roles = [
     name: "Storyteller",
     descJa: "画像とHTMLシーンを使ったインタラクティブな絵本",
     descEn: "Interactive illustrated stories with images and HTML scenes",
-  },
-  {
-    name: "Musician",
-    descJa: "ブラウザで音楽を作曲・演奏",
-    descEn: "Compose and play music in the browser",
-  },
-  {
-    name: "Role Manager",
-    descJa: "カスタムロールの作成・編集",
-    descEn: "Create and edit custom roles",
   },
 ];
 
