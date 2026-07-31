@@ -1,0 +1,32 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  // Yarn-workspaces monorepo: knip auto-detects the "web" (Vue 3 / Vite SPA) and "server"
+  // (Hono Cloudflare Worker) workspaces from the root package.json, resolving each workspace's
+  // entry points via its Vite / Wrangler config. No entry/project globs are set here so that
+  // auto-detection keeps working.
+  "ignoreExportsUsedInFile": true,
+  "includeEntryExports": false,
+  "workspaces": {
+    "web": {
+      // prettier-plugin-tailwindcss is loaded through the repo-root .prettierrc "plugins"
+      // array, not imported from any source file, so knip's per-workspace analysis cannot see
+      // that web's `prettier` run uses it. It is genuinely used; ignore the false positive.
+      "ignoreDependencies": ["prettier-plugin-tailwindcss"],
+    },
+  },
+  "rules": {
+    // Warn mode: every rule is "warn" (reported, exit 0) or "off". Nothing gates CI here.
+    "files": "warn",
+    "dependencies": "warn",
+    "devDependencies": "warn",
+    "unlisted": "warn",
+    "exports": "warn",
+    "types": "warn",
+    "unresolved": "off",
+    "binaries": "off",
+    "nsExports": "off",
+    "nsTypes": "off",
+    "enumMembers": "off",
+    "duplicates": "off",
+  },
+}

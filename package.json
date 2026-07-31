@@ -15,11 +15,13 @@
     "deploy": "yarn workspace mulmocast-web run config:dev && VITE_GTAG=GTM-N6QMN3VF yarn workspace mulmocast-web run build && yarn workspace mulmocast-server run deploy",
     "deploy-prod": "yarn workspace mulmocast-web run config:prod && VITE_GTAG=GTM-W8L5QNPS yarn workspace mulmocast-web run build && yarn workspace mulmocast-server run deploy-prod && yarn workspace mulmocast-web run config:dev",
     "lint": "yarn workspace mulmocast-web run lint",
-    "format": "prettier --write 'web/**/*.{ts,json,yaml,vue}' 'server/**/*.{ts,json}' '*.json' '*.md'"
+    "format": "prettier --write 'web/**/*.{ts,json,yaml,vue}' 'server/**/*.{ts,json}' '*.json' '*.md'",
+    "knip": "knip"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "globals": "^17.8.0",
+    "knip": "^6",
     "prettier": "^3.9.6"
   }
 }
