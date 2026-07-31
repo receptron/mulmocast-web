@@ -42,3 +42,6 @@ coverage
 # Playwright MCP
 .playwright-mcp
 .mcp.json
+
+# jscpd duplication-scan output
+report/
