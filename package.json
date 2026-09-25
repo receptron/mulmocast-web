@@ -20,8 +20,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "globals": "^17.8.0",
-    "knip": "^6",
+    "globals": "^17.11.0",
+    "knip": "^6.32.2",
     "prettier": "^3.9.6"
   }
 }
