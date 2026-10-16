@@ -131,6 +131,12 @@ const lang = {
       description:
         "Claude CodeをGUIチャットクライアント化するマルチモーダル実装。ドキュメント・スプレッドシート・マインドマップ・画像・3D・ピアノなどのインタラクティブなビジュアルツールでClaudeが応答。組み込みのパーソナルWikiにより、会話を重ねるごとに成長する長期記憶をClaudeに与えます。",
     },
+    terminal: {
+      title: "MulmoTerminal",
+      tagline: "AI エージェントの並列ターミナル",
+      description:
+        "複数の AI コーディングエージェントのセッションをグリッドで並べるブラウザターミナル。各セルを「作業中／完了／あなた待ち」で色分けし、手を入れるべきセッションへ迷わず導きます。Claude Code を既定に、Codex など 6 つの CLI にも対応。",
+    },
     protocol: {
       title: "GUI Chat Protocol",
       tagline: "チャットプラグイン仕様",
@@ -154,6 +160,7 @@ const lang = {
       slides: "スライド生成",
       integration: "AI統合",
       longTermMemory: "長期記憶",
+      parallel: "並列エージェント",
     },
     backButton: "ホームに戻る",
   },
@@ -868,10 +875,14 @@ const lang = {
   },
   home: {
     hero: {
-      title: "MulmoCast",
-      subtitle: "台本を書くだけ。AIが動画まで。",
-      description: "学生の発表も、ビジネスの提案も、{emphasize}。",
-      emphasize: "伝わる形に自動で",
+      title: "Mulmo ファミリー",
+      subtitle: "AI ネイティブなアプリ群。動画・音声対話・パーソナルアシスタント・並列エージェント。",
+    },
+    learnMore: "詳しく見る",
+    family: {
+      title: "Mulmo ファミリー全体を見る",
+      description: "CLI・Slides・Vision・Viewer・MCP・GUI Chat Protocol など、エコシステムを構成するツールの一覧。",
+      button: "ファミリー一覧へ",
     },
     support: {
       title: "💬 質問・要望はこちら",
@@ -924,6 +935,87 @@ const lang = {
       discord: "Discord",
       githubApp: "GitHub - MulmoCast App",
       githubCli: "GitHub - MulmoCast CLI",
+    },
+  },
+  products: {
+    links: {
+      npm: "npm",
+      github: "GitHub",
+      docs: "ドキュメント",
+      guide: "ユーザーガイド",
+      download: "ダウンロード",
+    },
+    familyPrompt: "Mulmo ファミリーには、ほかにも CLI やライブラリなど多くのツールがあります。",
+    backHome: "トップに戻る",
+    seeFamily: "ファミリー一覧へ",
+    mulmocast: {
+      title: "MulmoCast",
+      tagline: "台本を書くだけ。AI が動画まで。",
+      lead: "台本から AI が画像とナレーション音声を生成し、動画・PDF・スライドに仕上げるマルチモーダルなプレゼンテーションプラットフォーム。",
+      introTitle: "MulmoCast とは",
+      intro: [
+        "MulmoCast は、台本（MulmoScript）を書くだけで、AI が画像とナレーション音声を自動生成し、動画を完成させるマルチモーダルプレゼンテーションツールです。",
+        "コアとなる CLI はフル機能を備え、それを GUI アプリ化した MulmoCast App なら、インストールするだけでほとんどの用途の動画が作れます。生成 AI の呼び出しにはご自身の API Key を使う仕組みのため、アプリ自体は無料で利用できます。",
+      ],
+      featuresTitle: "主な機能",
+      features: [
+        "AI に台本を作らせる、または自分で書く",
+        "画像とナレーション音声を自動生成",
+        "ワンクリックで動画を完成（PDF・スライド出力にも対応）",
+        "macOS / Windows のデスクトップアプリ、または npm の CLI で利用可能",
+      ],
+    },
+    mulmochat: {
+      title: "MulmoChat",
+      tagline: "音声で対話する、次世代のマルチモーダル AI",
+      lead: "テキストの往復に閉じない AI チャット。会話しながら、画像・地図・ゲームなどのビジュアルがキャンバス上にリアルタイムで現れます。",
+      introTitle: "MulmoChat とは",
+      intro: [
+        "MulmoChat は、マルチモーダル AI チャットの新しいパラダイムを探る研究プロトタイプです。従来のチャットがテキスト中心なのに対し、自然な会話をしながら、豊かなビジュアルとインタラクティブなコンテンツをキャンバス上で同時に体験できます。",
+        "「AI との対話はテキストの流れに限られなくてもよい」という発想から、ビジュアル体験と言語理解が自然に共存するアーキテクチャを設計。画像が立ち上がり、地図を探索でき、ゲームが遊べる——すべてが会話の流れの中で起こります。",
+      ],
+      featuresTitle: "主な特徴",
+      features: [
+        "音声で話しかけながら操作するリアルタイム対話",
+        "会話の流れの中で画像・地図・インタラクティブコンテンツが出現",
+        "GUI Chat Protocol によるプラグイン拡張",
+        "AI ネイティブな OS 的インターフェースの実験場",
+      ],
+    },
+    mulmoclaude: {
+      title: "MulmoClaude",
+      tagline: "自分だけの AI アシスタントを「育てる」",
+      lead: "Claude Code を GUI チャット化し、長期記憶とあなた専用のアプリを、手元のコンピューター上で育てるマルチモーダルクライアント。",
+      introTitle: "MulmoClaude とは",
+      intro: [
+        "あなたのことを何でも知り、24 時間支えてくれる AI アシスタントは、どこにも売っていません。買うのではなく、育てるもの——MulmoClaude は、自分のコンピューター上で自分だけの AI アシスタントを育てるためのツールです。",
+        "アシスタントの価値は AI モデルそのものではなく、あなたについてどれだけ知っているかで決まります。会話・予定・メモ・データ——そうした大切なものを特定のサービスに預けず、オープンソースかつローカルで動作させ、すべてを自分の手元（ワークスペース内のプレーンファイル）に保ちます。",
+        "内部は AI ネイティブなアプリケーションプラットフォームです。機能は単一レジストリのプラグインとして提供され、Claude がそれらを横断して組み合わせる万能コントローラーとして振る舞い、タスクごとに最適な GUI（Markdown・グラフ・フォーム・wiki・スプレッドシート・3D など）を呼び出します。",
+      ],
+      featuresTitle: "主な特徴",
+      features: [
+        "会話を重ねるごとに育つパーソナル wiki（長期記憶）",
+        "「こういうのが欲しい」と話すだけで、あなた専用の小さなアプリを Claude が作成",
+        "スキーマ駆動のコレクションでデータを蓄積",
+        "スマホや普段のメッセージアプリから、手元の同じアシスタントへアクセス（記憶・データは外に出ない）",
+      ],
+    },
+    mulmoterminal: {
+      title: "MulmoTerminal",
+      tagline: "複数の AI コーディングエージェントを並列で。今どれが待っているか、ひと目で。",
+      lead: "複数のエージェントセッションをグリッドで並べるブラウザターミナル。各セルを「作業中／完了／あなた待ち」で色分けし、手を入れるべきところへ迷わず導きます。",
+      introTitle: "MulmoTerminal とは",
+      intro: [
+        "エージェント 1 つのバイブコーディングならシェルだけで十分ですが、複数を同時に走らせると「どれが待っているか」を見失います。MulmoTerminal は、すべてのセッションを 1 画面のグリッドに並べ、青（作業中）・緑（完了）・黄（あなた待ち）で色分けして、光っているところへ行けばよい状態にします。",
+        "既定のエージェントは Claude Code で、Codex・Antigravity・Grok・Muse・GitHub Copilot CLI・Cursor CLI の 6 つも一級市民として扱えます。各セルは本物の pty で、セッションは tmux でリロードに耐え、作業は git worktree で分離。ターンが終わるとスマホに通知が届きます。Electron 不要、設定不要、npx 一発で起動します。",
+      ],
+      featuresTitle: "主な特徴",
+      features: [
+        "多数のエージェントセッションをグリッドで一覧、状態を色で表示",
+        "ロスターが各セッションの「依頼・応答・実行」を保持し、戻っても追いつける",
+        "git worktree によるセッション分離とワンクリック PR",
+        "ターン完了時のスマホ通知、コスト表示。Node ≥ 22.12、npx 一発で起動",
+      ],
     },
   },
   languages,

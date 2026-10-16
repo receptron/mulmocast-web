@@ -131,6 +131,12 @@ const lang = {
       description:
         "Turns Claude Code into a GUI chat client. Claude responds with interactive visual tools — documents, spreadsheets, mind maps, images, 3D scenes, piano, and more. A built-in personal wiki gives Claude long-term memory that grows with every conversation.",
     },
+    terminal: {
+      title: "MulmoTerminal",
+      tagline: "A parallel terminal for AI agents",
+      description:
+        "A browser terminal that puts many AI coding-agent sessions in a grid, color-coding each as working, done or needs-you so you go straight to whatever needs attention. Claude Code is the default, with six more CLIs such as Codex supported.",
+    },
     protocol: {
       title: "GUI Chat Protocol",
       tagline: "Chat Plugin Specification",
@@ -154,6 +160,7 @@ const lang = {
       protocol: "Protocol",
       integration: "AI Integration",
       longTermMemory: "Long-term Memory",
+      parallel: "Parallel Agents",
     },
     backButton: "Back to Home",
   },
@@ -872,10 +879,14 @@ const lang = {
   },
   home: {
     hero: {
-      title: "MulmoCast",
-      subtitle: "Just write a script. AI creates the video.",
-      description: "For student presentations and business proposals, {emphasize}.",
-      emphasize: "automatically in a compelling format",
+      title: "The Mulmo Family",
+      subtitle: "A family of AI-native apps: video, voice conversation, a personal assistant, and parallel agents.",
+    },
+    learnMore: "Learn more",
+    family: {
+      title: "Explore the whole Mulmo family",
+      description: "The full set of ecosystem tools — CLI, Slides, Vision, Viewer, MCP, GUI Chat Protocol and more.",
+      button: "See the family",
     },
     support: {
       title: "💬 Questions & Requests",
@@ -933,6 +944,87 @@ const lang = {
       discord: "Discord",
       githubApp: "GitHub - MulmoCast App",
       githubCli: "GitHub - MulmoCast CLI",
+    },
+  },
+  products: {
+    links: {
+      npm: "npm",
+      github: "GitHub",
+      docs: "Docs",
+      guide: "User guide",
+      download: "Download",
+    },
+    familyPrompt: "The Mulmo family includes many more tools — CLIs, libraries and more.",
+    backHome: "Back to home",
+    seeFamily: "See the family",
+    mulmocast: {
+      title: "MulmoCast",
+      tagline: "Just write a script. AI creates the video.",
+      lead: "A multimodal presentation platform: from a script, AI generates images and narration and renders it into video, PDF and slides.",
+      introTitle: "What is MulmoCast",
+      intro: [
+        "MulmoCast is a multimodal presentation tool: write a script (MulmoScript) and AI generates images and narration audio to produce a finished video.",
+        "The core CLI is fully featured, and MulmoCast App wraps it in a GUI — install it and you can make videos for most use cases. It calls generative AI with your own API keys, so the app itself is free to use.",
+      ],
+      featuresTitle: "Key features",
+      features: [
+        "Let AI write the script, or write it yourself",
+        "Auto-generate images and narration audio",
+        "Finish a video in one click (PDF and slide output too)",
+        "Available as a macOS / Windows desktop app, or the npm CLI",
+      ],
+    },
+    mulmochat: {
+      title: "MulmoChat",
+      tagline: "Next-generation multimodal AI you talk to",
+      lead: "An AI chat that is not confined to text. As you converse, visuals — images, maps, playable games — materialize on canvas in real time.",
+      introTitle: "What is MulmoChat",
+      intro: [
+        "MulmoChat is a research prototype exploring a new paradigm for multimodal AI chat. Where traditional chat is text-based, here you hold a natural conversation while experiencing rich visual and interactive content on canvas at the same time.",
+        "The key insight: AI conversations don't have to be limited to text streams. An architecture where visual experience and language understanding coexist naturally lets images materialize, maps become explorable and games turn playable — all within the conversational flow.",
+      ],
+      featuresTitle: "Key features",
+      features: [
+        "Real-time conversation driven by voice",
+        "Images, maps and interactive content appear within the flow of the conversation",
+        "Extensible via the GUI Chat Protocol",
+        "A testbed for an AI-native, OS-like interface",
+      ],
+    },
+    mulmoclaude: {
+      title: "MulmoClaude",
+      tagline: "Nurture an AI assistant that is yours alone",
+      lead: "A multimodal client that turns Claude Code into a GUI chat, growing long-term memory and apps built just for you — all on your own computer.",
+      introTitle: "What is MulmoClaude",
+      intro: [
+        "An AI assistant that knows everything about you and supports you around the clock isn't sold anywhere. You can't buy one — you can only nurture one. MulmoClaude is a tool for nurturing your own AI assistant on your own computer.",
+        "An assistant's value lies not in the AI model but in how much it knows about you: your conversations, calendar, notes and data. Rather than entrust something that important to a single service, MulmoClaude is open source and runs locally, keeping everything it accumulates in your own hands — as plain files in your workspace.",
+        "Under the hood it is an AI-native application platform: capabilities are plugins in a single registry, Claude acts as a universal controller that composes across them, and chat summons the right GUI for each task — markdown, charts, forms, wikis, spreadsheets or 3D scenes.",
+      ],
+      featuresTitle: "Key features",
+      features: [
+        "A personal wiki (long-term memory) that grows with every conversation",
+        "Say what you want in plain words and Claude builds a small app just for you",
+        "Schema-driven collections to accumulate your data",
+        "Reach the same assistant from your phone or a messaging app (memory and data never leave your computer)",
+      ],
+    },
+    mulmoterminal: {
+      title: "MulmoTerminal",
+      tagline: "Run multiple AI coding agents in parallel — and see which one needs you.",
+      lead: "A browser terminal that puts many agent sessions in a grid, color-coding each as working, done or needs-you so you go straight to whatever needs attention.",
+      introTitle: "What is MulmoTerminal",
+      intro: [
+        "Vibe coding with a single agent needs nothing but a shell. Running several, you lose track of which is waiting. MulmoTerminal puts every session on one screen and color-codes them — blue (working), green (done), amber (needs you) — so you just go where the light is.",
+        "Claude Code is the default, with six more CLIs as first-class citizens — Codex, Antigravity, Grok, Muse, GitHub Copilot CLI and Cursor CLI. Every cell is a real pty; sessions survive a reload via tmux, work isolates in git worktrees, and a phone push reaches you when a turn finishes. No Electron, no config — one npx command.",
+      ],
+      featuresTitle: "Key features",
+      features: [
+        "Many agent sessions in a grid, state shown by color",
+        "A roster keeps each session's ask, answer and actions so you lose nothing catching up",
+        "Git-worktree isolation with one-click PRs",
+        "Phone push on turn completion, cost readouts. Node ≥ 22.12, one npx command",
+      ],
     },
   },
   languages,
