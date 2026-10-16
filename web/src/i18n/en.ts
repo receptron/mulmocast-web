@@ -1044,6 +1044,8 @@ const lang = {
       featuresLead: "A closer look at what {name} can do.",
       useCasesLead: "Where {name} helps.",
       gettingStartedLead: "What you need and the steps to start with {name}.",
+      faq: "FAQ",
+      faqLead: "Common questions about {name}.",
     },
     mulmocast: {
       title: "MulmoCast",
@@ -1086,6 +1088,24 @@ const lang = {
         "Desktop app: macOS or Windows",
         "To use the CLI: Node.js",
       ],
+      faq: [
+        {
+          q: "Is it free to use?",
+          a: "The app itself is free. Generating images, audio and video needs API keys for each AI provider (pay-as-you-go), and those charges come from the providers.",
+        },
+        {
+          q: "Do I need to know how to code?",
+          a: "No. With the desktop app you make videos just by chatting with the AI assistant. For finer automation the npm CLI is also available.",
+        },
+        {
+          q: "What formats can it output?",
+          a: "Video, audio, PDF (presentation / handout), podcast and slides, all in one click.",
+        },
+        {
+          q: "What is MulmoScript?",
+          a: "A script format that describes your content beat by beat. You can edit it across Text / YAML / JSON / Media / Style modes, or generate it by chatting with AI.",
+        },
+      ],
     },
     mulmochat: {
       title: "MulmoChat",
@@ -1125,6 +1145,24 @@ const lang = {
         "Node.js and yarn",
         "OpenAI / Google Gemini API keys",
         "Optional: Anthropic, Grok (XAI), Exa (search), Google Maps, and ComfyUI / Ollama for local image generation",
+      ],
+      faq: [
+        {
+          q: "Is MulmoChat a product?",
+          a: "It is a research prototype exploring a new paradigm for multimodal AI chat, released as open source.",
+        },
+        {
+          q: "Which AI providers are supported?",
+          a: "It is provider-agnostic: OpenAI, Anthropic, Google Gemini, Grok and Ollama. Image generation can also run locally via ComfyUI / FLUX.",
+        },
+        {
+          q: "What do I need to run it?",
+          a: "Node.js and yarn, plus OpenAI / Google Gemini API keys. Search (Exa) and maps (Google Maps) are optional.",
+        },
+        {
+          q: "Can I add my own tools?",
+          a: "Yes. The GUI Chat Protocol lets you add capabilities as plugins with no core changes; each plugin returns both machine-readable data and a human-readable UI.",
+        },
       ],
     },
     mulmoclaude: {
@@ -1169,6 +1207,24 @@ const lang = {
         "Claude Code CLI (installed and authenticated)",
         "ffmpeg for movie generation; Docker Desktop optionally for sandbox mode",
       ],
+      faq: [
+        {
+          q: "How is it different from MulmoCast or MulmoChat?",
+          a: "MulmoClaude turns Claude Code into a GUI chat and is a client for nurturing long-term memory and apps that are yours alone, right on your own computer.",
+        },
+        {
+          q: "Where is my data stored?",
+          a: "Everything is kept on your own computer as plain files in your workspace; it never leaves for an external service.",
+        },
+        {
+          q: "What do I need to run it?",
+          a: "Node.js 22.22.2+ / 24.15+ / 26+ and the Claude Code CLI (installed and authenticated). ffmpeg for movie generation, and Docker Desktop optionally for sandbox mode.",
+        },
+        {
+          q: "Can I build apps without coding?",
+          a: 'Yes. Just say something like "make me a restaurant list" and Claude builds schema-driven collections and small apps for you.',
+        },
+      ],
     },
     mulmoterminal: {
       title: "MulmoTerminal",
@@ -1210,6 +1266,24 @@ const lang = {
         "Node.js 22.12 or newer",
         "The claude CLI on your PATH and logged in by default, or another supported agent such as Codex",
         "Optional: tmux for session persistence across restarts",
+      ],
+      faq: [
+        {
+          q: "Can I use agents other than Claude Code?",
+          a: "Claude Code is the default, but Codex, Antigravity, Grok, Muse, GitHub Copilot CLI and Cursor CLI are all first-class citizens.",
+        },
+        {
+          q: "Do I need to install anything?",
+          a: "No. With no Electron and no config, a single npx mulmoterminal{'@'}latest opens the grid in your browser (Node ≥ 22.12).",
+        },
+        {
+          q: "Do sessions survive a reload?",
+          a: "Yes. Each session persists via tmux, and work is isolated in git worktrees.",
+        },
+        {
+          q: "Can I use it on the go?",
+          a: "A finished turn reaches your phone via Web Push, and RemoteHost lets you reply on the spot.",
+        },
       ],
     },
   },
