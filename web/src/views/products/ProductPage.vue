@@ -199,6 +199,19 @@
         <MulmoCastDownload v-if="product.id === 'mulmocast'" />
       </template>
 
+      <!-- FAQ -->
+      <section v-else-if="sectionKey === 'faq'">
+        <dl class="divide-border divide-y">
+          <div v-for="(item, index) in faq" :key="index" class="py-5 first:pt-0">
+            <dt class="text-foreground flex items-start gap-3 font-semibold">
+              <HelpCircle class="mt-0.5 h-5 w-5 shrink-0" :class="accent.text" />
+              <span>{{ rt(item.q) }}</span>
+            </dt>
+            <dd class="text-muted-foreground mt-2 pl-8 leading-relaxed">{{ rt(item.a) }}</dd>
+          </div>
+        </dl>
+      </section>
+
       <!-- Common footer: related apps + explore -->
       <section>
         <h2 class="text-foreground text-xl font-bold">{{ t("products.relatedTitle") }}</h2>
@@ -265,13 +278,14 @@ import {
   Sparkles,
   Lightbulb,
   Rocket,
+  HelpCircle,
 } from "lucide-vue-next";
 import { getProduct, listProducts, RESOURCES, type ProductDef, type ProductLink, type RelatedDoc } from "./products";
 import { SECTIONS, toSectionKey, type SectionDef, type SectionKey } from "./productSections";
 import { ACCENTS } from "./accents";
 import { iconFor } from "./icons";
 import MulmoCastDownload from "./MulmoCastDownload.vue";
-import { useSeo, softwareAppJsonLd, SITE_ORIGIN } from "@/lib/seo";
+import { useSeo, softwareAppJsonLd, faqPageJsonLd, SITE_ORIGIN } from "@/lib/seo";
 
 const props = defineProps<{ id: string; section?: string }>();
 
@@ -295,6 +309,10 @@ const features = computed(() => tm(`products.${props.id}.features`));
 const useCases = computed(() => tm(`products.${props.id}.useCases`));
 const steps = computed(() => tm(`products.${props.id}.steps`));
 const prerequisites = computed(() => tm(`products.${props.id}.prerequisites`));
+const faq = computed(() => tm(`products.${props.id}.faq`));
+const faqEntries = computed(() =>
+  faq.value.map((item: { q: string; a: string }) => ({ question: rt(item.q), answer: rt(item.a) })),
+);
 
 const sectionLabel = computed(() => t(`products.sections.${sectionDef.value.labelKey}`));
 const sectionLead = computed(() => t(`products.sections.${sectionDef.value.labelKey}Lead`, { name: base("title") }));
@@ -314,7 +332,7 @@ const exploreLinks = computed<RelatedDoc[]>(() => [
   { path: "/faq", key: "faq" },
 ]);
 
-const TAB_ICONS: Record<string, Component> = { House, Sparkles, Lightbulb, Rocket };
+const TAB_ICONS: Record<string, Component> = { House, Sparkles, Lightbulb, Rocket, HelpCircle };
 const tabIcon = (name: string): Component | undefined => TAB_ICONS[name];
 
 const LINK_ICONS: Record<ProductLink["kind"], Component> = {
@@ -349,6 +367,9 @@ useSeo({
   description: isOverview.value ? base("lead") : sectionLead.value,
   path: seoPath.value,
   image: product.value?.image,
-  jsonLd: softwareAppJsonLd(base("title"), base("lead"), `${SITE_ORIGIN}/${props.id}`),
+  jsonLd:
+    sectionKey.value === "faq"
+      ? faqPageJsonLd(faqEntries.value)
+      : softwareAppJsonLd(base("title"), base("lead"), `${SITE_ORIGIN}/${props.id}`),
 });
 </script>

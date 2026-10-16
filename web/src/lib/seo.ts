@@ -49,3 +49,13 @@ export const softwareAppJsonLd = (name: string, description: string, url: string
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   publisher: { "@type": "Organization", name: "Singularity Society", url: "https://singularitysociety.org/" },
 });
+
+export const faqPageJsonLd = (entries: Array<{ question: string; answer: string }>): Record<string, unknown> => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: entries.map((entry) => ({
+    "@type": "Question",
+    name: entry.question,
+    acceptedAnswer: { "@type": "Answer", text: entry.answer },
+  })),
+});

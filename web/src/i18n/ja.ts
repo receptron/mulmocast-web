@@ -1035,6 +1035,8 @@ const lang = {
       featuresLead: "{name} でできることの詳細です。",
       useCasesLead: "{name} はどんな場面で役立つか。",
       gettingStartedLead: "{name} を使い始めるための前提と手順。",
+      faq: "よくある質問",
+      faqLead: "{name} についてよく聞かれること。",
     },
     mulmocast: {
       title: "MulmoCast",
@@ -1073,6 +1075,24 @@ const lang = {
         "生成 AI 用の API Key（画像・音声・動画の各プロバイダ。用途により複数）",
         "デスクトップアプリ: macOS または Windows",
         "CLI で使う場合: Node.js",
+      ],
+      faq: [
+        {
+          q: "無料で使えますか？",
+          a: "アプリ自体は無料です。画像・音声・動画の生成には各 AI プロバイダの API Key（従量課金）が必要で、費用は各プロバイダに対して発生します。",
+        },
+        {
+          q: "プログラミングの知識は必要ですか？",
+          a: "不要です。デスクトップアプリなら AI アシスタントと会話するだけで動画が作れます。細かく自動化したい場合は npm の CLI も使えます。",
+        },
+        {
+          q: "どんな形式で出力できますか？",
+          a: "動画・音声・PDF（プレゼン / 資料）・Podcast・スライドをワンクリックで出力できます。",
+        },
+        {
+          q: "MulmoScript とは何ですか？",
+          a: "ビート単位で構成を記述する台本フォーマットです。Text / YAML / JSON / Media / Style の各モードで編集でき、AI との会話からも生成できます。",
+        },
       ],
     },
     mulmochat: {
@@ -1113,6 +1133,24 @@ const lang = {
         "Node.js と yarn",
         "OpenAI / Google Gemini の API Key",
         "任意: Anthropic・Grok(XAI)・Exa（検索）・Google Maps、ローカル画像生成用の ComfyUI / Ollama",
+      ],
+      faq: [
+        {
+          q: "MulmoChat は製品ですか？",
+          a: "マルチモーダル AI チャットの新しいパラダイムを探る研究プロトタイプで、オープンソースとして公開されています。",
+        },
+        {
+          q: "どの AI プロバイダに対応していますか？",
+          a: "OpenAI / Anthropic / Google Gemini / Grok / Ollama などプロバイダ非依存です。画像生成はローカルの ComfyUI・FLUX も利用できます。",
+        },
+        {
+          q: "使うには何が必要ですか？",
+          a: "Node.js と yarn、OpenAI / Google Gemini の API Key が必要です。検索（Exa）や地図（Google Maps）などは任意です。",
+        },
+        {
+          q: "独自のツールを追加できますか？",
+          a: "GUI Chat Protocol により、コアを改変せずプラグインとして機能を追加できます。各プラグインは AI 向けのデータと利用者向けの UI の両方を返します。",
+        },
       ],
     },
     mulmoclaude: {
@@ -1157,6 +1195,24 @@ const lang = {
         "Claude Code CLI（インストール・認証済み）",
         "動画生成を使う場合は ffmpeg、任意でサンドボックス用に Docker Desktop",
       ],
+      faq: [
+        {
+          q: "MulmoCast や MulmoChat と何が違いますか？",
+          a: "MulmoClaude は Claude Code を GUI チャット化し、長期記憶とあなた専用のアプリを手元で「育てる」クライアントです。",
+        },
+        {
+          q: "データはどこに保存されますか？",
+          a: "すべてワークスペース内のプレーンファイルとして自分のコンピューターに保たれ、外部サービスには出ません。",
+        },
+        {
+          q: "使うのに必要なものは？",
+          a: "Node.js 22.22.2+ / 24.15+ / 26+ と、インストール・認証済みの Claude Code CLI が必要です。動画生成には ffmpeg、サンドボックスには任意で Docker Desktop。",
+        },
+        {
+          q: "プログラミングなしでアプリを作れますか？",
+          a: "はい。「飲食店リストを作って」のように話すだけで、Claude がスキーマ駆動のコレクションや小さなアプリを生成します。",
+        },
+      ],
     },
     mulmoterminal: {
       title: "MulmoTerminal",
@@ -1195,6 +1251,24 @@ const lang = {
         "Node.js 22.12 以上",
         "既定で claude CLI（PATH 上、ログイン済み）。または Codex 等の対応エージェント",
         "任意: tmux（再起動をまたぐセッション永続化）",
+      ],
+      faq: [
+        {
+          q: "Claude Code 以外のエージェントも使えますか？",
+          a: "既定は Claude Code ですが、Codex・Antigravity・Grok・Muse・GitHub Copilot CLI・Cursor CLI も一級市民として扱えます。",
+        },
+        {
+          q: "インストールは必要ですか？",
+          a: "不要です。Electron も設定も要らず、npx mulmoterminal{'@'}latest 一発でブラウザにグリッドが開きます（Node ≥ 22.12）。",
+        },
+        {
+          q: "セッションはリロードで消えませんか？",
+          a: "消えません。各セッションは tmux で永続化され、作業は git worktree で分離されます。",
+        },
+        {
+          q: "外出先でも使えますか？",
+          a: "ターン完了がスマホに Web Push で届き、RemoteHost からその場で返信できます。",
+        },
       ],
     },
   },
