@@ -1034,6 +1034,17 @@ const lang = {
       family: "The Mulmo family",
       faq: "FAQ",
     },
+    open: "Open",
+    prerequisitesTitle: "Prerequisites",
+    sections: {
+      overview: "Overview",
+      features: "Features",
+      useCases: "Use cases",
+      gettingStarted: "Getting started",
+      featuresLead: "A closer look at what {name} can do.",
+      useCasesLead: "Where {name} helps.",
+      gettingStartedLead: "What you need and the steps to start with {name}.",
+    },
     mulmocast: {
       title: "MulmoCast",
       tagline: "Just write a script. AI creates the video.",
@@ -1070,6 +1081,11 @@ const lang = {
         "Chat with the AI assistant, or start a script from a template",
         "Pick your output format and hit Generate to finish the video or slides",
       ],
+      prerequisites: [
+        "API keys for generative AI (image / audio / video providers; several depending on use)",
+        "Desktop app: macOS or Windows",
+        "To use the CLI: Node.js",
+      ],
     },
     mulmochat: {
       title: "MulmoChat",
@@ -1104,6 +1120,11 @@ const lang = {
         "Clone the repo and run yarn install",
         "Set OpenAI / Gemini and other API keys in .env",
         "Run yarn dev, allow the microphone, and press Start Voice Chat",
+      ],
+      prerequisites: [
+        "Node.js and yarn",
+        "OpenAI / Google Gemini API keys",
+        "Optional: Anthropic, Grok (XAI), Exa (search), Google Maps, and ComfyUI / Ollama for local image generation",
       ],
     },
     mulmoclaude: {
@@ -1143,6 +1164,11 @@ const lang = {
         "When localhost:3001 opens in your browser, just start chatting",
         "Say what you want in everyday words and Claude builds the wiki, collection or app",
       ],
+      prerequisites: [
+        "Node.js 22.22.2+ / 24.15+ / 26+",
+        "Claude Code CLI (installed and authenticated)",
+        "ffmpeg for movie generation; Docker Desktop optionally for sandbox mode",
+      ],
     },
     mulmoterminal: {
       title: "MulmoTerminal",
@@ -1179,6 +1205,11 @@ const lang = {
         "Run npx mulmoterminal{'@'}latest (Node ≥ 22.12, Claude Code by default)",
         "The grid opens in your browser (http://localhost:34567)",
         "Go to whichever cell is lit, answer, and move on — triage without losing your place",
+      ],
+      prerequisites: [
+        "Node.js 22.12 or newer",
+        "The claude CLI on your PATH and logged in by default, or another supported agent such as Codex",
+        "Optional: tmux for session persistence across restarts",
       ],
     },
   },

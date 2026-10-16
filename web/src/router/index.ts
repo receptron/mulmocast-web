@@ -9,6 +9,7 @@ import Festival from "../views/Festival.vue";
 import Family from "../views/Family.vue";
 import ProductPage from "../views/products/ProductPage.vue";
 import { PRODUCT_IDS } from "../views/products/products";
+import { SECTIONS } from "../views/products/productSections";
 import Samples from "../views/Samples.vue";
 import Test from "../views/test.vue";
 import Document from "../views/Document.vue";
@@ -55,12 +56,14 @@ const routeChildren: Array<RouteRecordRaw> = [
     name: "family",
     component: Family,
   },
-  ...PRODUCT_IDS.map((id): RouteRecordRaw => ({
-    path: id,
-    name: id,
-    component: ProductPage,
-    props: { id },
-  })),
+  ...PRODUCT_IDS.flatMap((id): RouteRecordRaw[] =>
+    SECTIONS.map((section) => ({
+      path: section.slug ? `${id}/${section.slug}` : id,
+      name: section.slug ? `${id}-${section.slug}` : id,
+      component: ProductPage,
+      props: { id, section: section.key },
+    })),
+  ),
   {
     path: "samples",
     name: "samples",

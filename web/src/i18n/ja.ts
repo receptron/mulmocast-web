@@ -1025,6 +1025,17 @@ const lang = {
       family: "Mulmo ファミリー一覧",
       faq: "よくある質問（FAQ）",
     },
+    open: "開く",
+    prerequisitesTitle: "前提条件",
+    sections: {
+      overview: "概要",
+      features: "機能",
+      useCases: "利用例",
+      gettingStarted: "はじめかた",
+      featuresLead: "{name} でできることの詳細です。",
+      useCasesLead: "{name} はどんな場面で役立つか。",
+      gettingStartedLead: "{name} を使い始めるための前提と手順。",
+    },
     mulmocast: {
       title: "MulmoCast",
       tagline: "台本を書くだけ。AI が動画まで。",
@@ -1057,6 +1068,11 @@ const lang = {
         "アプリをダウンロードして起動（または npx mulmocast）",
         "AI アシスタントと会話するか、テンプレートから台本を作成",
         "出力形式を選び「コンテンツ生成」で動画・スライドを完成",
+      ],
+      prerequisites: [
+        "生成 AI 用の API Key（画像・音声・動画の各プロバイダ。用途により複数）",
+        "デスクトップアプリ: macOS または Windows",
+        "CLI で使う場合: Node.js",
       ],
     },
     mulmochat: {
@@ -1092,6 +1108,11 @@ const lang = {
         "リポジトリを取得して yarn install",
         ".env に OpenAI / Gemini などの API Key を設定",
         "yarn dev で起動し、マイクを許可して「Start Voice Chat」から話す",
+      ],
+      prerequisites: [
+        "Node.js と yarn",
+        "OpenAI / Google Gemini の API Key",
+        "任意: Anthropic・Grok(XAI)・Exa（検索）・Google Maps、ローカル画像生成用の ComfyUI / Ollama",
       ],
     },
     mulmoclaude: {
@@ -1131,6 +1152,11 @@ const lang = {
         "ブラウザで localhost:3001 が開いたら、そのまま話しかける",
         "欲しいものを日常の言葉で伝えると、Claude が wiki・コレクション・アプリを生成",
       ],
+      prerequisites: [
+        "Node.js 22.22.2+ / 24.15+ / 26+",
+        "Claude Code CLI（インストール・認証済み）",
+        "動画生成を使う場合は ffmpeg、任意でサンドボックス用に Docker Desktop",
+      ],
     },
     mulmoterminal: {
       title: "MulmoTerminal",
@@ -1164,6 +1190,11 @@ const lang = {
         "npx mulmoterminal{'@'}latest を実行（Node ≥ 22.12、既定で Claude Code）",
         "ブラウザでグリッドが開く（http://localhost:34567）",
         "光っているセルへ行き、応答して次へ。待ちを見逃さず捌く",
+      ],
+      prerequisites: [
+        "Node.js 22.12 以上",
+        "既定で claude CLI（PATH 上、ログイン済み）。または Codex 等の対応エージェント",
+        "任意: tmux（再起動をまたぐセッション永続化）",
       ],
     },
   },
