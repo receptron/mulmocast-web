@@ -878,11 +878,68 @@ const lang = {
     },
   },
   home: {
+    seoTagline: "A family of AI-native apps",
+    seoDescription:
+      "MulmoCast, MulmoChat, MulmoClaude and MulmoTerminal — the family of AI-native apps from Singularity Society. Video generation, multimodal voice conversation, your own personal assistant, and parallel AI agents: understand the whole Mulmo family in one place.",
     hero: {
+      eyebrow: "A family of AI-native apps from Singularity Society",
       title: "The Mulmo Family",
-      subtitle: "A family of AI-native apps: video, voice conversation, a personal assistant, and parallel agents.",
+      subtitle:
+        "Video generation, multimodal voice conversation, an assistant of your own, and parallel AI agents. The apps of the AI-native era — all from here.",
+      ctaApps: "Explore the apps",
+      ctaVision: "Read the vision",
     },
     learnMore: "Learn more",
+    apps: {
+      title: "Four flagship apps",
+      subtitle: "Each explores a new shape for apps in the AI-native era, from a different entry point.",
+      screenshotAlt: "screenshot",
+    },
+    picker: {
+      title: "Which one is for you?",
+      subtitle: "Pick by what you want to do.",
+      mulmocast: {
+        need: "Make a video or presentation",
+        reason: "From a script, AI generates images and narration and finishes the video.",
+      },
+      mulmochat: {
+        need: "Talk to AI while you work",
+        reason: "Speak, and images and maps materialize on canvas in real time.",
+      },
+      mulmoclaude: {
+        need: "Want an assistant of your own",
+        reason: "Long-term memory and apps built just for you — your data never leaves your computer.",
+      },
+      mulmoterminal: {
+        need: "Run multiple AI agents in parallel",
+        reason: "Put many sessions in a grid and go straight to whichever is waiting.",
+      },
+    },
+    vision: {
+      eyebrow: "One direction",
+      title: "Experiments that look separate stand on one idea",
+      body: "Put the LLM at the controller and let chat summon a GUI only when needed. Apps are born as you speak (MulmoChat) and become data — schema — that accumulates (MulmoClaude). Through DSLs, anyone can hold a safe, correct app on the spot. An article that traces that direction, checked against the official docs.",
+      cta: "Read the direction article",
+    },
+    familyAll: {
+      title: "The whole Mulmo family",
+      subtitle: "Beyond the four apps, CLIs, libraries and a protocol power the ecosystem.",
+      button: "See the full family",
+    },
+    resources: {
+      title: "Learn more",
+      subtitle: "Where to follow Mulmo and Singularity Society.",
+      ssName: "Singularity Society",
+      ssDesc: "The community behind the Mulmo family",
+      zennName: "Zenn — Singularity Society",
+      zennDesc: "Technical articles and deep dives",
+      githubName: "GitHub — receptron",
+      githubDesc: "Source code for every project",
+      discordName: "Discord",
+      discordDesc: "Questions, requests and community",
+      xName: "X — {'@'}mulmocast",
+      xDesc: "Latest updates",
+    },
     family: {
       title: "Explore the whole Mulmo family",
       description: "The full set of ecosystem tools — CLI, Slides, Vision, Viewer, MCP, GUI Chat Protocol and more.",
@@ -957,6 +1014,37 @@ const lang = {
     familyPrompt: "The Mulmo family includes many more tools — CLIs, libraries and more.",
     backHome: "Back to home",
     seeFamily: "See the family",
+    screenshotAlt: "screenshot",
+    visionEyebrow: "The idea behind it",
+    visionBody:
+      "This app is useful on its own, but it also stands on a direction shared across the Mulmo family: put the LLM at the controller, and let chat summon the GUI.",
+    visionCta: "Read the direction article",
+    relatedTitle: "Other apps in the family",
+    useCasesTitle: "Use cases",
+    stepsTitle: "Getting started",
+    exploreTitle: "Explore more of the site",
+    exploreSubtitle: "Jump to related docs and pages.",
+    docLabels: {
+      app: "MulmoCast App guide",
+      cli: "CLI documentation",
+      slides: "Slides conversion guide",
+      recipes: "MulmoScript recipes",
+      mulmochat: "MulmoChat documentation",
+      mulmoclaude: "MulmoClaude documentation",
+      family: "The Mulmo family",
+      faq: "FAQ",
+    },
+    open: "Open",
+    prerequisitesTitle: "Prerequisites",
+    sections: {
+      overview: "Overview",
+      features: "Features",
+      useCases: "Use cases",
+      gettingStarted: "Getting started",
+      featuresLead: "A closer look at what {name} can do.",
+      useCasesLead: "Where {name} helps.",
+      gettingStartedLead: "What you need and the steps to start with {name}.",
+    },
     mulmocast: {
       title: "MulmoCast",
       tagline: "Just write a script. AI creates the video.",
@@ -968,10 +1056,35 @@ const lang = {
       ],
       featuresTitle: "Key features",
       features: [
-        "Let AI write the script, or write it yourself",
-        "Auto-generate images and narration audio",
-        "Finish a video in one click (PDF and slide output too)",
+        "Build a script (MulmoScript) by chatting with an AI assistant",
+        "Edit beat by beat across Text / YAML / JSON / Media / Style modes",
+        "Auto-generate an image prompt and narration audio per beat, with translation",
+        "Output video, audio, PDF (presentation / handout), podcast and slides in one click",
         "Available as a macOS / Windows desktop app, or the npm CLI",
+      ],
+      useCases: [
+        {
+          title: "Short & explainer videos",
+          body: "Hand over a topic and get a narrated explainer or short video in minutes.",
+        },
+        {
+          title: "Student reports & presentations",
+          body: "Turn a report or talk into an easy-to-follow video of slides plus narration.",
+        },
+        {
+          title: "Business proposals & decks",
+          body: "Convert a proposal into a narrated video or a presentation PDF to share.",
+        },
+      ],
+      steps: [
+        "Download and launch the app (or run npx mulmocast)",
+        "Chat with the AI assistant, or start a script from a template",
+        "Pick your output format and hit Generate to finish the video or slides",
+      ],
+      prerequisites: [
+        "API keys for generative AI (image / audio / video providers; several depending on use)",
+        "Desktop app: macOS or Windows",
+        "To use the CLI: Node.js",
       ],
     },
     mulmochat: {
@@ -982,13 +1095,36 @@ const lang = {
       intro: [
         "MulmoChat is a research prototype exploring a new paradigm for multimodal AI chat. Where traditional chat is text-based, here you hold a natural conversation while experiencing rich visual and interactive content on canvas at the same time.",
         "The key insight: AI conversations don't have to be limited to text streams. An architecture where visual experience and language understanding coexist naturally lets images materialize, maps become explorable and games turn playable — all within the conversational flow.",
+        "Tools are added as plugins, extending OpenAI's function calling to the GUI. Each plugin returns both machine-readable data for the AI and a human-readable UI, and results stay in the sidebar to be re-selected.",
       ],
       featuresTitle: "Key features",
       features: [
         "Real-time conversation driven by voice",
-        "Images, maps and interactive content appear within the flow of the conversation",
-        "Extensible via the GUI Chat Protocol",
-        "A testbed for an AI-native, OS-like interface",
+        "Generate images (OpenAI or local ComfyUI / FLUX), maps, presentations, games and video on the spot",
+        "Call tools from the conversation — web search (Exa), reading X posts, and more",
+        "Provider-agnostic: OpenAI, Anthropic, Google Gemini, Grok, Ollama",
+        "Extensible via the GUI Chat Protocol (add capabilities with no core changes)",
+      ],
+      useCases: [
+        {
+          title: "Create while you talk",
+          body: "Speak an idea and images or a presentation appear, right in the conversation.",
+        },
+        { title: "Explore on a map", body: "Ask about travel or geography and a map opens up for you to explore." },
+        {
+          title: "Experiment with AI-native UI",
+          body: "Instead of a sea of icons, state an intent and the GUI appears on demand.",
+        },
+      ],
+      steps: [
+        "Clone the repo and run yarn install",
+        "Set OpenAI / Gemini and other API keys in .env",
+        "Run yarn dev, allow the microphone, and press Start Voice Chat",
+      ],
+      prerequisites: [
+        "Node.js and yarn",
+        "OpenAI / Google Gemini API keys",
+        "Optional: Anthropic, Grok (XAI), Exa (search), Google Maps, and ComfyUI / Ollama for local image generation",
       ],
     },
     mulmoclaude: {
@@ -1003,10 +1139,35 @@ const lang = {
       ],
       featuresTitle: "Key features",
       features: [
-        "A personal wiki (long-term memory) that grows with every conversation",
+        "A personal wiki (long-term memory) that grows with every conversation (/wiki)",
         "Say what you want in plain words and Claude builds a small app just for you",
-        "Schema-driven collections to accumulate your data",
+        "Schema-driven collections (a todo becomes a kanban, a schedule a calendar)",
+        "RSS feeds (/feeds), a real accounting system, an SEC-filings reader and more",
         "Reach the same assistant from your phone or a messaging app (memory and data never leave your computer)",
+      ],
+      useCases: [
+        {
+          title: "Apps for an audience of one",
+          body: '"Make me a restaurant list" or "track my invoices" — small apps appear, no coding needed.',
+        },
+        {
+          title: "Long-term memory you grow",
+          body: 'Say "ingest this article" and it becomes a wiki page; the more you talk, the smarter it gets.',
+        },
+        {
+          title: "Collect information automatically",
+          body: "Subscribe to RSS, gather what's new and summarize; todos and schedules as kanban and calendar.",
+        },
+      ],
+      steps: [
+        "Run npx mulmoclaude{'@'}latest (Node and Claude Code required)",
+        "When localhost:3001 opens in your browser, just start chatting",
+        "Say what you want in everyday words and Claude builds the wiki, collection or app",
+      ],
+      prerequisites: [
+        "Node.js 22.22.2+ / 24.15+ / 26+",
+        "Claude Code CLI (installed and authenticated)",
+        "ffmpeg for movie generation; Docker Desktop optionally for sandbox mode",
       ],
     },
     mulmoterminal: {
@@ -1020,10 +1181,35 @@ const lang = {
       ],
       featuresTitle: "Key features",
       features: [
-        "Many agent sessions in a grid, state shown by color",
-        "A roster keeps each session's ask, answer and actions so you lose nothing catching up",
-        "Git-worktree isolation with one-click PRs",
-        "Phone push on turn completion, cost readouts. Node ≥ 22.12, one npx command",
+        "See every agent in a grid, color-coded by state, with an attention chime",
+        "A cockpit roster keeps each session's AI summary, last prompt, reply and PR phase in one row",
+        "A Canvas panel renders an agent's output (documents, forms, charts, images, HTML) over MCP",
+        "Git-worktree isolation with diff / commit / push / one-click PR, all inside the grid",
+        "Web Push to your phone plus RemoteHost, and cost readouts (context % / token / estimated $)",
+      ],
+      useCases: [
+        {
+          title: "Parallel work across repos & features",
+          body: "Run many agents at once and progress in parallel without collisions.",
+        },
+        {
+          title: "Never miss a waiting session",
+          body: "Permission or question prompts show by color and chime, so nothing sits idle.",
+        },
+        {
+          title: "Respond from anywhere",
+          body: "A finished turn pings your phone, and RemoteHost lets you reply on the spot.",
+        },
+      ],
+      steps: [
+        "Run npx mulmoterminal{'@'}latest (Node ≥ 22.12, Claude Code by default)",
+        "The grid opens in your browser (http://localhost:34567)",
+        "Go to whichever cell is lit, answer, and move on — triage without losing your place",
+      ],
+      prerequisites: [
+        "Node.js 22.12 or newer",
+        "The claude CLI on your PATH and logged in by default, or another supported agent such as Codex",
+        "Optional: tmux for session persistence across restarts",
       ],
     },
   },

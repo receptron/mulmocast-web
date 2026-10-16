@@ -874,11 +874,68 @@ const lang = {
     },
   },
   home: {
+    seoTagline: "AI ネイティブなアプリ群",
+    seoDescription:
+      "MulmoCast・MulmoChat・MulmoClaude・MulmoTerminal — Singularity Society が生み出す AI ネイティブなアプリ群。動画生成、音声でのマルチモーダル対話、自分だけのパーソナルアシスタント、AI エージェントの並列運用まで、Mulmo ファミリーのすべてがここで分かる。",
     hero: {
+      eyebrow: "Singularity Society が生み出す AI ネイティブなアプリ群",
       title: "Mulmo ファミリー",
-      subtitle: "AI ネイティブなアプリ群。動画・音声対話・パーソナルアシスタント・並列エージェント。",
+      subtitle:
+        "動画生成、音声でのマルチモーダル対話、自分だけのアシスタント、AI エージェントの並列運用。AI ネイティブ時代のアプリを、ここからすべて。",
+      ctaApps: "アプリを見る",
+      ctaVision: "思想を読む",
     },
     learnMore: "詳しく見る",
+    apps: {
+      title: "4 つの主役アプリ",
+      subtitle: "それぞれが AI ネイティブ時代の「新しいアプリの形」を、別々の入り口から探っています。",
+      screenshotAlt: "のスクリーンショット",
+    },
+    picker: {
+      title: "どれを使う？",
+      subtitle: "やりたいことから選べます。",
+      mulmocast: {
+        need: "動画やプレゼンを作りたい",
+        reason: "台本から AI が画像とナレーションを生成し、動画まで仕上げます。",
+      },
+      mulmochat: {
+        need: "AI と話しながら操作したい",
+        reason: "音声で対話すると、画像や地図がその場でキャンバスに現れます。",
+      },
+      mulmoclaude: {
+        need: "自分専用のアシスタントが欲しい",
+        reason: "手元で育てる長期記憶とあなた専用のアプリ。データは外に出ません。",
+      },
+      mulmoterminal: {
+        need: "複数の AI エージェントを並列運用したい",
+        reason: "多数のセッションをグリッドで並べ、待っているものへ迷わず導きます。",
+      },
+    },
+    vision: {
+      eyebrow: "一つの方向へ",
+      title: "別々に見える実験は、同じ思想の上に立っている",
+      body: "LLM をコントローラに据え、チャットが必要なときだけ GUI を呼ぶ。話すとその場でアプリが生まれ（MulmoChat）、アプリがデータ（スキーマ）になって蓄積される（MulmoClaude）。DSL によって、誰もが安全で正確なアプリをその場で手にできる——その方向性を、公式ドキュメントで確かめながら整理した記事です。",
+      cta: "方向性の記事を読む",
+    },
+    familyAll: {
+      title: "Mulmo ファミリー全体",
+      subtitle: "4 つのアプリに加え、エコシステムを支える CLI・ライブラリ・プロトコルがあります。",
+      button: "ファミリー一覧をすべて見る",
+    },
+    resources: {
+      title: "もっと知る",
+      subtitle: "Mulmo と Singularity Society の情報源。",
+      ssName: "Singularity Society",
+      ssDesc: "Mulmo ファミリーを生み出すコミュニティの公式サイト",
+      zennName: "Zenn — Singularity Society",
+      zennDesc: "技術記事・解説のパブリケーション",
+      githubName: "GitHub — receptron",
+      githubDesc: "各プロジェクトのソースコード",
+      discordName: "Discord",
+      discordDesc: "質問・要望・コミュニティ",
+      xName: "X — {'@'}mulmocast",
+      xDesc: "最新のアップデート情報",
+    },
     family: {
       title: "Mulmo ファミリー全体を見る",
       description: "CLI・Slides・Vision・Viewer・MCP・GUI Chat Protocol など、エコシステムを構成するツールの一覧。",
@@ -948,6 +1005,37 @@ const lang = {
     familyPrompt: "Mulmo ファミリーには、ほかにも CLI やライブラリなど多くのツールがあります。",
     backHome: "トップに戻る",
     seeFamily: "ファミリー一覧へ",
+    screenshotAlt: "のスクリーンショット",
+    visionEyebrow: "背景にある思想",
+    visionBody:
+      "このアプリは単体で便利なだけでなく、「LLM をコントローラに、チャットが GUI を呼ぶ」という Mulmo ファミリー共通の方向性の上に立っています。",
+    visionCta: "方向性の記事を読む",
+    relatedTitle: "ファミリーの他のアプリ",
+    useCasesTitle: "利用例",
+    stepsTitle: "はじめかた",
+    exploreTitle: "サイト内をもっと見る",
+    exploreSubtitle: "関連するドキュメントやページへ。",
+    docLabels: {
+      app: "MulmoCast App ガイド",
+      cli: "CLI ドキュメント",
+      slides: "Slides 変換ガイド",
+      recipes: "MulmoScript レシピ集",
+      mulmochat: "MulmoChat ドキュメント",
+      mulmoclaude: "MulmoClaude ドキュメント",
+      family: "Mulmo ファミリー一覧",
+      faq: "よくある質問（FAQ）",
+    },
+    open: "開く",
+    prerequisitesTitle: "前提条件",
+    sections: {
+      overview: "概要",
+      features: "機能",
+      useCases: "利用例",
+      gettingStarted: "はじめかた",
+      featuresLead: "{name} でできることの詳細です。",
+      useCasesLead: "{name} はどんな場面で役立つか。",
+      gettingStartedLead: "{name} を使い始めるための前提と手順。",
+    },
     mulmocast: {
       title: "MulmoCast",
       tagline: "台本を書くだけ。AI が動画まで。",
@@ -959,10 +1047,32 @@ const lang = {
       ],
       featuresTitle: "主な機能",
       features: [
-        "AI に台本を作らせる、または自分で書く",
-        "画像とナレーション音声を自動生成",
-        "ワンクリックで動画を完成（PDF・スライド出力にも対応）",
+        "AI アシスタントチャットと会話しながら台本（MulmoScript）を作成",
+        "Text / YAML / JSON / Media / Style の各モードでビート単位に編集",
+        "ビートごとに画像生成プロンプトとナレーション音声を自動生成、翻訳にも対応",
+        "動画・音声・PDF（プレゼン / 資料）・Podcast・スライドをワンクリックで出力",
         "macOS / Windows のデスクトップアプリ、または npm の CLI で利用可能",
+      ],
+      useCases: [
+        {
+          title: "ショート動画・解説動画",
+          body: "トピックを渡すだけで、ナレーション付きの解説動画やショート動画を数分で。",
+        },
+        { title: "学生のレポート・授業発表", body: "レポートや発表内容を、わかりやすいスライド＋音声の動画に。" },
+        {
+          title: "ビジネスの提案・企画資料",
+          body: "提案書や企画をナレーション付き動画やプレゼン PDF に変換して共有。",
+        },
+      ],
+      steps: [
+        "アプリをダウンロードして起動（または npx mulmocast）",
+        "AI アシスタントと会話するか、テンプレートから台本を作成",
+        "出力形式を選び「コンテンツ生成」で動画・スライドを完成",
+      ],
+      prerequisites: [
+        "生成 AI 用の API Key（画像・音声・動画の各プロバイダ。用途により複数）",
+        "デスクトップアプリ: macOS または Windows",
+        "CLI で使う場合: Node.js",
       ],
     },
     mulmochat: {
@@ -973,13 +1083,36 @@ const lang = {
       intro: [
         "MulmoChat は、マルチモーダル AI チャットの新しいパラダイムを探る研究プロトタイプです。従来のチャットがテキスト中心なのに対し、自然な会話をしながら、豊かなビジュアルとインタラクティブなコンテンツをキャンバス上で同時に体験できます。",
         "「AI との対話はテキストの流れに限られなくてもよい」という発想から、ビジュアル体験と言語理解が自然に共存するアーキテクチャを設計。画像が立ち上がり、地図を探索でき、ゲームが遊べる——すべてが会話の流れの中で起こります。",
+        "ツールはプラグインとして追加でき、OpenAI の function calling を GUI へ拡張。各プラグインは AI 向けのデータと利用者向けの UI の両方を返し、結果はサイドバーに残って再選択できます。",
       ],
       featuresTitle: "主な特徴",
       features: [
         "音声で話しかけながら操作するリアルタイム対話",
-        "会話の流れの中で画像・地図・インタラクティブコンテンツが出現",
-        "GUI Chat Protocol によるプラグイン拡張",
-        "AI ネイティブな OS 的インターフェースの実験場",
+        "画像生成（OpenAI / ローカルの ComfyUI・FLUX）、地図、プレゼン、ゲーム、動画をその場で生成",
+        "Web 検索（Exa）や X 投稿の読み取りなどのツールを会話から呼び出し",
+        "OpenAI / Anthropic / Google Gemini / Grok / Ollama などプロバイダ非依存",
+        "GUI Chat Protocol によるプラグイン拡張（コア改変なしで機能追加）",
+      ],
+      useCases: [
+        {
+          title: "話しながら資料を作る",
+          body: "声でアイデアを伝えると、画像やプレゼンがその場で生成され会話に現れます。",
+        },
+        { title: "調べながら地図で確認", body: "旅行や地理の相談をすると、地図が立ち上がって探索できます。" },
+        {
+          title: "AI ネイティブ UI の実験",
+          body: "「アイコンの海」ではなく、意図を語ると GUI が都度現れる体験を試せます。",
+        },
+      ],
+      steps: [
+        "リポジトリを取得して yarn install",
+        ".env に OpenAI / Gemini などの API Key を設定",
+        "yarn dev で起動し、マイクを許可して「Start Voice Chat」から話す",
+      ],
+      prerequisites: [
+        "Node.js と yarn",
+        "OpenAI / Google Gemini の API Key",
+        "任意: Anthropic・Grok(XAI)・Exa（検索）・Google Maps、ローカル画像生成用の ComfyUI / Ollama",
       ],
     },
     mulmoclaude: {
@@ -994,10 +1127,35 @@ const lang = {
       ],
       featuresTitle: "主な特徴",
       features: [
-        "会話を重ねるごとに育つパーソナル wiki（長期記憶）",
+        "会話を重ねるごとに育つパーソナル wiki（長期記憶、/wiki）",
         "「こういうのが欲しい」と話すだけで、あなた専用の小さなアプリを Claude が作成",
-        "スキーマ駆動のコレクションでデータを蓄積",
+        "スキーマ駆動のコレクション（todo はかんばん、予定はカレンダー）でデータを蓄積",
+        "RSS フィード購読（/feeds）、会計システム、SEC 提出書類リーダーなどのプラグイン",
         "スマホや普段のメッセージアプリから、手元の同じアシスタントへアクセス（記憶・データは外に出ない）",
+      ],
+      useCases: [
+        {
+          title: "自分専用の管理アプリ",
+          body: "「飲食店リストを作って」「請求書を管理したい」——プログラミング不要で小さなアプリが生まれます。",
+        },
+        {
+          title: "育てる長期記憶",
+          body: "「この記事を取り込んで」と言えば、wiki ページにまとめ、会話を重ねるほど賢くなります。",
+        },
+        {
+          title: "情報の自動収集",
+          body: "RSS を購読して新着を集め、必要なときに要約。予定やタスクはかんばん・カレンダーで。",
+        },
+      ],
+      steps: [
+        "npx mulmoclaude{'@'}latest を実行（Node・Claude Code が必要）",
+        "ブラウザで localhost:3001 が開いたら、そのまま話しかける",
+        "欲しいものを日常の言葉で伝えると、Claude が wiki・コレクション・アプリを生成",
+      ],
+      prerequisites: [
+        "Node.js 22.22.2+ / 24.15+ / 26+",
+        "Claude Code CLI（インストール・認証済み）",
+        "動画生成を使う場合は ffmpeg、任意でサンドボックス用に Docker Desktop",
       ],
     },
     mulmoterminal: {
@@ -1011,10 +1169,32 @@ const lang = {
       ],
       featuresTitle: "主な特徴",
       features: [
-        "多数のエージェントセッションをグリッドで一覧、状態を色で表示",
-        "ロスターが各セッションの「依頼・応答・実行」を保持し、戻っても追いつける",
-        "git worktree によるセッション分離とワンクリック PR",
-        "ターン完了時のスマホ通知、コスト表示。Node ≥ 22.12、npx 一発で起動",
+        "全エージェントをグリッドで一覧、状態を色で表示＋チャイムで気づける",
+        "コクピット・ロスターが各セッションの AI 要約・最終プロンプト・返信・PR フェーズを 1 行で保持",
+        "Canvas パネルがエージェントの成果（ドキュメント・フォーム・グラフ・画像・HTML）を MCP で描画",
+        "git worktree で分離、diff／commit／push／ワンクリック PR までグリッド内で完結",
+        "スマホへの Web Push と RemoteHost、コスト表示（context % / token / 概算 $）",
+      ],
+      useCases: [
+        {
+          title: "複数リポジトリ・機能の並列開発",
+          body: "いくつものエージェントを同時に走らせ、衝突なく並行して進めます。",
+        },
+        {
+          title: "待ちの取りこぼしを防ぐ",
+          body: "許可待ち・質問待ちのセッションが色とチャイムで分かり、放置がなくなります。",
+        },
+        { title: "外出先から応答", body: "ターン完了がスマホに届き、RemoteHost からその場で返信できます。" },
+      ],
+      steps: [
+        "npx mulmoterminal{'@'}latest を実行（Node ≥ 22.12、既定で Claude Code）",
+        "ブラウザでグリッドが開く（http://localhost:34567）",
+        "光っているセルへ行き、応答して次へ。待ちを見逃さず捌く",
+      ],
+      prerequisites: [
+        "Node.js 22.12 以上",
+        "既定で claude CLI（PATH 上、ログイン済み）。または Codex 等の対応エージェント",
+        "任意: tmux（再起動をまたぐセッション永続化）",
       ],
     },
   },
