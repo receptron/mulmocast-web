@@ -11,6 +11,8 @@ export type AccentKey = "red" | "violet" | "amber" | "emerald";
 export type ProductLink =
   { kind: "npm" | "github" | "guide"; url: string } | { kind: "docs" | "download"; path: string };
 
+export type RelatedDoc = { path: string; key: string };
+
 export type ProductDef = {
   id: ProductId;
   icon: string;
@@ -19,6 +21,7 @@ export type ProductDef = {
   install?: string;
   videoIds: string[];
   links: ProductLink[];
+  relatedDocs: RelatedDoc[];
 };
 
 const PRODUCTS: Record<ProductId, ProductDef> = {
@@ -35,6 +38,12 @@ const PRODUCTS: Record<ProductId, ProductDef> = {
       { kind: "npm", url: "https://www.npmjs.com/package/mulmocast" },
       { kind: "github", url: "https://github.com/receptron/mulmocast-app" },
     ],
+    relatedDocs: [
+      { path: "/docs/app", key: "app" },
+      { path: "/docs/cli", key: "cli" },
+      { path: "/docs/slides", key: "slides" },
+      { path: "/docs/recipes", key: "recipes" },
+    ],
   },
   mulmochat: {
     id: "mulmochat",
@@ -46,6 +55,7 @@ const PRODUCTS: Record<ProductId, ProductDef> = {
       { kind: "docs", path: "/docs/mulmochat" },
       { kind: "github", url: "https://github.com/receptron/MulmoChat" },
     ],
+    relatedDocs: [{ path: "/docs/mulmochat", key: "mulmochat" }],
   },
   mulmoclaude: {
     id: "mulmoclaude",
@@ -60,6 +70,7 @@ const PRODUCTS: Record<ProductId, ProductDef> = {
       { kind: "npm", url: "https://www.npmjs.com/package/mulmoclaude" },
       { kind: "github", url: "https://github.com/receptron/mulmoclaude" },
     ],
+    relatedDocs: [{ path: "/docs/mulmoclaude", key: "mulmoclaude" }],
   },
   mulmoterminal: {
     id: "mulmoterminal",
@@ -73,6 +84,7 @@ const PRODUCTS: Record<ProductId, ProductDef> = {
       { kind: "npm", url: "https://www.npmjs.com/package/mulmoterminal" },
       { kind: "github", url: "https://github.com/receptron/mulmoterminal" },
     ],
+    relatedDocs: [],
   },
 };
 

@@ -67,6 +67,34 @@
         </ul>
       </section>
 
+      <!-- Use cases -->
+      <section>
+        <h2 class="text-foreground text-2xl font-bold">{{ t("products.useCasesTitle") }}</h2>
+        <div class="mt-4 grid gap-4 sm:grid-cols-3">
+          <div v-for="(useCase, index) in useCases" :key="index" class="border-border bg-card rounded-2xl border p-5">
+            <div class="mb-2 h-1 w-8 rounded-full" :class="accent.dot"></div>
+            <h3 class="text-foreground font-semibold">{{ rt(useCase.title) }}</h3>
+            <p class="text-muted-foreground mt-1 text-sm">{{ rt(useCase.body) }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Getting started -->
+      <section>
+        <h2 class="text-foreground text-2xl font-bold">{{ t("products.stepsTitle") }}</h2>
+        <ol class="mt-4 space-y-3">
+          <li v-for="(step, index) in steps" :key="index" class="flex items-start gap-3">
+            <span
+              class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
+              :class="accent.dot"
+            >
+              {{ index + 1 }}
+            </span>
+            <span class="text-muted-foreground pt-0.5">{{ rt(step) }}</span>
+          </li>
+        </ol>
+      </section>
+
       <!-- Videos -->
       <section v-if="product.videoIds.length" class="space-y-6">
         <div v-for="videoId in product.videoIds" :key="videoId" class="aspect-video w-full overflow-hidden rounded-2xl">
@@ -122,6 +150,23 @@
         </div>
       </section>
 
+      <!-- Explore more -->
+      <section>
+        <h2 class="text-foreground text-2xl font-bold">{{ t("products.exploreTitle") }}</h2>
+        <p class="text-muted-foreground mt-2">{{ t("products.exploreSubtitle") }}</p>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          <a
+            v-for="link in exploreLinks"
+            :key="link.key"
+            :href="localizedUrl(link.path)"
+            class="group border-border bg-card hover:bg-muted/50 flex items-center justify-between gap-3 rounded-xl border p-4 transition-colors"
+          >
+            <span class="text-foreground text-sm font-semibold">{{ t(`products.docLabels.${link.key}`) }}</span>
+            <ArrowRight class="text-muted-foreground h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
+          </a>
+        </div>
+      </section>
+
       <!-- Footer nav -->
       <div class="flex flex-wrap justify-center gap-3 pt-4">
         <Button as="a" :href="localizedUrl('/')" variant="outline" size="sm">{{ t("products.backHome") }}</Button>
@@ -139,8 +184,8 @@ import { useI18n } from "vue-i18n";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation.vue";
 import { useLocalizedUrl } from "@/i18n/utils";
-import { Github, Package, BookOpen, Download, ExternalLink, ArrowUpRight, Check } from "lucide-vue-next";
-import { getProduct, listProducts, RESOURCES, type ProductDef, type ProductLink } from "./products";
+import { Github, Package, BookOpen, Download, ExternalLink, ArrowUpRight, ArrowRight, Check } from "lucide-vue-next";
+import { getProduct, listProducts, RESOURCES, type ProductDef, type ProductLink, type RelatedDoc } from "./products";
 import { ACCENTS } from "./accents";
 import { iconFor } from "./icons";
 import MulmoCastDownload from "./MulmoCastDownload.vue";
@@ -157,6 +202,14 @@ const base = (key: string): string => t(`products.${props.id}.${key}`);
 
 const introParagraphs = computed(() => tm(`products.${props.id}.intro`));
 const features = computed(() => tm(`products.${props.id}.features`));
+const useCases = computed(() => tm(`products.${props.id}.useCases`));
+const steps = computed(() => tm(`products.${props.id}.steps`));
+
+const exploreLinks = computed<RelatedDoc[]>(() => [
+  ...(product.value ? product.value.relatedDocs : []),
+  { path: "/family", key: "family" },
+  { path: "/faq", key: "faq" },
+]);
 
 const accent = computed(() => ACCENTS[product.value ? product.value.accent : "violet"]);
 const heroGlow = computed(() => `${accent.value.glow} bg-gradient-to-br to-transparent`);
