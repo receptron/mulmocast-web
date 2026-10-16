@@ -874,11 +874,68 @@ const lang = {
     },
   },
   home: {
+    seoTagline: "AI ネイティブなアプリ群",
+    seoDescription:
+      "MulmoCast・MulmoChat・MulmoClaude・MulmoTerminal — Singularity Society が生み出す AI ネイティブなアプリ群。動画生成、音声でのマルチモーダル対話、自分だけのパーソナルアシスタント、AI エージェントの並列運用まで、Mulmo ファミリーのすべてがここで分かる。",
     hero: {
+      eyebrow: "Singularity Society が生み出す AI ネイティブなアプリ群",
       title: "Mulmo ファミリー",
-      subtitle: "AI ネイティブなアプリ群。動画・音声対話・パーソナルアシスタント・並列エージェント。",
+      subtitle:
+        "動画生成、音声でのマルチモーダル対話、自分だけのアシスタント、AI エージェントの並列運用。AI ネイティブ時代のアプリを、ここからすべて。",
+      ctaApps: "アプリを見る",
+      ctaVision: "思想を読む",
     },
     learnMore: "詳しく見る",
+    apps: {
+      title: "4 つの主役アプリ",
+      subtitle: "それぞれが AI ネイティブ時代の「新しいアプリの形」を、別々の入り口から探っています。",
+      screenshotAlt: "のスクリーンショット",
+    },
+    picker: {
+      title: "どれを使う？",
+      subtitle: "やりたいことから選べます。",
+      mulmocast: {
+        need: "動画やプレゼンを作りたい",
+        reason: "台本から AI が画像とナレーションを生成し、動画まで仕上げます。",
+      },
+      mulmochat: {
+        need: "AI と話しながら操作したい",
+        reason: "音声で対話すると、画像や地図がその場でキャンバスに現れます。",
+      },
+      mulmoclaude: {
+        need: "自分専用のアシスタントが欲しい",
+        reason: "手元で育てる長期記憶とあなた専用のアプリ。データは外に出ません。",
+      },
+      mulmoterminal: {
+        need: "複数の AI エージェントを並列運用したい",
+        reason: "多数のセッションをグリッドで並べ、待っているものへ迷わず導きます。",
+      },
+    },
+    vision: {
+      eyebrow: "一つの方向へ",
+      title: "別々に見える実験は、同じ思想の上に立っている",
+      body: "LLM をコントローラに据え、チャットが必要なときだけ GUI を呼ぶ。話すとその場でアプリが生まれ（MulmoChat）、アプリがデータ（スキーマ）になって蓄積される（MulmoClaude）。DSL によって、誰もが安全で正確なアプリをその場で手にできる——その方向性を、公式ドキュメントで確かめながら整理した記事です。",
+      cta: "方向性の記事を読む",
+    },
+    familyAll: {
+      title: "Mulmo ファミリー全体",
+      subtitle: "4 つのアプリに加え、エコシステムを支える CLI・ライブラリ・プロトコルがあります。",
+      button: "ファミリー一覧をすべて見る",
+    },
+    resources: {
+      title: "もっと知る",
+      subtitle: "Mulmo と Singularity Society の情報源。",
+      ssName: "Singularity Society",
+      ssDesc: "Mulmo ファミリーを生み出すコミュニティの公式サイト",
+      zennName: "Zenn — Singularity Society",
+      zennDesc: "技術記事・解説のパブリケーション",
+      githubName: "GitHub — receptron",
+      githubDesc: "各プロジェクトのソースコード",
+      discordName: "Discord",
+      discordDesc: "質問・要望・コミュニティ",
+      xName: "X — {'@'}mulmocast",
+      xDesc: "最新のアップデート情報",
+    },
     family: {
       title: "Mulmo ファミリー全体を見る",
       description: "CLI・Slides・Vision・Viewer・MCP・GUI Chat Protocol など、エコシステムを構成するツールの一覧。",
@@ -948,6 +1005,12 @@ const lang = {
     familyPrompt: "Mulmo ファミリーには、ほかにも CLI やライブラリなど多くのツールがあります。",
     backHome: "トップに戻る",
     seeFamily: "ファミリー一覧へ",
+    screenshotAlt: "のスクリーンショット",
+    visionEyebrow: "背景にある思想",
+    visionBody:
+      "このアプリは単体で便利なだけでなく、「LLM をコントローラに、チャットが GUI を呼ぶ」という Mulmo ファミリー共通の方向性の上に立っています。",
+    visionCta: "方向性の記事を読む",
+    relatedTitle: "ファミリーの他のアプリ",
     mulmocast: {
       title: "MulmoCast",
       tagline: "台本を書くだけ。AI が動画まで。",

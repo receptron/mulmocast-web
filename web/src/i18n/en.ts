@@ -878,11 +878,68 @@ const lang = {
     },
   },
   home: {
+    seoTagline: "A family of AI-native apps",
+    seoDescription:
+      "MulmoCast, MulmoChat, MulmoClaude and MulmoTerminal — the family of AI-native apps from Singularity Society. Video generation, multimodal voice conversation, your own personal assistant, and parallel AI agents: understand the whole Mulmo family in one place.",
     hero: {
+      eyebrow: "A family of AI-native apps from Singularity Society",
       title: "The Mulmo Family",
-      subtitle: "A family of AI-native apps: video, voice conversation, a personal assistant, and parallel agents.",
+      subtitle:
+        "Video generation, multimodal voice conversation, an assistant of your own, and parallel AI agents. The apps of the AI-native era — all from here.",
+      ctaApps: "Explore the apps",
+      ctaVision: "Read the vision",
     },
     learnMore: "Learn more",
+    apps: {
+      title: "Four flagship apps",
+      subtitle: "Each explores a new shape for apps in the AI-native era, from a different entry point.",
+      screenshotAlt: "screenshot",
+    },
+    picker: {
+      title: "Which one is for you?",
+      subtitle: "Pick by what you want to do.",
+      mulmocast: {
+        need: "Make a video or presentation",
+        reason: "From a script, AI generates images and narration and finishes the video.",
+      },
+      mulmochat: {
+        need: "Talk to AI while you work",
+        reason: "Speak, and images and maps materialize on canvas in real time.",
+      },
+      mulmoclaude: {
+        need: "Want an assistant of your own",
+        reason: "Long-term memory and apps built just for you — your data never leaves your computer.",
+      },
+      mulmoterminal: {
+        need: "Run multiple AI agents in parallel",
+        reason: "Put many sessions in a grid and go straight to whichever is waiting.",
+      },
+    },
+    vision: {
+      eyebrow: "One direction",
+      title: "Experiments that look separate stand on one idea",
+      body: "Put the LLM at the controller and let chat summon a GUI only when needed. Apps are born as you speak (MulmoChat) and become data — schema — that accumulates (MulmoClaude). Through DSLs, anyone can hold a safe, correct app on the spot. An article that traces that direction, checked against the official docs.",
+      cta: "Read the direction article",
+    },
+    familyAll: {
+      title: "The whole Mulmo family",
+      subtitle: "Beyond the four apps, CLIs, libraries and a protocol power the ecosystem.",
+      button: "See the full family",
+    },
+    resources: {
+      title: "Learn more",
+      subtitle: "Where to follow Mulmo and Singularity Society.",
+      ssName: "Singularity Society",
+      ssDesc: "The community behind the Mulmo family",
+      zennName: "Zenn — Singularity Society",
+      zennDesc: "Technical articles and deep dives",
+      githubName: "GitHub — receptron",
+      githubDesc: "Source code for every project",
+      discordName: "Discord",
+      discordDesc: "Questions, requests and community",
+      xName: "X — {'@'}mulmocast",
+      xDesc: "Latest updates",
+    },
     family: {
       title: "Explore the whole Mulmo family",
       description: "The full set of ecosystem tools — CLI, Slides, Vision, Viewer, MCP, GUI Chat Protocol and more.",
@@ -957,6 +1014,12 @@ const lang = {
     familyPrompt: "The Mulmo family includes many more tools — CLIs, libraries and more.",
     backHome: "Back to home",
     seeFamily: "See the family",
+    screenshotAlt: "screenshot",
+    visionEyebrow: "The idea behind it",
+    visionBody:
+      "This app is useful on its own, but it also stands on a direction shared across the Mulmo family: put the LLM at the controller, and let chat summon the GUI.",
+    visionCta: "Read the direction article",
+    relatedTitle: "Other apps in the family",
     mulmocast: {
       title: "MulmoCast",
       tagline: "Just write a script. AI creates the video.",

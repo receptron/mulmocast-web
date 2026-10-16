@@ -5,7 +5,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a :href="localizedUrl('/')" class="text-foreground hover:text-primary text-xl font-bold transition-colors">
-            MulmoCast
+            Mulmo<span class="text-muted-foreground font-normal"> Family</span>
           </a>
         </div>
 
