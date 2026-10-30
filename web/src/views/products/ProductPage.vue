@@ -285,12 +285,14 @@ import { SECTIONS, toSectionKey, type SectionDef, type SectionKey } from "./prod
 import { ACCENTS } from "./accents";
 import { iconFor } from "./icons";
 import MulmoCastDownload from "./MulmoCastDownload.vue";
+import { useMulmoCastInstallers } from "./useMulmoCastInstallers";
 import { useSeo, softwareAppJsonLd, faqPageJsonLd, SITE_ORIGIN } from "@/lib/seo";
 
 const props = defineProps<{ id: string; section?: string }>();
 
 const { t, tm, rt } = useI18n();
 const localizedUrl = useLocalizedUrl();
+const { forThisDevice: installerForThisDevice } = useMulmoCastInstallers();
 
 const product = computed<ProductDef | undefined>(() => getProduct(props.id));
 const sections = SECTIONS;
@@ -347,10 +349,11 @@ const linkIcon = (link: ProductLink): Component => LINK_ICONS[link.kind];
 const isExternal = (link: ProductLink): link is { kind: "npm" | "github" | "guide"; url: string } =>
   link.kind === "npm" || link.kind === "github" || link.kind === "guide";
 
-const linkAttrs = (link: ProductLink): Record<string, string> =>
-  isExternal(link)
-    ? { href: link.url, target: "_blank", rel: "noopener noreferrer" }
-    : { href: localizedUrl(link.path) };
+const linkAttrs = (link: ProductLink): Record<string, string> => {
+  if (isExternal(link)) return { href: link.url, target: "_blank", rel: "noopener noreferrer" };
+  if (link.kind === "download" && installerForThisDevice.value) return { href: installerForThisDevice.value.url };
+  return { href: localizedUrl(link.path) };
+};
 
 const isPrimary = (link: ProductLink): boolean =>
   link.kind === "download" || link.kind === "guide" || link.kind === "docs";
