@@ -85,7 +85,7 @@
             </div>
           </CardContent>
           <CardFooter class="flex gap-3">
-            <Button as="a" :href="localizedUrl('/')" variant="default" size="sm">
+            <Button as="a" :href="localizedUrl('/mulmocast/getting-started#download')" variant="default" size="sm">
               {{ t("family.app.download") }}
             </Button>
             <Button

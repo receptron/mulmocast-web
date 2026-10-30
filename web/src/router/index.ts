@@ -152,8 +152,13 @@ const routeChildren: Array<RouteRecordRaw> = [
   },
 ];
 
+// Matches the `scroll-mt-20` on anchored sections, so the sticky header does not cover them.
+const ANCHOR_OFFSET_PX = 80;
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  // The SPA renders after the browser's native hash jump, so the jump has to be redone here.
+  scrollBehavior: (to) => (to.hash ? { el: to.hash, top: ANCHOR_OFFSET_PX } : undefined),
   routes: [
     {
       path: "/:lang(en|ja)?",
