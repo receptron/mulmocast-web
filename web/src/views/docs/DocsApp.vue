@@ -61,41 +61,37 @@
         <p class="text-muted-foreground mb-4">
           {{
             locale === "ja"
-              ? "GitHub Actionsから最新版をダウンロードできます。"
-              : "Download the latest version from GitHub Actions."
+              ? "ボタンを押すと最新版のインストーラーをダウンロードします。"
+              : "Click a button to download the latest installer."
           }}
         </p>
 
         <div class="grid gap-4 md:grid-cols-2">
           <a
-            href="https://github.com/receptron/mulmocast-app/actions/workflows/ci-mac.yml"
-            target="_blank"
-            rel="noopener noreferrer"
+            :href="mac?.url ?? 'https://github.com/receptron/mulmocast-app/actions/workflows/ci-mac.yml'"
             class="border-border hover:bg-muted flex items-center justify-between rounded-lg border p-4 transition-colors"
           >
             <div class="flex items-center gap-3">
               <Apple class="h-6 w-6" />
               <div>
                 <p class="font-medium">macOS</p>
-                <p class="text-muted-foreground text-sm">Apple Silicon / Intel</p>
+                <p class="text-muted-foreground text-sm">Apple Silicon{{ mac ? ` · v${mac.version}` : "" }}</p>
               </div>
             </div>
-            <ExternalLink class="h-4 w-4" />
+            <Download class="h-4 w-4" />
           </a>
           <a
-            href="https://github.com/receptron/mulmocast-app/actions/workflows/ci-ms.yml"
-            target="_blank"
-            rel="noopener noreferrer"
+            :href="windows?.url ?? 'https://github.com/receptron/mulmocast-app/actions/workflows/ci-ms.yml'"
             class="border-border hover:bg-muted flex items-center justify-between rounded-lg border p-4 transition-colors"
           >
             <div class="flex items-center gap-3">
               <Monitor class="h-6 w-6" />
               <div>
                 <p class="font-medium">Windows</p>
-                <p class="text-muted-foreground text-sm">64-bit</p>
+                <p class="text-muted-foreground text-sm">64-bit{{ windows ? ` · v${windows.version}` : "" }}</p>
               </div>
             </div>
-            <ExternalLink class="h-4 w-4" />
+            <Download class="h-4 w-4" />
           </a>
         </div>
 
@@ -106,18 +102,15 @@
           <li>
             {{
               locale === "ja"
-                ? "GitHub Actionsページで最新の成功ワークフローをクリック"
-                : "Click the latest successful workflow on GitHub Actions page"
+                ? "上のボタンからお使いのOSのインストーラーをダウンロード"
+                : "Download the installer for your OS above"
             }}
-          </li>
-          <li>
-            {{ locale === "ja" ? "「Artifacts」セクションからダウンロード" : "Download from the 'Artifacts' section" }}
           </li>
           <li>
             {{
               locale === "ja"
-                ? "ZIPを解凍し、アプリケーションフォルダへ移動"
-                : "Extract ZIP and move to Applications folder"
+                ? "Mac: ZIPを解凍し、アプリケーションフォルダへ移動 / Windows: setup.exe を実行"
+                : "Mac: extract the ZIP and move it to the Applications folder / Windows: run setup.exe"
             }}
           </li>
           <li>{{ locale === "ja" ? "初回起動時の警告で「開く」を選択" : "Select 'Open' on first launch warning" }}</li>
@@ -660,8 +653,10 @@ import { Badge } from "../../components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
 import Navigation from "../../components/Navigation.vue";
 import { useLocalizedUrl } from "../../i18n/utils";
+import { useMulmoCastInstallers } from "../products/useMulmoCastInstallers";
 import {
   ChevronLeft,
+  Download,
   ExternalLink,
   Github,
   MessageCircle,
@@ -678,6 +673,7 @@ import {
 
 const { t, locale } = useI18n();
 const localizedUrl = useLocalizedUrl();
+const { mac, windows } = useMulmoCastInstallers();
 
 const editingAreas = [
   {

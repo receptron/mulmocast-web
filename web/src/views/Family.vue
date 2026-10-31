@@ -85,7 +85,12 @@
             </div>
           </CardContent>
           <CardFooter class="flex gap-3">
-            <Button as="a" :href="localizedUrl('/')" variant="default" size="sm">
+            <Button
+              as="a"
+              :href="installerForThisDevice?.url ?? localizedUrl('/mulmocast/getting-started#download')"
+              variant="default"
+              size="sm"
+            >
               {{ t("family.app.download") }}
             </Button>
             <Button
@@ -527,6 +532,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "../components/ui/badge";
 import Navigation from "../components/Navigation.vue";
 import { useLocalizedUrl } from "../i18n/utils";
+import { useMulmoCastInstallers } from "./products/useMulmoCastInstallers";
 import {
   Monitor,
   Terminal,
@@ -544,6 +550,7 @@ import {
 
 const { t, locale } = useI18n();
 const localizedUrl = useLocalizedUrl();
+const { forThisDevice: installerForThisDevice } = useMulmoCastInstallers();
 </script>
 
 <style scoped></style>

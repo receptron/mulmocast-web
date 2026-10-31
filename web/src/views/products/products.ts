@@ -33,7 +33,7 @@ const PRODUCTS: Record<ProductId, ProductDef> = {
     install: "npx mulmocast",
     videoIds: [],
     links: [
-      { kind: "download", path: "/mulmocast#download" },
+      { kind: "download", path: "/mulmocast/getting-started#download" },
       { kind: "docs", path: "/docs" },
       { kind: "npm", url: "https://www.npmjs.com/package/mulmocast" },
       { kind: "github", url: "https://github.com/receptron/mulmocast-app" },
