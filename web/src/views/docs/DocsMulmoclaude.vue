@@ -529,8 +529,9 @@ npx @mulmobridge/line@latest        # LINE
             target="_blank"
             rel="noopener"
             class="text-primary hover:underline"
-            >{{ locale === "ja" ? "MulmoBridgeガイド" : "MulmoBridge Guide" }}</a
-          >{{ locale === "ja" ? "を参照してください。" : "." }}
+            >{{ locale === "ja" ? "MulmoBridgeガイド" : "MulmoBridge Guide" }}</a>{{
+            locale === "ja" ? "を参照してください。" : "."
+          }}
         </p>
       </section>
 
@@ -580,8 +581,9 @@ npx @mulmobridge/line@latest        # LINE
             target="_blank"
             rel="noopener"
             class="text-primary hover:underline"
-            >{{ locale === "ja" ? "ランタイムプラグインのドキュメント" : "Runtime-Loaded Plugins guide" }}</a
-          >{{ locale === "ja" ? "を参照してください。" : "." }}
+            >{{ locale === "ja" ? "ランタイムプラグインのドキュメント" : "Runtime-Loaded Plugins guide" }}</a>{{
+            locale === "ja" ? "を参照してください。" : "."
+          }}
         </p>
       </section>
 

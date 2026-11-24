@@ -544,8 +544,7 @@
                   >1</span
                 >
                 <span>
-                  <strong>{{ locale === "ja" ? "音声の長さ" : "Audio length" }}</strong
-                  >:
+                  <strong>{{ locale === "ja" ? "音声の長さ" : "Audio length" }}</strong>:
                   {{
                     locale === "ja"
                       ? "textから生成された音声の長さ + パディング"
@@ -559,8 +558,7 @@
                   >2</span
                 >
                 <span>
-                  <strong>{{ locale === "ja" ? "明示的なduration" : "Explicit duration" }}</strong
-                  >:
+                  <strong>{{ locale === "ja" ? "明示的なduration" : "Explicit duration" }}</strong>:
                   {{
                     locale === "ja" ? "durationプロパティで指定された秒数" : "Seconds specified by duration property"
                   }}
@@ -572,8 +570,7 @@
                   >3</span
                 >
                 <span>
-                  <strong>{{ locale === "ja" ? "動画の長さ" : "Video length" }}</strong
-                  >:
+                  <strong>{{ locale === "ja" ? "動画の長さ" : "Video length" }}</strong>:
                   {{
                     locale === "ja"
                       ? "moviePromptで動画を指定した場合、その動画の長さ"
@@ -587,8 +584,7 @@
                   >4</span
                 >
                 <span>
-                  <strong>{{ locale === "ja" ? "デフォルト" : "Default" }}</strong
-                  >:
+                  <strong>{{ locale === "ja" ? "デフォルト" : "Default" }}</strong>:
                   {{ locale === "ja" ? "上記がない場合は1秒" : "1 second if none of the above apply" }}
                 </span>
               </li>
